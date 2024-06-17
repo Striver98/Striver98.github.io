@@ -1,0 +1,631 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>《传感器与信号调理》期末复习 | 午夜飞行</title><meta name="author" content="WangZhixuan"><meta name="copyright" content="WangZhixuan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="利用传感器的测量系统简介 一般术语和概念 测量系统 System:a combination of two or more elements, subsystems, and parts necessary to carry out one or more functions. The function of a measurement system: the objective an">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《传感器与信号调理》期末复习">
+<meta property="og:url" content="https://striver98.github.io/1dcc5eac.html">
+<meta property="og:site_name" content="午夜飞行">
+<meta property="og:description" content="利用传感器的测量系统简介 一般术语和概念 测量系统 System:a combination of two or more elements, subsystems, and parts necessary to carry out one or more functions. The function of a measurement system: the objective an">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striver98.github.io/images/Avatar.jpg">
+<meta property="article:published_time" content="2024-05-23T11:44:46.000Z">
+<meta property="article:modified_time" content="2024-05-26T11:28:42.298Z">
+<meta property="article:author" content="WangZhixuan">
+<meta property="article:tag" content="传感器">
+<meta property="article:tag" content="自动化">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striver98.github.io/images/Avatar.jpg"><link rel="shortcut icon" href="/images/favicon.png"><link rel="canonical" href="https://striver98.github.io/1dcc5eac.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"WDLKUSN1F7","apiKey":"5ffee458d4af4547b0c362376424a0b0","indexName":"dev_NAME","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: WangZhixuan","link":"链接: ","source":"来源: 午夜飞行","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '《传感器与信号调理》期末复习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-05-26 19:28:42'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body><div id="loading-box"><div class="pokeball-back"></div><div class="pokeball-loading"><div class="pokeball" id="pokeball-normal"></div><div class="pokeball" id="pokeball-great"></div><div class="pokeball" id="pokeball-ultra"></div><div class="pokeball" id="pokeball-master"></div><div class="pokeball" id="pokeball-safari"></div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/Avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-camera"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fas fa-play-circle"></i><span> 追番</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><nav id="nav"><span id="blog-info"><a href="/" title="午夜飞行"><img class="site-icon" src="/images/universe.png"/><span class="site-name">午夜飞行</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-camera"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fas fa-play-circle"></i><span> 追番</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">《传感器与信号调理》期末复习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-23T11:44:46.000Z" title="发表于 2024-05-23 19:44:46">2024-05-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-26T11:28:42.298Z" title="更新于 2024-05-26 19:28:42">2024-05-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="《传感器与信号调理》期末复习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="利用传感器的测量系统简介">利用传感器的测量系统简介</h1>
+<h2 id="一般术语和概念">一般术语和概念</h2>
+<h3 id="测量系统">测量系统</h3>
+<p>System:a combination of two or more elements, subsystems, and parts
+necessary to carry out one or more functions.</p>
+<p>The function of a <strong>measurement system</strong>: the objective
+and empirical assignment of a number to a property or quality of an
+object or event in order to describe it.</p>
+<p>系统是指用来完成一个或多个功能所需两个或多个元件、子系统和部件的组合。</p>
+<p>测量系统的作用是以客观和实验方式对客体或事件的特性或品质加以定量描述。</p>
+<p>Objectives of a measurement:</p>
+<ul>
+<li>process monitoring（过程监测）</li>
+<li>process control（过程控制）</li>
+<li>assist experimental engineering</li>
+</ul>
+<h3 id="换能器传感器和执行器">换能器、传感器和执行器</h3>
+<p><strong>Transducer</strong>: a device that converts a signal from one
+physical form to a corresponding signal having a different physical
+form.</p>
+<p>―energy converter (mechanical, thermal, magnetic, electric, chemical,
+and radiation)</p>
+<p>换能器是一种将信号从一种物理形式变换为具有不同物理形式的相应信号的装置</p>
+<p><strong>Sensor</strong>: devices offering an electric output</p>
+<p>提供电输出的装置称为传感器</p>
+<p>A sensor may not be a transducer. Input transducers (physical
+signal/electric signal) are termed sensors, or detectors for radiation,
+output transducers (electric signal/display or actuation) are termed
+<strong>actuators or effectors</strong>.</p>
+<p>如今，将输入换能器称为辐射传感器或探测器，而将输出换能器称为执行器或控制器。</p>
+<h3 id="信号调节和显示">信号调节和显示</h3>
+<p><strong>Signal conditioner</strong>: measuring system elements that
+start with an electric sensor output signal and then yield a signal
+suitable for transmission, display or recording.</p>
+<p>It includes: amplification, level shifting, filtering, impedance
+matching, modulation, and demodulation</p>
+<p>信号调节器由传感器的输出电信号启动，然后给出适合于传输、显示或记录的信号。</p>
+<p>它包括：放大、电平移动、滤波、阻抗匹配、调制和解调</p>
+<p>Display: analog or digital</p>
+<h3 id="接口数据域和变换">接口、数据域和变换</h3>
+<p><strong>Interface</strong>: There is a need for signal processing of
+the sensor output signal before its end use.</p>
+<p>在最终利用传感器的输出信号之前，一般都需要对其进行某种信号处理。</p>
+<p><strong>Data Domain</strong>: a name of a quantity used to represent
+or transmit information.</p>
+<p>数据域是用来表示或传输信息的某个量的名称。</p>
+<p>Direct and indirect measurement</p>
+<h2 id="传感器分类">传感器分类</h2>
+<ul>
+<li>the need for a <strong>power supply</strong>: <strong>modulating or
+self-generating</strong>（无源传感器和有源传感器）</li>
+<li>output signals: <strong>analog or digital</strong></li>
+<li>operating mode: <strong>deflection or
+null</strong>（偏转工作方式和零示工作方式）</li>
+<li>Input-output relationship: zero, first, second, or higher order</li>
+<li>principle: physical, chemical or biological</li>
+<li>measurand: temperature, pressure, flow, level,etc.</li>
+<li>Manufacturer application area: chemical, aero-space, etc.</li>
+</ul>
+<h2 id="通用输入输出配置">通用输入输出配置</h2>
+<h3 id="干扰输入和调整输出">干扰输入和调整输出</h3>
+<p>It is unreasonable to expect the sensor to be sensitive to only the
+quantity of interest and also to expect the output signal to be entirely
+due to the input signal.</p>
+<p>xs—the desired signal xI—interfering inputs xM—modifying inputs</p>
+<p><strong>Example</strong>: measure force Stress changes the electric
+resistance. Temperature also changes the electric
+resistance：Interference Temperature change can also affect the
+amplifier gain Gs, so it can acts as a modifying input.</p>
+<h3 id="补偿技术">补偿技术</h3>
+<p>Reduce the effects of interfering and modifying inputs:</p>
+<ul>
+<li>Change the system design（改变系统设计）</li>
+<li>Add new elements to it（向系统设计增加新的组成部分）</li>
+</ul>
+<p>The best approach is to design systems insensitive to
+interference.（最好的方法是将系统设计成对干扰不敏感而只对有用信号起响应）</p>
+<p>Common methods:</p>
+<ul>
+<li><strong>Negative feedback</strong>（负反馈）: a common method to
+reduce the effect of modifying inputs, and it is the method used in null
+measurement systems.</li>
+</ul>
+<blockquote>
+<p><img src="../images/image-20240523203101652.png" /></p>
+<p>用来降低内部扰动影响的负反馈法。H单元由于比G单元承受较小的功率，故可以对内部扰动不敏感。</p>
+<p>It assumes that the measurement system and the feedback are linear
+and can be described by their respective transfer functions. The
+input-output relation is</p>
+<p><img src="../images/image-20240523203311081.png" /></p>
+</blockquote>
+<ul>
+<li><strong>Filtering</strong>（滤波）: a common method for interference
+reduction. Filters are very effective when frequency spectra of signals
+and interference do not overlap.</li>
+</ul>
+<blockquote>
+<p>当信号和干扰的频谱不重叠时，滤波器十分有用</p>
+</blockquote>
+<ul>
+<li><p>Use of <strong>opposing inputs</strong>（相反输入）: often
+applied to compensate for temperature variations.</p></li>
+<li><p><strong>Digital calculation</strong>（数字计算）: a common method
+in smart sensors.</p></li>
+</ul>
+<blockquote>
+<p>When the mathematical relationship between the interference and
+sensor output is known, interference can be compensated by digital
+calculation after measuring the magnitude of the interfering.</p>
+</blockquote>
+<h2 id="测量系统的静态特性">测量系统的静态特性</h2>
+<h3 id="精确度精密度和灵敏度">精确度、精密度和灵敏度</h3>
+<p><strong>Accuracy</strong> is the quality that characterizes the
+capacity of a measuring instrument for giving results close to the true
+value of the measured quantity.</p>
+<p>精确度是表征某种测量仪器给出接近于被测量真值的结果之能力。</p>
+<p>Sensor accuracy is determined through static calibration. It consists
+of keeping constant all sensor inputs, except the one to be studied.</p>
+<p>传感器的精确度由静态校准确定。静态校准是指除待研究的一个输入之外，使所有传感器输入都维持恒定不变。</p>
+<p><strong>Error</strong> : Any discrepancy between the true value for
+the measured quantity and the instrument reading.</p>
+<p>被测量的真值与仪器读数之间的任何差异被称为误差。</p>
+<p><strong>Absolute error</strong>: the difference between measurement
+result and the true value.</p>
+<p>测量结果与真值之间的差称为绝对误差。</p>
+<p>绝对误差=测量结果-真值</p>
+<p><strong>Relative error</strong>: quotient between the absolute error
+and the true value for the measured quantity</p>
+<p>相对误差：绝对误差与被测量的真值之商。</p>
+<p>Because true values are indeterminate, error calculations use a
+conventional true
+value.（因为真值是无法确定的值，故误差计算利用了约定真值）</p>
+<p>Relative error usually consists of two parts: one given as a
+percentage of the reading and another that is constant. The constant
+part can be expressed as a percentage of the FSO, a threshold value, a
+number of counts in digital instruments, or a combination of these.</p>
+<p>相对误差通常由两部分组成：一部分作为读数的百分比，另一部分为常数。常数部分可以表示为满量程输出的百分比、阈值、数字仪器的计数数据或三者的结合。</p>
+<p><strong>Accuracy Class</strong>: It facilitates the comparison of
+several sensors with respect to their accuracy. <strong>Index of
+class</strong> is defined as the percent measurement error, referred to
+a conventional value that is the measurement range or the FSO.</p>
+<blockquote>
+<p><img src="../images/image-20240523205848179.png" /></p>
+<p>第一个正确</p>
+</blockquote>
+<p><strong>Precision</strong>（精密度）: the quality that characterizes
+the capability of a measuring instrument of giving the same reading when
+repetitively measuring the same quantity under the same prescribed
+conditions ,without regard for the coincidence or discrepancy between
+the result and the true value.</p>
+<p>精确度表征在相同的规定条件下，某一测量仪器重复测量同一量时给出相同度数的能力，而不考虑结果与真值之间的符合程度或差异。</p>
+<p><strong>Repeatability</strong>: the closeness of agreement between
+successive results obtained with the same method under the same
+conditions and in a short time interval.</p>
+<p>重复性指在相同条件下，短时间间隔内用相同方法得到的相继结果之间一致性的接近程度。</p>
+<p><strong>Reproducibility</strong>（可复现性）: a long-term set of
+measurements or with measurements carried out by different people or
+performed with different instruments or in different laboratories.</p>
+<p><strong>The zero drift</strong>（零点漂移） describes output
+variations when the input is zero.</p>
+<p><strong>Scale factor drift</strong>（量程换算系数漂移） describes
+sensitivity changes.</p>
+<p>The <strong>sensitivity</strong> or scale factor is the slope of the
+calibration curve.（灵敏度或量程换算系数对应于校准曲线的斜率）</p>
+<p><img src="../images/image-20240523211754453.png" /></p>
+<h3 id="其他特性线性和分辨率">其他特性：线性和分辨率</h3>
+<p><strong>Linearity</strong>: the closeness between the calibration
+curve and a specified straight line.
+（线性用来描述校准曲线与规定直线之间的接近程度）</p>
+<p>Depending on which straight line is considered, several definitions
+apply:  Independent Linearity独立线性  Zero-Based
+Linearity基于零点的线性  Terminal-Based Linearity基于端点的线性 
+End-Points Linearity终点线性  Theoretical Linearity理论线性</p>
+<p>The main factors that influence linearity are resolution, threshold,
+and hysteresis.</p>
+<p>影响线性的主要因素时分辨率、阈值和滞后。</p>
+<p><strong>Resolution</strong> (or discrimination): the minimal change
+of the input necessary to produce a detectable change at the output.
+（分辨率是在输出端产生可检测变化所需的最小输入变化）</p>
+<p><strong>Hysteresis</strong>: the difference between two output values
+that correspond to the same input, depending on the direction
+(increasing or decreasing) of successive input
+values.（滞后是指对应于相同输入的两个输出值之差，它取决于相继输入值的方向（增大或减小）。</p>
+<h3 id="系统误差">系统误差</h3>
+<p>An error is said to be systematic when in the course of measuring the
+same value of a given quantity under the same conditions, it remains
+constant in absolute value and sign or varies according to a definite
+law when measurement conditions change.</p>
+<p>在相同条件下对给定量的相同值进行测量的过程中，若误差的绝对值和符号仍维持不变或者当测量条件改变时按确定规律变化，则将这样的误差看成是系统误差。</p>
+<p><img src="../images/image-20240523213128902.png" /></p>
+<h3 id="随机误差">随机误差</h3>
+<p>Random errors are those that remain after eliminating the causes of
+systematic errors.</p>
+<p>随机误差是在消除系统误差根源后仍然继续存留的误差。</p>
+<p><img src="../images/image-20240523213857715.png" /></p>
+<p><img src="../images/image-20240523213641599.png" /></p>
+<p><img src="../images/image-20240523213925422.png" /></p>
+<p><img src="../images/image-20240523214027363.png" /></p>
+<p><img src="../images/image-20240523214051785.png" /></p>
+<h2 id="动态特性">动态特性</h2>
+<p>The dynamic characteristics are the <strong>dynamic
+error</strong>（动态误差） and <strong>speed of
+response</strong>（响应速度） (time constant, delay).They describe the
+behavior of a sensor with applied variable input signals.</p>
+<p><strong>The dynamic error</strong> is the difference between the
+indicated value and the true value for the measured quantity, when the
+static error is zero.
+（动态误差是当静态误差为零时，被测量的指示值与真值之间的差）</p>
+<p><strong>The speed of response</strong> indicates how fast the
+measurement system reacts to changes in the input variable.
+（响应速度表示测量系统对输入变量的变化起反应有多快）</p>
+<p><img src="../images/image-20240523215839405.png" /></p>
+<p><img src="../images/image-20240523215854448.png" /></p>
+<p><img src="../images/image-20240523215927782.png" /></p>
+<p><img src="../images/image-20240523220240068.png" /></p>
+<p><img src="../images/image-20240523220253002.png" /></p>
+<p><img src="../images/image-20240523220502340.png" /></p>
+<h2 id="传感器的其他特性">传感器的其他特性</h2>
+<p><img src="../images/image-20240524143523260.png" /></p>
+<h3 id="输入特性阻抗">输入特性：阻抗</h3>
+<p>Sensor output impedance determines the input impedance needed for the
+interface circuit.</p>
+<p><img src="../images/image-20240524143750522.png" /></p>
+<p><img src="../images/image-20240524143848486.png" /></p>
+<h3 id="可靠性">可靠性</h3>
+<p>The failure rate λ is the number of failures of an item per unit
+measure of life.（失效率 λ
+是指某一产品每单位寿命测度（时间、周期）的失效数和保持完好的产品数之比。</p>
+<p><img src="../images/image-20240524144113168.png" /></p>
+<p>The <strong>reliability</strong> at any time t as a probability
+is</p>
+<p>$R(t)=_{N } $</p>
+<p><img src="../images/image-20240524144610286.png" /></p>
+<p><img src="../images/image-20240524144705530.png" /></p>
+<p><img src="../images/image-20240524144713172.png" /></p>
+<h2 id="初级传感器">初级传感器</h2>
+<p>温度传感器，压力传感器，流速和流量传感器，液位传感器，力和转矩传感器，加速度和倾斜传感器，速度传感器</p>
+<h2 id="传感器使用的材料">传感器使用的材料</h2>
+<p>导体、半导体和电介质，磁性材料</p>
+<h2 id="微传感器工艺">微传感器工艺</h2>
+<p>薄膜工艺、厚膜工艺、微机械加工工艺</p>
+<h1 id="电阻式传感器">电阻式传感器</h1>
+<h2 id="应变计">应变计</h2>
+<p><img src="../images/image-20240525223807731.png" /></p>
+<p><img src="../images/image-20240525223844196.png" /></p>
+<p>基本原理：导体或半导体受到机械应力作用时，其电阻会发生变化。（压阻效应）</p>
+<p>$=G=G$</p>
+<p>G是应变系数</p>
+<p>对于微小变化，金属导线的电阻为：<span class="math inline">\(R=
+R_{0}+dR=R_{0}(1+ \frac{dR}{R_{0}}) \approx
+R_{0}(1+G\varepsilon)=R_{0}(1+x)\)</span></p>
+<p>式中，R0是无外加应力时的电阻，<span
+class="math inline">\(x=G\varepsilon\)</span>。</p>
+<p><span class="math inline">\(\varepsilon =\frac{FA}{E}\)</span></p>
+<h2 id="电阻式温度检测器rtd">电阻式温度检测器RTD</h2>
+<p>热耗散因数<span
+class="math inline">\(\delta\)</span>，用于表示处于给定环境中导体的热耗散能力。</p>
+<p><img src="../images/image-20240525201352605.png" /></p>
+<p>对于用作RTD传感器的金属，在它们各自的线性范围内，有<span
+class="math inline">\(R=R_{0}[1+\alpha (T-T_{0})]\)</span></p>
+<p><span
+class="math inline">\(\alpha\)</span>是电阻温度系数（TCR）：<span
+class="math inline">\(\alpha =\frac{R_{100}-R_{0}}{(100°c)\times
+R_{0}}\)</span></p>
+<p><img src="../images/image-20240525201521522.png" /></p>
+<h2 id="热敏电阻">热敏电阻</h2>
+<p>他所指的是基于半导体的热变电阻，而不是基于导体的热传感器。</p>
+<p>热敏电阻的基础是半导体电阻对温度的依赖性</p>
+<p><span
+class="math inline">\(R_{T}=R_{0}e^{B(1/T-1/T_{0})}\)</span></p>
+<p>等效电阻温度系数或相对灵敏度为：<span
+class="math inline">\(\alpha=-\frac{B}{T^{2}}\)</span></p>
+<p><img src="../images/image-20240525202034985.png" /></p>
+<p><img src="../images/image-20240525202145186.png" /></p>
+<h1 id="电阻式传感器的信号调节">电阻式传感器的信号调节</h1>
+<h2 id="惠斯登电桥">惠斯登电桥</h2>
+<p><img src="../images/image-20240525203109470.png" /></p>
+<p><img src="../images/image-20240525203255513.png" /></p>
+<p><img src="../images/image-20240525203742451.png" /></p>
+<h1 id="变电抗式传感器和磁电式传感器">变电抗式传感器和磁电式传感器</h1>
+<h2 id="电容式传感器">电容式传感器</h2>
+<p><img src="../images/image-20240525205813083.png" /></p>
+<h2 id="线性可调差接变压器lvdt">线性可调差接变压器（LVDT）</h2>
+<p>原理：当铁磁性磁心受到与用于检测的移动部分相连的非铁磁杆拖曳沿它的内部移动时，初级绕组与两个次级绕组中每一个之间的互感将发生变化。当初级绕组由交流电压供电时，在中心位置处，每个次级绕组中感应的电压相等。磁心移开中心位置时，两个次级电压之一增大，而另一个次级电压则减小相同数量。。通常两个次级绕组像图a所示那样反向串联，以给出图b所示那样的线性输出。</p>
+<p><img src="../images/image-20240525210946237.png" /></p>
+<h1 id="有源传感器">有源传感器</h1>
+<h2 id="热电式传感器热电偶">热电式传感器：热电偶</h2>
+<h3 id="可逆的热电效应">可逆的热电效应</h3>
+<p>基础：珀尔帖（Peltier）效应和汤姆逊（Thomson）效应</p>
+<p><img src="../images/image-20240525211534637.png" /></p>
+<p><img src="../images/image-20240525211605036.png" /></p>
+<p>珀尔帖效应：当电流流过两种不同金属的结点时，结点将发热或变冷。当电流方向颠倒时，热的流动方向也颠倒。</p>
+<p><img src="../images/image-20240525211838811.png" /></p>
+<p>汤姆逊效应：当沿具有非均匀温度的单一导体存在电流时，导体中的吸热或发热现象。当电荷和热量在相反方向流动时将吸收热量，而当它们在同一方向流动时则释放热量。</p>
+<p><img src="../images/image-20240525212158578.png" /></p>
+<h3 id="热电偶定律">热电偶定律</h3>
+<p>均质回路定律：在由单一均质形成的回路中，只靠外加热即使不改变导体的截面也不可能维持热电电流。</p>
+<p><img src="../images/image-20240525212706441.png" /></p>
+<p>中间金属定律：在由几种不同金属组成的回路中，只要整个回路处于均匀温度，则回路中所有电动势的代数和保持为零。这意味着可以将仪表接入回路而不会增加任何误差，条件是引入的新结点全都处于相同的温度。</p>
+<p><img src="../images/image-20240525213058179.png" /></p>
+<p>中间温度定律：</p>
+<p><img src="../images/image-20240525213221036.png" /></p>
+<p><img src="../images/image-20240525223644099.png" /></p>
+<p><img src="../images/image-20240525223707225.png" /></p>
+<h1 id="其他检测方法">其他检测方法</h1>
+<h2 id="超声波传感器">超声波传感器</h2>
+<p>超声波是一种频率高于人的听觉范围（约20kHz）的机械振动。</p>
+<p>多普勒效应：当辐射（机械或电磁辐射）被一相对于辐射发射器移动的物体反射时，辐射所经历的频率要发生变化。若反射体以速度v移动，则频率变化为<span
+class="math inline">\(f_{e}-f_{r}=2f_{e}\frac{v}{c}cos\alpha\)</span></p>
+<p>式中fe是发射频率，fr是接收频率，而<span
+class="math inline">\(\alpha\)</span>是反射体速度与声传播方向之间的相对角。</p>
+<p>The Doppler effectis the change in frequency undergone by a radiation
+(be it mechanical or electromagnetic) when it is reflected by an object
+that is moving with respect to the radiation transmitter.If the
+reflector moves with velocity v, the change in frequency is</p>
+<p><img src="../images/image-20240525222116838.png" /></p>
+<p><img src="../images/image-20240525222128201.png" /></p>
+<p><img src="../images/image-20240525223300912.png" /></p>
+<p><img src="../images/image-20240525223314038.png" /></p>
+<p><img src="../images/image-20240525223400358.png" /></p>
+<p><img src="../images/image-20240525223424505.png" /></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/">传感器</a><a class="post-meta__tags" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a></div><div class="post_share"><div class="social-share" data-image="/images/Avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/ff05b5bf.html" title="过程控制"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-31</div><div class="title">过程控制</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/Avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WangZhixuan</div><div class="author-info__description">the Answer to Life, the Universe and Everything is 42.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Striver98"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E6%B5%8B%E9%87%8F%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">利用传感器的测量系统简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E6%9C%AF%E8%AF%AD%E5%92%8C%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">一般术语和概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E9%87%8F%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.1.</span> <span class="toc-text">测量系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8D%A2%E8%83%BD%E5%99%A8%E4%BC%A0%E6%84%9F%E5%99%A8%E5%92%8C%E6%89%A7%E8%A1%8C%E5%99%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text">换能器、传感器和执行器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E8%B0%83%E8%8A%82%E5%92%8C%E6%98%BE%E7%A4%BA"><span class="toc-number">1.1.3.</span> <span class="toc-text">信号调节和显示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E5%9F%9F%E5%92%8C%E5%8F%98%E6%8D%A2"><span class="toc-number">1.1.4.</span> <span class="toc-text">接口、数据域和变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E6%84%9F%E5%99%A8%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.</span> <span class="toc-text">传感器分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.</span> <span class="toc-text">通用输入输出配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B2%E6%89%B0%E8%BE%93%E5%85%A5%E5%92%8C%E8%B0%83%E6%95%B4%E8%BE%93%E5%87%BA"><span class="toc-number">1.3.1.</span> <span class="toc-text">干扰输入和调整输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%81%BF%E6%8A%80%E6%9C%AF"><span class="toc-number">1.3.2.</span> <span class="toc-text">补偿技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E9%87%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%9D%99%E6%80%81%E7%89%B9%E6%80%A7"><span class="toc-number">1.4.</span> <span class="toc-text">测量系统的静态特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B2%BE%E7%A1%AE%E5%BA%A6%E7%B2%BE%E5%AF%86%E5%BA%A6%E5%92%8C%E7%81%B5%E6%95%8F%E5%BA%A6"><span class="toc-number">1.4.1.</span> <span class="toc-text">精确度、精密度和灵敏度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%89%B9%E6%80%A7%E7%BA%BF%E6%80%A7%E5%92%8C%E5%88%86%E8%BE%A8%E7%8E%87"><span class="toc-number">1.4.2.</span> <span class="toc-text">其他特性：线性和分辨率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%AF%AF%E5%B7%AE"><span class="toc-number">1.4.3.</span> <span class="toc-text">系统误差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%AF%AF%E5%B7%AE"><span class="toc-number">1.4.4.</span> <span class="toc-text">随机误差</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%89%B9%E6%80%A7"><span class="toc-number">1.5.</span> <span class="toc-text">动态特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E5%85%B6%E4%BB%96%E7%89%B9%E6%80%A7"><span class="toc-number">1.6.</span> <span class="toc-text">传感器的其他特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E7%89%B9%E6%80%A7%E9%98%BB%E6%8A%97"><span class="toc-number">1.6.1.</span> <span class="toc-text">输入特性：阻抗</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%9D%A0%E6%80%A7"><span class="toc-number">1.6.2.</span> <span class="toc-text">可靠性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E7%BA%A7%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="toc-number">1.7.</span> <span class="toc-text">初级传感器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E6%84%9F%E5%99%A8%E4%BD%BF%E7%94%A8%E7%9A%84%E6%9D%90%E6%96%99"><span class="toc-number">1.8.</span> <span class="toc-text">传感器使用的材料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E4%BC%A0%E6%84%9F%E5%99%A8%E5%B7%A5%E8%89%BA"><span class="toc-number">1.9.</span> <span class="toc-text">微传感器工艺</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%B5%E9%98%BB%E5%BC%8F%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">电阻式传感器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E5%8F%98%E8%AE%A1"><span class="toc-number">2.1.</span> <span class="toc-text">应变计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E9%98%BB%E5%BC%8F%E6%B8%A9%E5%BA%A6%E6%A3%80%E6%B5%8B%E5%99%A8rtd"><span class="toc-number">2.2.</span> <span class="toc-text">电阻式温度检测器RTD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%83%AD%E6%95%8F%E7%94%B5%E9%98%BB"><span class="toc-number">2.3.</span> <span class="toc-text">热敏电阻</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%B5%E9%98%BB%E5%BC%8F%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E4%BF%A1%E5%8F%B7%E8%B0%83%E8%8A%82"><span class="toc-number">3.</span> <span class="toc-text">电阻式传感器的信号调节</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%83%A0%E6%96%AF%E7%99%BB%E7%94%B5%E6%A1%A5"><span class="toc-number">3.1.</span> <span class="toc-text">惠斯登电桥</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%98%E7%94%B5%E6%8A%97%E5%BC%8F%E4%BC%A0%E6%84%9F%E5%99%A8%E5%92%8C%E7%A3%81%E7%94%B5%E5%BC%8F%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">变电抗式传感器和磁电式传感器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E5%AE%B9%E5%BC%8F%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="toc-number">4.1.</span> <span class="toc-text">电容式传感器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%AF%E8%B0%83%E5%B7%AE%E6%8E%A5%E5%8F%98%E5%8E%8B%E5%99%A8lvdt"><span class="toc-number">4.2.</span> <span class="toc-text">线性可调差接变压器（LVDT）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%89%E6%BA%90%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">有源传感器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%83%AD%E7%94%B5%E5%BC%8F%E4%BC%A0%E6%84%9F%E5%99%A8%E7%83%AD%E7%94%B5%E5%81%B6"><span class="toc-number">5.1.</span> <span class="toc-text">热电式传感器：热电偶</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%80%86%E7%9A%84%E7%83%AD%E7%94%B5%E6%95%88%E5%BA%94"><span class="toc-number">5.1.1.</span> <span class="toc-text">可逆的热电效应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E7%94%B5%E5%81%B6%E5%AE%9A%E5%BE%8B"><span class="toc-number">5.1.2.</span> <span class="toc-text">热电偶定律</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">其他检测方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B6%85%E5%A3%B0%E6%B3%A2%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="toc-number">6.1.</span> <span class="toc-text">超声波传感器</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/f2cbe61d.html" title="大作业：三相有源滤波APF的控制仿真设计">大作业：三相有源滤波APF的控制仿真设计</a><time datetime="2024-06-06T05:07:26.000Z" title="发表于 2024-06-06 13:07:26">2024-06-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/ff8a6906.html" title="计算机接口与通信">计算机接口与通信</a><time datetime="2024-05-26T08:55:37.000Z" title="发表于 2024-05-26 16:55:37">2024-05-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/1dcc5eac.html" title="《传感器与信号调理》期末复习">《传感器与信号调理》期末复习</a><time datetime="2024-05-23T11:44:46.000Z" title="发表于 2024-05-23 19:44:46">2024-05-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/39a57f2d.html" title="BUCK电路建模控制与仿真">BUCK电路建模控制与仿真</a><time datetime="2024-05-15T07:14:52.000Z" title="发表于 2024-05-15 15:14:52">2024-05-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/7ebf209f.html" title="Boost变换器的小信号模型的matlab计算">Boost变换器的小信号模型的matlab计算</a><time datetime="2024-05-14T08:09:39.000Z" title="发表于 2024-05-14 16:09:39">2024-05-14</time></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><div id="footer-wrap"><div class="copyright">&copy;2024 By WangZhixuan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.65.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = '7e64242d6520486e98596ea1c6042736';
+  var gaud_map_key = '499bcb8b7888a8f00a3315c6d8c5141b';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>

@@ -1,0 +1,1837 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数据库系统期末复习笔记 | 午夜飞行</title><meta name="author" content="WangZhixuan"><meta name="copyright" content="WangZhixuan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第一章 数据库系统概论 数据管理技术好坏评判的标准：  数据冗余  数据共享  数据独立性：数据逻辑独立性和数据物理独立性  数据统一集中管理  数据库与数据管理 数据库系统的特点：  数据结构化、集成化  数据的共享性高、冗余度低、易扩充 数据独立性高 数据由DBMS统一管理和控制  相关概念：  数据库（DB）：按一定结构组织存储的、集成的、可共享的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库系统期末复习笔记">
+<meta property="og:url" content="https://striver98.github.io/a7f387d3.html">
+<meta property="og:site_name" content="午夜飞行">
+<meta property="og:description" content="第一章 数据库系统概论 数据管理技术好坏评判的标准：  数据冗余  数据共享  数据独立性：数据逻辑独立性和数据物理独立性  数据统一集中管理  数据库与数据管理 数据库系统的特点：  数据结构化、集成化  数据的共享性高、冗余度低、易扩充 数据独立性高 数据由DBMS统一管理和控制  相关概念：  数据库（DB）：按一定结构组织存储的、集成的、可共享的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striver98.github.io/images/Avatar.jpg">
+<meta property="article:published_time" content="2024-04-23T12:39:48.000Z">
+<meta property="article:modified_time" content="2024-05-18T03:59:36.000Z">
+<meta property="article:author" content="WangZhixuan">
+<meta property="article:tag" content="数据库系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striver98.github.io/images/Avatar.jpg"><link rel="shortcut icon" href="/images/favicon.png"><link rel="canonical" href="https://striver98.github.io/a7f387d3.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"WDLKUSN1F7","apiKey":"5ffee458d4af4547b0c362376424a0b0","indexName":"dev_NAME","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: WangZhixuan","link":"链接: ","source":"来源: 午夜飞行","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据库系统期末复习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-05-18 11:59:36'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div id="loading-box"><div class="pokeball-back"></div><div class="pokeball-loading"><div class="pokeball" id="pokeball-normal"></div><div class="pokeball" id="pokeball-great"></div><div class="pokeball" id="pokeball-ultra"></div><div class="pokeball" id="pokeball-master"></div><div class="pokeball" id="pokeball-safari"></div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/Avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-camera"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fas fa-play-circle"></i><span> 追番</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><nav id="nav"><span id="blog-info"><a href="/" title="午夜飞行"><img class="site-icon" src="/images/universe.png"/><span class="site-name">午夜飞行</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-camera"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fas fa-play-circle"></i><span> 追番</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据库系统期末复习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-23T12:39:48.000Z" title="发表于 2024-04-23 20:39:48">2024-04-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-18T03:59:36.000Z" title="更新于 2024-05-18 11:59:36">2024-05-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">13.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>48分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据库系统期末复习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="第一章-数据库系统概论">第一章 数据库系统概论</h1>
+<p>数据管理技术好坏评判的标准：</p>
+<ol type="1">
+<li>数据冗余<br>
+</li>
+<li>数据共享<br>
+</li>
+<li>数据独立性：数据逻辑独立性和数据物理独立性<br>
+</li>
+<li>数据统一集中管理</li>
+</ol>
+<h2 id="数据库与数据管理">数据库与数据管理</h2>
+<p>数据库系统的特点：</p>
+<ol type="1">
+<li>数据结构化、集成化<br>
+</li>
+<li>数据的共享性高、冗余度低、易扩充</li>
+<li>数据独立性高</li>
+<li>数据由DBMS统一管理和控制</li>
+</ol>
+<p>相关概念：</p>
+<ul>
+<li><strong>数据库（DB）</strong>：按一定结构组织存储的、集成的、可共享的数据的集合。</li>
+<li><strong>数据库管理系统（DBMS）</strong>：管理和维护数据库的系统软件。</li>
+<li><strong>数据库系统（DBS）</strong>：具有管理数据库功能的计算机系统。</li>
+<li><strong>DBS=计算机系统（硬件、软件平台、人）+DBMS+DB（重点）</strong></li>
+</ul>
+<h2 id="数据模型与信息模型">数据模型与信息模型</h2>
+<p><strong>分类：（重点）</strong></p>
+<ul>
+<li><strong>信息模型（概念模型）</strong>：是表示实体及其联系的模型。是从用户角度对数据建模，用于DB设计。它是一种独立于计算机系统的模型。</li>
+<li><strong>数据模型</strong>：是表示数据及其联系的模型。是对现实世界数据关系、特征的抽象。是从计算机角度对数据建模，用于DBMS实现。</li>
+</ul>
+<h3 id="信息模型">信息模型</h3>
+<ol type="1">
+<li><p>实体间的联系</p>
+<blockquote>
+<ul>
+<li>1:1</li>
+<li>1:m</li>
+<li>m:n</li>
+</ul>
+</blockquote></li>
+<li><p>信息模型的表示方法</p></li>
+</ol>
+<p>​ E-R模型（实体联系模型）</p>
+<figure>
+<img src="../images/ER实体模型-17138781886461.png" alt="ER实体模型">
+<figcaption aria-hidden="true">ER实体模型</figcaption>
+</figure>
+<h3 id="数据模型">数据模型</h3>
+<ol type="1">
+<li><strong>数据模型的三要素（重点）</strong></li>
+</ol>
+<blockquote>
+<ul>
+<li>数据结构（描述系统的静态特性）</li>
+<li>数据操作（描述系统的动态特性）</li>
+<li>数据的完整性约束</li>
+</ul>
+</blockquote>
+<ol start="2" type="1">
+<li>三种基本数据模型</li>
+</ol>
+<blockquote>
+<ul>
+<li>层次模型：树结构</li>
+<li>网状模型：图结构</li>
+<li>关系模型：表结构</li>
+</ul>
+</blockquote>
+<figure>
+<img src="../images/三种基本数据模型比较-17138782727653.png" alt="三种基本数据模型比较">
+<figcaption aria-hidden="true">三种基本数据模型比较</figcaption>
+</figure>
+<p><strong>数据库系统的三级模式结构（重点）</strong></p>
+<ul>
+<li><strong>外模式（子模式）</strong>：局部数据逻辑结构和特征的描述。（多个）<br>
+</li>
+<li><strong>概念模式（模式）</strong>：全局数据逻辑结构和特征的描述。（一个）定义模式时不仅要定义数据的逻辑结构，还要定义与数据有关的安全性、完整性要求。</li>
+<li><strong>内模式（存储模式、物理模式）</strong>：数据物理结构和存储方式的描述。（一个）</li>
+</ul>
+<p>三级模式间的联系：</p>
+<p>模式是内模式的逻辑表示；内模式是模式的物理实现；外模式是模式的逻辑子集。</p>
+<p><strong>数据库的二级映象功能：（重点）</strong></p>
+<ul>
+<li>外模式/模式映象</li>
+<li>模式/内模式映象</li>
+</ul>
+<ol type="1">
+<li><p>实现逻辑数据到物理数据的转换</p></li>
+<li><p>实现数据独立性(数据独立性：数据结构与应用程序之间相互独立的特性。)</p>
+<blockquote>
+<ul>
+<li>外模式/模式映象：实现数据逻辑独立性</li>
+<li>模式/内模式映象：实现数据物理独立性</li>
+</ul>
+</blockquote></li>
+</ol>
+<p><strong>数据库系统的组成</strong></p>
+<ul>
+<li>硬件平台</li>
+<li>软件系统（DBMS，OS，语言工具和开发环境）</li>
+<li>数据库</li>
+<li>各类人员（DBA，系统分析员，应用程序员，用户）</li>
+</ul>
+<p><strong>DBMS的主要功能</strong></p>
+<ul>
+<li>数据定义：DDL数据定义语言</li>
+<li>数据操纵：DML数据操纵语言</li>
+<li>数据组织和管理</li>
+<li>数据库运行管理</li>
+<li>数据库的建立和维护</li>
+<li>数据接口</li>
+</ul>
+<h2 id="课后习题">课后习题</h2>
+<p>1、数据库系统的3级结构描述了什么？为什么要在3级结构之间提供两级映像？</p>
+<p>答：外模式(子模式):描述了局部数据逻辑结构和特征。
+概念模式(模式):描述了全局数据逻辑结构和特征。
+内模式(存储模式、物理模式):描述了数据物理结构和存储方式。</p>
+<p>​ 在3级结构之间提供两级映像的目的是:</p>
+<ul>
+<li><p>实现逻辑数据到物理数据的转换</p></li>
+<li><p>实现数据独立性</p>
+<blockquote>
+<ul>
+<li>外模式/模式映象：实现数据逻辑独立性</li>
+<li>模式/内模式映象：实现数据物理独立性</li>
+</ul>
+</blockquote></li>
+</ul>
+<p>2、有一个记录球队、队员和球迷信息的数据库，包括：
+(1）对于每个球队，有球队的名字、队员、队长(队员之一)及队服颜色。
+(2）对于每个队员，有其姓名和所属球队。
+(3）对于每个球迷，有其姓名、最喜爱的球队、最喜爱的队员及最喜爱的颜色。
+用E－R图画出该数据库的信息模型。</p>
+<figure>
+<img src="../images/习题1.2-17138782901365.png" alt="习题1.2">
+<figcaption aria-hidden="true">习题1.2</figcaption>
+</figure>
+<h1 id="第二章-关系数据库">第二章 关系数据库</h1>
+<h2 id="关系模型">关系模型</h2>
+<h3 id="关系模型的特点及组成">关系模型的特点及组成</h3>
+<p>关系模型是用表结构表示实体集与实体集之间联系的一种模型。</p>
+<p>1.特点：</p>
+<ul>
+<li>结构简单，表达力强</li>
+<li>语言的一体化</li>
+<li>非过程化的操作</li>
+<li>坚实的数学基础</li>
+<li>操作效率低</li>
+</ul>
+<p>2.组成：</p>
+<ul>
+<li>关系数据结构</li>
+<li>关系数据操作</li>
+<li>关系完整性约束</li>
+</ul>
+<p>3.关系DB系统</p>
+<ul>
+<li>是支持关系模型的DB系统</li>
+</ul>
+<h3 id="关系数据结构">关系数据结构</h3>
+<p>1.域：是一组具有相同数据类型的值的集合。</p>
+<p>2.笛卡尔积：给定一组域 D1，…，Dn
+(可有相同的域)。其笛卡尔积为：Dl×D2×…×Dn={(d1,d2,…,dn)|di∈Di，i=1,2…,n}</p>
+<p>3.关系：</p>
+<ul>
+<li>笛卡尔积的<strong>有限子集</strong>称作对应域上的关系。</li>
+<li>关系是<strong>元组</strong>的集合。（二维表中的每一行称为关系的元组，每一列称为关系的属性）</li>
+<li>R(D1，D2， …，Dn)，R是n元(目)关系。</li>
+</ul>
+<p><strong>4.术语（重点）</strong></p>
+<ul>
+<li>候选键（一个关系上有1~多个）</li>
+<li>主键（一个关系上只有一个）</li>
+<li>主属性（包含在任一候选键中的属性）</li>
+<li>非主属性（不包含在任一候选键中的属性）</li>
+<li>外键（一个关系上可以没有，也可以有多个），外键提供了一种表示两个关系联系的方法。</li>
+<li>全键（由关系上所有属性组成的候选键）</li>
+</ul>
+<figure>
+<img src="../images/image-20240425220739717.png" alt="image-20240425220739717">
+<figcaption aria-hidden="true">image-20240425220739717</figcaption>
+</figure>
+<p><strong>5.关系的性质（重点）</strong></p>
+<ul>
+<li>每列的值为同一类型</li>
+<li>每列具有不同的属性名（可同域）</li>
+<li>任意两元组不能完全相同</li>
+<li>行的次序可以互换</li>
+<li>列的次序可以互换</li>
+<li>分量值是原子的</li>
+</ul>
+<p>6.关系模式与关系数据库</p>
+<ul>
+<li>关系模式：是关系结构的描述和定义，即二维表的表结构定义。关系模式简记为关系的属性名表:R(U)=R(A1
+，A2，A3，….An)</li>
+<li>关系数据库：对应关系模型的一个应用领域的全部关系的集合。</li>
+</ul>
+<h3 id="关系模型的数据操作">关系模型的数据操作</h3>
+<ol type="1">
+<li>数据查询</li>
+<li>数据插入</li>
+<li>数据删除</li>
+<li>数据修改</li>
+</ol>
+<p>关系数据语言分类：</p>
+<ol type="1">
+<li>关系代数语言：用对关系的运算来表达查询要求方式的语言。</li>
+<li>关系演算语言：用谓词来表达查询要求方式的语言。包括元组关系演算语言和域关系演算语言。</li>
+<li>具有关系代数和关系演算双重特点的语言。</li>
+</ol>
+<h3 id="关系的完整性约束重点">关系的完整性约束（重点）</h3>
+<ol type="1">
+<li><p><strong>实体完整性及规则</strong>：若属性A是基本关系R的主键属性，则属性A不能取空值。</p></li>
+<li><p><strong>参照完整性及规则</strong>：若属性(组)
+F是R的外键，它与S的主键K相对应，则对于R中每个元组在F上的值必须必为下列之一：
+（1）取空值(F的每个属性值均为空值)；
+（2）等于S中某个元组的主键值。</p></li>
+<li><p><strong>用户定义完整性及规则</strong>：反映具体应用所涉及的数据应满足的语义要求、约束条件。用户定义的完整性检查按是否能使约束表达式为真进行。</p></li>
+</ol>
+<h2 id="关系代数重点">关系代数（重点）</h2>
+<h3 id="集合运算">集合运算</h3>
+<p>设：t为元组变量；R、S为同类(同目、相应属性同域）关系：</p>
+<ol type="1">
+<li>并运算：R∪S ={t|(t∈R)∨(t∈S)}</li>
+<li>差运算: R-S={t|(t∈R)∧(<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.486ex;" xmlns="http://www.w3.org/2000/svg" width="5.042ex" height="2.106ex" role="img" focusable="false" viewBox="0 -716 2228.6 931"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(638.8,0)"><path data-c="2209" d="M196 25Q84 109 84 250Q84 372 166 450T360 539Q361 539 375 539T413 540T460 540L547 707Q550 716 563 716Q570 716 575 712T581 703T583 696T505 540H568Q583 532 583 520Q583 511 570 501L484 500L366 270H568Q583 262 583 250T568 230H346L247 38Q284 16 328 7Q355 1 466 0H570Q583 -10 583 -20Q583 -32 568 -40H471Q464 -40 447 -40T419 -41Q304 -41 228 3Q117 -211 115 -212Q111 -215 104 -215T92 -212T86 -204T84 -197Q84 -190 89 -183L196 25ZM214 61L301 230H124V228Q124 196 147 147T214 61ZM321 270L440 500Q353 499 329 494Q280 482 242 458T183 409T147 354T129 306T124 272V270H321Z"></path></g><g data-mml-node="mi" transform="translate(1583.6,0)"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g></g></g></svg></mjx-container></span>)}<br>
+</li>
+<li>交运算: R∩S={t|(t∈R)∧(t∈S)}</li>
+</ol>
+<p>示例：</p>
+<figure>
+<img src="../images/image-20240426132155875.png" alt="image-20240426132155875">
+<figcaption aria-hidden="true">image-20240426132155875</figcaption>
+</figure>
+<ol start="4" type="1">
+<li>广义笛卡尔积：设:R、S为不同类关系，则结果为不同类关系：RⅹS={tr
+ts|（tr∈R）∧（ts∈S）}</li>
+</ol>
+<figure>
+<img src="../images/image-20240426132418594.png" alt="image-20240426132418594">
+<figcaption aria-hidden="true">image-20240426132418594</figcaption>
+</figure>
+<h3 id="关系运算">关系运算</h3>
+<ol type="1">
+<li>选择：<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.339ex;" xmlns="http://www.w3.org/2000/svg" width="2.678ex" height="1.314ex" role="img" focusable="false" viewBox="0 -431 1183.6 581"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D70E" d="M184 -11Q116 -11 74 34T31 147Q31 247 104 333T274 430Q275 431 414 431H552Q553 430 555 429T559 427T562 425T565 422T567 420T569 416T570 412T571 407T572 401Q572 357 507 357Q500 357 490 357T476 358H416L421 348Q439 310 439 263Q439 153 359 71T184 -11ZM361 278Q361 358 276 358Q152 358 115 184Q114 180 114 178Q106 141 106 117Q106 67 131 47T188 26Q242 26 287 73Q316 103 334 153T356 233T361 278Z"></path></g><g data-mml-node="TeXAtom" transform="translate(604,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D439" d="M48 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H742Q749 676 749 669Q749 664 736 557T722 447Q720 440 702 440H690Q683 445 683 453Q683 454 686 477T689 530Q689 560 682 579T663 610T626 626T575 633T503 634H480Q398 633 393 631Q388 629 386 623Q385 622 352 492L320 363H375Q378 363 398 363T426 364T448 367T472 374T489 386Q502 398 511 419T524 457T529 475Q532 480 548 480H560Q567 475 567 470Q567 467 536 339T502 207Q500 200 482 200H470Q463 206 463 212Q463 215 468 234T473 274Q473 303 453 310T364 317H309L277 190Q245 66 245 60Q245 46 334 46H359Q365 40 365 39T363 19Q359 6 353 0H336Q295 2 185 2Q120 2 86 2T48 1Z"></path></g></g></g></g></g></svg></mjx-container></span>(R)={t|(t∈R)∧F(t)=true}}，是行上的选择，产生同类关系。</li>
+</ol>
+<ul>
+<li>含义：由R中满足F条件的元组组成。</li>
+<li>其中：F由属性(值)、比较符、逻辑运算符组成。</li>
+</ul>
+<blockquote>
+<p>属性（值）：属性名(如：A1)，列号（如1、2……[1]、[2]……）</p>
+<p>比较符：&gt;、≥、&lt;、≤、=、≠</p>
+<p>逻辑运算：∧、∨、┐</p>
+</blockquote>
+<ol start="2" type="1">
+<li>投影：<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.345ex;" xmlns="http://www.w3.org/2000/svg" width="2.677ex" height="1.321ex" role="img" focusable="false" viewBox="0 -431 1183.3 583.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path></g><g data-mml-node="TeXAtom" transform="translate(603,-152.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></g></g></svg></mjx-container></span>(R)={t[A]|(t∈R)}，是列上的选择，产生不同类关系。</li>
+</ol>
+<ul>
+<li>含义：R中取属性名表A中指定的列，<strong>消除重复元组</strong>。</li>
+<li>用关系代数表示查询：</li>
+</ul>
+<figure>
+<img src="../images/image-20240426133657728.png" alt="image-20240426133657728">
+<figcaption aria-hidden="true">image-20240426133657728</figcaption>
+</figure>
+<ol start="3" type="1">
+<li>连接：</li>
+</ol>
+<ul>
+<li><p>一般连接：它从两个关系的笛卡尔积中选取属性间满足一定条件的元组。</p>
+<blockquote>
+<figure>
+<img src="../images/image-20240426134120150.png" alt="image-20240426134120150">
+<figcaption aria-hidden="true">image-20240426134120150</figcaption>
+</figure>
+</blockquote>
+<blockquote>
+<p>从RⅹS中选取R关系在A属性组上的值与S关系在B属性组上值满足θ关系的元组。</p>
+</blockquote></li>
+<li><p>等值连接：θ为“=”的连接。</p></li>
+<li><p>自然连接： 设R、S有同名属性 Bi ( i=1,2….k) R ⋈ S= {tr
+ts|(tr∈R)∧(ts∈S)∧tr[B]=ts[B]}，其中B是R和S的公共属性，并且在形成的新关系中要去掉重复的属性。</p></li>
+</ul>
+<blockquote>
+<p>R ⋈ S 运算过程：</p>
+<ol type="1">
+<li>R×S</li>
+<li>σ(在R和S的公共属性上进行等值选择)</li>
+<li>π(去掉S中与R重复的属性)</li>
+</ol>
+</blockquote>
+<figure>
+<img src="../images/image-20240426134507716.png" alt="image-20240426134507716">
+<figcaption aria-hidden="true">image-20240426134507716</figcaption>
+</figure>
+<ul>
+<li><p>等值连接与自然连接的区别：
+（1）自然连接一定是等值连接，但等值连接不一定是自然连接。因为自然连接要求相等的分量必须是公共属性，而等值连接相等的分量不一定是公共属性。
+（2）等值连接不把重复的属性去掉，而自然连接要把重复属性去掉。</p></li>
+<li><p>除：设关系R(X，Y)和S(Y，Z)，X，Y，Z为属性组，R÷S={t[X]|t∈R ∧<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.339ex;" xmlns="http://www.w3.org/2000/svg" width="2.698ex" height="1.314ex" role="img" focusable="false" viewBox="0 -431 1192.5 581"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path></g><g data-mml-node="TeXAtom" transform="translate(603,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D44C" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path></g></g></g></g></g></svg></mjx-container></span>(S)⊆Yx}</p></li>
+</ul>
+<figure>
+<img src="../images/image-20240426135049504.png" alt="image-20240426135049504">
+<figcaption aria-hidden="true">image-20240426135049504</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240426135128615.png" alt="image-20240426135128615">
+<figcaption aria-hidden="true">image-20240426135128615</figcaption>
+</figure>
+<p>例子：</p>
+<p><strong>学生-课程数据库:</strong>
+S(sno，sname，sex，age，dept，place)</p>
+<p>C(cno，cname， credit ， pcno)</p>
+<p>SC(sno，cno，grade)</p>
+<figure>
+<img src="../images/image-20240426135541035.png" alt="image-20240426135541035">
+<figcaption aria-hidden="true">image-20240426135541035</figcaption>
+</figure>
+<p>1.查询至少选修了一门其直接先行课为003号课程的学生名。</p>
+<figure>
+<img src="../images/image-20240426135429775.png" alt="image-20240426135429775">
+<figcaption aria-hidden="true">image-20240426135429775</figcaption>
+</figure>
+<p>2.查没选005号课程的学生姓名与年龄。</p>
+<figure>
+<img src="../images/image-20240426135453454.png" alt="image-20240426135453454">
+<figcaption aria-hidden="true">image-20240426135453454</figcaption>
+</figure>
+<p>3.查询至少选修了两门课程的学生学号。</p>
+<figure>
+<img src="../images/image-20240426135523926.png" alt="image-20240426135523926">
+<figcaption aria-hidden="true">image-20240426135523926</figcaption>
+</figure>
+<p>4.查询选修了全部课程的学生学号与姓名。</p>
+<figure>
+<img src="../images/image-20240426135622251.png" alt="image-20240426135622251">
+<figcaption aria-hidden="true">image-20240426135622251</figcaption>
+</figure>
+<p><strong>关系代数五种基本运算：
+并、差、笛卡尔积、投影、选择</strong></p>
+<h3 id="扩充的关系运算">扩充的关系运算</h3>
+<ol type="1">
+<li>外连接</li>
+</ol>
+<blockquote>
+<ul>
+<li>完全外连接：R和S作自然连接时，把原该舍弃的元组也保留在新关系中，同时在这些元组新增加的属性上填空值（NULL）。</li>
+<li>左外连接：只把R中原该舍弃的元组放到新关系中。</li>
+<li>右外连接：只把S中原该舍弃的元组放到新关系中。</li>
+</ul>
+</blockquote>
+<figure>
+<img src="../images/image-20240426141010527.png" alt="image-20240426141010527">
+<figcaption aria-hidden="true">image-20240426141010527</figcaption>
+</figure>
+<ol start="2" type="1">
+<li>聚集：根据关系中的一组值经统计、计算得到一个值作为结果。</li>
+</ol>
+<blockquote>
+<ul>
+<li>常用聚集函数：max、min、avg、sum、count。</li>
+<li>求男同学的平均年龄：G avg(age)(σsex=‘男’(Student))</li>
+<li>计算年龄不小于20岁的同学人数：G count(sno)(σage≥20(Student))</li>
+<li>求选修数据库课程的平均分数： G
+avg(grade)(Πcno(σcname=‘数据库’(Course)) ⋈ SC)</li>
+</ul>
+</blockquote>
+<ol start="3" type="1">
+<li>重命名：</li>
+</ol>
+<blockquote>
+<ul>
+<li>ρx(E)：其含义为给一个关系表达式赋予名字，返回表达式E的结果，并把名字x赋给E。</li>
+<li>ρx（A1，A2，……，An)(E):其含义为返回表达式E的结果，并把名字x赋给E，同时将各属性更名为A1，A2，……，An。</li>
+<li>设关系R(姓名，课程，成绩），求数学成绩比王红同学高的学生。</li>
+</ul>
+<figure>
+<img src="../images/image-20240426142208609.png" alt="image-20240426142208609">
+<figcaption aria-hidden="true">image-20240426142208609</figcaption>
+</figure>
+</blockquote>
+<h2 id="查询优化">查询优化</h2>
+<h3 id="查询处理与查询优化">查询处理与查询优化</h3>
+<ul>
+<li>查询优化：从查询的多个执行策略中进行合理选择的过程。</li>
+<li>查询优化的基本途径：
+<ol type="1">
+<li>用户处理: 非关系数据库系统中采用</li>
+<li>机器自动处理: 关系数据库系统中采用</li>
+</ol></li>
+<li>查询优化器：由DBMS自动生成并从中选取较优查询计划的程序。</li>
+<li>查询的开销主要包括：</li>
+</ul>
+<blockquote>
+<p>在单机数据库中： 总代价=I/O代价+CPU代价 在多用户环境下：
+总代价=I/O代价+CPU代价+内存代价 在网络环境下：
+总代价=I/O代价+CPU代价+内存代价+网络代价</p>
+</blockquote>
+<figure>
+<img src="../images/image-20240426143011815.png" alt="image-20240426143011815">
+<figcaption aria-hidden="true">image-20240426143011815</figcaption>
+</figure>
+<h3 id="查询优化的一般准则重点">查询优化的一般准则（重点）</h3>
+<ol type="1">
+<li><p>选择运算应尽可能先做。</p></li>
+<li><p>在执行连接前对关系适当地预处理（其方法有：索引连接方法、排序合并连接方法）。</p></li>
+<li><p>把投影运算和选择运算同时进行。 例：<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.357ex;" xmlns="http://www.w3.org/2000/svg" width="3.963ex" height="1.332ex" role="img" focusable="false" viewBox="0 -431 1751.8 588.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path></g><g data-mml-node="TeXAtom" transform="translate(603,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path></g><g data-mml-node="mi" transform="translate(469,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(1069,0)"><path data-c="1D45C" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path></g></g></g></g></g></svg></mjx-container></span>(<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.667ex;" xmlns="http://www.w3.org/2000/svg" width="6.94ex" height="1.438ex" role="img" focusable="false" viewBox="0 -340.7 3067.7 635.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"></g><g data-mml-node="TeXAtom" transform="translate(33,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D454" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path></g><g data-mml-node="mi" transform="translate(477,0)"><path data-c="1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(928,0)"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path></g><g data-mml-node="mi" transform="translate(1457,0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g><g data-mml-node="mi" transform="translate(1977,0)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path></g><g data-mml-node="mo" transform="translate(2443,0)"><path data-c="3E" d="M84 520Q84 528 88 533T96 539L99 540Q106 540 253 471T544 334L687 265Q694 260 694 250T687 235Q685 233 395 96L107 -40H101Q83 -38 83 -20Q83 -19 83 -17Q82 -10 98 -1Q117 9 248 71Q326 108 378 132L626 250L378 368Q90 504 86 509Q84 513 84 520Z"></path></g><g data-mml-node="mn" transform="translate(3221,0)"><path data-c="39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g></g></g></g></g></svg></mjx-container>(SC))</p></li>
+<li><p>让投影运算与其前后的双目运算同时进行。 例： <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.357ex;" xmlns="http://www.w3.org/2000/svg" width="3.963ex" height="1.332ex" role="img" focusable="false" viewBox="0 -431 1751.8 588.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path></g><g data-mml-node="TeXAtom" transform="translate(603,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path></g><g data-mml-node="mi" transform="translate(469,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(1069,0)"><path data-c="1D45C" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path></g></g></g></g></g></svg></mjx-container></span>(S1-S2)</p></li>
+<li><p>合并笛卡尔积与其后的选择为连接运算。 例：<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.409ex;" xmlns="http://www.w3.org/2000/svg" width="6.968ex" height="1.209ex" role="img" focusable="false" viewBox="0 -353.6 3079.7 534.6"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"></g><g data-mml-node="TeXAtom" transform="translate(33,-152.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D445" d="M230 637Q203 637 198 638T193 649Q193 676 204 682Q206 683 378 683Q550 682 564 680Q620 672 658 652T712 606T733 563T739 529Q739 484 710 445T643 385T576 351T538 338L545 333Q612 295 612 223Q612 212 607 162T602 80V71Q602 53 603 43T614 25T640 16Q668 16 686 38T712 85Q717 99 720 102T735 105Q755 105 755 93Q755 75 731 36Q693 -21 641 -21H632Q571 -21 531 4T487 82Q487 109 502 166T517 239Q517 290 474 313Q459 320 449 321T378 323H309L277 193Q244 61 244 59Q244 55 245 54T252 50T269 48T302 46H333Q339 38 339 37T336 19Q332 6 326 0H311Q275 2 180 2Q146 2 117 2T71 2T50 1Q33 1 33 10Q33 12 36 24Q41 43 46 45Q50 46 61 46H67Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628Q287 635 230 637ZM630 554Q630 586 609 608T523 636Q521 636 500 636T462 637H440Q393 637 386 627Q385 624 352 494T319 361Q319 360 388 360Q466 361 492 367Q556 377 592 426Q608 449 619 486T630 554Z"></path></g><g data-mml-node="mo" transform="translate(759,0)"><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mi" transform="translate(1037,0)"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g><g data-mml-node="mo" transform="translate(1787,0)"><path data-c="3E" d="M84 520Q84 528 88 533T96 539L99 540Q106 540 253 471T544 334L687 265Q694 260 694 250T687 235Q685 233 395 96L107 -40H101Q83 -38 83 -20Q83 -19 83 -17Q82 -10 98 -1Q117 9 248 71Q326 108 378 132L626 250L378 368Q90 504 86 509Q84 513 84 520Z"></path></g><g data-mml-node="mi" transform="translate(2565,0)"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g><g data-mml-node="mo" transform="translate(3210,0)"><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mi" transform="translate(3488,0)"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></g></g></svg></mjx-container>(R×S))=R
+<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="0.036ex" height="0.036ex" role="img" focusable="false" viewBox="0 0 16 16"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"></g></g></svg></mjx-container> S</p></li>
+<li><p>找出公共子表达式。将公共子表达式预先计算出结果保存起来，以免重复计算。</p></li>
+</ol>
+<h2 id="课后习题-1">课后习题</h2>
+<p>设有下图所示的5个关系表R、S、T、U和V，请写出下列各种运算结果。
+（1）R∪S （2）R∩S (3)R×S (4)U÷V (6) U与T的外连接、左外连接及右外连接
+（7）T ⋈ S</p>
+<figure>
+<img src="../images/image-20240426145305796.png" alt="image-20240426145305796">
+<figcaption aria-hidden="true">image-20240426145305796</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240426145456322.png" alt="image-20240426145456322">
+<figcaption aria-hidden="true">image-20240426145456322</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240426145638604.png" alt="image-20240426145638604">
+<figcaption aria-hidden="true">image-20240426145638604</figcaption>
+</figure>
+<p>已知学生表S、仼课表C和选课表SC如下所示，试用关系代数表示下列查询。
+（1）查询＂张景林＂老师所授课程号和课程名。
+（2）查询选修课程名为＂C语言＂或者＂数据库＂的学生号。
+（3）查询＂高晓灵＂同学所选俢课程的课程号及课程名。
+（4）查询至少选俢两门课程的学生学号。
+（5）查询全部学生都选修课程的课程号和课程名。
+（6）查询至少选修＂张景林＂老师所授全部课程的学生姓名。S(sno,sname,sex,age)
+C(cno,cname,teacher) SC(sno,cno,grade)</p>
+<figure>
+<img src="../images/image-20240426150058984.png" alt="image-20240426150058984">
+<figcaption aria-hidden="true">image-20240426150058984</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240426150112245.png" alt="image-20240426150112245">
+<figcaption aria-hidden="true">image-20240426150112245</figcaption>
+</figure>
+<h1 id="第三章-数据库语言">第三章 数据库语言</h1>
+<h2 id="sql简介">SQL简介</h2>
+<ol type="1">
+<li>SQL—Structured Query
+Language（结构化查询语言），是通用的，功能极强的关系DB语言。</li>
+<li>SQL的功能</li>
+</ol>
+<blockquote>
+<ul>
+<li>数据定义</li>
+<li>数据查询</li>
+<li>数据操纵</li>
+<li>数据控制</li>
+</ul>
+</blockquote>
+<ol start="3" type="1">
+<li>SQL的特点</li>
+</ol>
+<blockquote>
+<ul>
+<li>综合统一</li>
+<li>高度非过程化</li>
+<li>灵活的使用方式：交互式、嵌入式</li>
+<li>简洁、通用、功能强</li>
+</ul>
+</blockquote>
+<ol start="4" type="1">
+<li>SQL的基本组成</li>
+</ol>
+<p>（1）SQL数据库层次结构</p>
+<figure>
+<img src="../images/image-20240426192019130.png" alt="image-20240426192019130">
+<figcaption aria-hidden="true">image-20240426192019130</figcaption>
+</figure>
+<p>一般关系模型 SQL <strong>外模式-------视图（VIEW)</strong>
+<strong>模式---------基本表(TABLE)</strong>
+<strong>内模式-------存储文件-索引</strong> 元组----------行(ROW)
+属性----------列(COLUMN)</p>
+<p>（2）SQL语言的组成</p>
+<ul>
+<li>数据定义语言（DDL）</li>
+<li>数据操纵语言（DML）</li>
+<li>数据控制语言（DCL）</li>
+<li>嵌入与会话规则</li>
+</ul>
+<p>（3）SQL的语句类型</p>
+<ul>
+<li>SQL模式语句</li>
+<li>SQL数据语句</li>
+<li>SQL事物与控制语句</li>
+<li>SQL连接、会话及诊断语句</li>
+</ul>
+<ol start="5" type="1">
+<li>SQL的数据类型</li>
+</ol>
+<blockquote>
+<ul>
+<li>预定义数据类型：int、real、double、char、varchar、date、boolean等</li>
+<li>构造数据类型：array、ref、row等</li>
+<li>用户定义数据类型：UDT，User Defined Type</li>
+</ul>
+</blockquote>
+<ol start="6" type="1">
+<li>SQL环境</li>
+</ol>
+<blockquote>
+<p>（1）SQL模式与目录 SQL模式：基本表、视图、角色等的集合。
+好处：允许在不同的SQL模式中出现同名的基表名或视图名。
+目录：SQL环境中所有模式的集合。 定位基表的方式：
+&lt;目录名&gt;．&lt;模式名&gt;．&lt;表名&gt;</p>
+<p>（2）SQL环境 设置默认的目录和模式 设置用户身份</p>
+</blockquote>
+<h2 id="sql的数据定义">SQL的数据定义</h2>
+<h3 id="sql模式的定义与撤销">SQL模式的定义与撤销</h3>
+<ol type="1">
+<li>SQL模式的定义</li>
+</ol>
+<p><strong>CREATE SCHEMA ＜模式名＞ AUTHORIZATION ＜用户名＞ [＜CREATE
+DOMAIN子句＞|＜CREATE TABLE子句＞|＜CREATE VIEW ＞|…… ]</strong></p>
+<p>其中：[…]：表示其中的成分为任选项。
+&lt;…&gt;：表示其中的成分由用户具体给定。 |：
+表示其中并列的成分只能择一。</p>
+<ol start="2" type="1">
+<li>数据库模式的删除</li>
+</ol>
+<p><strong>DROP SCHEMA ＜模式名＞ [CASCADE | RESTRICT]</strong></p>
+<p>CASCADE：级联式 RESTRICT：约束式（受限式）</p>
+<h3 id="表的建立与删除重点">表的建立与删除（重点）</h3>
+<ol type="1">
+<li>表的建立</li>
+</ol>
+<p><strong>CREATE TABLE [模式名.] &lt;表名&gt;(&lt;列名&gt;&lt;类型&gt;[&lt;列约束条件&gt;]
+[，&lt;列名&gt;&lt;类型&gt;[&lt;列约束条件&gt;]]…[&lt;表约束条件&gt;])</strong>；</p>
+<p>例：CREATE TABLE Student ( sno CHAR(5) NOT NULL UNIQUE，//主键 sname
+CHAR(8) NOT NULL ， sex CHAR(2)， age INT ， dept CHAR(20) )；</p>
+<p>完整性约束条件涉及到该表的多个属性列，则必须定义在表级上，否则既可定义在列级，也可以定义在表级。</p>
+<p>完整性约束常用的三种子句形式：</p>
+<figure>
+<img src="../images/image-20240426195147637.png" alt="image-20240426195147637">
+<figcaption aria-hidden="true">image-20240426195147637</figcaption>
+</figure>
+<p>例：</p>
+<p>CREATE TABLE Student ( sno CHAR (5), sname CHAR (8) NOT NULL,
+//列级完整性约束条件 sex CHAR (2), age SMALLINT, dept CHAR (20), PRIMARY
+KEY(sno), //实体完整性约束条件 CHECK sex IN (‘男’,‘女’)
+//用户自定义完整性约束条件 );</p>
+<p>CREATE TABLE Course ( cno CHAR (4), cname CHAR (10) NOT NULL, pcno
+CHAR (4), credit SMALLINT, PRIMARY KEY (cno), FOREIGN KEY (pcno)
+REFERENCES Course(cno) //参照完整性约束条件 );</p>
+<ol start="2" type="1">
+<li>表的删除</li>
+</ol>
+<p><strong>DROP TABLE &lt;表名&gt; [CASCADE | RESTRICT]</strong>；</p>
+<p>基本表定义一旦删除，表中的数据、在此表上建立的视图、索引、触发器、断言都将自动被删除掉。RESTRICT确保只有不具有相关对象的表才能被撤销。</p>
+<h3 id="表的扩充和修改">表的扩充和修改</h3>
+<p><strong>ALTER TABLE &lt;表名&gt;[ADD &lt;新列名&gt;&lt;数据类型&gt;[完整性约束]]
+[DROP&lt;列名&gt;[&lt;完整性约束名&gt;] ] [MODIFY&lt;列名&gt;
+&lt;数据类型&gt;&lt;数据类型&gt;];</strong></p>
+<p>其中&lt;表名&gt;指定需要修改的基本表，ADD子句用于增加新列和新的完整性约束条件，DROP子句用于删除指定的列和完整性约束条件，MODIFY子句用于修改原有的列定义。</p>
+<ol type="1">
+<li>在现存表中增加新列 格式：ALTER TABLE &lt;表名&gt; ADD (&lt;列名&gt;
+&lt;数据类型&gt;，… ) 例：ALTER TABLE Student ADD (place CHAR(20)，addr
+CHAR(20))；</li>
+<li>删除已存在的某个列 格式：ALTER TABLE &lt;表名&gt; DROP &lt;列名&gt; [CASCADE |
+RESTRICT] 例：ALTER TABLE Student DROP addr；</li>
+<li>修改原有列的类型 格式：ALTER TABLE &lt;表名&gt; MODIFY &lt;列名&gt; &lt;类型&gt;；
+例：ALTER TABLE Student MODIFY place CHAR(8)；</li>
+<li>补充定义主键 格式：ALTER TABLE &lt;表名&gt; ADD PRIMARY KEY (&lt;列名表&gt;
+)</li>
+<li>删除主键 格式：ALTER TABLE &lt;表名&gt; DROP PRIMARY KEY</li>
+</ol>
+<h3 id="域定义">域定义</h3>
+<p>域定义用于建立用户自定义的数据类型。</p>
+<p><strong>CREATE DOMAIN &lt;域名&gt; [AS] &lt;数据类型&gt; [DEFAULT &lt;缺省值&gt;]
+[&lt;域约束&gt;]</strong></p>
+<h3 id="索引的建立与删除">索引的建立与删除</h3>
+<ol type="1">
+<li>建立索引的目的：基本表上建立一个或多个索引，以提供多种存取路径，加快查找速度。</li>
+<li>命令格式：<strong>CREATE [UNIQUE] [CLUSTER] INDEX &lt;索引名&gt; ON &lt;表名&gt;
+(&lt;列名&gt;&lt;次序&gt;[ [，&lt;列名&gt;&lt;次序&gt;]]…)；</strong></li>
+</ol>
+<blockquote>
+<p>次序： 升序（ASC，缺省） 降序 （DESC） UNIQUE:
+每一个索引值只对应惟一的数据记录。 CLUSTER:
+建立聚簇索引，即索引项的顺序与表中记录的物理顺序一致。</p>
+</blockquote>
+<ol start="3" type="1">
+<li>注意：在一个基本表上最多只能建立一个聚簇索引。
+经常更新的列不宜建立聚簇索引。</li>
+</ol>
+<blockquote>
+<p>例: ① 为Student表按学号升序建惟一聚簇索引。 ②
+为SC表按学号升序和课程号降序建惟一索引。 ① CREATE UNIQUE CLUSTER INDEX
+Stno ON Student(Sno)； ② CREATE UNIQUE INDEX Scno ON SC(Sno，Cno
+DESC)；</p>
+</blockquote>
+<ol start="4" type="1">
+<li>删除索引一般格式为：<strong>DROP INDEX&lt;索引名&gt;；</strong></li>
+<li>删除索引时，系统会同时从数据字典中删去有关该索引的描述。</li>
+</ol>
+<h2 id="sql的数据查询重点">SQL的数据查询(重点)</h2>
+<ul>
+<li>基本形式：</li>
+</ul>
+<p>SELECT &lt; A &gt; FROM &lt; R &gt; WHERE &lt; F &gt;;</p>
+<p>GROUP BY &lt;列名1&gt; HAVING &lt;条件&gt; ORDER BY &lt;列名2&gt; [ASC|DESC]；</p>
+<ul>
+<li>从表
+(视图)R中找出满足条件F的行，再从中选出目标属性A的值形成结果表。</li>
+</ul>
+<h3 id="单表查询">单表查询</h3>
+<ol type="1">
+<li>选择表中的列</li>
+</ol>
+<blockquote>
+<p>例: 查询所有学生的姓名、学号、所在院系。</p>
+<p>SELECT sname，sno，dept FROM Student WHERE .T. ;</p>
+</blockquote>
+<ol start="2" type="1">
+<li>选择表中的行</li>
+</ol>
+<blockquote>
+<ul>
+<li><strong>比较：</strong></li>
+</ul>
+<blockquote>
+<p>例:查考试成绩不及格的学号。</p>
+<p>SELECT DISTINCT sno //DISTINCT去掉重复元组 FROM SC WHERE grade&lt;60
+；</p>
+</blockquote>
+<ul>
+<li><strong>确定范围(BETWEEN … AND … )</strong></li>
+</ul>
+<blockquote>
+<p>查询选004号课程且成绩在85--95的学生号。 SELECT sno FROM SC WHERE
+cno=‘004’ AND grade BETWEEN 85 AND 95；</p>
+</blockquote>
+<ul>
+<li>字符匹配---近似查询，<strong>模糊查询（重点）</strong></li>
+</ul>
+<blockquote>
+<p><strong>格式1：[NOT] LIKE ’&lt;匹配串&gt;’</strong>
+含义：查找指定的属性列值与&lt;匹配串&gt;相匹配的元组。</p>
+<p>其中匹配串可含： ％：代表任意长度(可为0)的字符串。<br>
+_：代表任意单个字符。</p>
+<p>例：查所有姓刘或姓王的学生姓名、学号和性别。 SELECT sname，sno，sex
+FROM Student WHERE sname LIKE‘刘％’OR sname LIKE‘王％’ ；</p>
+<p>查姓“欧阳”且全名为三个汉字的学生的姓名。 SELECT sname FROM Student
+WHERE sname LIKE ‘欧阳_';</p>
+<p>查名字中第二字为“阳”字的学生的姓名和学号。 SELECT sname, sno FROM
+Student WHERE sname LIKE '_阳%';</p>
+<p><strong>格式2： LIKE ’&lt;匹配串&gt;’ ESCAPE ’&lt;换码字符&gt;’</strong></p>
+<p>若要查的串本身含<strong>％或_</strong> ，用ESCAPE
+‘&lt;换码字符&gt;’对通配符进行转义。ESCAPE
+’’短语表示，这样匹配串中紧跟在”<em>”不再具有通配符的含义，而是取其本身含义，被转义为普通的”</em>”字符。</p>
+<p>[例] 查以“数据_”开头，且倒数第2个汉字为 ”原”的课程情况。 SELECT *
+FROM Course WHERE cname LIKE ‘数据_％原_’ ESCAPE ’’；</p>
+</blockquote>
+<ul>
+<li><strong>确定集合（IN）</strong></li>
+</ul>
+<blockquote>
+<p>例：查询是（不是）信息院、数学系和计算机学院学生的姓名和性别。 SELECT
+sname，sex FROM Student WHERE dept (NOT) IN (’信息院’，’数学系’
+，’计算机学院’);</p>
+</blockquote>
+</blockquote>
+<ol start="3" type="1">
+<li>对查询结果排序</li>
+</ol>
+<p>例：查询全体男学生的学号、姓名，结果按所在的系升序排列，
+同一系中的学生按年龄降序排列。</p>
+<p>SELECT sno，sname FROM Student WHERE sex= ’男’ ORDER BY dept，age
+DESC；</p>
+<ol start="4" type="1">
+<li><p>表达式与函数的使用</p>
+<p>（1）使用集函数 COUNT([DISTINCT | ALL] * ) 统计元组个数
+COUNT([DISTINCT | ALL]&lt;列名&gt;) 统计一列中值的个数 SUM([DISTINCT |
+ALL]&lt;列名&gt; ) 计算一数值型列值的总和 AVG([DISTINCT | ALL]&lt;列名&gt; )
+计算一数值型列值的平均值 MAX([DISTINCT | ALL]&lt;列名&gt; ) 求一列值的最大值
+MIN([DISTINCT | ALL]&lt;列名&gt; ) 求一列值的最小值</p></li>
+</ol>
+<p>DISTINCT：无重复值</p>
+<p>（2）使用表达式</p>
+<p>[例] 查询各课程的学时数。 SELECT cname AS course_name,credit*18 AS
+course_time FROM Course;</p>
+<p>（3）对查询结果分组（GROUP BY 子句）</p>
+<p>将查询结果表按某一(多)列值分组，值相等的为一组。
+目的：<strong>细化集函数的作用对象</strong>。如果未对查询结果分组，集函数将作用于整个查询结果，即整个查询结果只有一个函数值。否则，集函数将作用于每一个组，即每一组都有一个函数值。</p>
+<p>例：求每个学生所选课程的平均成绩。 SELECT sno，AVG( grade) AS
+平均成绩 FROM SC GROUP BY sno</p>
+<p>​ HAVING AVG( grade)&gt;88；</p>
+<p><strong>HAVING短语：在各组中选择满足条件的小组。</strong>
+<strong>WHERE子句 ：在表中选择满足条件的元组。</strong></p>
+<p>例:求每个学生的平均成绩。 SELECT sno,AVG(grade) FROM SC GROUP BY sno
+；</p>
+<p>例：查询至少选修4门课程的学生学号。 SELECT sno FROM SC GROUP BY sno
+HAVING COUNT(*)&gt;=4</p>
+<p>例：求学生关系中湖北籍男生的每一年龄组（不少于30人）共有多少人，要求查询结果按人数升序排列，人数相同时按年龄降序排列。
+SELECT age,COUNT(sno) number FROM Student WHERE sex=‘男’ AND
+place='湖北' GROUP BY age HAVING number&gt;30 ORDER BY number,age
+DESC;</p>
+<h3 id="多表查询">多表查询</h3>
+<h4 id="子查询重点">子查询（重点）</h4>
+<ul>
+<li>一个查询块嵌套在另一查询块中作为条件的查询。</li>
+<li>上层的查询块又称为外层查询或父查询或主查询，下层查询块又称为内层查询或子查询。</li>
+<li>子查询一般跟在IN、SOME（ANY）、ALL和EXIST等谓词后面。</li>
+<li>嵌套查询的求解方法是由里向外处理。</li>
+</ul>
+<ol type="1">
+<li>带有IN谓词的子查询</li>
+</ol>
+<p>例：查询与“刘晨”在同一个系学习的学生的学号、姓名、系。</p>
+<p>SELECT sno,sname,dept</p>
+<p>FROM Student WHERE dept IN ( SELECT dept</p>
+<p>FROM Student</p>
+<p>WHERE sname=‘刘晨’）；</p>
+<ol start="2" type="1">
+<li>带有比较运算符的子查询</li>
+</ol>
+<p>找出年龄超过平均年龄的学生姓名。 SELECT sname FROM Student WHERE age
+＞ (SELECT AVG(age) FROM Student)；</p>
+<ol start="3" type="1">
+<li>带SOME(ANY)、ALL谓词的子查询</li>
+</ol>
+<ul>
+<li><strong>＞SOME：大于子查询结果中的某个值</strong></li>
+<li><strong>＜ALL：小于子查询结果中的所有值</strong></li>
+</ul>
+<p>例：查询其他系比信息院某学生年龄小的学生名、年龄。 SELECT sname，age
+FROM Student WHERE age &lt;SOME ( SELECT age FROM Student WHERE
+dept=‘信息院’) AND dept&lt;&gt;‘信息院’ ；</p>
+<p>例：查平均成绩最高的学生号。</p>
+<p>SELECT sno FROM SC GROUP BY sno HAVING AVG(grade) &gt;=ALL</p>
+<p>​ (SELRCT AVG(grade)</p>
+<p>​ FROM SC</p>
+<p>​ GROUP BY sno);</p>
+<h4 id="条件连接查询">条件连接查询</h4>
+<ul>
+<li>连接条件的一般格式： [&lt;表名1&gt;.]&lt;列名1&gt; &lt;比较运算符&gt;
+[&lt;表名2&gt;.]&lt;列名2&gt;</li>
+<li>当连接运算符为=时，称为<strong>等值连接</strong>。</li>
+<li>例: 查询每个学生的情况及其选课成绩。</li>
+</ul>
+<blockquote>
+<p>SELECT Student.sno,sname,sex,age,dept,cno,grade FROM Student,SC WHERE
+Student.sno=SC.sno；</p>
+</blockquote>
+<ul>
+<li>例：找出籍贯为湖北或河北，选课成绩为90分以上的学生的姓名、课号和成绩。</li>
+</ul>
+<blockquote>
+<p>SELECT sname，cno，grade FROM Student，SC WHERE Student.sno=SC.sno
+AND place IN (’湖北’,’河北’) AND grade＞＝90；</p>
+</blockquote>
+<ul>
+<li>自身连接查询</li>
+<li>例：找出年龄比“王迎”同学大的同学的姓名及年龄。</li>
+</ul>
+<blockquote>
+<p>SELECT s1.sname，s1.age FROM Student AS s1，Student AS s2 WHERE
+s1.age &gt; s2.age AND s2.sname =‘王迎’；</p>
+</blockquote>
+<h4 id="相关子查询">相关子查询</h4>
+<ul>
+<li>当一个子查询的判断条件涉及到一个来自外部查询的列时，称为相关子查询</li>
+<li>例：查询所有选修了005号课程的学生姓名和学号。</li>
+</ul>
+<blockquote>
+<p>SELECT sname,sno FROM Student WHERE EXISTS (SELECT * FROM SC WHERE
+SC.sno=Student.sno AND cno=’005’)；</p>
+</blockquote>
+<ul>
+<li>查询没选修001号课程的学生学号和姓名。</li>
+</ul>
+<blockquote>
+<p>方法1： SELECT sno,sname FROM Student WHERE NOT EXISTS (SELECT * FROM
+SC WHERE SC.sno=Student.sno AND cno=’001’)；</p>
+<p>方法2： SELECT sno,sname FROM Student WHERE sno &lt;&gt;ALL (SELECT
+sno FROM SC WHERE cno=’001’)；</p>
+</blockquote>
+<ul>
+<li>查询选修了全部课程的学生姓名。</li>
+</ul>
+<blockquote>
+<p>转换成：查询这样的学生，没有一门课程是他不选修的。 SELECT sname FROM
+Student WHERE <strong>NOT EXISTS</strong> (SELECT <em> FROM Course WHERE
+<strong>NOT EXISTS</strong> (SELECT </em> FROM SC WHERE
+SC.sno=Student.sno AND SC.cno=Course.cno))；</p>
+</blockquote>
+<h4 id="集合运算-1">集合运算</h4>
+<p>（1）UNION （并） （2）INTERSECT （交） （3）EXCEPT （差）</p>
+<p>例：求选修了001或002号而没有选003号课程的学生号。</p>
+<blockquote>
+<p>(SELECT sno FROM SC WHERE cno =’001’OR cno =’002’)
+<strong>EXCEPT</strong> (SELECT sno FROM SC WHERE cno =‘003’)；</p>
+</blockquote>
+<h3 id="连接查询重点">连接查询（重点）</h3>
+<h4 id="自然连接natural-join">自然连接(natural join)</h4>
+<p>查询在计算机学院且课程成绩在90分以上的学生档案及其成绩情况。 SELECT *
+FROM Student <strong>NATURAL JOIN</strong> SC WHERE dept=‘计算机学院’
+AND grade &gt;=90；</p>
+<h4 id="外连接">外连接</h4>
+<ul>
+<li>左外连接。LEFT [OUTER] JOIN，保留左关系的所有元组。</li>
+<li>右外连接。RIGHT [OUTER] JOIN，保留右关系的所有元组。</li>
+<li>全外连接。FULL [OUTER] JOIN，保留左右两关系的所有元组。</li>
+</ul>
+<blockquote>
+<p>例: 查每个学生及其选课情况。</p>
+<p>SELECT * FROM Student NATURAL JOIN SC; ? FROM Student <strong>LEFT
+OUTER JOIN</strong> SC ；//用左外连接产生未选课的空行</p>
+<p>教师表：Teacher(教师号，姓名，所属大学，职称)
+任职表：Post(编号，姓名，职务)</p>
+<p>例：SELECT * FROM Teacher FULL OUTER JOIN Post；</p>
+</blockquote>
+<figure>
+<img src="../images/image-20240428191117566.png" alt="image-20240428191117566">
+<figcaption aria-hidden="true">image-20240428191117566</figcaption>
+</figure>
+<h2 id="sql的数据查询">SQL的数据查询</h2>
+<p>SQL中的空值处理：</p>
+<ol type="1">
+<li>空值的含义
+<ul>
+<li>值暂未知</li>
+<li>值不适用</li>
+<li>值需隐瞒</li>
+</ul></li>
+<li>空值的测试：</li>
+</ol>
+<p><strong>IS NULL 和 IS NOT NULL</strong></p>
+<ul>
+<li>查询缺少选课成绩的学生号和相应的课程号。 SELECT sno, cno 　 FROM SC
+WHERE grade IS NULL;</li>
+<li>查所有有成绩的记录的学生学号和课程号。 SELECT sno, cno FROM SC WHERE
+grade IS NOT NULL;</li>
+</ul>
+<h2 id="sql的数据更新">SQL的数据更新</h2>
+<h3 id="插入数据">插入数据</h3>
+<p>格式：INSERT INTO &lt;表名&gt; [(&lt;列名1&gt;[,&lt;列名2&gt;…)]
+&lt;子查询&gt;|VALUES(&lt;常量1&gt;[，&lt;常量2&gt;] …)；</p>
+<blockquote>
+<p>例：向student表插入一行。 INSERT INTO Student
+VALUES(200510,’王雪’,20,’女’,’英语系’);</p>
+<p>例：向st1_grade表插入多行。 INSERT INTO st1_grade(gno,name,avg)
+SELECT Student.sno,sname,avg(grade) as avg_good FROM Student,SC WHERE
+Student.sno=SC.sno GROUP BY sno,sname HAVING avg_good&gt;=90;</p>
+</blockquote>
+<h3 id="修改数据">修改数据</h3>
+<p>格式：UPDATE &lt;表名&gt; SET &lt;列名&gt;=&lt;表达式&gt;[,&lt;列名&gt;=&lt;表达式&gt;]… [WHERE
+&lt;条件[子查询]&gt;];</p>
+<blockquote>
+<p>例：学生“左彼”在001号课程考试中作弊，该课成绩作零分计。</p>
+<p>UPDATE SC SET grade=0 WHERE cno='001' AND sno=( SELECT sno FROM
+Student WHERE sname＝'左彼');</p>
+<p>例：若某学生008号课程的成绩低于该门课程平均成绩时，提高5%。</p>
+<p>UPDATE SC SET grade=grade*1.05 WHERE cno='008' AND grade&lt;(SELECT
+AVG(grade) FROM SC WHERE cno=‘008’);</p>
+</blockquote>
+<h3 id="删除数据">删除数据</h3>
+<p>格式：DELETE FROM &lt;表名&gt; [WHERE &lt;条件[子查询]&gt;];</p>
+<blockquote>
+<p>例：将选课人数不足10人的课程记录删除。 DELETE FROM Course WHERE cno
+IN (SELECT cno FROM SC GROUP BY cno HAVING COUNT(*)&lt;10)</p>
+</blockquote>
+<h2 id="sql中的视图">SQL中的视图</h2>
+<h3 id="创建与使用视图">创建与使用视图</h3>
+<h4 id="创建视图">创建视图</h4>
+<p>一般格式： CREATE VIEW &lt;视图名&gt; [(&lt;列名&gt;[,&lt;列名&gt;]…)]<br>
+AS &lt;子查询&gt;<br>
+[WITH CHECK OPTION]；</p>
+<blockquote>
+<p>例：建立信息系选修了1号课程的学生的视图。 CREATE VIEW IS_S1(sno,
+sname, grade) AS</p>
+<p>SELECT Student.sno, sname, grade</p>
+<p>FROM Student, SC</p>
+<p>WHERE Student.sno=SC.sno AND dept='信息系' AND cno='1';</p>
+<p>例：建立信息系选修了1号课程且成绩在90分以上的学生的视图。</p>
+<p>CREATE VIEW IS_S2 AS</p>
+<p>SELECT sno, sname, grade</p>
+<p>FROM IS_S1</p>
+<p>WHERE grade&gt;=90;</p>
+</blockquote>
+<h4 id="删除视图">删除视图</h4>
+<p>格式：DROP VIEW &lt;视图名&gt; [CASCADE | RESTRICT]</p>
+<h4 id="查询视图">查询视图</h4>
+<p>DBMS执行对视图的查询时，首先进行有效性检查，检查查询涉及的表、视图等是否在数据库中存在，如果存在，则从数据字典中取出查询涉及的视图的定义，把定义中的子查询和用户对视图的查询结合起来，转换成对基本表的查询，然后再执行这个经过修正的查询。将对视图的查询转换为对基本表的查询的过程称为视图的消解（View
+Resolution）。</p>
+<h4 id="更新视图">更新视图</h4>
+<p>最终要转换为对基本表的更新。 注意：并不是所有的视图都可以更新的。</p>
+<p>视图更新规定（不同系统不尽相同）：</p>
+<blockquote>
+<p>若视图由两个或以上基本表导出的，则此视图不允许更新。
+若视图的列来自表达式或常数，则不允许对此视图执行INSERT和UPDATE操作，但允许执行DELETE操作。
+若视图的来自聚集函数，则此视图不允许更新。 若视图定义中含有GROUP
+BY子句，则此视图不允许更新。
+若视图定义中含有DISTINCT短语，则此视图不允许更新。
+若视图定义中有嵌套查询，并且内层查询的FROM子句中涉及的表也是导出该视图的基本表，则此视图不允许更新。
+一个不允许更新的视图上定义的视图也不允许更新。</p>
+</blockquote>
+<h2 id="课后习题-2">课后习题</h2>
+<p>设学生-选课数据库同表2-5至表2-7，试用SQL语句完成以下操作：
+（1）查询考试成绩不及格的学生学号及成绩。
+（2）查询年龄在19～25岁（包括19和25岁）之间的学生的姓名、院系和年龄，并按年龄的降序排序。
+（3）查询姓名中含＂国＂字的学生档案情况。 （4）按院系查询学生总人数。
+（5）计算选修了008号课程的学生平均成绩和最高分及最低分。
+（6）求平均成绩在85分以上（含85）的各门课程号及平均成绩。
+student(sno,sname,sex,age,dept,place) course(cno,cname,credit,pcno)
+s_c(sno,cno,grade)</p>
+<figure>
+<img src="../images/image-20240428210920444.png" alt="image-20240428210920444">
+<figcaption aria-hidden="true">image-20240428210920444</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240428210926209.png" alt="image-20240428210926209">
+<figcaption aria-hidden="true">image-20240428210926209</figcaption>
+</figure>
+<p>（1）select sno,grade from s_c where grade&lt;60;</p>
+<p>（2）select sname,dept,age from student where age between 19 and 25
+order by age desc;</p>
+<p>（3）select * from student where sname like ′%国% ′;</p>
+<p>（4）select dept,count(*) as 学生总人数 from student<br>
+group by dept;</p>
+<p>（5）select sno,avg(grade) AS 平均成绩,max(grade) AS
+最高分,min(grade) AS 最低分 from s_c where sno in (select sno from s_c
+where cno=′008′) group by sno;</p>
+<p>（6）select cno,avg(grade) AS 平均成绩 from s_c group by cno having
+avg(grade)&gt;=85;</p>
+<p>已知学生表S、仼课表C和选课表SC如下所示，试用SQL语句实现下列查询：</p>
+<p>S(sno,sname,sex,age)</p>
+<p>C(cno,cname,teacher)</p>
+<p>SC(sno,cno,grade)</p>
+<p>（1）查询＂张景林＂老师所授课程号和课程名。 select cno,cname from c
+where teacher=′张景林′;</p>
+<p>（2）查询选修课程名为＂C语言＂或者＂数据库＂的学生号。</p>
+<p>select distinct sno from sc where cno in (select cno from c where
+cname=′C语言′ or cname=′数据库′);</p>
+<p>（3）查询＂高晓灵＂同学所选俢课程的课程号及课程名。</p>
+<p>方法一：<br>
+select cno,cname from c where cno in (select cno from sc where sno in
+(select sno from s where sname=′高晓灵′); 方法二： select c.cno,c.cname
+from sc,c,s where sc.cno=c.cno and sc.sno=s.sno and sname=′高晓灵′;</p>
+<p>（4）查询至少选俢课程号为C3和C4的学生姓名。</p>
+<p>select sname from s where sno in (select sno from sc where
+cno=′C3′and sno in (select sno from sc where cno=′C4′));</p>
+<p>（5）用EXISTS来查询学习课程号为C5的学生学号与姓名。</p>
+<p>select sno,sname from s where exists (select * from sc where
+s.sno=sc.sno and sc.cno=′C5′);</p>
+<p>（6）查询不学C2课程的学生姓名与性别。</p>
+<p>方法一：(不相关子查询)<br>
+select sname,sex from s where sno not in (select sno from sc where
+cno=′C2′);</p>
+<p>方法二： (相关子查询) select sname,sex from s where not exists
+(select * from sc where s.sno=sc.sno and sc.cno=′C2′);</p>
+<p>8、设有以下关系：
+职工：E(职工号，姓名，性别，职务，家庭地址，部门号）
+部门：D(部门号，部门名称，地址，电话）
+保健：B(保健号，职工号，检查日期，健康状况） 用SQL语言完成下列功能：
+（4）删除职工关系表中职工号为＂3016＂的记录。 delete from E where
+职工号=′3016′; （5）将职工号为“3016”的职工的健康状况改为“一般”。 update
+B set 健康状况=′一般′ where 职工号=′3016′;</p>
+<p>（6）建立健康状况为＂差＂的职工情况的视图。 create view health as
+select 职工号,健康状况 from B where 健康状况=′差′;</p>
+<h1 id="关系数据库理论">关系数据库理论</h1>
+<h2 id="关系模式设计不合理带来的问题">关系模式设计不合理带来的问题</h2>
+<ul>
+<li>数据冗余</li>
+<li>插入异常（应该插入的数据不能执行插入操作）</li>
+<li>删除异常（不应该删除的数据被删除）</li>
+</ul>
+<h2 id="函数依赖的定义">函数依赖的定义</h2>
+<h3 id="函数依赖">函数依赖</h3>
+<p>设：R(A1,A2,…,An)=R( U )</p>
+<p>定义：①
+函数依赖：设R(U)是属性U上的关系模式，X,Y是U的子集，r是R的任一具体关系，如果对r的任意两个元组s,t，由s[X]=t[X]，能导致s[Y]=t[Y]，则称X函数决定Y，或Y函数依赖于X，记作
+<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="3.654ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 1615 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="mi" transform="translate(852,0)"><path data-c="1D44C" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path></g></g></g></svg></mjx-container>。 ②
+<strong>函数依赖</strong>：若R的任意关系有：对X中的每个属性值，在Y中都有<strong>惟一的值</strong>与之对应，则称X函数决定Y，或<strong>Y函数依赖于X</strong>，记作
+<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="3.654ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 1615 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="mi" transform="translate(852,0)"><path data-c="1D44C" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path></g></g></g></svg></mjx-container>。</p>
+<p>一般，函数依赖与属性间的关系有：</p>
+<ul>
+<li>若X，Y是1:1关系，则存在$XY <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="2.149ex" role="img" focusable="false" viewBox="0 -750 1000 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mo"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">、</text></g></g></g></g></svg></mjx-container></span>YX
+$。</li>
+<li>若X，Y是m:1关系，则存在<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="3.654ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 1615 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="mi" transform="translate(852,0)"><path data-c="1D44C" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path></g></g></g></svg></mjx-container>但 Y+&gt; X。</li>
+<li>若X，Y是m:n关系，则X，Y间不存在函数依赖关系。</li>
+</ul>
+<h3 id="非平凡函数依赖">非平凡函数依赖</h3>
+<p>$XY <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.686ex;" xmlns="http://www.w3.org/2000/svg" width="17.983ex" height="2.498ex" role="img" focusable="false" viewBox="0 -801 7948.6 1104"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">但</text></g><g data-mml-node="mi" transform="translate(2000,0)"><path data-c="1D44C" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path></g><g data-mml-node="mo" transform="translate(3040.8,0)"><path data-c="2288" d="M146 -283Q146 -282 174 -213T202 -143H115Q102 -127 102 -123T115 -103H220L291 68L278 73Q203 101 153 157T86 288Q83 309 83 344Q83 380 86 399Q107 480 160 539Q222 601 298 621Q328 630 345 631T435 635L526 637L560 715Q587 778 593 789T609 801Q616 801 622 795T629 781Q629 780 625 771T614 742T600 706L571 637Q571 635 626 635H680Q693 620 693 613T689 601L682 597L618 595H553L449 346Q425 288 399 223T359 127T346 95H356Q365 95 381 95T417 94T463 93T515 93H682Q693 82 693 74T680 53H511Q420 55 335 55L329 57L262 -103H680Q682 -105 684 -108T688 -113T691 -118T693 -124Q693 -134 682 -141L464 -143H246L213 -219Q182 -292 178 -299Q172 -303 166 -303T153 -297T146 -283ZM509 590Q509 595 438 595Q354 595 318 586Q246 567 195 516T126 395Q123 378 123 344T126 293Q141 229 184 181T291 110L306 104L406 346L509 590Z"></path></g><g data-mml-node="mi" transform="translate(4096.6,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="mi" transform="translate(4948.6,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(5948.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">则</text></g><g data-mml-node="mi" transform="translate(6948.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">称</text></g></g></g></svg></mjx-container></span>XY
+$是非平凡的函数依赖。</p>
+<h3 id="平凡函数依赖">平凡函数依赖</h3>
+<p>$XY <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex;" xmlns="http://www.w3.org/2000/svg" width="17.983ex" height="2.149ex" role="img" focusable="false" viewBox="0 -750 7948.6 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">但</text></g><g data-mml-node="mi" transform="translate(2000,0)"><path data-c="1D44C" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path></g><g data-mml-node="mo" transform="translate(3040.8,0)"><path data-c="2286" d="M84 346Q84 468 166 546T360 635Q361 635 370 635T395 635T430 636T475 636T524 636H679Q694 628 694 616Q694 607 681 597L522 596H470H441Q366 596 338 592T266 568Q244 557 224 542T179 500T139 433T124 346V341Q124 253 185 185Q244 121 328 103Q348 98 366 98T522 96H681Q694 86 694 76Q694 64 679 56H526Q510 56 480 56T434 55Q350 55 289 71T172 141Q84 223 84 346ZM104 -131T104 -118T118 -98H679Q694 -106 694 -118T679 -138H118Q104 -131 104 -118Z"></path></g><g data-mml-node="mi" transform="translate(4096.6,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="mi" transform="translate(4948.6,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(5948.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">则</text></g><g data-mml-node="mi" transform="translate(6948.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">称</text></g></g></g></svg></mjx-container></span>XY
+$是平凡的函数依赖。</p>
+<h3 id="完全函数依赖">完全函数依赖</h3>
+<p>指$XY <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex;" xmlns="http://www.w3.org/2000/svg" width="49.973ex" height="2.17ex" role="img" focusable="false" viewBox="0 -759 22087.9 959"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">且</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">对</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">任</text></g><g data-mml-node="mi" transform="translate(4000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">何</text></g><g data-mml-node="mi" transform="translate(5000,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="mi" transform="translate(5852,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">的</text></g><g data-mml-node="mi" transform="translate(6852,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">真</text></g><g data-mml-node="mi" transform="translate(7852,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">子</text></g><g data-mml-node="mi" transform="translate(8852,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">集</text></g><g data-mml-node="msup" transform="translate(9852,0)"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="mo" transform="translate(936.2,363) scale(0.707)"><path data-c="2032" d="M79 43Q73 43 52 49T30 61Q30 68 85 293T146 528Q161 560 198 560Q218 560 240 545T262 501Q262 496 260 486Q259 479 173 263T84 45T79 43Z"></path></g></g><g data-mml-node="mi" transform="translate(11032.7,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(12032.7,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">都</text></g><g data-mml-node="mi" transform="translate(13032.7,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">有</text></g><g data-mml-node="msup" transform="translate(14032.7,0)"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="mo" transform="translate(936.2,363) scale(0.707)"><path data-c="2032" d="M79 43Q73 43 52 49T30 61Q30 68 85 293T146 528Q161 560 198 560Q218 560 240 545T262 501Q262 496 260 486Q259 479 173 263T84 45T79 43Z"></path></g></g><g data-mml-node="mo" transform="translate(15213.3,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mo" transform="translate(16269.1,0)"><path data-c="3E" d="M84 520Q84 528 88 533T96 539L99 540Q106 540 253 471T544 334L687 265Q694 260 694 250T687 235Q685 233 395 96L107 -40H101Q83 -38 83 -20Q83 -19 83 -17Q82 -10 98 -1Q117 9 248 71Q326 108 378 132L626 250L378 368Q90 504 86 509Q84 513 84 520Z"></path></g><g data-mml-node="mi" transform="translate(17324.9,0)"><path data-c="1D44C" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path></g><g data-mml-node="mi" transform="translate(18087.9,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(19087.9,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">记</text></g><g data-mml-node="mi" transform="translate(20087.9,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">作</text></g><g data-mml-node="mi" transform="translate(21087.9,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">：</text></g></g></g></svg></mjx-container></span>X
+Y$。</p>
+<p><strong>左部为单属性的函数依赖一定是完全函数依赖</strong></p>
+<h3 id="部分函数依赖">部分函数依赖</h3>
+<p>$XY <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex;" xmlns="http://www.w3.org/2000/svg" width="27.274ex" height="2.17ex" role="img" focusable="false" viewBox="0 -759 12055.2 959"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">且</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">存</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">在</text></g><g data-mml-node="msup" transform="translate(4000,0)"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="mo" transform="translate(936.2,363) scale(0.707)"><path data-c="2032" d="M79 43Q73 43 52 49T30 61Q30 68 85 293T146 528Q161 560 198 560Q218 560 240 545T262 501Q262 496 260 486Q259 479 173 263T84 45T79 43Z"></path></g></g><g data-mml-node="mo" transform="translate(5180.7,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mo" transform="translate(6236.4,0)"><path data-c="3E" d="M84 520Q84 528 88 533T96 539L99 540Q106 540 253 471T544 334L687 265Q694 260 694 250T687 235Q685 233 395 96L107 -40H101Q83 -38 83 -20Q83 -19 83 -17Q82 -10 98 -1Q117 9 248 71Q326 108 378 132L626 250L378 368Q90 504 86 509Q84 513 84 520Z"></path></g><g data-mml-node="mi" transform="translate(7292.2,0)"><path data-c="1D44C" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path></g><g data-mml-node="mi" transform="translate(8055.2,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(9055.2,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">记</text></g><g data-mml-node="mi" transform="translate(10055.2,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">作</text></g><g data-mml-node="mi" transform="translate(11055.2,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">：</text></g></g></g></svg></mjx-container></span>X
+Y$。</p>
+<h3 id="传递函数依赖">传递函数依赖</h3>
+<p>是指若$XY <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex;" xmlns="http://www.w3.org/2000/svg" width="15.218ex" height="2.149ex" role="img" focusable="false" viewBox="0 -750 6726.6 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(1000,0)"><path data-c="1D44C" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path></g><g data-mml-node="mo" transform="translate(1763,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mo" transform="translate(2818.8,0)"><path data-c="3E" d="M84 520Q84 528 88 533T96 539L99 540Q106 540 253 471T544 334L687 265Q694 260 694 250T687 235Q685 233 395 96L107 -40H101Q83 -38 83 -20Q83 -19 83 -17Q82 -10 98 -1Q117 9 248 71Q326 108 378 132L626 250L378 368Q90 504 86 509Q84 513 84 520Z"></path></g><g data-mml-node="mi" transform="translate(3874.6,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="mi" transform="translate(4726.6,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(5726.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">而</text></g></g></g></svg></mjx-container></span>YZ <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex;" xmlns="http://www.w3.org/2000/svg" width="9.05ex" height="2.149ex" role="img" focusable="false" viewBox="0 -750 4000 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mo"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">。</text></g></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">记</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">作</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">：</text></g></g></g></svg></mjx-container></span>X Z$。</p>
+<h2 id="nf2nf3nfbcnf的定义及包含关系">1NF、2NF、3NF、BCNF的定义及包含关系</h2>
+<p>候选键：设X为R&lt;U，F&gt;中的属性或属性组合，若 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="7.182ex" height="2.972ex" role="img" focusable="false" viewBox="0 -1291.8 3174.6 1313.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="mover" transform="translate(1129.8,0)"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(235.2,711) scale(0.707)"><path data-c="1D439" d="M48 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H742Q749 676 749 669Q749 664 736 557T722 447Q720 440 702 440H690Q683 445 683 453Q683 454 686 477T689 530Q689 560 682 579T663 610T626 626T575 633T503 634H480Q398 633 393 631Q388 629 386 623Q385 622 352 492L320 363H375Q378 363 398 363T426 364T448 367T472 374T489 386Q502 398 511 419T524 457T529 475Q532 480 548 480H560Q567 475 567 470Q567 467 536 339T502 207Q500 200 482 200H470Q463 206 463 212Q463 215 468 234T473 274Q473 303 453 310T364 317H309L277 190Q245 66 245 60Q245 46 334 46H359Q365 40 365 39T363 19Q359 6 353 0H336Q295 2 185 2Q120 2 86 2T48 1Z"></path></g></g><g data-mml-node="mi" transform="translate(2407.6,0)"><path data-c="1D448" d="M107 637Q73 637 71 641Q70 643 70 649Q70 673 81 682Q83 683 98 683Q139 681 234 681Q268 681 297 681T342 682T362 682Q378 682 378 672Q378 670 376 658Q371 641 366 638H364Q362 638 359 638T352 638T343 637T334 637Q295 636 284 634T266 623Q265 621 238 518T184 302T154 169Q152 155 152 140Q152 86 183 55T269 24Q336 24 403 69T501 205L552 406Q599 598 599 606Q599 633 535 637Q511 637 511 648Q511 650 513 660Q517 676 519 679T529 683Q532 683 561 682T645 680Q696 680 723 681T752 682Q767 682 767 672Q767 650 759 642Q756 637 737 637Q666 633 648 597Q646 592 598 404Q557 235 548 205Q515 105 433 42T263 -22Q171 -22 116 34T60 167V183Q60 201 115 421Q164 622 164 628Q164 635 107 637Z"></path></g></g></g></svg></mjx-container></span>，则X为R的候选键。</p>
+<h3 id="第一范式1nf">第一范式：1NF</h3>
+<p>定义: 若R的每个分量都是不可分的数据项，则R∈1NF。</p>
+<ul>
+<li>从型上看：不存在嵌套结构</li>
+<li>从值上看，不存在重复组、表达式</li>
+<li>1NF是关系模式的最低要求。</li>
+</ul>
+<h3 id="第二范式2nf">第二范式：2NF</h3>
+<p>定义:若R∈1NF，且R中的每一个非主属性都<strong>完全函数依赖于</strong>R的任一候选键，则R∈2NF。</p>
+<p>分解为2NF的方法：将非主属性和侯选键之间满足部分函数依赖和满足完全函数依赖的属性分解到不同的关系中。</p>
+<ul>
+<li>关系S分解为三个关系：
+ST(<strong>SNO</strong>，SNAME，CLASS)（只依赖SNO的属性分解到一个子模式中）
+CTA(<strong>CNO</strong>，TNO，TNAME，TAGE，ADDRESS)
+（只依赖CNO的属性分解到另一个子模式中）
+SC(<strong>SNO，CNO，</strong>GRADE)
+（完全函数依赖于候选键的属性分解到第三个子模式中）
+分解后，关系ST、CTA和SC都为2NF。</li>
+<li><strong>若关系R的侯选键是单属性的，则R必定是2NF。</strong></li>
+</ul>
+<h3 id="第三范式3nf">第三范式：3NF</h3>
+<p>定义:若R∈1NF，且R的任何一个非主属性<strong>都不传递函数依赖于</strong>它的任何一个候选键，则R∈3NF。</p>
+<p><strong>分解为3NF的方法</strong>：将涉及传递函数依赖中的两个依赖中的属性分解到不同的关系中。</p>
+<ul>
+<li>将CTA分解为： CT(<strong>CNO</strong>，TNO)
+TA(<strong>TNO</strong>，TNAME，TAGE，ADDRESS)</li>
+</ul>
+<p>则关系CT和TA都是3NF，关系CTA中存在的问题得到了解决。</p>
+<p><strong>定理4.1：一个3NF的关系必定是2NF。</strong></p>
+<p><strong>若关系R的所有属性都是主属性，则R必定是3NF。</strong></p>
+<h3 id="bcnf">BCNF</h3>
+<p>定义:关系模式R&lt;U，F&gt;∈1NF。若函数依赖集合F中的所有函数依赖X→Y（Y⊈X）的<strong>左部</strong>都包含R的任一侯选键，则R∈BCNF。</p>
+<p><strong>定理4.2：一个BCNF的关系必定是3NF。</strong></p>
+<p><strong>任何的二元关系必定是BCNF。</strong></p>
+<figure>
+<img src="../images/image-20240429142915281.png" alt="image-20240429142915281">
+<figcaption aria-hidden="true">image-20240429142915281</figcaption>
+</figure>
+<h2 id="armstrong公理和推论">Armstrong公理和推论</h2>
+<p><strong>Armstrong公理(阿氏公理)：</strong> 对R&lt;U，F&gt; 有：
+A1自反律：若Y⊆X，则X→Y。 A2增广律：若X→Y，则XZ→YZ。
+A3传递律：若X→Y、Y→Z，则X→Z。</p>
+<p><strong>公理的推论</strong>： 合并规则：若X→Y、X→Z，则X→YZ。
+分解规则：若X→YZ，则X→Y,X→Z。 伪传递规则：若X→Y、WY→Z，则WX→Z。</p>
+<p><strong>定理4.5: X→A1A2…AK成立的充分必要条件是 X→Ai
+成立。</strong></p>
+<h3 id="关系模式分解应遵循的原则">关系模式分解应遵循的原则</h3>
+<p>（1）查询时的连接操作是否会丢失某些信息或多出某些信息。这引出了<strong>无损连接</strong>的概念。
+（2）分解后的关系模式是否保持了原来的函数依赖。这是<strong>保持函数依赖性</strong>的问题。</p>
+<figure>
+<img src="../images/image-20240429145954790.png" alt="image-20240429145954790">
+<figcaption aria-hidden="true">image-20240429145954790</figcaption>
+</figure>
+<h3 id="求侯选键的方法">求侯选键的方法</h3>
+<p>给出函数依赖集，如何求出该关系所有的侯选键？
+给定一个关系模式R(U,F),U={A1,A2,…An},那么可以将属性分为如下四类：
+（1）L: 仅出现在函数依赖集F左部的属性。 （2）R:
+仅出现在函数依赖集F右部的属性。 （3）LR:
+在函数依赖集F左、右部都出现的属性。 （4）NLR:
+在函数依赖集F左、右部都未出现的属性。</p>
+<p><strong>有关侯选键的相关结论：</strong>
+（1）若X(X⊆U)是L类属性，则X必为R的任一侯选键的成员。
+（2）若X(X⊆U)是R类属性，则X不是R的任一侯选键的成员。
+（3）若X(X⊆U)是NLR类属性，则X必为R的任一侯选键的成员。
+（4）若X(X⊆U)是L类和NLR类属性组成的属性集，且<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.695ex;" xmlns="http://www.w3.org/2000/svg" width="3.476ex" height="2.559ex" role="img" focusable="false" viewBox="0 -823.8 1536.3 1131.1"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msubsup"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="TeXAtom" transform="translate(936.2,411.6) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g></g><g data-mml-node="TeXAtom" transform="translate(861,-307.2) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D439" d="M48 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H742Q749 676 749 669Q749 664 736 557T722 447Q720 440 702 440H690Q683 445 683 453Q683 454 686 477T689 530Q689 560 682 579T663 610T626 626T575 633T503 634H480Q398 633 393 631Q388 629 386 623Q385 622 352 492L320 363H375Q378 363 398 363T426 364T448 367T472 374T489 386Q502 398 511 419T524 457T529 475Q532 480 548 480H560Q567 475 567 470Q567 467 536 339T502 207Q500 200 482 200H470Q463 206 463 212Q463 215 468 234T473 274Q473 303 453 310T364 317H309L277 190Q245 66 245 60Q245 46 334 46H359Q365 40 365 39T363 19Q359 6 353 0H336Q295 2 185 2Q120 2 86 2T48 1Z"></path></g></g></g></g></g></svg></mjx-container></span>=U，则X必为R的惟一侯选键。</p>
+<h3 id="求属性闭包函数依赖最小集的算法">求属性闭包、函数依赖最小集的算法</h3>
+<h4 id="函数依赖集闭包">函数依赖集闭包</h4>
+<p>定义:
+设F是关系模式R的函数依赖集，X、Y是R的属性子集，如果从F的函数依赖中能够推出X→Y，则称F<strong>逻辑蕴涵</strong>X→Y。
+在R&lt;U，F&gt;
+中为F所逻辑蕴含的函数依赖全体叫<strong>F的闭包</strong>，记为：F+。 F+=
+{ ① F； ② F中推出的非平凡的函数依赖； ③
+平凡的函数依赖：A-&gt;φ、A-&gt;A、AB-&gt;A、… }</p>
+<h4 id="属性集闭包">属性集闭包</h4>
+<p>定义：<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.695ex;" xmlns="http://www.w3.org/2000/svg" width="3.476ex" height="2.559ex" role="img" focusable="false" viewBox="0 -823.8 1536.3 1131.1"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msubsup"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="TeXAtom" transform="translate(936.2,411.6) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g></g><g data-mml-node="TeXAtom" transform="translate(861,-307.2) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D439" d="M48 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H742Q749 676 749 669Q749 664 736 557T722 447Q720 440 702 440H690Q683 445 683 453Q683 454 686 477T689 530Q689 560 682 579T663 610T626 626T575 633T503 634H480Q398 633 393 631Q388 629 386 623Q385 622 352 492L320 363H375Q378 363 398 363T426 364T448 367T472 374T489 386Q502 398 511 419T524 457T529 475Q532 480 548 480H560Q567 475 567 470Q567 467 536 339T502 207Q500 200 482 200H470Q463 206 463 212Q463 215 468 234T473 274Q473 303 453 310T364 317H309L277 190Q245 66 245 60Q245 46 334 46H359Q365 40 365 39T363 19Q359 6 353 0H336Q295 2 185 2Q120 2 86 2T48 1Z"></path></g></g></g></g></g></svg></mjx-container></span>
+={A|X-&gt;A能由F用阿氏公理导出} <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.695ex;" xmlns="http://www.w3.org/2000/svg" width="3.476ex" height="2.559ex" role="img" focusable="false" viewBox="0 -823.8 1536.3 1131.1"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msubsup"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="TeXAtom" transform="translate(936.2,411.6) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g></g><g data-mml-node="TeXAtom" transform="translate(861,-307.2) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D439" d="M48 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H742Q749 676 749 669Q749 664 736 557T722 447Q720 440 702 440H690Q683 445 683 453Q683 454 686 477T689 530Q689 560 682 579T663 610T626 626T575 633T503 634H480Q398 633 393 631Q388 629 386 623Q385 622 352 492L320 363H375Q378 363 398 363T426 364T448 367T472 374T489 386Q502 398 511 419T524 457T529 475Q532 480 548 480H560Q567 475 567 470Q567 467 536 339T502 207Q500 200 482 200H470Q463 206 463 212Q463 215 468 234T473 274Q473 303 453 310T364 317H309L277 190Q245 66 245 60Q245 46 334 46H359Q365 40 365 39T363 19Q359 6 353 0H336Q295 2 185 2Q120 2 86 2T48 1Z"></path></g></g></g></g></g></svg></mjx-container></span> 称为属性集X关于F的闭包。</p>
+<blockquote>
+<p>例：R(A,B,C) F={A-&gt;B,B-&gt;C} 则 A+=ABC B+=BC C+=C</p>
+</blockquote>
+<p>定理4.6: X-&gt;Y能从F中用阿氏公理导出的充要条件是：Y⊆ <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.695ex;" xmlns="http://www.w3.org/2000/svg" width="3.476ex" height="2.559ex" role="img" focusable="false" viewBox="0 -823.8 1536.3 1131.1"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msubsup"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="TeXAtom" transform="translate(936.2,411.6) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g></g><g data-mml-node="TeXAtom" transform="translate(861,-307.2) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D439" d="M48 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H742Q749 676 749 669Q749 664 736 557T722 447Q720 440 702 440H690Q683 445 683 453Q683 454 686 477T689 530Q689 560 682 579T663 610T626 626T575 633T503 634H480Q398 633 393 631Q388 629 386 623Q385 622 352 492L320 363H375Q378 363 398 363T426 364T448 367T472 374T489 386Q502 398 511 419T524 457T529 475Q532 480 548 480H560Q567 475 567 470Q567 467 536 339T502 207Q500 200 482 200H470Q463 206 463 212Q463 215 468 234T473 274Q473 303 453 310T364 317H309L277 190Q245 66 245 60Q245 46 334 46H359Q365 40 365 39T363 19Q359 6 353 0H336Q295 2 185 2Q120 2 86 2T48 1Z"></path></g></g></g></g></g></svg></mjx-container></span></p>
+<h4 id="属性闭包的计算">属性闭包的计算</h4>
+<p>设有关系模式R&lt;U,F&gt;，其中U={A,B,C,D,E,I}，
+F={A→D，AB→E，BI→E，CD→I，E→C} 计算 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="6.618ex" height="2.32ex" role="img" focusable="false" viewBox="0 -775.2 2925.1 1025.2"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(389,0)"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g><g data-mml-node="mi" transform="translate(1139,0)"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g><g data-mml-node="msup" transform="translate(1903,0)"><g data-mml-node="mo"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="TeXAtom" transform="translate(422,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g></g></g></g></g></svg></mjx-container></span> <img src="../images/image-20240429144407216.png" alt="image-20240429144407216"></p>
+<h3 id="最小函数依赖集">最小函数依赖集</h3>
+<p>定义:若F满足下列条件，则称其为一个最小函数依赖集Fm。 (1)
+F中每个函数依赖的右部都是单属性； (2)
+对于F中的任一函数依赖X→A，F-{X→A}与F都不等价； (3)
+对于F中的任一函数依赖X→A和X的真子集Z， (F-(X→A))U{Z→A}与F都不等价。</p>
+<blockquote>
+<p>（1）保证在函数依赖的右部没有多余的属性；
+（2）保证F中不存在多余的函数依赖；
+（3）保证F中每个函数依赖的左部没有多余的属性。</p>
+</blockquote>
+<p><strong>定理4.10: 每个F与Fm等价</strong>。</p>
+<p><strong>如何求最小函数依赖集Fm？</strong>
+(1)分解：使F中任一函数依赖的右部仅含有单属性。
+(2)去掉函数依赖左边多余的属性： 方法：对F中任一XY→A，在F中求X+， 若A⊆X+
+，则Y为多余的。 (3)去掉多余函数依赖：
+方法：对F中任一X→A，在F-{X→A}中求X+， 若A⊆X+，则X→A为多余的。</p>
+<p>例：设有函数依赖集F={B→C，C→AB，A→BC，BC→A}
+求与F等价的最小函数依赖集。</p>
+<figure>
+<img src="../images/image-20240429145555571.png" alt="image-20240429145555571">
+<figcaption aria-hidden="true">image-20240429145555571</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240429145711459.png" alt="image-20240429145711459">
+<figcaption aria-hidden="true">image-20240429145711459</figcaption>
+</figure>
+<h3 id="nfbcnf分解算法">3NF、BCNF分解算法</h3>
+<h4 id="nf分解">3NF分解</h4>
+<p>设R(A,B,C,D,E,G),F={AB→C,C→D,CA→E,E→A,BD→A,B→C},求其保持函数依赖和无损连接的3NF分解。
+解: ∵B→C ∴AB→C多余,去掉。 ∵B+=BCDAE(注意BD→A可以使用)
+∴BD→A中D多余,去掉。 ∴ Fm={C→D,CA→E,E→A,B→A,B→C} L类：B NLR类：G
+(BG)+=BGCDAE=U ∴ <strong>BG是R惟一的候选键</strong>。
+<strong>独立</strong>:G 分组: B→A,B→C --&gt; B→AC
+∴保持函数依赖的3NF分解:{CD,CAE,EA,BAC,G}
+<strong>添键</strong>:{CD,CAE,EA,BAC,G,BG}<br>
+∵EA⊆CAE,G⊆BG去掉。
+∴保持函数依赖和无损连接的的3NF分解:{CD,CAE,BAC,BG}</p>
+<h4 id="bcnf分解">BCNF分解</h4>
+<p>设R(A,B,C,D,E,G),F={AB→C,C→D,CA→E,E→A,BD→A,B→C},求其具有无损连接的BCNF分解。
+解: BG是R惟一的候选键。 Fm={C→D,CA→E,E→A,B→A,B→C}(也可以利用F进行分解)
+∴R不是BCNF。 选C→D, S1=CD(是BCNF),
+S2=ABCDEG-D=ABCEG(不是BCNF,候选键是BG)
+选CA→E,S1=CAE(不是BCNF,候选键是AC,EC),
+S2=ABCEG-E=ABCG(不是BCNF,候选键是BG) 选E→A, S1=EA(是BCNF),
+S2=CAE-A=CE(是BCNF) 选B→A, S1=BA(是BCNF),
+S2=ABCG-A=BCG(不是BCNF,候选键是BG) 选B→C, S1=BC(是BCNF), S2=BCG-C=BG
+(是BCNF) ∴具有无损连接的的BCNF分解:{CD,EA,CE,BA,BC,BG}</p>
+<h2 id="课后习题-3">课后习题</h2>
+<p>3、设有一关系R(S#，C#，G，TN，D），其属性的含义为：S#-学号；C#-课程号；G-成绩；TN-任课教师；D-教师所在系，这些数据有下列语义：
+学号和课程号分别与其代表的学生和课程一一对应；一个学生所修的毎门课程都有一个成绩；每门课程只有一位任课教师，但毎位教师可以有多门课程；教师中没有重名；每个教师只属于一个系。
+（1）试根据上述语义确定函数依赖集。
+（2）关系R为第几范式？并举例说明在进行增、删操作时的异常现象。
+（3）试把R分解成3NF模式集，并说明理由。</p>
+<p>解：(1) F={(S#,C#)→G, C#→TN, TN→D} (2) R的候选键为： (S#,C#) R∈1NF (∵
+C#→TN 存在非主属性对候选键的部分函数依赖)
+学生未选课时不能插入教师信息;删除某门课时会丢失教师的信息。 (3)
+R1(S#,C#,G) R2(C#,TN) R3(TN,D)</p>
+<p>4、指出下列关系模式是第几范式？并说明理由。 (1) R(X,Y,Z) F={XY→Z}
+候选键:XY R∈BCNF(∵XY→Z的左部包含了R的候选键) (2) R(X,Y,Z) F={Y→Z,XZ→Y}
+候选键:XY,XZ
+R∈3NF(∵R的所有属性都是主属性，但Y→Z的左部未包含R的任一候选键) (3)
+R(X,Y,Z) F={Y→Z,Y→X,X→YZ} 候选键:X,Y<br>
+R∈BCNF(∵所有函数依赖的左部包含了R的任一候选键) (4) R(X,Y,Z) F={X→Y,X→Z}
+候选键:X R∈BCNF(∵所有函数依赖的左部包含了R的候选键) (5) R(W,X,Y,Z)
+F={X→Z,WX→Y} 候选键:WX R∈1NF(∵X→Z
+存在非主属性对候选键的部分函数依赖)</p>
+<p>6、设有关系模式R(A,B,C,D,E),其上的函数依赖集： F={A→BC,CD→E,B→D,E→A}
+(1)计算B+。 (2)求出R的所有的候选键,判断R的范式。</p>
+<p>解：(1) B+=BD (2) L,R类：无 A+=ABCDE=U B+=BD≠U C+=C≠U D+=D≠U
+E+=EABCD=U (BC)+=BCDEA=U (CD)+=CDEAB=U ∴ A,E,BC,CD是R的候选键。
+非主属性:无 ∴ R∈3NF
+(∵全部属性都是主属性的关系至少是3NF。但B→D的左部未包含R的仼一候选键，∴R不是BCNF)</p>
+<p>10、设有关系模式R(A,B,C,D),其上的函数依赖集： F={A→C,C→A,B→AC,D→AC}
+(1)求F的最小等价依赖集Fm。 (2)将R分解使其满足BCNF且无损连接性。
+(3)将R分解成满足3NF并具有无损连接性与依赖保持性。</p>
+<p>解：(1) F1={A→C,C→A,B→A,B→C,D→A,D→C} Fm={A→C,C→A,B→A,D→A} (不惟一)
+(2) 候选键: BD ρ={AC,BA, BD} (利用Fm进行分解,分解不惟一) (3) ρ={AC，BC,
+DC, BD} (分解不惟一)</p>
+<p>12、设有关系模式R(A,B,C,D,E,G),其上的函数依赖集：
+F={A→B,C→G,E→A,CE→D},现有下列分解： (1)ρ1={CG,BE,ECD,AB}
+(2)ρ2={ABE,CDEG} 试判断上述每一个分解是否具有无损连接性。</p>
+<figure>
+<img src="../images/image-20240429162431561.png" alt="image-20240429162431561">
+<figcaption aria-hidden="true">image-20240429162431561</figcaption>
+</figure>
+<p>(2)令 R1=ABE R2=CDEG 则 R1∩R2=E R1-R2=AB R2-R1=CDG ∵ E→AB∈F+ (即
+R1∩R2→R1-R2∈F+) ∴ ρ2具有无损连接性。</p>
+<h1 id="第五章-数据库设计">第五章 数据库设计</h1>
+<h2 id="数据库设计步骤">数据库设计步骤</h2>
+<ol type="1">
+<li><strong>需求分析</strong>：用户需求的收集和分析，结果得到<strong>数据字典描述的数据需求</strong>和<strong>数据流图描述的处理需求</strong>。</li>
+<li><strong>概念结构设计</strong>：对用户需求进行综合、归纳与抽象，形成一个独立于具体DBMS的概念模型，可以用<strong>E-R图</strong>表示。</li>
+<li><strong>逻辑结构设计</strong>：将概念结构<strong>转换</strong>为某个DBMS所支持的数据模型（例如关系模型），并对其进行优化。</li>
+<li><strong>数据库物理设计</strong>：为逻辑数据模型选取一个最适合应用环境的物理结构（包括存储结构和存取方法）。</li>
+<li><strong>数据库实施</strong>：运用DBMS提供的数据语言（例如SQL）及其宿主语言（例如C），根据逻辑设计和物理设计的结果建立数据库，编制与调试应用程序，组织数据入库，并进行试运行。</li>
+<li><strong>数据库运行和维护</strong>：数据库应用系统经过试运行后即可投入正式运行。在数据库系统运行过程中必须不断地对其进行评价、调整与修改。</li>
+</ol>
+<h2 id="需求分析阶段需求信息的整理">需求分析阶段需求信息的整理</h2>
+<p>数据流图、数据字典（DBMS数据字典、应用系统数据字典）</p>
+<h3 id="数据流图dfddata-flow-diagram">数据流图(DFD—Data Flow
+Diagram)</h3>
+<p>DFD用来表示收集到的各业务流程中涉及到的数据和处理过程的关系。</p>
+<ul>
+<li>数据流图的基本成分：</li>
+</ul>
+<figure>
+<img src="../images/image-20240429191053293.png" alt="image-20240429191053293">
+<figcaption aria-hidden="true">image-20240429191053293</figcaption>
+</figure>
+<p>例：<img src="../images/image-20240429191143287.png" alt="image-20240429191143287"></p>
+<h3 id="数据字典dddata-dictionary">数据字典（DD—Data Dictionary)</h3>
+<p>数据字典是对数据库中数据的描述信息的集合。</p>
+<h4 id="dbms数据字典">DBMS数据字典</h4>
+<ol type="1">
+<li>数据字典在DBMS中的作用 （1）满足DBMS快速查询有关对象的要求。
+（2）供数据库管理员掌握整个系统运行的情况。</li>
+<li>DBMS数据字典的内容 （1）数据库系统所有对象及其属性的描述信息。
+（2）数据库系统对象之间关系的描述信息。
+（3）数据安全性、完整性约束条件、数据库日志等。
+（4）记录数据字典变化的历史。</li>
+</ol>
+<h4 id="应用系统数据字典">应用系统数据字典</h4>
+<ol start="3" type="1">
+<li>数据库应用系统的数据字典 包括：
+<ul>
+<li>数据项</li>
+<li>数据结构</li>
+<li>数据流<br>
+</li>
+<li>数据存储</li>
+<li>处理过程</li>
+</ul></li>
+<li>关于数据字典的说明
+<ul>
+<li>用来说明或描述系统中数据的静态组成结构。</li>
+<li>数据库系统中所有数据的详尽描述，是各类数据属性的清单。</li>
+<li>数据字典在需求分析阶段建立，在数据库设计过程中不断修改、充实、完善。</li>
+</ul></li>
+</ol>
+<p>例：下图给出了某机器制造厂的零配件采购子系统的数据流图。该子系统要处理的工作是生产部门提出的生产计划根据零配件当前价格计算成本送主管部门审批，对已批准生产计划制定采购计划，准备好订货单给供应商。</p>
+<figure>
+<img src="../images/image-20240429191617550.png" alt="image-20240429191617550">
+<figcaption aria-hidden="true">image-20240429191617550</figcaption>
+</figure>
+<h3 id="概念结构设计的任务与步骤">概念结构设计的任务与步骤</h3>
+<h4 id="概念结构设计任务">概念结构设计任务</h4>
+<p>将用户需求抽象为概念模型 (E-R图)。</p>
+<h4 id="自底向上方法步骤">自底向上方法步骤</h4>
+<ol type="1">
+<li>数据抽象与局部视图设计</li>
+</ol>
+<blockquote>
+<ol type="1">
+<li><p>选择局部应用 可利用机构职能关系进行局部处理。</p></li>
+<li><p>逐一设计分E-R图 设计时注意：实体与属性的划分原则</p></li>
+</ol>
+<ul>
+<li>属性应是系统中最小的信息单位，不再具有描述性质。</li>
+<li>属性不能与其他实体有联系。</li>
+</ul>
+<ol start="3" type="1">
+<li>E-R图扩展</li>
+</ol>
+<ul>
+<li>数据抽象：聚集和概括</li>
+<li>属性：单值属性：用椭圆表示。 多值属性：用双椭圆表示。
+派生属性：用虚椭圆表示。 复合属性：包含其它属性的属性。</li>
+</ul>
+<figure>
+<img src="../images/image-20240429193224599.png" alt="image-20240429193224599">
+<figcaption aria-hidden="true">image-20240429193224599</figcaption>
+</figure>
+<ul>
+<li>基数：在相互联系的实体中，实体出现一次而可能引起的另一个实体出现的最小和最大次数称为前一个实体的基数。</li>
+</ul>
+<figure>
+<img src="../images/image-20240429193305341.png" alt="image-20240429193305341">
+<figcaption aria-hidden="true">image-20240429193305341</figcaption>
+</figure>
+<ul>
+<li>弱实体：
+必须以另一个实体或多个实体的存在为前提的实体。用双线矩形框表示。</li>
+</ul>
+<figure>
+<img src="../images/image-20240429193338591.png" alt="image-20240429193338591">
+<figcaption aria-hidden="true">image-20240429193338591</figcaption>
+</figure>
+</blockquote>
+<ol start="2" type="1">
+<li>视图集成（全局视图设计）</li>
+</ol>
+<blockquote>
+<ol type="1">
+<li>视图集成概述</li>
+</ol>
+<ul>
+<li>局部视图反映局部的数据观点，可能由不同的人员设计，存在不一致、冲突、信息冗余，需要通过集成处理形成全局范围内单一的数据视图。</li>
+<li>视图集成的本质是统一与归并：等同、聚合和普遍化。</li>
+<li>视图集成的策略：二元集成与n元集成。</li>
+</ul>
+<ol start="2" type="1">
+<li>合并分E-R图，生成初步E-R图</li>
+</ol>
+<ul>
+<li><p>合并的过程实际上是一个发现冲突和解决冲突的过程。</p></li>
+<li><p><strong>冲突（重点）</strong>主要有： （1）属性冲突
+属性值类型、取值范围等发生冲突：<strong>尽量大的覆盖</strong>。
+（2）命名冲突 同名异义、异名同义：<strong>重新命名</strong>。
+（3）结构冲突</p>
+<p>同一对象在不同视图中有不同抽象：<strong>统一为实体或属性</strong>。
+同一实体在不同视图中属性组成不同：<strong>取并</strong>。
+相同实体间联系在不同视图中呈现不同类型：<strong>应用语义</strong>。</p></li>
+</ul>
+<ol start="3" type="1">
+<li>消除不必要的冗余，设计基本E-R图</li>
+</ol>
+</blockquote>
+<p>例：设计一个工厂产品、零件和材料的基本E-R模型。 局部E-R模型设计
+技术部门：关心的是产品的编号、性能、由哪些零件组成，每个零件的零件号、消耗的材料名和数量。
+供销部门：关心的是产品的编号、价格和库存量。 初步E-R模型设计
+基本E-R模型设计</p>
+<figure>
+<img src="../images/image-20240429195331300.png" alt="image-20240429195331300">
+<figcaption aria-hidden="true">image-20240429195331300</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240429195419264.png" alt="image-20240429195419264">
+<figcaption aria-hidden="true">image-20240429195419264</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240429195454442.png" alt="image-20240429195454442">
+<figcaption aria-hidden="true">image-20240429195454442</figcaption>
+</figure>
+<h2 id="关系逻辑结构设计的任务与步骤">关系逻辑结构设计的任务与步骤</h2>
+<h3 id="任务">任务</h3>
+<p>将基本E-R模型转换为DBMS所支持的数据模型。</p>
+<h3 id="步骤">步骤</h3>
+<ol type="1">
+<li>将概念结构转换为关系模型</li>
+<li>优化模型</li>
+<li>设计适合DBMS的子模式</li>
+</ol>
+<h4 id="e-r模型向关系模型转换">E-R模型向关系模型转换</h4>
+<p><strong>转换的一般原则</strong>： (1)一个实体型转换为一个关系模式。
+(2)一个1：1联系可转换为一个独立的关系模式，也可与任一端对应的关系模式合并。
+(3)一个1：n联系可转换为一个独立的关系模式，也可与n端对应的关系模式合并。
+(4)一个m: n联系转换为一个关系模式。
+(5)三个或三个以上实体间的多元联系可转换为一个关系模式。 (6)
+相同键的关系模式可合并。</p>
+<figure>
+<img src="../images/image-20240429200026590.png" alt="image-20240429200026590">
+<figcaption aria-hidden="true">image-20240429200026590</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240429200046153.png" alt="image-20240429200046153">
+<figcaption aria-hidden="true">image-20240429200046153</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240429200058440.png" alt="image-20240429200058440">
+<figcaption aria-hidden="true">image-20240429200058440</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240429200114408.png" alt="image-20240429200114408">
+<figcaption aria-hidden="true">image-20240429200114408</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240429200140516.png" alt="image-20240429200140516">
+<figcaption aria-hidden="true">image-20240429200140516</figcaption>
+</figure>
+<h2 id="物理结构设计">物理结构设计</h2>
+<h3 id="建立索引的一般原则">建立索引的一般原则</h3>
+<p>① <strong>主键和外键上一般建立索引。</strong>
+有利于主键惟一性的检查。 有助于参照完整性的检查。
+可加快以主键和外键为连接条件属性的连接操作。</p>
+<p>② <strong>若经常按某列顺序访问记录，则在该列上建立索引</strong>。 ③
+为经常有如下情况的列建立索引： <strong>· 查询</strong> <strong>· ORDER
+BY</strong> <strong>· GROUP BY</strong> · <strong>DISTINCT</strong> ④
+<strong>在经常作为最大值和最小值等集函数的列上建立索引</strong>。 ⑤
+<strong>在经常作为连接操作的连接条件中出现的列上建立索引</strong>。</p>
+<h3 id="提高查询效率的主要方法">提高查询效率的主要方法</h3>
+<p>（建索引；适当的水平分解、垂直分解；选择运算提前执行等）</p>
+<h2 id="课后习题-4">课后习题</h2>
+<p>8、设要建立一个公司数据库，该公司有多个下属单位，毎一个单位有多个职员，一个职员仅隶属于一个单位，且一个职员在一个工程中工作，但一个工程中有很多职员参加建设，有多个供应商为各个工程供应不同设备。
+单位的属性有：单位名、电话。 职员的属性有：职员号、姓名、性别。
+设备的属性有：设备号、设备名、产地。 供应商的属性有：姓名、电话。
+工程的属性有：工程名、地点。 请完成以下处理：
+（1）设计满足上述要求的E-R图。 （2）将该E-R图转换为等价的关系模式。
+（3）根据你的理解,用下划线标明毎个关系中的键。</p>
+<p>（1）<img src="../images/image-20240429201601690.png" alt="image-20240429201601690"></p>
+<p>（2）（3）</p>
+<figure>
+<img src="../images/image-20240429201711099.png" alt="image-20240429201711099">
+<figcaption aria-hidden="true">image-20240429201711099</figcaption>
+</figure>
+<p>9、有以下运动队和运动会两个方面的实体： 运动队方面有：
+运动队：队名、教练姓名、队员姓名。 队员：队名、队员姓名、性别、项目名。
+其中，一个运动队有多个队员，一个队员仅属于一个运动队，一个队仅一个教练。
+运动会方面有： 运动队：队编号、队名、教练姓名。
+项目：项目名、参加运动队的编号、队员姓名、性别、比赛场地。
+其中，一个项目有多个运动队参加，一个运动员可参加多个项目，一个项目一个比赛场地。
+请完成以下设计与分析： （1）分别设计运动队和运动会两个局部E-R图。
+（2）将它们合并为一个全局E-R图。
+（3）合并时存在什么冲突？如何解决这些冲突？</p>
+<p>（1）运动队局部E-R图:</p>
+<figure>
+<img src="../images/image-20240429201806816.png" alt="image-20240429201806816">
+<figcaption aria-hidden="true">image-20240429201806816</figcaption>
+</figure>
+<p>运动会局部E-R图:</p>
+<figure>
+<img src="../images/image-20240429201841174.png" alt="image-20240429201841174">
+<figcaption aria-hidden="true">image-20240429201841174</figcaption>
+</figure>
+<p>（2）将它们合并为一个全局E-R图。</p>
+<figure>
+<img src="../images/image-20240429201918401.png" alt="image-20240429201918401">
+<figcaption aria-hidden="true">image-20240429201918401</figcaption>
+</figure>
+<p>（3）存在同一实体在不同分E-R图中属性组成不同。<strong>运动队</strong>增加队编号。
+实体与属性冲突。队员实体中的<strong>项目</strong>由属性变成为实体。
+存在属性异名同义。<strong>队员姓名和运动员姓名</strong>统一为队员姓名。</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></div><div class="post_share"><div class="social-share" data-image="/images/Avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/Avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WangZhixuan</div><div class="author-info__description">the Answer to Life, the Universe and Everything is 42.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Striver98"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">第一章 数据库系统概论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">数据库与数据管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E4%B8%8E%E4%BF%A1%E6%81%AF%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">数据模型与信息模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text">信息模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text">数据模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">课后习题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">第二章 关系数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">关系模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%89%B9%E7%82%B9%E5%8F%8A%E7%BB%84%E6%88%90"><span class="toc-number">2.1.1.</span> <span class="toc-text">关系模型的特点及组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.2.</span> <span class="toc-text">关系数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><span class="toc-number">2.1.3.</span> <span class="toc-text">关系模型的数据操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F%E9%87%8D%E7%82%B9"><span class="toc-number">2.1.4.</span> <span class="toc-text">关系的完整性约束（重点）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E9%87%8D%E7%82%B9"><span class="toc-number">2.2.</span> <span class="toc-text">关系代数（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97"><span class="toc-number">2.2.1.</span> <span class="toc-text">集合运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97"><span class="toc-number">2.2.2.</span> <span class="toc-text">关系运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%85%85%E7%9A%84%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97"><span class="toc-number">2.2.3.</span> <span class="toc-text">扩充的关系运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96"><span class="toc-number">2.3.</span> <span class="toc-text">查询优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%A4%84%E7%90%86%E4%B8%8E%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96"><span class="toc-number">2.3.1.</span> <span class="toc-text">查询处理与查询优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96%E7%9A%84%E4%B8%80%E8%88%AC%E5%87%86%E5%88%99%E9%87%8D%E7%82%B9"><span class="toc-number">2.3.2.</span> <span class="toc-text">查询优化的一般准则（重点）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98-1"><span class="toc-number">2.4.</span> <span class="toc-text">课后习题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%AD%E8%A8%80"><span class="toc-number">3.</span> <span class="toc-text">第三章 数据库语言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#sql%E7%AE%80%E4%BB%8B"><span class="toc-number">3.1.</span> <span class="toc-text">SQL简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89"><span class="toc-number">3.2.</span> <span class="toc-text">SQL的数据定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sql%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E6%92%A4%E9%94%80"><span class="toc-number">3.2.1.</span> <span class="toc-text">SQL模式的定义与撤销</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B%E4%B8%8E%E5%88%A0%E9%99%A4%E9%87%8D%E7%82%B9"><span class="toc-number">3.2.2.</span> <span class="toc-text">表的建立与删除（重点）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E7%9A%84%E6%89%A9%E5%85%85%E5%92%8C%E4%BF%AE%E6%94%B9"><span class="toc-number">3.2.3.</span> <span class="toc-text">表的扩充和修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%9F%E5%AE%9A%E4%B9%89"><span class="toc-number">3.2.4.</span> <span class="toc-text">域定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E5%BB%BA%E7%AB%8B%E4%B8%8E%E5%88%A0%E9%99%A4"><span class="toc-number">3.2.5.</span> <span class="toc-text">索引的建立与删除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql%E7%9A%84%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E9%87%8D%E7%82%B9"><span class="toc-number">3.3.</span> <span class="toc-text">SQL的数据查询(重点)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.3.1.</span> <span class="toc-text">单表查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.3.2.</span> <span class="toc-text">多表查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E6%9F%A5%E8%AF%A2%E9%87%8D%E7%82%B9"><span class="toc-number">3.3.2.1.</span> <span class="toc-text">子查询（重点）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.3.2.2.</span> <span class="toc-text">条件连接查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.3.2.3.</span> <span class="toc-text">相关子查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97-1"><span class="toc-number">3.3.2.4.</span> <span class="toc-text">集合运算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2%E9%87%8D%E7%82%B9"><span class="toc-number">3.3.3.</span> <span class="toc-text">连接查询（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E8%BF%9E%E6%8E%A5natural-join"><span class="toc-number">3.3.3.1.</span> <span class="toc-text">自然连接(natural join)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.3.3.2.</span> <span class="toc-text">外连接</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql%E7%9A%84%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.4.</span> <span class="toc-text">SQL的数据查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql%E7%9A%84%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%96%B0"><span class="toc-number">3.5.</span> <span class="toc-text">SQL的数据更新</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">3.5.1.</span> <span class="toc-text">插入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="toc-number">3.5.2.</span> <span class="toc-text">修改数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">3.5.3.</span> <span class="toc-text">删除数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql%E4%B8%AD%E7%9A%84%E8%A7%86%E5%9B%BE"><span class="toc-number">3.6.</span> <span class="toc-text">SQL中的视图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8%E8%A7%86%E5%9B%BE"><span class="toc-number">3.6.1.</span> <span class="toc-text">创建与使用视图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE"><span class="toc-number">3.6.1.1.</span> <span class="toc-text">创建视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%A7%86%E5%9B%BE"><span class="toc-number">3.6.1.2.</span> <span class="toc-text">删除视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E8%A7%86%E5%9B%BE"><span class="toc-number">3.6.1.3.</span> <span class="toc-text">查询视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%A7%86%E5%9B%BE"><span class="toc-number">3.6.1.4.</span> <span class="toc-text">更新视图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98-2"><span class="toc-number">3.7.</span> <span class="toc-text">课后习题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E7%90%86%E8%AE%BA"><span class="toc-number">4.</span> <span class="toc-text">关系数据库理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F%E8%AE%BE%E8%AE%A1%E4%B8%8D%E5%90%88%E7%90%86%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">4.1.</span> <span class="toc-text">关系模式设计不合理带来的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">4.2.</span> <span class="toc-text">函数依赖的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="toc-number">4.2.1.</span> <span class="toc-text">函数依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E5%B9%B3%E5%87%A1%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="toc-number">4.2.2.</span> <span class="toc-text">非平凡函数依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E5%87%A1%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="toc-number">4.2.3.</span> <span class="toc-text">平凡函数依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="toc-number">4.2.4.</span> <span class="toc-text">完全函数依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E5%88%86%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="toc-number">4.2.5.</span> <span class="toc-text">部分函数依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="toc-number">4.2.6.</span> <span class="toc-text">传递函数依赖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nf2nf3nfbcnf%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%8C%85%E5%90%AB%E5%85%B3%E7%B3%BB"><span class="toc-number">4.3.</span> <span class="toc-text">1NF、2NF、3NF、BCNF的定义及包含关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F1nf"><span class="toc-number">4.3.1.</span> <span class="toc-text">第一范式：1NF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%8C%83%E5%BC%8F2nf"><span class="toc-number">4.3.2.</span> <span class="toc-text">第二范式：2NF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E8%8C%83%E5%BC%8F3nf"><span class="toc-number">4.3.3.</span> <span class="toc-text">第三范式：3NF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bcnf"><span class="toc-number">4.3.4.</span> <span class="toc-text">BCNF</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#armstrong%E5%85%AC%E7%90%86%E5%92%8C%E6%8E%A8%E8%AE%BA"><span class="toc-number">4.4.</span> <span class="toc-text">Armstrong公理和推论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F%E5%88%86%E8%A7%A3%E5%BA%94%E9%81%B5%E5%BE%AA%E7%9A%84%E5%8E%9F%E5%88%99"><span class="toc-number">4.4.1.</span> <span class="toc-text">关系模式分解应遵循的原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E4%BE%AF%E9%80%89%E9%94%AE%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">4.4.2.</span> <span class="toc-text">求侯选键的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E5%B1%9E%E6%80%A7%E9%97%AD%E5%8C%85%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E6%9C%80%E5%B0%8F%E9%9B%86%E7%9A%84%E7%AE%97%E6%B3%95"><span class="toc-number">4.4.3.</span> <span class="toc-text">求属性闭包、函数依赖最小集的算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E9%9B%86%E9%97%AD%E5%8C%85"><span class="toc-number">4.4.3.1.</span> <span class="toc-text">函数依赖集闭包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E9%9B%86%E9%97%AD%E5%8C%85"><span class="toc-number">4.4.3.2.</span> <span class="toc-text">属性集闭包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E9%97%AD%E5%8C%85%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">4.4.3.3.</span> <span class="toc-text">属性闭包的计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E9%9B%86"><span class="toc-number">4.4.4.</span> <span class="toc-text">最小函数依赖集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nfbcnf%E5%88%86%E8%A7%A3%E7%AE%97%E6%B3%95"><span class="toc-number">4.4.5.</span> <span class="toc-text">3NF、BCNF分解算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nf%E5%88%86%E8%A7%A3"><span class="toc-number">4.4.5.1.</span> <span class="toc-text">3NF分解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bcnf%E5%88%86%E8%A7%A3"><span class="toc-number">4.4.5.2.</span> <span class="toc-text">BCNF分解</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98-3"><span class="toc-number">4.5.</span> <span class="toc-text">课后习题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="toc-number">5.</span> <span class="toc-text">第五章 数据库设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%AD%A5%E9%AA%A4"><span class="toc-number">5.1.</span> <span class="toc-text">数据库设计步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E9%98%B6%E6%AE%B5%E9%9C%80%E6%B1%82%E4%BF%A1%E6%81%AF%E7%9A%84%E6%95%B4%E7%90%86"><span class="toc-number">5.2.</span> <span class="toc-text">需求分析阶段需求信息的整理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BEdfddata-flow-diagram"><span class="toc-number">5.2.1.</span> <span class="toc-text">数据流图(DFD—Data Flow
+Diagram)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8dddata-dictionary"><span class="toc-number">5.2.2.</span> <span class="toc-text">数据字典（DD—Data Dictionary)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dbms%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8"><span class="toc-number">5.2.2.1.</span> <span class="toc-text">DBMS数据字典</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%B3%BB%E7%BB%9F%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8"><span class="toc-number">5.2.2.2.</span> <span class="toc-text">应用系统数据字典</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%BB%BB%E5%8A%A1%E4%B8%8E%E6%AD%A5%E9%AA%A4"><span class="toc-number">5.2.3.</span> <span class="toc-text">概念结构设计的任务与步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%BB%BB%E5%8A%A1"><span class="toc-number">5.2.3.1.</span> <span class="toc-text">概念结构设计任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%BA%95%E5%90%91%E4%B8%8A%E6%96%B9%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="toc-number">5.2.3.2.</span> <span class="toc-text">自底向上方法步骤</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%BB%BB%E5%8A%A1%E4%B8%8E%E6%AD%A5%E9%AA%A4"><span class="toc-number">5.3.</span> <span class="toc-text">关系逻辑结构设计的任务与步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1"><span class="toc-number">5.3.1.</span> <span class="toc-text">任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">5.3.2.</span> <span class="toc-text">步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#e-r%E6%A8%A1%E5%9E%8B%E5%90%91%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.3.2.1.</span> <span class="toc-text">E-R模型向关系模型转换</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">5.4.</span> <span class="toc-text">物理结构设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B%E7%B4%A2%E5%BC%95%E7%9A%84%E4%B8%80%E8%88%AC%E5%8E%9F%E5%88%99"><span class="toc-number">5.4.1.</span> <span class="toc-text">建立索引的一般原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E9%AB%98%E6%9F%A5%E8%AF%A2%E6%95%88%E7%8E%87%E7%9A%84%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95"><span class="toc-number">5.4.2.</span> <span class="toc-text">提高查询效率的主要方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98-4"><span class="toc-number">5.5.</span> <span class="toc-text">课后习题</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/f2cbe61d.html" title="大作业：三相有源滤波APF的控制仿真设计">大作业：三相有源滤波APF的控制仿真设计</a><time datetime="2024-06-06T05:07:26.000Z" title="发表于 2024-06-06 13:07:26">2024-06-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/ff8a6906.html" title="计算机接口与通信">计算机接口与通信</a><time datetime="2024-05-26T08:55:37.000Z" title="发表于 2024-05-26 16:55:37">2024-05-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/1dcc5eac.html" title="《传感器与信号调理》期末复习">《传感器与信号调理》期末复习</a><time datetime="2024-05-23T11:44:46.000Z" title="发表于 2024-05-23 19:44:46">2024-05-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/39a57f2d.html" title="BUCK电路建模控制与仿真">BUCK电路建模控制与仿真</a><time datetime="2024-05-15T07:14:52.000Z" title="发表于 2024-05-15 15:14:52">2024-05-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/7ebf209f.html" title="Boost变换器的小信号模型的matlab计算">Boost变换器的小信号模型的matlab计算</a><time datetime="2024-05-14T08:09:39.000Z" title="发表于 2024-05-14 16:09:39">2024-05-14</time></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><div id="footer-wrap"><div class="copyright">&copy;2024 By WangZhixuan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.65.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = '7e64242d6520486e98596ea1c6042736';
+  var gaud_map_key = '499bcb8b7888a8f00a3315c6d8c5141b';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>

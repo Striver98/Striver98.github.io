@@ -1,0 +1,751 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>午夜飞行 - 个人学习记录博客</title><meta name="author" content="WangZhixuan"><meta name="copyright" content="WangZhixuan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="the Answer to Life, the Universe and Everything is 42.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="午夜飞行">
+<meta property="og:url" content="https://striver98.github.io/index.html">
+<meta property="og:site_name" content="午夜飞行">
+<meta property="og:description" content="the Answer to Life, the Universe and Everything is 42.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striver98.github.io/images/Avatar.jpg">
+<meta property="article:author" content="WangZhixuan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striver98.github.io/images/Avatar.jpg"><link rel="shortcut icon" href="/images/favicon.png"><link rel="canonical" href="https://striver98.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"WDLKUSN1F7","apiKey":"5ffee458d4af4547b0c362376424a0b0","indexName":"dev_NAME","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: WangZhixuan","link":"链接: ","source":"来源: 午夜飞行","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '午夜飞行',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: true,
+  isToc: false,
+  postUpdate: '2024-06-17 16:42:58'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div id="loading-box"><div class="pokeball-back"></div><div class="pokeball-loading"><div class="pokeball" id="pokeball-normal"></div><div class="pokeball" id="pokeball-great"></div><div class="pokeball" id="pokeball-ultra"></div><div class="pokeball" id="pokeball-master"></div><div class="pokeball" id="pokeball-safari"></div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/Avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-camera"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fas fa-play-circle"></i><span> 追番</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><nav id="nav"><span id="blog-info"><a href="/" title="午夜飞行"><img class="site-icon" src="/images/universe.png"/><span class="site-name">午夜飞行</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-camera"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fas fa-play-circle"></i><span> 追番</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">午夜飞行</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/f2cbe61d.html" title="大作业：三相有源滤波APF的控制仿真设计">大作业：三相有源滤波APF的控制仿真设计</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-06T05:07:26.000Z" title="发表于 2024-06-06 13:07:26">2024-06-06</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-07T10:48:28.708Z" title="更新于 2024-06-07 18:48:28">2024-06-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%9E%E9%AA%8C%E4%BB%BF%E7%9C%9F/">实验仿真</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/simulink/">simulink</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/">电力电子</a></span></div><div class="content">算法原理描述
+补偿原理
+​
+有源滤波器是一种用于动态抑制谐波，兼具一定的无功补偿功能的电力电子装置。APF可以对大小和频率变化的谐波进行补偿。APF主要由两大部分构成：指令电流检测部分和补偿电流生成部分；主要工作原理是检测补偿点处电压和电流，通过谐波检测手段，将负载电流分为谐波电流和基波电流，然后将谐波电流反极性作为补偿电流生成部分的控制指令电流，以抵消电路中的谐波成分。通过控制，APF还可以消除指定次数的谐波。
+ip-iq法简述
+​
+通过将三相电流变换后得到有功分量和无功分量i_p和i_q，通过滤波即可得到i_p和i_q的直流分量，通过反变换后将得到三相基波电流i_af、i_bf、i_cf，利用原电流波形减去这些基波电流分量便可以得到我们需要的谐波分量i_ah、i_bh、i_ch。
+补偿电流控制方法
+​
+常用的PWM控制方法主要分为滞环比较法和PI三角波比较法。滞环比较法利用滞环比较器形成一个以0为中心、H和-H为上下限的滞环或死区，把补偿电流和指令电流差值控制到规定的滞环宽度范围之内，控制逆变器的开关动作。PI三角波比较法通过指令值与实际值做差，并与三角波进行比较 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/ff8a6906.html" title="计算机接口与通信">计算机接口与通信</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-26T08:55:37.000Z" title="发表于 2024-05-26 16:55:37">2024-05-26</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-01T14:02:42.878Z" title="更新于 2024-06-01 22:02:42">2024-06-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/">微机原理</a></span></div><div class="content">第二章：微处理器的结构和工作模式
+
+8086 CPU内部由哪两部分组成？它们大致是如何工作的？
+
+
+
+总线接口单元（ Bus Interface Unit，BIU）
+
+​ BIU 负责 CPU 与内存和 I/O 端口间的数据交换：
+
+BIU 先从指定内存单元中取出指令，送到指令队列中排队 等待执行 。
+执行指令时所需的操作数 也可由 BIU 从指定的内存单元或 I/O
+端口中获取，再送到 EU 去执行 。
+执行完指令后 可通过 BIU 将数据传送到内存或I/O 端口中 。
+
+
+指令执行单元（ Execution Unit， EU）
+EU 负责执行指令：
+
+它先从 BIU 的指令队列中取出指令，送到 EU
+控制器，经译码分析后执行指令。
+EU 的算术逻辑单元 （Arithmetic Logic Unit， ALU）完成各种运算。
+
+
+
+
+8086 CPU内部有哪些寄存器？各有什么用途？
+
+
+
+数据寄存器：
+
+
+16 位数据寄存器 AX 、 BX 、 CX 、 DX ，存放 16
+位数据信息或地址信息。
+每个16位寄存器 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/1dcc5eac.html" title="《传感器与信号调理》期末复习">《传感器与信号调理》期末复习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-23T11:44:46.000Z" title="发表于 2024-05-23 19:44:46">2024-05-23</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-26T11:28:42.298Z" title="更新于 2024-05-26 19:28:42">2024-05-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/">传感器</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a></span></div><div class="content">利用传感器的测量系统简介
+一般术语和概念
+测量系统
+System:a combination of two or more elements, subsystems, and parts
+necessary to carry out one or more functions.
+The function of a measurement system: the objective
+and empirical assignment of a number to a property or quality of an
+object or event in order to describe it.
+系统是指用来完成一个或多个功能所需两个或多个元件、子系统和部件的组合。
+测量系统的作用是以客观和实验方式对客体或事件的特性或品质加以定量描述。
+Objectives of a measurement:
+
+process monitoring（过程监测）
+process control（过程控制）
+assist experimental engineering
+
+换 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/39a57f2d.html" title="BUCK电路建模控制与仿真">BUCK电路建模控制与仿真</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-15T07:14:52.000Z" title="发表于 2024-05-15 15:14:52">2024-05-15</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-18T05:47:12.000Z" title="更新于 2024-05-18 13:47:12">2024-05-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%9E%E9%AA%8C%E4%BB%BF%E7%9C%9F/">实验仿真</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/">电力电子</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/MATLAB/">MATLAB</a></span></div><div class="content">作业要求
+
+1、建立系统动态模型
+2、根据上述输入输出要求，分析系统静态工作点，画出当控制器传递函数为1时系统框图，写出占空比和输出电压的传函，并在Matlab中画出系统开环传递函数波特图，分析控制系统稳态及静态特性。
+3、假定开关频率为50KHz，选择合适的穿越频率，并要求系统相位裕度为60°，请设计合理的控制算法，并给出传递函数。
+4、控制器采用经典的PI控制，设计控制参数，并仿真测试效果。
+建立系统动态模型
+当V导通，二极管关断时：
+\(L\frac{di_{L}(t)}{dt}=u_{s}-u_{o}(t)-i_{L}(t)R_{L}\)
+\(C\frac{du_{c}(t)}{dt}=i_{L}(t)-\frac{u_{o}(t)}{R}\)
+\(u_{c}(t)=u_{o}(t)\)
+当V关断，二极管导通时
+\(L\frac{di_{L}(t)}{dt}=-u_{o}(t)-i_{L}(t)R_{L}\)
+\(C\frac{du_{c}(t)}{dt}=i_{L}(t)-\frac{u_{o}(t)}{R}\)
+\(u_{c}(t)=u_{o}( ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/7ebf209f.html" title="Boost变换器的小信号模型的matlab计算">Boost变换器的小信号模型的matlab计算</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-14T08:09:39.000Z" title="发表于 2024-05-14 16:09:39">2024-05-14</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-18T05:46:34.000Z" title="更新于 2024-05-18 13:46:34">2024-05-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%9E%E9%AA%8C%E4%BB%BF%E7%9C%9F/">实验仿真</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/">电力电子</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/MATLAB/">MATLAB</a></span></div><div class="content">作业要求
+Boost变换器的小信号模型的matlab计算。要求：
+（1）列写开关管在开通、关断不同状态下的系统动态微分方程，使用matlab计算A1,A2,B1,B2,C1,C2,
+以及A B C
+（2）使用求偏导的方法，求状态空间方程，以及以占空比为输入、输出电压为输出的传递函数
+
+具体过程
+第一问
+
+开关管开通：
+
+
+动态微分方程如下：
+\(L \frac{di_{L}(t)}{dt}=u
+_{s}-i_{L}(t)R_{L}\)
+\(C
+\frac{du_{c}(t)}{dt}=-\frac{u_{c}(t)}{R}\)
+\(u_{c}(t)=u_{o}(t)\)
+
+开关管关断
+
+
+\(L
+\frac{di_{L}(t)}{dt}=u_{s}-i_{L}(t)R_{L}-u_{c}(t)\)
+\(C\frac{du_{c}(t)}{dt}=i_{L}(t)-\frac{u_{c}(t)}{R}\)
+\(u_{c}(t)=u_{o}(t)\)
+
+使用matlab计算A1,A2,B1,B2,C1,C2, 以及A B C
+
+代码 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/591a96ac.html" title="半桥LLC谐振电路的simulink模型仿真">半桥LLC谐振电路的simulink模型仿真</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-09T13:39:16.000Z" title="发表于 2024-05-09 21:39:16">2024-05-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-18T05:47:24.000Z" title="更新于 2024-05-18 13:47:24">2024-05-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%9E%E9%AA%8C%E4%BB%BF%E7%9C%9F/">实验仿真</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/simulink/">simulink</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/">电力电子</a></span></div><div class="content">作业要求
+根据上述LLC算例，搭建半桥LLC谐振电路的simulink模型，验证其在fr2&lt;fs&lt;fr1条件下的ZVS、ZCS状态，作出仿照PPT第29~34页的电流电压图并进行对比。
+
+
+LLC谐振变换器
+
+
+
+LLC电路拓朴原理
+
+显然，fr1&gt;fr2。由直流特性曲线可知： ①
+当fs&gt;fr2时，MOSFET工作在ZVS区域，对于MOSFET而言，ZVS模式下开关损耗较ZCS模式要小；
+②
+在轻载时，LLC谐振变换器的开关频率变化很小，即使在空载时它也具备零电压开关能力。
+仿真结果
+
+
+电路图
+
+参数设计：
+
+
+Q1触发脉冲
+
+
+
+Q2触发脉冲
+
+
+
+LLC参数
+
+
+
+仿真示波器结果
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/9ba9207d.html" title="BUCK电路和RCD缓冲电路的simulink仿真">BUCK电路和RCD缓冲电路的simulink仿真</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-09T12:00:28.000Z" title="发表于 2024-05-09 20:00:28">2024-05-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-18T05:46:58.000Z" title="更新于 2024-05-18 13:46:58">2024-05-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%9E%E9%AA%8C%E4%BB%BF%E7%9C%9F/">实验仿真</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/simulink/">simulink</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/">电力电子</a></span></div><div class="content">作业要求
+
+采用simulink建立图1中BUCK电路的模型，仿真分析分布式电感Lσ
+=10nH时，开关管两端的电压过冲。
+
+
+
+图1
+
+
+
+开通关断过程波形图
+
+
+
+
+
+轨迹图
+
+
+设计图2中的RCD缓冲电路，计算电容值，
+查资料确定电阻值，仿真验证缓冲效果。
+
+
+
+图2
+
+仿真结果
+BUCK电路
+
+
+BUCK
+
+
+
+参数设置
+
+
+
+仿真图像
+
+RCD电路
+
+
+RCD
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/db9d098f.html" title="通过WindowsTerminal打开GitBash">通过WindowsTerminal打开GitBash</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-09T11:31:45.000Z" title="发表于 2024-05-09 19:31:45">2024-05-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-18T05:48:50.000Z" title="更新于 2024-05-18 13:48:50">2024-05-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/">配置教程</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/GitBash/">GitBash</a></span></div><div class="content">
+概述：在使用Git
+Bash上传博客时发现其过程非常不便，需要在对应目录打开Git Bash，在Git
+Bash内不能使用Ctrl+C等快捷键等，于是尝试用Windows Terminal打开Git
+Bash使用。
+
+
+打开Windows terminal，点击左上角的下拉框，打开设置
+
+
+
+图1
+
+
+在配置文件中点击“添加新配置文件”
+
+
+
+图2
+
+
+进行配置设置，具体如图所示
+
+
+
+图3
+
+
+命令行选择git
+bash所在的目录，通常的目录是Git.exe
+启动目录选择你想要在其中启动Git Bash的目录
+图标位置：Git-for-windows.ico
+如果想要以管理员身份运行可打开此开关
+
+
+保存后打开终端即可找到Git Bash
+
+
+
+图4
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/f1a64d69.html" title="三相桥式全控整流电路simulink仿真">三相桥式全控整流电路simulink仿真</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-30T16:36:29.000Z" title="发表于 2024-05-01 00:36:29">2024-05-01</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-18T05:47:48.000Z" title="更新于 2024-05-18 13:47:48">2024-05-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%9E%E9%AA%8C%E4%BB%BF%E7%9C%9F/">实验仿真</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/simulink/">simulink</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/">电力电子</a></span></div><div class="content">器件的选择
+
+
+
+器件名称
+
+
+
+
+AC Voltage
+
+
+Scope
+
+
+Voltage Measurement
+
+
+Current Measurement
+
+
+Series RLC Branch
+
+
+Ground
+
+
+powergui
+
+
+Bus Creator
+
+
+Thyristor Converter
+
+
+Pulse Generator(Thyristor, 6-Pulse)
+
+
+Constant
+
+
+
+仿真电路的绘制
+
+
+image-20240501004526694
+
+老触发脉冲和通用变换桥模块：
+链接：https://pan.baidu.com/s/1WjY4Xc1HligwZncdVTJYlw
+提取码：fomy
+参数设定
+电源
+电源参数设置：电压设置为380V，频率设为50Hz。
+初相角的设置：a相的电压源设为0，b相的电压源设为-120，c相的电压源设为-240。
+
+
+image-20240501004752609
+
+
+
+image-202405 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/a7f387d3.html" title="数据库系统期末复习笔记">数据库系统期末复习笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-23T12:39:48.000Z" title="发表于 2024-04-23 20:39:48">2024-04-23</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-18T03:59:36.000Z" title="更新于 2024-05-18 11:59:36">2024-05-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></span></div><div class="content">第一章 数据库系统概论
+数据管理技术好坏评判的标准：
+
+数据冗余
+
+数据共享
+
+数据独立性：数据逻辑独立性和数据物理独立性
+
+数据统一集中管理
+
+数据库与数据管理
+数据库系统的特点：
+
+数据结构化、集成化
+
+数据的共享性高、冗余度低、易扩充
+数据独立性高
+数据由DBMS统一管理和控制
+
+相关概念：
+
+数据库（DB）：按一定结构组织存储的、集成的、可共享的数据的集合。
+数据库管理系统（DBMS）：管理和维护数据库的系统软件。
+数据库系统（DBS）：具有管理数据库功能的计算机系统。
+DBS=计算机系统（硬件、软件平台、人）+DBMS+DB（重点）
+
+数据模型与信息模型
+分类：（重点）
+
+信息模型（概念模型）：是表示实体及其联系的模型。是从用户角度对数据建模，用于DB设计。它是一种独立于计算机系统的模型。
+数据模型：是表示数据及其联系的模型。是对现实世界数据关系、特征的抽象。是从计算机角度对数据建模，用于DBMS实现。
+
+信息模型
+
+实体间的联系
+
+
+1:1
+1:m
+m:n
+
+
+信息模型的表示方法
+
+​ ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/Avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WangZhixuan</div><div class="author-info__description">the Answer to Life, the Universe and Everything is 42.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Striver98"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/f2cbe61d.html" title="大作业：三相有源滤波APF的控制仿真设计">大作业：三相有源滤波APF的控制仿真设计</a><time datetime="2024-06-06T05:07:26.000Z" title="发表于 2024-06-06 13:07:26">2024-06-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/ff8a6906.html" title="计算机接口与通信">计算机接口与通信</a><time datetime="2024-05-26T08:55:37.000Z" title="发表于 2024-05-26 16:55:37">2024-05-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/1dcc5eac.html" title="《传感器与信号调理》期末复习">《传感器与信号调理》期末复习</a><time datetime="2024-05-23T11:44:46.000Z" title="发表于 2024-05-23 19:44:46">2024-05-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/39a57f2d.html" title="BUCK电路建模控制与仿真">BUCK电路建模控制与仿真</a><time datetime="2024-05-15T07:14:52.000Z" title="发表于 2024-05-15 15:14:52">2024-05-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/7ebf209f.html" title="Boost变换器的小信号模型的matlab计算">Boost变换器的小信号模型的matlab计算</a><time datetime="2024-05-14T08:09:39.000Z" title="发表于 2024-05-14 16:09:39">2024-05-14</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AE%9E%E9%AA%8C%E4%BB%BF%E7%9C%9F/"><span class="card-category-list-name">实验仿真</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"><span class="card-category-list-name">期末复习</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/"><span class="card-category-list-name">配置教程</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/" style="font-size: 1.1em; color: #999">数据库系统</a> <a href="/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/" style="font-size: 1.1em; color: #999">微机原理</a> <a href="/tags/MATLAB/" style="font-size: 1.23em; color: #999ea6">MATLAB</a> <a href="/tags/GitBash/" style="font-size: 1.1em; color: #999">GitBash</a> <a href="/tags/%E6%8E%A7%E5%88%B6/" style="font-size: 1.1em; color: #999">控制</a> <a href="/tags/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/" style="font-size: 1.5em; color: #99a9bf">电力电子</a> <a href="/tags/simulink/" style="font-size: 1.37em; color: #99a4b2">simulink</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" style="font-size: 1.23em; color: #999ea6">自动化</a> <a href="/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/" style="font-size: 1.1em; color: #999">传感器</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">11</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">31.3k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-06-17T08:42:58.428Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><div id="footer-wrap"><div class="copyright">&copy;2024 By WangZhixuan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["the Answer to Life, the Universe and Everything is 42."])
+  } else {
+    document.getElementById("subtitle").textContent = "the Answer to Life, the Universe and Everything is 42."
+  }
+}
+typedJSFn.run(subtitleType)</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.65.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = '7e64242d6520486e98596ea1c6042736';
+  var gaud_map_key = '499bcb8b7888a8f00a3315c6d8c5141b';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>
