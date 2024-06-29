@@ -1,0 +1,795 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Linux学习笔记 | 午夜飞行</title><meta name="author" content="WangZhixuan"><meta name="copyright" content="WangZhixuan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言 基于《鸟哥的Linux私房菜-基础学习篇》的学习笔记，跳过了前三章的介绍与安装，从第四章开始，使用版本为centos7。 首次登陆与在线求助 首次登陆系统  X Window与命令行模式的切换：Ctrl+Alt+F1-F6    [Ctrl] + [Alt] + [F2] ~ [F6] ：文本接口登录 tty2 ~ tty6 终端机； [Ctrl] + [Alt] +">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux学习笔记">
+<meta property="og:url" content="https://striver98.github.io/b30ceb9f.html">
+<meta property="og:site_name" content="午夜飞行">
+<meta property="og:description" content="前言 基于《鸟哥的Linux私房菜-基础学习篇》的学习笔记，跳过了前三章的介绍与安装，从第四章开始，使用版本为centos7。 首次登陆与在线求助 首次登陆系统  X Window与命令行模式的切换：Ctrl+Alt+F1-F6    [Ctrl] + [Alt] + [F2] ~ [F6] ：文本接口登录 tty2 ~ tty6 终端机； [Ctrl] + [Alt] +">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://striver98.github.io/images/Avatar.jpg">
+<meta property="article:published_time" content="2024-06-29T06:35:48.000Z">
+<meta property="article:modified_time" content="2024-06-29T11:24:59.206Z">
+<meta property="article:author" content="WangZhixuan">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://striver98.github.io/images/Avatar.jpg"><link rel="shortcut icon" href="/images/favicon.png"><link rel="canonical" href="https://striver98.github.io/b30ceb9f.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"WDLKUSN1F7","apiKey":"5ffee458d4af4547b0c362376424a0b0","indexName":"dev_NAME","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: WangZhixuan","link":"链接: ","source":"来源: 午夜飞行","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-06-29 19:24:59'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body><div id="loading-box"><div class="pokeball-back"></div><div class="pokeball-loading"><div class="pokeball" id="pokeball-normal"></div><div class="pokeball" id="pokeball-great"></div><div class="pokeball" id="pokeball-ultra"></div><div class="pokeball" id="pokeball-master"></div><div class="pokeball" id="pokeball-safari"></div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/Avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-camera"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fas fa-play-circle"></i><span> 追番</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><nav id="nav"><span id="blog-info"><a href="/" title="午夜飞行"><img class="site-icon" src="/images/universe.png"/><span class="site-name">午夜飞行</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-camera"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fas fa-play-circle"></i><span> 追番</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-29T06:35:48.000Z" title="发表于 2024-06-29 14:35:48">2024-06-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-29T11:24:59.206Z" title="更新于 2024-06-29 19:24:59">2024-06-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>20分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="前言">前言</h1>
+<p>基于《鸟哥的Linux私房菜-基础学习篇》的学习笔记，跳过了前三章的介绍与安装，从第四章开始，使用版本为centos7。</p>
+<h1 id="首次登陆与在线求助">首次登陆与在线求助</h1>
+<h2 id="首次登陆系统">首次登陆系统</h2>
+<ol type="1">
+<li>X Window与命令行模式的切换：<code>Ctrl+Alt+F1-F6</code></li>
+</ol>
+<blockquote>
+<ul>
+<li>[Ctrl] + [Alt] + [F2] ~ [F6] ：文本接口登录 tty2 ~ tty6
+终端机；</li>
+<li>[Ctrl] + [Alt] + [F1] ：图形接口桌面。</li>
+</ul>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">纯文本界面下 (不能有 X 存在) 启动窗口界面的作法</span></span><br><span class="line">[wzx@study ~]$ startx</span><br></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li>在终端登录Linux</li>
+</ol>
+<p><img src="../images/image-20240629144803420.png" /></p>
+<ol start="3" type="1">
+<li>注销Linux：<code>exit</code></li>
+</ol>
+<h2 id="命令行模式下命令的执行">命令行模式下命令的执行</h2>
+<h3 id="开始执行命令">开始执行命令</h3>
+<p>命令详细格式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[wzx@study ~]$ command  [-options]  parameter1  parameter2 ...</span><br><span class="line">                     指令     选项        参数(1)     参数(2)</span><br></pre></td></tr></table></figure>
+<p>上述指令详细说明如下：</p>
+<ol type="1">
+<li><strong>一行指令中第一个输入的部分绝对是『命令(command)』或『可执行文件(例如shell脚本)』</strong></li>
+<li>command 为指令的名称，例如变换工作目录的指令为 cd 等等；</li>
+<li>中括号[]并不存在于实际的指令中，而加入选项设置时，通常选项前会带 -
+号，例如 -h；有时候会使用选项的完整全名，则选项前带有 -- 符号，例如
+--help；</li>
+<li>parameter1 parameter2.. 为依附在选项后面的参数，或者是 command
+的参数；</li>
+<li>指令, 选项, 参数等这几个东西中间以空格来区分，<strong>不论空几格
+shell 都视为一格</strong>。所以空格是很重要的特殊字符；</li>
+<li>按下[Enter]按键后，该命令就立即运行。<strong>[Enter]按键代表着一行命令的开始启动</strong>。</li>
+<li>命令太长的时候，可以使用反斜线 (\)
+来转义[Enter]键，使命令连续到下一行。注意，反斜线后就立刻接特殊字符，才能转义！</li>
+<li>其他：
+<ol type="1">
+<li>在 Linux 系统中，英文大小写字母是不一样的。举例来说， cd 与 CD
+并不同。</li>
+<li>更多的介绍等到介绍BASH时，再来详述。</li>
+</ol></li>
+</ol>
+<h3 id="基础命令的操作">基础命令的操作</h3>
+<ul>
+<li>显示日期与时间的指令： date</li>
+<li>显示日历的指令： cal</li>
+<li>简单好用的计算机： bc</li>
+</ul>
+<figure>
+<img src="../images/image-20240629150656536.png"
+alt="date的格式化输出" />
+<figcaption aria-hidden="true">date的格式化输出</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240629150738974.png" alt="整年的日历情况" />
+<figcaption aria-hidden="true">整年的日历情况</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240629150837671.png"
+alt="2024年7月的日历" />
+<figcaption aria-hidden="true">2024年7月的日历</figcaption>
+</figure>
+<figure>
+<img src="../images/image-20240629151247677.png" alt="bc的使用" />
+<figcaption aria-hidden="true">bc的使用</figcaption>
+</figure>
+<p>bc缺省仅输出整数，如果要输出小数点下位数，那么就必须要运行
+scale=number ，那个number就是小数点位数，例如：</p>
+<figure>
+<img src="../images/image-20240629151527404.png"
+alt="使小数点位数为4" />
+<figcaption aria-hidden="true">使小数点位数为4</figcaption>
+</figure>
+<h3 id="重要的几个热键tab-ctrl-c-ctrl-d">重要的几个热键[Tab], [ctrl]-c,
+[ctrl]-d</h3>
+<h4 id="tab按键命令补全与文件补齐">[Tab]按键：命令补全与文件补齐</h4>
+<figure>
+<img src="../images/image-20240629152321257.png"
+alt="输入命令后连续按两次Tab" />
+<figcaption aria-hidden="true">输入命令后连续按两次Tab</figcaption>
+</figure>
+<ul>
+<li>[Tab] 接在一串指令的第一个字的后面，则为『命令补全』；</li>
+<li>[Tab] 接在一串指令的第二个字以后时，则为『文件补齐』；</li>
+<li>若安装 bash-completion 软件，则在某些指令后面使用 [tab]
+按键时，可以进行『选项/参数的补齐』功能。</li>
+</ul>
+<h4 id="ctrl-c-按键中断目前程序">[Ctrl]-c 按键：中断目前程序</h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[wzx@study ~]$ find /</span><br><span class="line">....(一堆东西都省略)....</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">此时屏幕会很花，你看不到命令提示字符的！直接按下[ctrl]-c即可！</span></span><br><span class="line">[wzx@study ~]$ &lt;==此时提示字符就会回来了！find程序就被中断！</span><br></pre></td></tr></table></figure>
+<h4 id="ctrl-d-按键键盘输入结束end-of-file-eof-或-end-of-input">[Ctrl]-d
+按键：键盘输入结束(End Of File, EOF 或 End Of Input)</h4>
+<h4 id="shiftpageuppage-down按键上下翻页">[shift]+{[PageUP]|[Page
+Down]}按键：上下翻页</h4>
+<p>注：如果是在笔记本上操作，按键格式可能为：[shift]+[Fn]+{[PageUP]|[Page
+Down]}才会有效</p>
+<h2 id="linux系统的在线求助man-page与info-page">Linux系统的在线求助man
+page与info page</h2>
+<h3 id="指令的---help-求助说明">指令的 --help 求助说明</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[wzx@study ~]# date --help</span><br><span class="line">Usage: date [OPTION]... [+FORMAT]                           # 这里有基本语法</span><br><span class="line">  or:  date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]  # 这是设置时间的语法</span><br><span class="line">Display the current time in the given FORMAT, or set the system date.</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">底下是主要的选项说明</span></span><br><span class="line">Mandatory arguments to long options are mandatory for short options too.</span><br><span class="line">  -d, --date=STRING         display time described by STRING, not &#x27;now&#x27;</span><br><span class="line">  -f, --file=DATEFILE       like --date once for each line of DATEFILE</span><br><span class="line">....(中间省略)....</span><br><span class="line">  -u, --utc, --universal    print or set Coordinated Universal Time (UTC)</span><br><span class="line">      --help     显示此求助说明并离开</span><br><span class="line">      --version  显示版本信息并离开</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">底下则是重要的格式 (FORMAT) 的主要项目</span></span><br><span class="line">FORMAT controls the output.  Interpreted sequences are:</span><br><span class="line"><span class="meta prompt_">  %</span><span class="language-bash">%   a literal %</span></span><br><span class="line"><span class="meta prompt_">  %</span><span class="language-bash">a   locale<span class="string">&#x27;s abbreviated weekday name (e.g., Sun)</span></span></span><br><span class="line"><span class="meta prompt_">  %</span><span class="language-bash"><span class="string">A   locale&#x27;</span>s full weekday name (e.g., Sunday)</span></span><br><span class="line">....(中间省略)....</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">底下是几个重要的范例 (Example)</span></span><br><span class="line">Examples:</span><br><span class="line">Convert seconds since the epoch (1970-01-01 UTC) to a date</span><br><span class="line"><span class="meta prompt_">  $ </span><span class="language-bash"><span class="built_in">date</span> --<span class="built_in">date</span>=<span class="string">&#x27;@2147483647&#x27;</span></span></span><br><span class="line">....(底下省略)....</span><br></pre></td></tr></table></figure>
+<h3 id="man-page">man page</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">[dmtsai@study ~]$ man date</span><br><span class="line">DATE(1)                          User Commands                         DATE(1)</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">请注意上面这个括号内的数字</span></span><br><span class="line">NAME  &lt;==这个指令的完整全名，如下所示为date且说明简单用途为设置与显示日期/时间</span><br><span class="line">       date - print or set the system date and time</span><br><span class="line">SYNOPSIS  &lt;==这个指令的基本语法如下所示</span><br><span class="line">       date [OPTION]... [+FORMAT]                            &lt;==第一种单纯显示的用法</span><br><span class="line">       date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]   &lt;==这种可以设置系统时间的用法</span><br><span class="line">DESCRIPTION  &lt;==详细说明刚刚语法谈到的选项与参数的用法</span><br><span class="line">       Display the current time in the given FORMAT, or set the system date.</span><br><span class="line">       Mandatory arguments to long options are mandatory for short options too.</span><br><span class="line">       -d, --date=STRING  &lt;==左边-d为短选项名称，右边--date为完整选项名称</span><br><span class="line">              display time described by STRING, not &#x27;now&#x27;</span><br><span class="line">       -f, --file=DATEFILE</span><br><span class="line">              like --date once for each line of DATEFILE</span><br><span class="line">       -I[TIMESPEC], --iso-8601[=TIMESPEC]</span><br><span class="line">              output  date/time  in  ISO  8601  format.   TIMESPEC=&#x27;date&#x27; for date only (the</span><br><span class="line">              default), &#x27;hours&#x27;, &#x27;minutes&#x27;, &#x27;seconds&#x27;, or &#x27;ns&#x27; for  date  and  time  to  the</span><br><span class="line">              indicated precision.</span><br><span class="line">....(中间省略)....</span><br><span class="line">       # 找到了！底下就是格式化输出的详细数据！</span><br><span class="line">       FORMAT controls the output.  Interpreted sequences are:</span><br><span class="line">       %%     a literal %</span><br><span class="line">       %a     locale&#x27;s abbreviated weekday name (e.g., Sun)</span><br><span class="line">       %A     locale&#x27;s full weekday name (e.g., Sunday)</span><br><span class="line">....(中间省略)....</span><br><span class="line">ENVIRONMENT  &lt;==与这个指令相关的环境参数有如下的说明</span><br><span class="line">       TZ     Specifies the timezone, unless overridden by command line parameters.  </span><br><span class="line">              If neither is specified, the setting from /etc/localtime is used.</span><br><span class="line">EXAMPLES     &lt;==一堆可用的范本</span><br><span class="line">       Convert seconds since the epoch (1970-01-01 UTC) to a date</span><br><span class="line">              $ date --date=&#x27;@2147483647&#x27;</span><br><span class="line">....(中间省略)....</span><br><span class="line">DATE STRING  &lt;==上面曾提到的 --date 的格式说明！</span><br><span class="line">       The --date=STRING is a mostly free format human readable date string such as &quot;Sun, 29</span><br><span class="line">       Feb 2004 16:21:42 -0800&quot; or &quot;2004-02-29 16:21:42&quot; or even &quot;next  Thursday&quot;.   A  date</span><br><span class="line">       string  may  contain  items  indicating calendar date, time of day, time zone, day of</span><br><span class="line">AUTHOR  &lt;==这个指令的作者啦！</span><br><span class="line">       Written by David MacKenzie.</span><br><span class="line">COPYRIGHT  &lt;==受到著作权法的保护！用的就是 GPL 了！</span><br><span class="line">       Copyright © 2013 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or</span><br><span class="line">       later &lt;http://gnu.org/licenses/gpl.html&gt;.</span><br><span class="line">       This  is free software: you are free to change and redistribute it.  There is NO WAR‐</span><br><span class="line">       RANTY, to the extent permitted by law.</span><br><span class="line">SEE ALSO  &lt;==这个重要，你还可以从哪里查到与date相关的说明文档之意</span><br><span class="line">       The full documentation for date is maintained as a Texinfo manual.  If the  info  and</span><br><span class="line">       date programs are properly installed at your site, the command</span><br><span class="line">              info coreutils &#x27;date invocation&#x27;</span><br><span class="line">       should give you access to the complete manual.</span><br><span class="line">GNU coreutils 8.22                        June 2014                                  DATE(1)</span><br></pre></td></tr></table></figure>
+<p>在上个表格的第一行，你可以看到的是：『DATE(1)』，DATE我们知道是指令的名称，
+那么(1)代表什么呢？他代表的是『一般用户可使用的指令』的意思。在查找数据的后面的数字是有意义的，他可以帮助我们了解或者是直接查找相关的数据。
+常见的几个数字的意义是这样的：</p>
+<table>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 93%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">编号</th>
+<th style="text-align: left;">代表内容</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td
+style="text-align: left;"><strong>用户在shell环境中可以操作的命令或可执行文件</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">系统内核可调的函数和工具等</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td
+style="text-align: left;">一些常用的函数（function）和函数库（library），大部分为C的函数库（libc）</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">设备文件的说明，通常在</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td
+style="text-align: left;"><strong>配置文件或是某些文件的格式</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">游戏（games）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td
+style="text-align: left;">惯例与协议等，例如Linux文件系统，网络协议，ASCII代码等的说明</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td
+style="text-align: left;"><strong>系统管理员可用的管理命令</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">跟内核有关的文件</td>
+</tr>
+</tbody>
+</table>
+<p>man page的内容也分成好几个部分来加以介绍该命令。就是上头man
+date那个表格内， 以NAME作为开始介绍，最后还有个SEE
+ALSO来作为结束。基本上，man page大致分成底下这几个部分：</p>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 84%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>代号</th>
+<th>内容说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NAME</td>
+<td>简短的指令、数据名称说明</td>
+</tr>
+<tr class="even">
+<td>SYNOPSIS</td>
+<td>简短的指令下达语法(syntax)简介</td>
+</tr>
+<tr class="odd">
+<td>DESCRIPTION</td>
+<td>较为完整的说明，这部分最好仔细看看！</td>
+</tr>
+<tr class="even">
+<td>OPTIONS</td>
+<td>针对 SYNOPSIS 部分中，有枚举的所有可用的选项说明</td>
+</tr>
+<tr class="odd">
+<td>COMMANDS</td>
+<td>当这个程序(软件)在运行的时候，可以在此程序(软件)中下达的指令</td>
+</tr>
+<tr class="even">
+<td>FILES</td>
+<td>这个程序或数据所使用或参考或链接到的某些文件</td>
+</tr>
+<tr class="odd">
+<td>SEE ALSO</td>
+<td>可以参考的，跟这个指令或数据有相关的其他说明！</td>
+</tr>
+<tr class="even">
+<td>EXAMPLE</td>
+<td>一些可以参考的范例</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 84%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>按键</th>
+<th>进行工作</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>空白键</td>
+<td>向下翻一页</td>
+</tr>
+<tr class="even">
+<td>[Page Down]</td>
+<td>向下翻一页</td>
+</tr>
+<tr class="odd">
+<td>[Page Up]</td>
+<td>向上翻一页</td>
+</tr>
+<tr class="even">
+<td>[Home]</td>
+<td>去到第一页</td>
+</tr>
+<tr class="odd">
+<td>[End]</td>
+<td>去到最后一页</td>
+</tr>
+<tr class="even">
+<td>/string</td>
+<td>向『下』搜索 string 这个字符串，如果要搜索 vbird 的话，就输入
+/vbird</td>
+</tr>
+<tr class="odd">
+<td>?string</td>
+<td>向『上』搜索 string 这个字符串</td>
+</tr>
+<tr class="even">
+<td>n, N</td>
+<td>利用 / 或 ? 来搜索字符串时，可以用 n 来继续下一个搜索 (不论是 / 或
+?) ，可以利用 N 来进行『反向』搜索。举例来说，我以 /vbird 搜索 vbird
+字符串， 那么可以 n 继续往下查找，用 N 往上查找。若以 ?vbird 向上查找
+vbird 字符串， 那我可以用 n 继续『向上』查找，用 N 反向查找。</td>
+</tr>
+<tr class="odd">
+<td>q</td>
+<td>结束这次的 man page</td>
+</tr>
+</tbody>
+</table>
+<h4 id="搜索特定指令文件的man-page说明文档">搜索特定指令/文件的man
+page说明文档</h4>
+<ol type="1">
+<li>系统中还有哪些跟『man』这个指令有关的说明文档</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[wzx@study ~]$ man -f man</span><br><span class="line">man (1)              - an interface to the on-line reference manuals</span><br><span class="line">man (1p)             - display system documentation</span><br><span class="line">man (7)              - macros to format man pages</span><br><span class="line"></span><br><span class="line">[wzx@study ~]$ man 1 man  &lt;==这里是用 man(1) 的文档数据</span><br><span class="line">[wzx@study ~]$ man 7 man  &lt;==这里是用 man(7) 的文档数据</span><br></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li>找出系统的说明档中，只要有man这个关键字就将该说明列出来</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[wzx@study ~]$ man -k man</span><br><span class="line">fallocate (2)        - manipulate file space</span><br><span class="line">zshall (1)           - the Z shell meta-man page</span><br><span class="line">....(中间省略)....</span><br><span class="line">yum-config-manager (1) - manage yum configuration options and yum repositories</span><br><span class="line">yum-groups-manager (1) - create and edit yum&#x27;s group metadata</span><br><span class="line">yum-utils (1)        - tools for manipulating repositories and extended package managemen</span><br></pre></td></tr></table></figure>
+<ol start="3" type="1">
+<li>man的简略写法</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[wzx@study ~]$ whatis  [指令或者是数据]   &lt;==相当于 man -f [指令或者是数据]</span><br><span class="line">[wzx@study ~]$ apropos [指令或者是数据]   &lt;==相当于 man -k [指令或者是数据]</span><br></pre></td></tr></table></figure>
+<p>要注意的是，这两个特殊指令要能使用，必须要有创建 whatis
+数据库，这个数据库的创建需要以 root 的身份下达如下的指令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@study ~]# mandb</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">旧版的 Linux 这个指令是使用 makewhatis。这一版开始使用 mandb 了。</span></span><br></pre></td></tr></table></figure>
+<h3 id="info-page">info page</h3>
+<p>基本上，info与man的用途其实差不多，都是用来查找指令的用法或者是文件的格式。但是与man
+page一口气输出一堆信息不同的是，info
+page则是将文档数据拆成一个一个的段落，每个段落用自己的页面来撰写，
+并且在各个页面中还有类似网页的『超链接』来跳到各不同的页面中，每个独立的页面也被称为一个节点(node)。</p>
+<p><img src="../images/image-20240629165139183.png" /></p>
+<p>第一行里面的数据意义为：</p>
+<ul>
+<li>File：代表这个info page的数据是来自info.info文件所提供的；</li>
+<li>Node：代表目前的这个页面是属于Top节点。
+意思是info.info内含有很多信息，而Top仅是info.info文件内的一个节点内容而已；</li>
+<li>Next：下一个节点的名称为Getting
+Started，你也可以按『N』到下个节点去；</li>
+<li>Up：回到上一层的节点总揽画面，你也可以按下『U』回到上一层；</li>
+<li>Prev：前一个节点。但由于Top是info.info的第一个节点，所以上面没有前一个节点的信息。</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>按键</th>
+<th>进行工作</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>空白键</td>
+<td>向下翻一页</td>
+</tr>
+<tr class="even">
+<td>[Page Down]</td>
+<td>向下翻一页</td>
+</tr>
+<tr class="odd">
+<td>[Page Up]</td>
+<td>向上翻一页</td>
+</tr>
+<tr class="even">
+<td>[tab]</td>
+<td>在 node 之间移动，有 node 的地方，通常会以 * 显示。</td>
+</tr>
+<tr class="odd">
+<td>[Enter]</td>
+<td>当光标在 node 上面时，按下 Enter 可以进入该 node 。</td>
+</tr>
+<tr class="even">
+<td>b</td>
+<td>移动光标到该 info 画面当中的第一个 node 处</td>
+</tr>
+<tr class="odd">
+<td>e</td>
+<td>移动光标到该 info 画面当中的最后一个 node 处</td>
+</tr>
+<tr class="even">
+<td>n</td>
+<td>前往下一个 node 处</td>
+</tr>
+<tr class="odd">
+<td>p</td>
+<td>前往上一个 node 处</td>
+</tr>
+<tr class="even">
+<td>u</td>
+<td>向上移动一层</td>
+</tr>
+<tr class="odd">
+<td>s(/)</td>
+<td>在 info page 当中进行搜索</td>
+</tr>
+<tr class="even">
+<td>h, ?</td>
+<td>显示求助菜单</td>
+</tr>
+<tr class="odd">
+<td>q</td>
+<td>结束这次的 info page</td>
+</tr>
+</tbody>
+</table>
+<h3 id="总结">总结</h3>
+<ul>
+<li>在终端机模式中，如果你知道某个指令，但却忘记了相关选项与参数，请先善用
+--help 的功能来查找相关信息；</li>
+<li>当有任何你不知道的指令或文件格式，但是你想要了解他，请赶快使用man或者是info来查找。</li>
+<li>而如果你想要架设一些其他的服务，或想要利用一整组软件来达成某项功能时，请赶快到/usr/share/doc
+底下查一查有没有该服务的说明档。</li>
+<li>另外，再次的强调，因为Linux毕竟是外国人发明的，所以中文文档确实是比较少的，但是不要害怕，拿本英文本典在身边吧。</li>
+</ul>
+<h2 id="超简单文书编辑器-nano">超简单文书编辑器： nano</h2>
+<ul>
+<li>[ctrl]-G：取得在线说明(help)，很有用的！</li>
+<li>[ctrl]-X：离开nano软件，若有修改过文件会提示是否需要保存喔！</li>
+<li>[ctrl]-O：保存文件，若你有权限的话就能够保存文件了；</li>
+<li>[ctrl]-R：从其他文件读入数据，可以将某个文件的内容贴在本文件中；</li>
+<li>[ctrl]-W：搜索字符串，这个也是很有帮助的指令喔！</li>
+<li>[ctrl]-C：说明目前光标所在处的行数与列数等信息；</li>
+<li>[ctrl]-_：可以直接输入行号，让光标快速移动到该行；</li>
+<li>[alt]-Y：校正语法功能开启或关闭(按一下开、再按一下关)</li>
+<li>[alt]-M：可以支持鼠标来移动光标的功能</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[wzx@study ~]$ nano text.txt</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">不管text.txt存不存在都没有关系！存在就开启旧档，不存在就开启新档</span></span><br><span class="line">  GNU nano 2.3.1                        File: text.txt                                 </span><br><span class="line">   &lt;==这个是光标所在处</span><br><span class="line">                                  [ New File ]</span><br><span class="line">^G Get Help   ^O WriteOut   ^R Read File  ^Y Prev Page  ^K Cut Text   ^C Cur Pos</span><br><span class="line">^X Exit       ^J Justify    ^W Where Is   ^V Next Page  ^U UnCut Te   ^T To Spell</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上面两行是指令说明列，其中^代表的是[ctrl]的意思</span></span><br></pre></td></tr></table></figure>
+<p>在上述的画面中随便输入许多字，
+输入完毕之后就保存后离开，如下所示：</p>
+<p><img src="../images/image-20240629171303911.png" /></p>
+<h2 id="正确的关机方法">正确的关机方法</h2>
+<ul>
+<li>将数据同步写入硬盘中的指令： sync</li>
+<li>惯用的关机指令： shutdown</li>
+<li>重新开机，关机： reboot, halt, poweroff</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">[wzx@study ~]$ su -   # 这个指令在让你的身份变成 root ！底下请输入 root 的密码！</span><br><span class="line">Password:  # 就这里！请输入安装时你所设置的 root 密码！</span><br><span class="line">Last login: Mon Jun  1 16:10:12 CST 2015 on pts/0</span><br><span class="line">[root@study ~]# sync</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root@study ~]# /sbin/shutdown [-krhc] [时间] [警告消息]</span><br><span class="line">选项与参数：</span><br><span class="line">-k     ： 不要真的关机，只是发送警告消息出去。</span><br><span class="line">-r     ： 在将系统的服务停掉之后就重新开机(常用)</span><br><span class="line">-h     ： 将系统的服务停掉后，立即关机。 (常用)</span><br><span class="line">-c     ： 取消已经在进行的 shutdown 指令内容。</span><br><span class="line">时间   ： 指定系统关机的时间！时间的范例底下会说明。若没有这个项目，则缺省 1 分钟后自动进行。</span><br><span class="line">范例：</span><br><span class="line">[root@study ~]# /sbin/shutdown -h 10 &#x27;I will shutdown after 10 mins&#x27;</span><br><span class="line">Broadcast message from root@study.centos.vbird (Tue 2015-06-02 10:51:34 CST):</span><br><span class="line">I will shutdown after 10 mins</span><br><span class="line">The system is going down for power-off at Tue 2015-06-02 11:01:34 CST</span><br><span class="line"></span><br><span class="line">[root@study ~]# shutdown -h now</span><br><span class="line">立刻关机，其中 now 相当于时间为 0 的状态</span><br><span class="line">[root@study ~]# shutdown -h 20:25</span><br><span class="line">系统在今天的 20:25 分会关机，若在21:25才下达此指令，则隔天才关机</span><br><span class="line">[root@study ~]# shutdown -h +10</span><br><span class="line">系统再过十分钟后自动关机</span><br><span class="line">[root@study ~]# shutdown -r now</span><br><span class="line">系统立刻重新开机</span><br><span class="line">[root@study ~]# shutdown -r +30 &#x27;The system will reboot&#x27; </span><br><span class="line">再过三十分钟系统会重新开机，并显示后面的消息给所有在在线的用户</span><br><span class="line">[root@study ~]# shutdown -k now &#x27;This system will reboot&#x27; </span><br><span class="line">仅发出警告信件的参数，系统并不会关机啦。！</span><br><span class="line"></span><br><span class="line">[root@study ~]# halt      # 系统停止，屏幕可能会保留系统已经停止的消息</span><br><span class="line">[root@study ~]# poweroff  # 系统关机，所以没有提供额外的电力，屏幕空白</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实际使用管理工具 systemctl 关机</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@study ~]# systemctl [指令]</span><br><span class="line">指令项目包括如下：</span><br><span class="line">halt       进入系统停止的模式，屏幕可能会保留一些消息，这与你的电源管理模式有关</span><br><span class="line">poweroff   进入系统关机模式，直接关机没有提供电力喔！</span><br><span class="line">reboot     直接重新开机</span><br><span class="line">suspend    进入休眠模式</span><br><span class="line">[root@study ~]# systemctl reboot    # 系统重新开机</span><br><span class="line">[root@study ~]# systemctl poweroff  # 系统关机</span><br></pre></td></tr></table></figure>
+<h2 id="简答题">简答题</h2>
+<ul>
+<li><p>简单的查找一下，Physical console / Virtual console / Terminal
+的说明为何？</p>
+<p>console 有『控制台』的意思在里面，因此你可以这样看的：</p>
+<ul>
+<li>实体控制台：实体的屏幕、键盘、鼠标等界面，让你可以使用该配备来操作系统的环境，就称为实体控制台
+(Physical console)</li>
+<li>虚拟控制台：由系统衍生出的虚拟控制台，你可以透过该虚拟控制台搭配你自己系统的实体配备，来操作远程系统的环境。每个虚拟控制台都是独立运作的。</li>
+<li>终端机：你可以用该界面来取得一个可以控制系统的 shell 环境。</li>
+</ul>
+<p>由这些定义来看，一般来说，我们取得可以与系统交互的环境，大致上都称为
+terminal 就是了。</p></li>
+<li><p>请问如果我以文本模式登录Linux主机时，我有几个终端机接口可以使用？如何切换各个不同的终端机接口？</p>
+<p>共有六个， tty1 ~ tty6 ，切换的方式为 Ctrl + Alt + [F1]~[F6]</p></li>
+<li><p>在Linux系统中，/VBird与/vbird是否为相同的文件？</p>
+<p>两者为不同的文件，因为 Linux
+系统中，大小写字母代表意义不一样。</p></li>
+<li><p>我想要知道 date 如何使用，应该如何查找？</p>
+<p>最简单的方式就是使用 man date 或 info date
+来查看，如果该套件有完整说明的话，那么应该也可以在 /usr/share/doc
+里面找到说明档。</p></li>
+<li><p>我想要在今天的 1:30 让系统自己关机，要怎么做？</p>
+<p>shutdown -h 1:30</p></li>
+<li><p>如果我 Linux 的 X Window 突然发生问题而挂掉，但 Linux
+本身还是好好的，那么我可以按下哪三个按键来让 X window 重新启动？</p>
+<p>[ctrl]+[alt]+[backspace]</p></li>
+<li><p>我想要知道 2010 年 5 月 2 日是星期几？该怎么做？</p>
+<p>最简单的方式直接使用 cal 5 2010 即可找出 2010 年 5
+月份的月历。</p></li>
+<li><p>使用 man date
+然后找出显示目前的日期与时间的参数，成为类似：2015/10/16-20:03</p>
+<p>date +%Y/%m/%d-%H:%M</p></li>
+<li><p>若以 X-Window 为默认的登录方式，那请问如何进入 虚拟终端？</p>
+<p>可以按下 [Ctrl] + [Alt] + [F2] ~ [F6] 进入 Virtual console ( 共六个
+)； 而按下 [Ctrl] + [Alt] + [F1] 可回到 X-Window 的 desktop
+中。</p></li>
+<li><p>简单说明在 bash shell 的环境下， [tab] 按键的用途？</p>
+<p>[Tab] 按键可做为命令补齐或文件补齐的功能，与所接的指令位置有关。
+接在一串指令的第一个单字后面，则为命令补齐，否则则为文件补齐。
+目前尚有选项/参数补齐的功能。</p></li>
+<li><p>如何强制中断一个程序的进行？(利用按键，非利用 kill 指令)</p>
+<p>可以利用 [Ctrl] + c 来中断。</p></li>
+<li><p>Linux 提供相当多的在线查找，称为 man
+page，请问，我如何知道系统上有多少关于 passwd
+的说明？又，可以使用其他的程序来取代 man 的这个功能吗？</p>
+<p>可以利用 man -f passwd 来查找，另外，如果有提供 info 的文档数据时 (在
+/usr/share/info/ 目录中) ，则能够利用 info passwd 来查找之！</p></li>
+<li><p>在 man 的时候， man page
+显示的内容中，指令(或文件)后面会接一组数字，这个数字若为 1, 5, 8
+，表示该查找的指令(或文件)意义为何？</p>
+<p>代表意义为 1) 一般用户可以使用的指令或可运行文件
+5)一些设置档的文件内容格式 8)系统管理员能够使用的管理指令。</p></li>
+<li><p>man page 显示的内容的文件是放置在哪些目录中？</p>
+<p>放置在 /usr/share/man/ 与 /usr/local/man 等默认目录中。</p></li>
+<li><p>请问这一串指令『 foo1 -foo2 foo3 foo4 』中，各代表什么意义？</p>
+<p>foo1 一定是指令， -foo2 则是 foo1 这个指令的选择项目参数， foo3 与
+foo4 则不一定， 可能是 foo1 的参数设置值，也可能是额外加入的
+parameters。</p></li>
+<li><p>当我输入 man date
+时，在我的终端机却出现一些乱码，请问可能的原因为何？如何修正？</p>
+<p>如果没有其他错误的发生，那么发生乱码可能是因为语系的问题所致。
+可以利用 export LANG=en_US.utf8 或者是 export LC_ALL=en_US.utf8
+等设置来修订这个问题。</p></li>
+<li><p>我输入这个指令『ls -al /vbird』，系统回复我这个结果：『ls:
+/vbird: No such file or directory』 请问发生了什么事？』</p>
+<p>不要紧张，很简单的英文，因为系统根本没有 /vbird 这个文件的存在啊！
+^_^</p></li>
+<li><p>我想知道目前系统有多少指令是以 bz 为开头的，可以怎么作？</p>
+<p>直接输入 bz [tab] [tab] 就可以知道了！</p></li>
+<li><p>承上题，在出现的许多指令中，请问 bzip2 是干嘛用的？</p>
+<p>在使用 man bzip2 之后，可以发现到，其实 bzip2
+是用来作为压缩与解压缩文件用的！</p></li>
+<li><p>在终端机里面登录后，看到的提示字符 $ 与 #
+有何不同？平时操作应该使用哪一个？</p>
+<p># 代表以 root 的身份登录系统，而 $
+则代表一般身份用户。依据提示字符的不同，
+我们可以约略判断登录者身份。一般来说，建议日常操作使用一般身份用户登录，亦即是
+$ 。</p></li>
+<li><p>我使用dmtsai这个帐号登录系统了，请问我能不能使用reboot来重新开机？
+若不能，请说明原因，若可以，请说明指令如何下达？</p>
+<p>理论上reboot仅能让root运行。不过，如果dmtsai是在主机前面以图形接口登录时，则dmtsai还是可以透过图形接口功能来关机。</p></li>
+</ul>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post_share"><div class="social-share" data-image="/images/Avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/Avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">WangZhixuan</div><div class="author-info__description">the Answer to Life, the Universe and Everything is 42.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Striver98"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">考完了！！！！！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A6%96%E6%AC%A1%E7%99%BB%E9%99%86%E4%B8%8E%E5%9C%A8%E7%BA%BF%E6%B1%82%E5%8A%A9"><span class="toc-number">2.</span> <span class="toc-text">首次登陆与在线求助</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E6%AC%A1%E7%99%BB%E9%99%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.1.</span> <span class="toc-text">首次登陆系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F%E4%B8%8B%E5%91%BD%E4%BB%A4%E7%9A%84%E6%89%A7%E8%A1%8C"><span class="toc-number">2.2.</span> <span class="toc-text">命令行模式下命令的执行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="toc-number">2.2.1.</span> <span class="toc-text">开始执行命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">2.2.2.</span> <span class="toc-text">基础命令的操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%A0%E4%B8%AA%E7%83%AD%E9%94%AEtab-ctrl-c-ctrl-d"><span class="toc-number">2.2.3.</span> <span class="toc-text">重要的几个热键[Tab], [ctrl]-c,
+[ctrl]-d</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#tab%E6%8C%89%E9%94%AE%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%A8%E4%B8%8E%E6%96%87%E4%BB%B6%E8%A1%A5%E9%BD%90"><span class="toc-number">2.2.3.1.</span> <span class="toc-text">[Tab]按键：命令补全与文件补齐</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ctrl-c-%E6%8C%89%E9%94%AE%E4%B8%AD%E6%96%AD%E7%9B%AE%E5%89%8D%E7%A8%8B%E5%BA%8F"><span class="toc-number">2.2.3.2.</span> <span class="toc-text">[Ctrl]-c 按键：中断目前程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ctrl-d-%E6%8C%89%E9%94%AE%E9%94%AE%E7%9B%98%E8%BE%93%E5%85%A5%E7%BB%93%E6%9D%9Fend-of-file-eof-%E6%88%96-end-of-input"><span class="toc-number">2.2.3.3.</span> <span class="toc-text">[Ctrl]-d
+按键：键盘输入结束(End Of File, EOF 或 End Of Input)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shiftpageuppage-down%E6%8C%89%E9%94%AE%E4%B8%8A%E4%B8%8B%E7%BF%BB%E9%A1%B5"><span class="toc-number">2.2.3.4.</span> <span class="toc-text">[shift]+{[PageUP]|[Page
+Down]}按键：上下翻页</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9C%A8%E7%BA%BF%E6%B1%82%E5%8A%A9man-page%E4%B8%8Einfo-page"><span class="toc-number">2.3.</span> <span class="toc-text">Linux系统的在线求助man
+page与info page</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%9A%84---help-%E6%B1%82%E5%8A%A9%E8%AF%B4%E6%98%8E"><span class="toc-number">2.3.1.</span> <span class="toc-text">指令的 --help 求助说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#man-page"><span class="toc-number">2.3.2.</span> <span class="toc-text">man page</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E7%89%B9%E5%AE%9A%E6%8C%87%E4%BB%A4%E6%96%87%E4%BB%B6%E7%9A%84man-page%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3"><span class="toc-number">2.3.2.1.</span> <span class="toc-text">搜索特定指令&#x2F;文件的man
+page说明文档</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#info-page"><span class="toc-number">2.3.3.</span> <span class="toc-text">info page</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.3.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B6%85%E7%AE%80%E5%8D%95%E6%96%87%E4%B9%A6%E7%BC%96%E8%BE%91%E5%99%A8-nano"><span class="toc-number">2.4.</span> <span class="toc-text">超简单文书编辑器： nano</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%85%B3%E6%9C%BA%E6%96%B9%E6%B3%95"><span class="toc-number">2.5.</span> <span class="toc-text">正确的关机方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E7%AD%94%E9%A2%98"><span class="toc-number">2.6.</span> <span class="toc-text">简答题</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/b30ceb9f.html" title="Linux学习笔记">Linux学习笔记</a><time datetime="2024-06-29T06:35:48.000Z" title="发表于 2024-06-29 14:35:48">2024-06-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/a3ab63fc.html" title="针对PaddlePaddle的Windows端CUDA安装">针对PaddlePaddle的Windows端CUDA安装</a><time datetime="2024-06-24T09:02:17.000Z" title="发表于 2024-06-24 17:02:17">2024-06-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/f2cbe61d.html" title="大作业：三相有源滤波APF的控制仿真设计">大作业：三相有源滤波APF的控制仿真设计</a><time datetime="2024-06-06T05:07:26.000Z" title="发表于 2024-06-06 13:07:26">2024-06-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/ff8a6906.html" title="计算机接口与通信">计算机接口与通信</a><time datetime="2024-05-26T08:55:37.000Z" title="发表于 2024-05-26 16:55:37">2024-05-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/1dcc5eac.html" title="《传感器与信号调理》期末复习">《传感器与信号调理》期末复习</a><time datetime="2024-05-23T11:44:46.000Z" title="发表于 2024-05-23 19:44:46">2024-05-23</time></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><div id="footer-wrap"><div class="copyright">&copy;2024 By WangZhixuan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.65.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = '7e64242d6520486e98596ea1c6042736';
+  var gaud_map_key = '499bcb8b7888a8f00a3315c6d8c5141b';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>
