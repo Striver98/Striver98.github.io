@@ -42,15 +42,15 @@
     lang   : 'zh-CN'
   };
 </script>
-<!-- ҳ����С���� -->
+<!-- 页面点击小红心 -->
 <script type="text/javascript" src="/js/love.js"></script>
 
-<!-- ���¼��� -->
+<!-- 文章加密 -->
 <script>
     (function(){
         if(''){
-            if (prompt('��������������') !== ''){
-                alert('�������');
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
                 history.back();
             }
         }
@@ -337,7 +337,7 @@
 <span id="times">载入时分秒...</span>
 <script>
     function createtime() {
-        const startTime = '09/27/2018 00:12:55',
+        const startTime = '08/12/2023 00:16:40',
             start = new Date(startTime)
         let mill = new Date() - start,
             seconds = Math.floor(mill / 1000),
