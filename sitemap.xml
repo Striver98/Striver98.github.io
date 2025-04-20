@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://striver98.github.io/about/index.html</loc>
+    
+    <lastmod>2025-04-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://striver98.github.io/link/index.html</loc>
     
     <lastmod>2025-04-20</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://striver98.github.io/tags/index.html</loc>
-    
-    <lastmod>2025-04-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://striver98.github.io/2025/04/20/hello-world/</loc>
     
     <lastmod>2025-04-20</lastmod>
     
@@ -74,20 +74,6 @@
 
   
   <url>
-    <loc>https://striver98.github.io/tags/node-js/</loc>
-    <lastmod>2025-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://striver98.github.io/tags/hexo/</loc>
-    <lastmod>2025-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://striver98.github.io/tags/Python/</loc>
     <lastmod>2025-04-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -109,20 +95,6 @@
   </url>
   
   <url>
-    <loc>https://striver98.github.io/tags/%E8%87%AA%E9%80%82%E5%BA%94%E6%BB%A4%E6%B3%A2/</loc>
-    <lastmod>2025-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://striver98.github.io/tags/%E6%AF%95%E8%AE%BE/</loc>
-    <lastmod>2025-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://striver98.github.io/tags/%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6/</loc>
     <lastmod>2025-04-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -136,24 +108,24 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://striver98.github.io/tags/%E8%87%AA%E9%80%82%E5%BA%94%E6%BB%A4%E6%B3%A2/</loc>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://striver98.github.io/tags/%E6%AF%95%E8%AE%BE/</loc>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
-    <loc>https://striver98.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2025-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://striver98.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
-    <lastmod>2025-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://striver98.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/</loc>
+    <loc>https://striver98.github.io/categories/%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2025-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
