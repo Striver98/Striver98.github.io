@@ -1,0 +1,851 @@
+<html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="计算机双学位操作系统期末考试复习（终于要结束了"><title>操作系统复习笔记
+-
+午夜飞行
+-
+
+个人学习生活记录网站</title><link rel="icon" href="/img/地球.png">
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="stylesheet" href="/css/helpers.css">
+
+<script src="/js/clipboard/clipboard.min.js"></script>
+
+
+<script src="/js/bootstrap.js"></script>
+
+<script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo injector head_end start --><style>
+body hanla:after {
+    content: ' ';
+    display: inline;
+    font-family: inherit;
+    font-size: 0.45em;
+}
+
+html code hanla,
+html pre hanla,
+html kbd hanla,
+html samp hanla,
+html ruby hanla,
+html .tag-list-item hanla {
+    display: none;
+}
+
+html ol > hanla,
+html ul > hanla {
+    display: none;
+}
+</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="午夜飞行" type="application/atom+xml">
+</head><body><div class="loading-wrapper" data-loading="data-loading"><div class="loading"><span></span><span></span><span></span></div></div><div class="page" data-filter="data-filter"><div class="head" data-show="data-show"><header class="head-header"><div class="head-author"><a class="head-author-link" href="/">午夜飞行</a></div><div class="head-right"><button class="bar-wrap" id="bar-wrap-toggle" title="菜单按钮"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button><div class="head-item"><a class="search-button head-item-link"><span>搜索</span>
+<i class="icon icon-search"></i></a></div><div class="head-item"><a class="head-item-link" href="/about">关于</a></div></div></header>
+<div class="menubar-head" id="menubar"><ul class="menubar-ul"><li class="menubar-item"><i class="icon icon-chevron-right"></i>
+<a class="menubar-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li><li class="menubar-item"><i class="icon icon-chevron-right"></i>
+<a class="menubar-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></li><li class="menubar-item" data-border="data-border"></li><li class="menubar-item"><i class="icon icon-archive"></i>
+<a class="menubar-link" href="/archives">博文归档</a></li><li class="menubar-item"><i class="icon icon-tags"></i>
+<a class="menubar-link" href="/tags">标签</a></li><li class="menubar-item" data-border="data-border"></li><li class="menubar-item"><a class="menubar-link" href="/about"><span>关于</span></a></li></ul><div class="menu-search-box search-button"><div>搜索</div>
+<i class="icon icon-search"></i></div></div></div><div class="main" data-page="post"><article class="post" id="post"><header class="post-head"><h1 class="post-title"><a class="title" href="/2025/04/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">操作系统复习笔记<hanla></hanla></a></h1></header><div class="post-meta"><div class="post-date"><time class="post-time" itemprop="datePublished" title="2025-04-21 13:49:07" datetime="2025-04-21T05:49:07.000Z">2025-04-21</time></div>|
+<div class="post-tag"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E4%B8%93%E4%B8%9A/" rel="tag">计算机科学与技术专业</a></li></ul></div>
+<div class="post-visit"><span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span>访问</span></div></div><div class="post-info"><div class="post-word-count">本文共<hanla></hanla>8,920<hanla></hanla>字。</div>
+<div class="post-cc">版权声明：署名-非商业性使用-相同方式共享
+
+|
+<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/2.5/cn/">CC BY-NC-SA 2.5 CN</a></div></div><div class="article-entry" itemprop="articleBody"><p><img src="https://cdn.jsdelivr.net/gh/Striver98/Pictures@master/img/image-20250421164340086.png" alt="操作系统课程总览"></p>
+<h1 id="第1章-操作系统基础知识"><a href="#第1章-操作系统基础知识" class="headerlink" title="第1章 操作系统基础知识"></a>第<hanla></hanla>1<hanla></hanla>章 操作系统基础知识</h1><h2 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h2><p><strong>请简述计算机从开机到操作系统完全启动的基本过程？</strong></p>
+<p>OS<hanla></hanla>的引导过程（滚雪球方式）：</p>
+<ol>
+<li>初始引导<ul>
+<li>系统加电</li>
+<li>执行初始引导程序，对系统硬件和配置进行自检，保证系统没有硬件错误</li>
+<li>从硬盘中读入操作系统引导程序，并将控制权交给该程序模块</li>
+</ul>
+</li>
+<li>引导程序执行：将操作系统核心文件读入内存，并将控制交给核心的初始化程序。</li>
+<li>内核初始化，初始化系统数据结构及参数<ul>
+<li>系统加电建立进程有关的数据结构 ；</li>
+<li>获得自由存储空间的容量，建立存储管理的数据结构 ；</li>
+<li>建立系统设备和文件系统的数据结构 ；</li>
+<li>初始化时钟。</li>
+</ul>
+</li>
+<li>系统初始化<ul>
+<li>完善<hanla></hanla>OS<hanla></hanla>的操作环境，装载命令处理程序 (或图形用户界面)，并初始化；</li>
+<li>在多用户系统中，为每个终端建立命令解释进程，使系统处于命令接收状态。</li>
+</ul>
+</li>
+</ol>
+<p>OS<hanla></hanla>的启动流程：</p>
+<ol>
+<li><p>引导加载程序加载<hanla></hanla>OS<hanla></hanla>内核到内存中。</p>
+</li>
+<li><p>内核初始化：OS<hanla></hanla>内核进行一系列的初始化操作，如硬件设备检查，加载驱动，内存管理等。</p>
+</li>
+<li><p>内核启动<hanla></hanla>init<hanla></hanla>进程：内核初始化完成后，会启动<hanla></hanla>init<hanla></hanla>进程（在<hanla></hanla>Linux<hanla></hanla>中）或<hanla></hanla>systemd<hanla></hanla>进程，该进程是所有其他用户进程的父进程。</p>
+</li>
+<li><p>用户空间程序启动：init<hanla></hanla>进程根据系统的配置，启动一系列的用户空间程序，如<hanla></hanla>Shell，图形界面等。</p>
+</li>
+</ol>
+<p><strong>什么是引导扇区（Boot Sector）？它在操作系统的启动过程中起什么作用？</strong></p>
+<p><strong>引导扇区（Boot Sector）</strong> 是计算机存储设备（如硬盘、U<hanla></hanla>盘等）上用于启动操作系统的关键数据区域，通常占据设备的第一个物理扇区（512<hanla></hanla>字节）。它在操作系统的启动过程中扮演<hanla></hanla>“启动链”<hanla></hanla>的第一环角色，负责将控制权从 BIOS/UEFI 传递给更复杂的引导加载程序（Boot Loader）。</p>
+<p><strong>请描述一个程序从点击图标到完全运行的典型执行流程</strong>？</p>
+<ol>
+<li><p><strong>加载：</strong> 当启动一个程序时，由<hanla></hanla>OS<hanla></hanla>的加载器将该程序的可执行文件加载到内存中。</p>
+</li>
+<li><p><strong>运行：</strong> OS<hanla></hanla>创建一个新的进程，并将<hanla></hanla>CPU<hanla></hanla>的控制权交给该进程。该新进程开始执行加载到内存中的程序代码。</p>
+</li>
+<li><p><strong>系统调用：</strong> 当程序需要进行一些特权操作（如读写文件，发送网络数据等）时，它将发起系统调用。</p>
+</li>
+<li><p><strong>中断和信号：</strong> 程序的执行可能会被中断和信号打断。中断通常是由硬件事件触发的，如<hanla></hanla>I/O<hanla></hanla>操作的完成，定时器的超时等。信号则是一种软件中断，可以由其他进程或者内核发送。</p>
+</li>
+<li><p><strong>退出：</strong> 当程序执行完成或者由于某种原因需要停止时，它将执行退出操作，包括释放资源，关闭打开的文件，通知父进程等。</p>
+</li>
+</ol>
+<h2 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h2><p>在脱机批处理方式中，有一台负责与外部设备交换信息的计算机，一般称之为<hanla></hanla>_____。  </p>
+<p> A．终端处理机            <strong>B．外围处理机</strong>  </p>
+<p> C．客户机                   D．服务处理机 </p>
+<p>在计算机系统中，操作系统是<hanla></hanla>_____。   </p>
+<p>A. 一般应用软件 	     <strong>B. 核心系统软件</strong>    </p>
+<p>C. 用户应用软件           D. 硬件</p>
+<p>实时操作系统必须在<hanla></hanla>_____<hanla></hanla>内处理来自外部的事件。</p>
+<p>A.<hanla></hanla>时间片                 B.<hanla></hanla>周转时间</p>
+<p><strong>C.<hanla></hanla>被控制对象规定时间</strong>     D.<hanla></hanla>一个机器周期</p>
+<p>在设计实时操作系统时，不重点考虑的是<hanla></hanla>______。</p>
+<p> A．及时响应，快速处理    B．有高安全性</p>
+<p> <strong>C．提高系统资源的利用率</strong>  D．有高可靠性</p>
+<p>下述关于并发性的叙述中正确的是<hanla></hanla>_____。</p>
+<p>A.<hanla></hanla>并发性是指若干事件在不同时间间隔内发生</p>
+<p><strong>B.<hanla></hanla>并发性是指若干事件在同一时间间隔内发生</strong></p>
+<p>C.<hanla></hanla>并发性是指若干事件在不同时刻发生</p>
+<p>D.<hanla></hanla>并发性是指若干事件在同一时刻发生</p>
+<p>分时系统追求的目标是<hanla></hanla>_____。</p>
+<p><strong>A.<hanla></hanla>快速响应用户</strong>  B.<hanla></hanla>充分利用<hanla></hanla>I/O<hanla></hanla>设备</p>
+<p>C.<hanla></hanla>充分利用内存  D.<hanla></hanla>提供系统吞吐率</p>
+<p>一个多道批处理系统，提高了计算机系统的资源利用率，同时<hanla></hanla>_____。</p>
+<p>A. 减少各个作业的执行时间</p>
+<p><strong>B. 增加了单位时间内作业的吞吐量</strong></p>
+<p>C. 减少了部分作业的执行时间</p>
+<p>D. 减少单位时间内作业的吞吐量</p>
+<p>批处理系统的主要缺点是<hanla></hanla>_____。</p>
+<p><strong>A. 无交互能力</strong>       B. 系统吞吐量小</p>
+<p>C. 资源利用率低     D. CPU<hanla></hanla>利用率不高</p>
+<p>从用户的观点看，操作系统是<hanla></hanla>_____。</p>
+<p>A.<hanla></hanla>合理地组织计算机工作流程的软件</p>
+<p>B. 由若干层次的程序按一定的结构组成的有机体</p>
+<p>C. 控制和管理计算机资源的软件</p>
+<p><strong>D.<hanla></hanla>用户与计算机之间的接口</strong></p>
+<p>所谓<hanla></hanla>_____<hanla></hanla>是指将一个以上的作业放入内存，并且同时处于运行状态，这些作业共享处理机的时间和外围设备等资源。</p>
+<p><strong>A.<hanla></hanla>多道程序设计</strong>    B.<hanla></hanla>多重处理</p>
+<p>C.<hanla></hanla>共行执行        D.<hanla></hanla>实时处理</p>
+<p>操作系统中最基本的两个特征是<hanla></hanla>_____。</p>
+<p>A. 虚拟和不确定   B.<hanla></hanla>共享和虚拟</p>
+<p><strong>C. 并发和共享</strong>     D.<hanla></hanla>并发和不确定</p>
+<h1 id="第2章-操作系统的运行环境和运行机制"><a href="#第2章-操作系统的运行环境和运行机制" class="headerlink" title="第2章 操作系统的运行环境和运行机制"></a>第<hanla></hanla>2<hanla></hanla>章 操作系统的运行环境和运行机制</h1><h2 id="练习题-1"><a href="#练习题-1" class="headerlink" title="练习题"></a>练习题</h2><p><strong>从应用程序的视角来看，异常和中断的区别是什么？</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>特征</strong></th>
+<th align="center"><strong>异常</strong></th>
+<th align="center"><strong>中断</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>触发源</strong></td>
+<td align="center">程序自身</td>
+<td align="center">外部硬件或定时器</td>
+</tr>
+<tr>
+<td align="center"><strong>同步<hanla></hanla>/<hanla></hanla>异步</strong></td>
+<td align="center">同步（由指令触发）</td>
+<td align="center">异步（随机发生）</td>
+</tr>
+<tr>
+<td align="center"><strong>应用程序感知</strong></td>
+<td align="center">直接感知，可能导致崩溃或信号处理</td>
+<td align="center">间接感知（如通过系统调用返回结果）</td>
+</tr>
+<tr>
+<td align="center"><strong>处理方式</strong></td>
+<td align="center">需显式处理（如捕获异常）</td>
+<td align="center">由操作系统透明处理</td>
+</tr>
+</tbody></table>
+<p>从应用程序的角度来看，<strong>异常是程序自身执行过程中的<hanla></hanla>“事故”</strong>，需要主动处理或修复；<strong>中断是外部事件的<hanla></hanla>“通知”</strong>，由操作系统代为处理，对程序透明。</p>
+<p><strong>在发生<hanla></hanla>CPU<hanla></hanla>的特权级切换时，CPU<hanla></hanla>会自动保存当前的执行状态，包括程序计器<hanla></hanla>(PC)、栈指针<hanla></hanla>(Stack Pointer, SP)<hanla></hanla>等。请分析：如果不保存<hanla></hanla>PC<hanla></hanla>和<hanla></hanla>SP，会出现什么问题？</strong></p>
+<ol>
+<li><strong>无法返回原执行流</strong>：PC 记录了下一条要执行的指令地址。如果切换特权级时未保存 PC，<strong>CPU 将无法知道中断<hanla></hanla>/<hanla></hanla>异常处理完成后应该返回到哪里继续执行</strong>。程序会跳转到错误的地址，导致执行流程混乱（例如执行随机指令、死循环或崩溃）。</li>
+<li><strong>栈数据破坏与内存安全风险</strong>：SP 指向当前栈的顶部，保存了函数的返回地址、局部变量和寄存器状态。若未保存 SP，<strong>切换特权级时会使用错误的栈空间</strong>。</li>
+<li><strong>特权级隔离失效</strong>：用户程序可能通过未隔离的 SP 或 PC 篡改内核栈或代码，引发安全漏洞（如提权攻击）。内核操作可能因用户态数据干扰而崩溃。</li>
+<li><strong>多任务调度失效</strong>：在多任务系统中，进程切换依赖保存的 PC 和 SP 以恢复执行现场。若未保存 PC 和 SP，进程切换后无法恢复原执行状态，导致多任务调度完全失效，系统只能运行单一任务。</li>
+</ol>
+<p><strong>系统调用和库函数或<hanla></hanla>API<hanla></hanla>之间是什么关系？</strong></p>
+<p>系统调用、库函数和<hanla></hanla>API<hanla></hanla>之间的关系可以理解为<strong>不同层次的接口封装</strong>，三者协作实现用户程序与操作系统之间的交互。系统调用是<strong>操作系统内核提供的底层接口</strong>，允许用户程序（运行在用户态）请求内核（运行在内核态）执行特权操作，例如文件读写、进程创建、网络通信等。库函数是<strong>封装在用户态库中的函数</strong>，例如<hanla></hanla>C<hanla></hanla>标准库（<code>libc</code>）、数学库（<code>libm</code>）等。它们可能直接执行用户态操作，也可能间接调用系统调用。API<hanla></hanla>是<strong>一组预定义的接口规范</strong>，用于定义程序与外部系统（如操作系统、库、服务）的交互方式。</p>
+<p><strong>层级结构</strong>：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">+-----------------+</span><br><span class="line">|  应用程序代码    | → 调用库函数或<hanla></hanla>API</span><br><span class="line">+-----------------+</span><br><span class="line">        ↓</span><br><span class="line">+-----------------+</span><br><span class="line">| 库函数<hanla></hanla>/API       | → 可能封装系统调用<hanla></hanla></span><br><span class="line">+-----------------+</span><br><span class="line">        ↓</span><br><span class="line">+-----------------+</span><br><span class="line">| 系统调用         | → 进入内核执行特权操作<hanla></hanla></span><br><span class="line">+-----------------+</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong><hanla></hanla>示例对比</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>操作</strong></th>
+<th align="center"><strong>系统调用</strong></th>
+<th align="center"><strong>库函数<hanla></hanla>/API</strong></th>
+<th align="center"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">输出字符串</td>
+<td align="center"><code>write()</code></td>
+<td align="center"><code>printf()</code></td>
+<td align="center"><code>printf()</code><hanla></hanla>封装了 <code>write()</code></td>
+</tr>
+<tr>
+<td align="center">创建进程</td>
+<td align="center"><code>fork()</code></td>
+<td align="center"><code>pthread_create()</code></td>
+<td align="center">线程库可能调用 <code>clone()</code>（系统调用）</td>
+</tr>
+<tr>
+<td align="center">获取时间</td>
+<td align="center"><code>gettimeofday()</code></td>
+<td align="center"><code>time()</code>（C<hanla></hanla>标准库）</td>
+<td align="center"><code>time()</code><hanla></hanla>可能直接调用系统调用</td>
+</tr>
+<tr>
+<td align="center">数学运算</td>
+<td align="center">无</td>
+<td align="center"><code>sqrt()</code>（数学库）</td>
+<td align="center">纯用户态计算，无需内核交互</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>系统调用</strong>是操作系统的底层入口，需特权级切换。</li>
+<li><strong>库函数<hanla></hanla>/API</strong><hanla></hanla>是更高层次的封装，可能间接调用系统调用，也可能独立运行于用户态。</li>
+<li><strong>关系</strong>：API<hanla></hanla>和库函数是对系统调用的抽象和扩展，目的是简化开发、增强功能、提高可移植性。</li>
+</ul>
+<p><strong>操作系统提供的系统调用有哪几种参数传递的方法</strong>？</p>
+<ol>
+<li>寄存器传递：将参数直接存放在<hanla></hanla><strong>CPU<hanla></hanla>寄存器</strong>中，系统调用处理程序从寄存器中读取参数。</li>
+<li>内存块传递：将参数存储在<strong>用户空间的内存缓冲区</strong>中，通过寄存器传递缓冲区的<strong>地址和长度</strong>，内核通过该地址读取数据。</li>
+<li>结构体指针传递：将多个参数打包为<strong>结构体</strong>，通过寄存器传递结构体的<strong>指针</strong>，内核解析结构体内容。</li>
+<li>堆栈传递：将参数压入<strong>用户态堆栈</strong>，内核通过栈指针读取参数。</li>
+</ol>
+<p><strong>请解释说明系统调用机制涉及的概念：访管指令、系统调用号、参数传递、系统调用表、系统调用实现函数。</strong></p>
+<ol>
+<li>访管指令：访管指令是<strong>用户态程序主动触发内核态执行的<hanla></hanla>CPU<hanla></hanla>指令</strong>，用于请求操作系统服务。它引发一个软中断（或异常），使<hanla></hanla>CPU<hanla></hanla>切换到特权模式（内核态）。</li>
+<li>系统调用好：每个系统调用在内核中对应<strong>唯一的数字编号</strong>，用于标识请求的服务类型。</li>
+<li>参数传递：用户程序向内核传递系统调用所需的<strong>输入参数</strong>（如文件路径、缓冲区地址等）。</li>
+<li>系统调用表：内核中维护的<strong>函数指针数组</strong>，每个条目对应一个系统调用的实现函数。</li>
+<li>系统调用实现函数：内核中实际执行系统调用操作的<strong>函数</strong>，完成用户请求的服务。</li>
+</ol>
+<h2 id="选择题-1"><a href="#选择题-1" class="headerlink" title="选择题"></a>选择题</h2><p>操作系统提供给编程人员的接口是<hanla></hanla>_____。</p>
+<p><strong>A.<hanla></hanla>系统调用</strong>      B.<hanla></hanla>子程序</p>
+<p>C.<hanla></hanla>库函数         D.<hanla></hanla>高级语言</p>
+<h1 id="第3章-进程线程模型"><a href="#第3章-进程线程模型" class="headerlink" title="第3章 进程线程模型"></a>第<hanla></hanla>3<hanla></hanla>章 进程线程模型</h1><h2 id="练习题-2"><a href="#练习题-2" class="headerlink" title="练习题"></a>练习题</h2><p><strong>当使用<hanla></hanla>fork()<hanla></hanla>操作创建新进程时，父进程和子进程之间会共享以下哪种状态？</strong><br>1.<hanla></hanla>堆栈	2.<hanla></hanla>堆	<strong>3.<hanla></hanla>共享内存段</strong></p>
+<p><strong>内核在进程间执行上下文切换时采取的主要操作步骤？</strong></p>
+<ol>
+<li><p>触发切换<br>• 由中断<hanla></hanla>/<hanla></hanla>异常（如时间片耗尽、I/O<hanla></hanla>请求）或主动系统调用（如<hanla></hanla>sleep()）引发</p>
+</li>
+<li><p>保存当前上下文<br>• 将当前进程的<hanla></hanla>CPU<hanla></hanla>状态存入其进程控制块<hanla></hanla>(PCB)：  </p>
+<p>  ✓ 所有寄存器（通用寄存器、程序计数器<hanla></hanla>PC、栈指针<hanla></hanla>SP）<br>  ✓ 内存管理信息（页表基址寄存器）<br>  ✓ 浮点寄存器状态<br>  ✓ 特殊功能寄存器</p>
+</li>
+<li><p>切换至内核态<br>• 提升<hanla></hanla>CPU<hanla></hanla>特权级别到内核模式，使用内核栈进行后续操作</p>
+</li>
+<li><p>执行调度程序<br>• 通过调度算法选择下一个要运行的进程</p>
+</li>
+<li><p>更新内存管理单元<br>• 切换新进程的地址空间（页表基址寄存器更新）  </p>
+<p>• 必要时刷新<hanla></hanla>TLB（Translation Lookaside Buffer）</p>
+</li>
+<li><p>恢复新进程上下文<br>• 从新进程的<hanla></hanla>PCB<hanla></hanla>加载保存的寄存器状态  </p>
+<p>• 恢复程序计数器、栈指针等关键寄存器</p>
+</li>
+<li><p>切换用户空间<br>• 降低<hanla></hanla>CPU<hanla></hanla>特权级别到用户模式  </p>
+<p>• 开始执行新进程的代码</p>
+</li>
+</ol>
+<p><strong>用户级线程与内核级线程的两个主要区别及其适用场景？</strong></p>
+<p><strong>区别 1：管理主体与内核感知</strong></p>
+<ul>
+<li><strong>用户级线程</strong><br>✓ 由用户空间的线程库（如 POSIX Pthreads）管理<br>✓ 内核无法感知线程存在，仅看到单进程</li>
+<li><strong>内核级线程</strong><br>✓ 由操作系统内核直接管理<br>✓ 每个线程在内核有独立的数据结构（如 Linux 的 task_struct）</li>
+</ul>
+<p><strong>区别 2：阻塞与并行性</strong></p>
+<ul>
+<li><strong>用户级线程</strong><br>✓ 单个线程阻塞（如 I/O 操作）会导致整个进程阻塞<br>✓ 无法利用多核 CPU 的并行性（所有线程绑定到单一内核线程）</li>
+<li><strong>内核级线程</strong><br>✓ 单个线程阻塞不影响其他线程执行<br>✓ 支持多核并行调度（不同线程可分配到不同 CPU 核心）</li>
+</ul>
+<hr>
+<p><strong>适用场景对比</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>用户级线程更优的场景</strong></th>
+<th align="center"><strong>内核级线程更优的场景</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">需要极速线程切换（无内核态切换开销）</td>
+<td align="center">需要多核并行计算（如科学计算、视频渲染）</td>
+</tr>
+<tr>
+<td align="center">大规模轻量级线程（如百万级连接处理）</td>
+<td align="center">涉及频繁阻塞操作（如文件<hanla></hanla>I/O<hanla></hanla>密集型任务）</td>
+</tr>
+<tr>
+<td align="center">跨平台移植性要求高（不依赖<hanla></hanla>OS<hanla></hanla>支持）</td>
+<td align="center">需要实时响应调度（如嵌入式系统控制）</td>
+</tr>
+</tbody></table>
+<h2 id="选择题-2"><a href="#选择题-2" class="headerlink" title="选择题"></a>选择题</h2><p>对进程的管理和控制使用<hanla></hanla>_____。</p>
+<p>A. 指令         B. 信号量</p>
+<p><strong>C. 原语</strong>         D. 信箱</p>
+<p>分配到必要的资源并获得处理机时的进程状态是<hanla></hanla>_____。</p>
+<p>A. 就绪状态        B.<hanla></hanla>撤消状态</p>
+<p><strong>C. 执行状态</strong>         D.<hanla></hanla>阻塞状态</p>
+<p>下列进程状态变化中，_____<hanla></hanla>变化是不可能发生的。</p>
+<p>A.<hanla></hanla>等待→就绪     <strong>B.<hanla></hanla>等待→运行</strong></p>
+<p>C.<hanla></hanla>运行→等待     D.<hanla></hanla>运行→就绪</p>
+<p>当<hanla></hanla>_____<hanla></hanla>时，进程从执行状态转变为就绪状态。</p>
+<p>A.<hanla></hanla>等待的事件发生    <strong>B.<hanla></hanla>时间片到</strong></p>
+<p>C. 等待某一事件      D.<hanla></hanla>进程被调度程序选中</p>
+<p>下面对进程的描述中，错误的是<hanla></hanla>_____。</p>
+<p>A.<hanla></hanla>进程是有生命期的  B. 进程执行需要处理机</p>
+<p><strong>C.<hanla></hanla>进程是指令的集合</strong>  D.<hanla></hanla>进程是动态的概念</p>
+<p>如果系统中有<hanla></hanla>n<hanla></hanla>个进程，则就绪队列中进程的个数最多为<hanla></hanla>_____。</p>
+<p>A. n      B. 1      <strong>C. n-1</strong>    D. n+1</p>
+<p>操作系统通过<hanla></hanla>_____<hanla></hanla>对进程进行管理。</p>
+<p>A. JCB     <strong>B. PCB</strong></p>
+<p>C. DCT    D. CHCT</p>
+<p>下面所述步骤中，_____<hanla></hanla>不是创建进程所必需的。</p>
+<p>A.<hanla></hanla>建立一个进程控制块</p>
+<p>B.<hanla></hanla>为进程分配内存</p>
+<p>C. 将进程控制块链入就绪队列</p>
+<p><strong>D.<hanla></hanla>由调度程序为进程分配<hanla></hanla>CPU</strong></p>
+<p>下述哪一个选项，体现了原语的主要特点<hanla></hanla>_____。</p>
+<p>A. 并发性      B. 异步性</p>
+<p><strong>C.<hanla></hanla>不可分割性</strong>    D.<hanla></hanla>共享性</p>
+<p>下面对父进程和子进程的叙述不正确的是<hanla></hanla>_____。</p>
+<p>A. 撤消父进程之时，可以同时撤消其子进程</p>
+<p>B. 父进程和子进程之间可以并发</p>
+<p>C. 父进程可以等待所有子进程结束后再执行</p>
+<p><strong>D.<hanla></hanla>父进程创建了子进程，因此父进程执行完了子进程才能运行</strong></p>
+<p>下列几种关于进程的叙述中，最不符合操作系统对进程理解的是<hanla></hanla>_____。</p>
+<p>  <strong>A．进程是在多程序并行环境中的完整的程序</strong></p>
+<p>  B．进程可以由程序，数据和进程控制块描述</p>
+<p>  C．线程<hanla></hanla>(Thread)<hanla></hanla>是一种特殊的进程</p>
+<p>  D．进程是程序在一个数据集合上运行的过程，是系统进行资源分配和调度的一个独立单位</p>
+<p>当一个进程处于<hanla></hanla>_____<hanla></hanla>的状态时，称其为等待状态</p>
+<p>  A．它正等待调度</p>
+<p>  <strong>B．它正等着协作进程的一个消息</strong></p>
+<p>  C．它正等分给它一个时间片</p>
+<p>  D．它正等进入内存</p>
+<p>进程从执行状态到阻塞状态可能是由于<hanla></hanla>_____ 。</p>
+<p>  A．进程调度程序的调度</p>
+<p>  B．现运行进程的时间片用完</p>
+<p>  <strong>C．现运行进程执行了<hanla></hanla>P<hanla></hanla>操作</strong></p>
+<p>  D．现运行进程执行了<hanla></hanla>V<hanla></hanla>操作</p>
+<p>一个进程被唤醒意味着<hanla></hanla>_____ 。</p>
+<p>  A．该进程重新占有了<hanla></hanla>CPU</p>
+<p>  <strong>B．进程状态变为就绪</strong> </p>
+<p>  C．它的优先权变为最大</p>
+<p>  D．其<hanla></hanla>PCB<hanla></hanla>移至就绪队列的队首</p>
+<p>一个进程基本状态可以从其他两种基本状态转变过来 ，这个基本状态是<hanla></hanla>_____。</p>
+<p>  A．执行状态    B．阻塞状态</p>
+<p>  <strong>C．就绪状态</strong>    D．撤销状态</p>
+<p>设系统中有<hanla></hanla>n（n&gt;2）个进程，且当前不在执行进程调度程序，试考虑下述<hanla></hanla>4<hanla></hanla>种情况：</p>
+<ol>
+<li><p>有<hanla></hanla>1<hanla></hanla>个运行进程，n-1<hanla></hanla>个就绪进程，没有进程处于等待状态。</p>
+</li>
+<li><p>有<hanla></hanla>1<hanla></hanla>个运行进程，没有就绪进程，n-1<hanla></hanla>进程处于等待状态。</p>
+</li>
+<li><p>有<hanla></hanla>1<hanla></hanla>个运行进程，有<hanla></hanla>1<hanla></hanla>个就绪进程，n-2<hanla></hanla>进程处于等待状态。</p>
+</li>
+<li><p><strong>没有运行进程，有<hanla></hanla>2<hanla></hanla>个就绪进程，n<hanla></hanla>个进程处于等待状态</strong></p>
+</li>
+</ol>
+<p>  上述情况中，不可能发生的情况是<hanla></hanla>_____。</p>
+<p>下面关于进程的叙述中，不正确的有 _____ 条。2</p>
+<p><strong>① 进程申请<hanla></hanla>CPU<hanla></hanla>得不到满足时，其状态变为等待状态。</strong></p>
+<p>② 在单<hanla></hanla>CPU<hanla></hanla>系统中，任一时刻都有一个进程处于运行状态。</p>
+<p><strong>③ 优先级是进行进程调度的重要依据，一旦确定不能改变。</strong></p>
+<p>④ 进程获得处理机而运行是通过调度而实现的。</p>
+<p>下列选项中，导致创建新进程的操作是   。</p>
+<p> Ⅰ 用户登录成功   Ⅱ 设备分配</p>
+<p> Ⅲ 启动程序执行</p>
+<p>A.<hanla></hanla>仅Ⅰ和Ⅱ B.<hanla></hanla>仅Ⅱ和Ⅲ</p>
+<p><strong>C.<hanla></hanla>仅Ⅰ和Ⅲ</strong> D.Ⅰ、Ⅱ、Ⅲ</p>
+<p>下列选项中，在用户态执行的是<hanla></hanla>____。</p>
+<p>  <strong>A、命令解释程序</strong> B、缺页处理程序</p>
+<p>  C、进程调度程序 D、时钟中断处理程序</p>
+<p>下列选项中，不可能在用户态发生的事件是（）。</p>
+<p>  A．系统调用    B. 外部中断</p>
+<p>  <strong>C. 进程切换</strong>     D. 缺页      </p>
+<h1 id="第4章-进程线程调度"><a href="#第4章-进程线程调度" class="headerlink" title="第4章 进程线程调度"></a>第<hanla></hanla>4<hanla></hanla>章 进程线程调度</h1><h2 id="练习题-3"><a href="#练习题-3" class="headerlink" title="练习题"></a>练习题</h2><p><strong>解释抢占式调度（preemptive scheduling）和非抢占式调度（nonpreemptive scheduling）的区别。</strong></p>
+<p><strong>1. 抢占式调度（Preemptive Scheduling）</strong></p>
+<ul>
+<li><strong>定义</strong>：操作系统可以在<strong>任意时刻</strong>中断当前运行的进程，将<hanla></hanla>CPU<hanla></hanla>分配给其他更高优先级或更紧急的进程。</li>
+<li>特点：<ul>
+<li>进程<strong>不需要主动释放<hanla></hanla>CPU</strong>，调度程序强制剥夺其执行权。</li>
+<li>适用于<strong>分时系统</strong>、实时系统等需要快速响应的场景。</li>
+</ul>
+</li>
+<li>触发条件：<ul>
+<li>时间片用完（如<hanla></hanla>RR<hanla></hanla>轮转调度）。</li>
+<li>更高优先级进程就绪（如优先级调度）。</li>
+<li>中断或系统调用导致内核态切换时可能触发调度。</li>
+</ul>
+</li>
+<li><strong>优点</strong>：公平性高、响应快，避免单一进程长期独占<hanla></hanla>CPU。</li>
+<li><strong>缺点</strong>：上下文切换开销较大。</li>
+</ul>
+<p><strong>2. 非抢占式调度（Nonpreemptive Scheduling）</strong></p>
+<ul>
+<li><strong>定义</strong>：进程<strong>主动释放<hanla></hanla>CPU</strong><hanla></hanla>后才会发生调度（如等待<hanla></hanla>I/O、执行完毕或主动调用<hanla></hanla><code>yield()</code>）。</li>
+<li>特点：<ul>
+<li>进程一旦获得<hanla></hanla>CPU，除非自身阻塞或终止，否则不会被强制中断。</li>
+<li>常见于批处理系统或简单嵌入式系统。</li>
+</ul>
+</li>
+<li>触发条件：<ul>
+<li>进程执行完毕。</li>
+<li>进程主动阻塞（如等待资源）。</li>
+<li>进程调用<hanla></hanla><code>exit()</code><hanla></hanla>终止。</li>
+</ul>
+</li>
+<li><strong>优点</strong>：上下文切换少，系统开销低。</li>
+<li><strong>缺点</strong>：可能导致长进程垄断<hanla></hanla>CPU，降低交互性。</li>
+</ul>
+<h4 id="关键区别总结"><a href="#关键区别总结" class="headerlink" title="关键区别总结"></a><strong>关键区别总结</strong></h4><table>
+<thead>
+<tr>
+<th align="center"><strong>对比维度</strong></th>
+<th align="center"><strong>抢占式调度</strong></th>
+<th align="center"><strong>非抢占式调度</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>控制权归属</strong></td>
+<td align="center">操作系统强制剥夺<hanla></hanla>CPU</td>
+<td align="center">进程主动释放<hanla></hanla>CPU</td>
+</tr>
+<tr>
+<td align="center"><strong>响应速度</strong></td>
+<td align="center">高（适合交互式系统）</td>
+<td align="center">低（适合批处理任务）</td>
+</tr>
+<tr>
+<td align="center"><strong>典型场景</strong></td>
+<td align="center">分时系统、实时<hanla></hanla>OS</td>
+<td align="center">批处理系统、简单任务调度</td>
+</tr>
+<tr>
+<td align="center"><strong>实现复杂度</strong></td>
+<td align="center">高（需处理中断、上下文保存）</td>
+<td align="center">低（仅需简单队列管理）</td>
+</tr>
+</tbody></table>
+<p><strong>在<hanla></hanla>RR<hanla></hanla>策略的设计实现中，通常会维护一个运行队列，队列中的元素是对任务的引用（指针），每次被调度的任务会运行固定长度的时间片。如果在实施<hanla></hanla>RR<hanla></hanla>策略的队列中加入一个功能，可以在该任务的后面插入多个对同一任务的引用，那么这样的设计会带来什么样的影响？这样的设计使得<hanla></hanla>RR<hanla></hanla>策略与什么类型的调度相似？</strong></p>
+<p>在标准<hanla></hanla>**RR（Round-Robin，轮转调度）**<hanla></hanla>策略中：</p>
+<ol>
+<li>所有就绪任务按<hanla></hanla><strong>FIFO<hanla></hanla>顺序</strong>排列在一个队列中。</li>
+<li>每个任务执行<hanla></hanla>**<hanla></hanla>固定时间片（time quantum）**<hanla></hanla>后，被移回队列尾部。</li>
+<li>公平性：每个任务获得<strong>均等的<hanla></hanla>CPU<hanla></hanla>时间份额</strong>。</li>
+</ol>
+<p>若在<hanla></hanla>RR<hanla></hanla>队列中<strong>允许对同一任务插入多个引用</strong>（即同一任务在队列中出现多次），会产生以下影响：</p>
+<p><strong>1）任务获得的<hanla></hanla>CPU<hanla></hanla>时间增加</strong></p>
+<ul>
+<li>原理：任务在队列中的引用次数越多，被调度的概率越高。<ul>
+<li>例如：任务<hanla></hanla>A<hanla></hanla>有<hanla></hanla>3<hanla></hanla>个引用，任务<hanla></hanla>B<hanla></hanla>有<hanla></hanla>1<hanla></hanla>个引用 → A<hanla></hanla>的<hanla></hanla>CPU<hanla></hanla>时间约为<hanla></hanla>B<hanla></hanla>的<hanla></hanla>3<hanla></hanla>倍。</li>
+</ul>
+</li>
+<li>效果：<ul>
+<li><strong>优点</strong>：可为高优先级任务分配更多资源（类似优先级调度）。</li>
+<li><strong>缺点</strong>：破坏<hanla></hanla>RR<hanla></hanla>的公平性，低引用任务可能<hanla></hanla>“饥饿”（Starvation）。</li>
+</ul>
+</li>
+</ul>
+<p><strong>（2）调度行为趋近于优先级调度</strong></p>
+<ul>
+<li><p>动态优先级模拟：通过调整任务的引用次数，间接实现优先级控制。</p>
+<ul>
+<li>例如：后台任务保持<hanla></hanla>1<hanla></hanla>个引用，交互式任务插入多个引用以提升响应速度。</li>
+</ul>
+</li>
+<li><p>与标准<hanla></hanla>RR<hanla></hanla>的区别：</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>标准<hanla></hanla>RR</strong></th>
+<th align="center"><strong>多引用<hanla></hanla>RR</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">严格公平（时间片均等）</td>
+<td align="center">允许任务权重差异化</td>
+</tr>
+<tr>
+<td align="center">无优先级</td>
+<td align="center">隐式优先级（引用数<hanla></hanla>=<hanla></hanla>权重）</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p><strong>（3）实现复杂度提高</strong></p>
+<ul>
+<li>需维护引用计数，避免同一任务被重复执行（如时间片未用完时跳过冗余引用）。</li>
+<li>需处理任务终止时的引用清理（防止悬垂指针）。</li>
+</ul>
+<p>这样的设计使得<hanla></hanla>RR<hanla></hanla>策略<strong>与多级反馈队列（MLFQ）或权重轮转（Weighted RR）调度相似</strong></p>
+<ul>
+<li>多级反馈队列（MLFQ）：<ul>
+<li>通过将任务分配到不同优先级的队列，实现<strong>动态优先级调整</strong>。</li>
+<li>高优先级队列中的任务获得更多<hanla></hanla>CPU<hanla></hanla>时间（类似多引用任务的权重优势）。</li>
+</ul>
+</li>
+<li>权重轮转（Weighted RR）：<ul>
+<li>直接为任务分配权重（如<hanla></hanla>3:1），权重高的任务获得更多时间片。</li>
+<li>本例中<hanla></hanla>“引用次数”<hanla></hanla>实质是权重的隐式表达。</li>
+</ul>
+</li>
+</ul>
+<p><strong>什么是处理器亲和性（Processor Affinity）？它在多处理器调度中起什么作用？</strong></p>
+<p><strong>处理器亲和性</strong>是指进程或线程<strong>倾向于在特定的</strong>处理器或处理器集合上运行的特性。</p>
+<p>作用：由于该进程或线程之前在这些处理器上运行过，因此可能有一些数据或状态仍然缓存在那里，如果再次在这些处理器上运行，则可以利用这些缓存数据，从而提高性能。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Striver98/Pictures@master/img/image-20250422161630379.png" alt="静态亲和性"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Striver98/Pictures@master/img/image-20250422161720230.png" alt="动态亲和性"></p>
+<h1 id="第5章-进程同步机制"><a href="#第5章-进程同步机制" class="headerlink" title="第5章 进程同步机制"></a>第<hanla></hanla>5<hanla></hanla>章 进程同步机制</h1><h2 id="练习题-4"><a href="#练习题-4" class="headerlink" title="练习题"></a>练习题</h2><p>赵家村和李家村靠一座独木桥连接，独木桥上一次只能供一个方向上的行人行走。                         </p>
+<p>（1）若独木桥上一次只允许一个人行走，请用信号量实现对行人的同步。                  </p>
+<p>（2）若不考虑独木桥的载重量，只要桥上有赵家村的人往李家村走<hanla></hanla>(或李家村的人往赵家村走)，其他同方向的人就可以连续通过。当桥上没有某一方向的行人行走时，另一方向的行人就可以走。请用信号量实现对两个方向上行人的同步。</p>
+<hr>
+<p><strong>（1）一次仅允许一人通行</strong><br><strong>解法：互斥信号量</strong><br>• 信号量设计：  </p>
+<p>  • <code>mutex</code>：初始值为<hanla></hanla>1，表示桥的互斥访问权。  </p>
+<p>• 伪代码：  </p>
+  <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">semaphore mutex = <span class="number">1</span>; <span class="comment">// 独木桥互斥锁<hanla></hanla></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 赵家村行人（A<hanla></hanla>方向）</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">person_A</span><span class="params">()</span> {</span><br><span class="line">    wait(mutex);    <span class="comment">// 申请桥的使用权</span></span><br><span class="line">    cross_bridge(); <span class="comment">// 过桥</span></span><br><span class="line">    signal(mutex);  <span class="comment">// 释放桥</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 李家村行人（B<hanla></hanla>方向）</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">person_B</span><span class="params">()</span> {</span><br><span class="line">    wait(mutex);    <span class="comment">// 申请桥的使用权</span></span><br><span class="line">    cross_bridge(); <span class="comment">// 过桥</span></span><br><span class="line">    signal(mutex);  <span class="comment">// 释放桥</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>• 说明：  </p>
+<p>  • <code>wait(mutex)</code> 和 <code>signal(mutex)</code> 保证同一时间只有一人过桥。  </p>
+<hr>
+<p><strong>（2）允许同方向连续通行，反方向需等待</strong><br><strong>解法：读者-写者变种（方向优先级）</strong><br>• 信号量设计：  </p>
+<p>  • <code>bridge</code>：互斥锁，初始值为<hanla></hanla>1（保护方向切换）。  </p>
+<p>  • <code>counter_A</code> 和 <code>counter_B</code>：统计当前方向的行人数量。  </p>
+<p>  • <code>mutex_A</code> 和 <code>mutex_B</code>：保护对应计数器的互斥锁（初始值为<hanla></hanla>1）。  </p>
+<p>• 伪代码：  </p>
+  <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">semaphore bridge = <span class="number">1</span>;     <span class="comment">// 方向切换锁<hanla></hanla></span></span><br><span class="line">semaphore mutex_A = <span class="number">1</span>;    <span class="comment">// 保护赵家村计数器<hanla></hanla></span></span><br><span class="line">semaphore mutex_B = <span class="number">1</span>;    <span class="comment">// 保护李家村计数器<hanla></hanla></span></span><br><span class="line"><span class="type">int</span> counter_A = <span class="number">0</span>;        <span class="comment">// 赵家村方向行人计数<hanla></hanla></span></span><br><span class="line"><span class="type">int</span> counter_B = <span class="number">0</span>;        <span class="comment">// 李家村方向行人计数<hanla></hanla></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 赵家村→李家村方向（A<hanla></hanla>方向）</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">person_A</span><span class="params">()</span> {</span><br><span class="line">    wait(mutex_A);        <span class="comment">// 保护<hanla></hanla>counter_A</span></span><br><span class="line">    <span class="keyword">if</span> (counter_A == <span class="number">0</span>)   <span class="comment">// 如果是第一个<hanla></hanla>A<hanla></hanla>方向行人</span></span><br><span class="line">        wait(bridge);     <span class="comment">// 申请方向锁（禁止<hanla></hanla>B<hanla></hanla>方向）</span></span><br><span class="line">    counter_A++;          <span class="comment">// 增加<hanla></hanla>A<hanla></hanla>方向计数</span></span><br><span class="line">    signal(mutex_A);</span><br><span class="line"></span><br><span class="line">    cross_bridge();       <span class="comment">// 过桥</span></span><br><span class="line"></span><br><span class="line">    wait(mutex_A);</span><br><span class="line">    counter_A--;          <span class="comment">// 离开桥</span></span><br><span class="line">    <span class="keyword">if</span> (counter_A == <span class="number">0</span>)   <span class="comment">// 如果是最后一个<hanla></hanla>A<hanla></hanla>方向行人</span></span><br><span class="line">        signal(bridge);   <span class="comment">// 释放方向锁（允许<hanla></hanla>B<hanla></hanla>方向）</span></span><br><span class="line">    signal(mutex_A);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 李家村→赵家村方向（B<hanla></hanla>方向）</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">person_B</span><span class="params">()</span> {</span><br><span class="line">    wait(mutex_B);</span><br><span class="line">    <span class="keyword">if</span> (counter_B == <span class="number">0</span>)</span><br><span class="line">        wait(bridge);     <span class="comment">// 申请方向锁（禁止<hanla></hanla>A<hanla></hanla>方向）</span></span><br><span class="line">    counter_B++;</span><br><span class="line">    signal(mutex_B);</span><br><span class="line"></span><br><span class="line">    cross_bridge();</span><br><span class="line"></span><br><span class="line">    wait(mutex_B);</span><br><span class="line">    counter_B--;</span><br><span class="line">    <span class="keyword">if</span> (counter_B == <span class="number">0</span>)</span><br><span class="line">        signal(bridge);   <span class="comment">// 释放方向锁</span></span><br><span class="line">    signal(mutex_B);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>• 关键逻辑：  </p>
+<ol>
+<li>第一个行人获取 <code>bridge</code> 锁，锁定方向。  </li>
+<li>后续同方向行人直接通过（不竞争 <code>bridge</code>）。  </li>
+<li>最后一个行人释放 <code>bridge</code> 锁，允许反方向行人通行。<br>• 特点：</li>
+</ol>
+<p>  • 同方向可连续通行（类似读者-写者的<hanla></hanla>“读者优先”）。  </p>
+<p>  • 反方向行人需等待桥上无人（<code>bridge</code> 释放）才能通行。  </p>
+<hr>
+<p>在一家繁忙的咖啡店，顾客不断地排队下订单。咖啡店有多个收银员和咖啡师。为了提高效率和顾客满意度，咖啡店需要一个系统来管理订单的处理。</p>
+<p>假设系统中有<hanla></hanla>N<hanla></hanla>个收银员线程负责接受顾客订单，有<hanla></hanla>M<hanla></hanla>个咖啡师线程负责制作饮品。订单需要先由收银员处理，然后由咖啡师制作。</p>
+<p>请使用信号量和互斥锁来协调收银员和咖啡师之间的工作。确保订单被正确地接收和处理，并且咖啡师在有订单时才开始制作。</p>
+<p>输出每个订单的接收和完成时间，以及当前队列中的订单数量。</p>
+<p>提示</p>
+<ul>
+<li>使用一个共享队列来存储订单，使用信号量来表示队列中的订单数量。</li>
+<li>使用互斥锁保护对订单队列的插入和删除操作。</li>
+<li>每个收银员和咖啡师由一个线程模拟。</li>
+</ul>
+<p><strong>问题分析</strong><br>我们需要模拟一个咖啡店的订单处理系统，其中：</p>
+<ol>
+<li><p>收银员线程（N<hanla></hanla>个）：负责接收顾客订单，并将订单加入共享队列。</p>
+</li>
+<li><p>咖啡师线程（M<hanla></hanla>个）：从共享队列获取订单并制作饮品。</p>
+</li>
+<li><p>共享订单队列：存储待处理的订单，需保证线程安全。</p>
+</li>
+<li><p>同步机制：<br>• 收银员和咖啡师需互斥访问队列（防止数据竞争）。</p>
+<p>• 咖啡师需等待订单到来（避免忙等待）。</p>
+<p>• 收银员需通知咖啡师有新订单。</p>
+</li>
+</ol>
+<hr>
+<p><strong>同步方案设计<hanla></hanla></strong><br><strong>1. 信号量与互斥锁</strong><br>• <code>queue_mutex</code>：互斥锁，保护共享队列的插入<hanla></hanla>/<hanla></hanla>删除操作（初始值<hanla></hanla>=1）。</p>
+<p>• <code>orders_available</code>：信号量，表示队列中的订单数量（初始值<hanla></hanla>=0），咖啡师通过 <code>wait</code> 等待订单。</p>
+<p>• <code>queue_space</code>：信号量（可选），限制队列最大长度（避免内存耗尽）。</p>
+<p><strong>2. 共享数据结构</strong><br>• 订单队列：存储订单（如订单<hanla></hanla>ID、接收时间等）。</p>
+<p>• 全局计数器：记录已处理的订单数量（需原子操作或加锁）。</p>
+<p><strong>3. 线程行为</strong><br>• 收银员线程：</p>
+<ol>
+<li><p>接收订单（模拟输入）。</p>
+</li>
+<li><p>获取 <code>queue_mutex</code>，将订单加入队列。</p>
+</li>
+<li><p>释放 <code>queue_mutex</code>，并 <code>signal(orders_available)</code>。<br>• 咖啡师线程：</p>
+</li>
+<li><p><code>wait(orders_available)</code> 等待订单。</p>
+</li>
+<li><p>获取 <code>queue_mutex</code>，从队列取出订单。</p>
+</li>
+<li><p>释放 <code>queue_mutex</code>，制作饮品并记录完成时间。</p>
+</li>
+</ol>
+<hr>
+<p><strong>代码实现（伪代码）</strong></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread, Semaphore, Lock</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> queue</span><br><span class="line"></span><br><span class="line"><span class="comment"># 全局变量<hanla></hanla></span></span><br><span class="line">order_queue = queue.Queue()  <span class="comment"># 线程安全队列（实际可用<hanla></hanla>list+<hanla></hanla>锁模拟）</span></span><br><span class="line">queue_mutex = Lock()         <span class="comment"># 保护队列操作<hanla></hanla></span></span><br><span class="line">orders_available = Semaphore(<span class="number">0</span>)  <span class="comment"># 初始无订单<hanla></hanla></span></span><br><span class="line">order_counter = <span class="number">0</span>            <span class="comment"># 已处理订单数（需原子操作或加锁）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 收银员线程<hanla></hanla></span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cashier_thread</span>(<span class="params">cashier_id</span>):</span><br><span class="line">    <span class="keyword">global</span> order_counter</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># 模拟接收订单</span></span><br><span class="line">        order_time = time.time()</span><br><span class="line">        order = {<span class="string">"id"</span>: order_counter, <span class="string">"received"</span>: order_time}</span><br><span class="line">        order_counter += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 将订单加入队列</span></span><br><span class="line">        <span class="keyword">with</span> queue_mutex:</span><br><span class="line">            order_queue.put(order)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f"订单 <span class="subst">{order[<span class="string">'id'</span>]}</span> 接收时间: <span class="subst">{order_time:<span class="number">.2</span>f}</span>, 队列长度: <span class="subst">{order_queue.qsize()}</span>"</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 通知咖啡师有新订单</span></span><br><span class="line">        orders_available.release()</span><br><span class="line">        time.sleep(<span class="number">1</span>)  <span class="comment"># 模拟处理间隔</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 咖啡师线程<hanla></hanla></span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">barista_thread</span>(<span class="params">barista_id</span>):</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># 等待订单</span></span><br><span class="line">        orders_available.acquire()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 从队列取出订单</span></span><br><span class="line">        <span class="keyword">with</span> queue_mutex:</span><br><span class="line">            order = order_queue.get()</span><br><span class="line">            queue_size = order_queue.qsize()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 模拟制作饮品</span></span><br><span class="line">        completion_time = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f"订单 <span class="subst">{order[<span class="string">'id'</span>]}</span> 完成时间: <span class="subst">{completion_time:<span class="number">.2</span>f}</span>, 制作耗时: <span class="subst">{completion_time - order[<span class="string">'received'</span>]:<span class="number">.2</span>f}</span>s, 队列剩余: <span class="subst">{queue_size}</span>"</span>)</span><br><span class="line"></span><br><span class="line">        time.sleep(<span class="number">2</span>)  <span class="comment"># 模拟制作时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动线程<hanla></hanla></span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N):</span><br><span class="line">    Thread(target=cashier_thread, args=(i,)).start()</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(M):</span><br><span class="line">    Thread(target=barista_thread, args=(j,)).start()</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<p><strong>关键点说明</strong></p>
+<ol>
+<li><p>线程安全队列：<br>• 使用 <code>queue_mutex</code> 保护队列操作（若用 <code>list</code> 需手动加锁）。</p>
+<p>• Python 的 <code>queue.Queue</code> 本身是线程安全的，但为演示显式加锁。</p>
+</li>
+<li><p>信号量作用：<br>• <code>orders_available</code> 确保咖啡师仅在订单到达时工作（避免忙等待）。</p>
+</li>
+<li><p>输出信息：<br>• 订单接收时间、完成时间、队列长度，用于监控系统状态。</p>
+</li>
+<li><p>扩展性：<br>• 可添加 <code>queue_space</code> 信号量限制队列最大长度（防止内存溢出）。</p>
+<p>• 可引入优先级队列（如<hanla></hanla>VIP<hanla></hanla>订单优先处理）。</p>
+</li>
+</ol>
+<hr>
+<p><strong>总结</strong><br>• 收银员和咖啡师通过互斥锁<hanla></hanla>+<hanla></hanla>信号量协同工作。</p>
+<p>• 订单队列作为缓冲区，解耦接收与制作过程。</p>
+<p>• 输出信息帮助分析系统性能（如平均等待时间、队列拥堵情况）。  </p>
+<p>• 实际应用中，可结合线程池（<code>ThreadPoolExecutor</code>）优化资源管理。</p>
+<p>​		某银行提供一个服务窗口和<hanla></hanla>10<hanla></hanla>个供顾客等待的座位。顾客到达银行时，若有空座位，则到取号机上领取一个号，等待叫号。取号机每次仅允许一个顾客使用。当营业员空闲时，通过叫号选取一位顾客，并为其服务。顾客及营业员的活动描述如下：</p>
+<p>cobegin</p>
+<p>{ process 顾客</p>
+<p>​	{ 从取号机获取一个号码；</p>
+<p>​		等待叫号；</p>
+<pre><code>	 获得服务； }
+</code></pre>
+<p>process 营业员</p>
+<p>  {  while（TRUE）</p>
+<p>   { 叫号；</p>
+<p>​    为顾客服务；} }</p>
+<p>}coend</p>
+<p>请添加必要的信号量和<hanla></hanla>P、V（或<hanla></hanla>wait（）、signal（））操作，实现上述过程中的互斥与同步。要求写出完整的过程，说明信号量的含义并赋初值。</p>
+<p>semaphore mutex=1;  //<hanla></hanla>互斥使用取号机</p>
+<p>semaphore empty=10;   //<hanla></hanla>空座位的数量</p>
+<p>semaphore full=0;   //<hanla></hanla>已占座位的数量</p>
+<p>semaphore service=0;    //<hanla></hanla>等待叫号</p>
+<p>cobegin</p>
+<p>{ process 顾客<hanla></hanla>i</p>
+<p>  { P(empty);   P(mutex);</p>
+<p>   从取号机获得一个号;</p>
+<p>   V(mutex);  V(full);</p>
+<p>   P(service);      // 等待叫号  }</p>
+<p> process 营业员</p>
+<p> { while(TRUE)</p>
+<p>   {  P(full);</p>
+<p>​     V(empty);</p>
+<p>​     V(service);     //<hanla></hanla>叫号</p>
+<p>​     为顾客服务;</p>
+<p>   }</p>
+<p> }</p>
+<p>}coend</p>
+<h2 id="选择题-3"><a href="#选择题-3" class="headerlink" title="选择题"></a>选择题</h2><p>若信号量<hanla></hanla>S<hanla></hanla>的初值为<hanla></hanla>2，当前值为-1，则表示有<hanla></hanla>_____<hanla></hanla>等待进程。</p>
+<p>A. 2<hanla></hanla>个      B. 1<hanla></hanla>个</p>
+<p>C. 0<hanla></hanla>个      <strong>D. 3<hanla></hanla>个</strong></p>
+<p>在操作系统中，P、V<hanla></hanla>操作是一种<hanla></hanla>_____。</p>
+<p>A. 机器指令         B. 系统调用命令</p>
+<p>C. 作业控制命令     <strong>D. 低级进程通信原语</strong></p>
+<p>下述哪个选项不是管程的组成部分<hanla></hanla>_____。</p>
+<p>A.<hanla></hanla>对局部于管程的数据结构设置初值的语句</p>
+<p>B.<hanla></hanla>局部于管程的共享数据说明</p>
+<p>C.<hanla></hanla>管程内对数据结构进行操作的一组过程</p>
+<p><strong>D.<hanla></hanla>管程外过程调用管程内数据结构的说明</strong></p>
+<p>临界区是<hanla></hanla>_____。</p>
+<p>A.<hanla></hanla>一段共享数据区   <strong>B. 一段程序</strong></p>
+<p>C.<hanla></hanla>一个互斥资源     D.<hanla></hanla>一个缓冲区</p>
+<p>用<hanla></hanla>P、V<hanla></hanla>操作管理临界区时，信号量的初值应定义为<hanla></hanla>_____。</p>
+<p><strong>A. 1</strong>      B. 2</p>
+<p>C. -1      D. 0</p>
+<p>对于两个并发进程，设互斥信号量为<hanla></hanla>mutex,<hanla></hanla>若<hanla></hanla>mutex=0<hanla></hanla>则<hanla></hanla>_____。</p>
+<p>A.<hanla></hanla>表示有一个进程进入临界区，另一个进程等待进入</p>
+<p>B. 表示没有进程进入临界区</p>
+<p><strong>C. 表示有一个进程进入临界区</strong></p>
+<p>D. 表示有两个进程进入临界区</p>
+<p>对信号量<hanla></hanla>S<hanla></hanla>执行<hanla></hanla>V<hanla></hanla>操作后，下述选项正确的是<hanla></hanla>_____。</p>
+<p>A.<hanla></hanla>当<hanla></hanla>S<hanla></hanla>小于<hanla></hanla>0<hanla></hanla>时唤醒一个阻塞进程</p>
+<p><strong>B.<hanla></hanla>当<hanla></hanla>S<hanla></hanla>小于等于<hanla></hanla>0<hanla></hanla>时唤醒一个阻塞进程</strong></p>
+<p>C.<hanla></hanla>当<hanla></hanla>S<hanla></hanla>小于<hanla></hanla>0<hanla></hanla>时唤醒一个就绪进程</p>
+<p>D.<hanla></hanla>当<hanla></hanla>S<hanla></hanla>小于等于<hanla></hanla>0<hanla></hanla>时唤醒一个就绪进程</p>
+<p>对信号量<hanla></hanla>X<hanla></hanla>执行<hanla></hanla>P<hanla></hanla>操作时，若 _____ 则进程进入等待状态。</p>
+<p>  <strong>A．X-1&lt;0</strong>     B．X-1&lt;=0</p>
+<p>  C．X-1&gt;0     D．X-1&gt;=0</p>
+<p>有若干并发进程均将共享变量<hanla></hanla>count<hanla></hanla>的值加<hanla></hanla>1<hanla></hanla>一次，那么有关<hanla></hanla>count<hanla></hanla>值说法正确的是<hanla></hanla>_____。</p>
+<p>  A．得到的结果肯定不正确</p>
+<p>  B．得到的结果肯定正确</p>
+<p>  <strong>C．若控制这些并发进程互斥执行<hanla></hanla>count<hanla></hanla>加<hanla></hanla>1<hanla></hanla>操作，count<hanla></hanla>中的值正确</strong></p>
+<p>  D．A，B，C<hanla></hanla>均不对</p>
+<p>下述关于管程的描述中错误的是<hanla></hanla>____ 。</p>
+<p>  A．管程是一种进程同步工具，解决了信号量机制 中大量同步操作分散问题</p>
+<p>  B．管程每次只允许一个进程进入管程</p>
+<p>  <strong>C．管程中的<hanla></hanla>signal<hanla></hanla>操作的作用和信号量机制中的<hanla></hanla>signal<hanla></hanla>操作相同</strong></p>
+<p>  D．管程是被进程调用的</p>
+<p>单处理机系统中，可并行的是   。</p>
+<p>  Ⅰ. 进程与进程 Ⅱ. 处理机与设备</p>
+<p>  Ⅲ. 处理机与通道  Ⅳ. 设备与设备</p>
+<p>  A.Ⅰ、Ⅱ和Ⅲ B.Ⅰ、Ⅱ和Ⅳ</p>
+<p>  C.Ⅰ、Ⅲ和Ⅳ <strong>D.Ⅱ、Ⅲ和Ⅳ</strong></p>
+<p>设与某资源相关联的信号量初值为<hanla></hanla>3，当前值为<hanla></hanla>1，若<hanla></hanla>M<hanla></hanla>表示该资源的可用个数，N<hanla></hanla>表示等待该资源的进程数，则<hanla></hanla>M、N<hanla></hanla>分别是   。</p>
+<p>  A.0，1 <strong>B.1，0</strong></p>
+<p>  C.1，2 D.2，0</p>
+<h2 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h2><ol>
+<li><p>如果信号量的当前值为-4，则表示系统中在该信号量上有 <strong>4</strong><hanla></hanla>个等待进程。</p>
+</li>
+<li><p>对于信号量可以做 P  操作和  V  操作，P<hanla></hanla>操作用于阻塞进程，V  操作用于释放进程。程序中的 P<hanla></hanla>操作应谨慎使用，以保证其使用的正确性，否则执行时可能发生死锁。</p>
+</li>
+<li><p>信号量的物理意义是：当信号量值大于<hanla></hanla>0<hanla></hanla>时表示 <strong>可用资源数量</strong>；当信号量值小于<hanla></hanla>0<hanla></hanla>时，其绝对值为 <strong>等待进程数量</strong> 。</p>
+</li>
+<li><p>有<hanla></hanla>m<hanla></hanla>个进程共享同一临界资源，若使用信号量机制实现对临界资源的互斥访问，则信号量值的变化范围是<hanla></hanla><strong>1 到 -(m-1)</strong>。</p>
+</li>
+<li><p>访问临界资源的进程应该遵循的条件有：<strong>互斥访问</strong>（Mutual Exclusion）、<strong>空闲让进</strong>（Progress）、<strong>有限等待</strong>（Bounded Waiting）、和 <strong>让权等待</strong>（No Busy Waiting。</p>
+</li>
+<li><p>临界资源是指<hanla></hanla>__<strong><hanla></hanla>一次仅允许一个进程访问<hanla></hanla></strong>__<hanla></hanla>的资源。</p>
+</li>
+<li><p>管程由<strong>共享变量声明</strong>、**<hanla></hanla>操作共享变量的过程（方法）**<hanla></hanla>和 <strong>初始化代码</strong>三部分组成</p>
+</li>
+</ol>
+</div></article><aside class="post-widget"><h4>目录<hanla></hanla></h4><nav class="post-toc-wrap" id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%AC%AC1%E7%AB%A0-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="post-toc-number">1.</span> <span class="post-toc-text">第<hanla></hanla>1<hanla></hanla>章 操作系统基础知识<hanla></hanla></span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BB%83%E4%B9%A0%E9%A2%98"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">练习题<hanla></hanla></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">选择题<hanla></hanla></span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%AC%AC2%E7%AB%A0-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%92%8C%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="post-toc-number">2.</span> <span class="post-toc-text">第<hanla></hanla>2<hanla></hanla>章 操作系统的运行环境和运行机制<hanla></hanla></span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BB%83%E4%B9%A0%E9%A2%98-1"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">练习题<hanla></hanla></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98-1"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">选择题<hanla></hanla></span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%AC%AC3%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="post-toc-number">3.</span> <span class="post-toc-text">第<hanla></hanla>3<hanla></hanla>章 进程线程模型<hanla></hanla></span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BB%83%E4%B9%A0%E9%A2%98-2"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">练习题<hanla></hanla></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98-2"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">选择题<hanla></hanla></span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%AC%AC4%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B%E8%B0%83%E5%BA%A6"><span class="post-toc-number">4.</span> <span class="post-toc-text">第<hanla></hanla>4<hanla></hanla>章 进程线程调度<hanla></hanla></span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BB%83%E4%B9%A0%E9%A2%98-3"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">练习题<hanla></hanla></span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%94%AE%E5%8C%BA%E5%88%AB%E6%80%BB%E7%BB%93"><span class="post-toc-number">4.1.0.1.</span> <span class="post-toc-text">关键区别总结<hanla></hanla></span></a></li></ol></li></ol></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%AC%AC5%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6"><span class="post-toc-number">5.</span> <span class="post-toc-text">第<hanla></hanla>5<hanla></hanla>章 进程同步机制<hanla></hanla></span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BB%83%E4%B9%A0%E9%A2%98-4"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">练习题<hanla></hanla></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98-3"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">选择题<hanla></hanla></span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%A1%AB%E7%A9%BA%E9%A2%98"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">填空题</span></a></li></ol></li></nav></aside></div><footer class="footer-nav"><div class="footer"><div class="back-top" id="back-top" title="Back to top"><i class="icon icon-chevron-bar-up"></i></div><div class="footer-content"><div><span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv">?</span>
+PV
+</span><span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv">?</span>
+UV</span></div>
+
+Copyright ©
+2023<span class="time-divide">-</span>2025
+Wang Zhixuan.
+
+Power by
+<a href="https://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>
+and
+<a href="https://github.com/Cerallin/hexo-theme-yuzu" target="_blank" rel="external nofollow" title="v3.2.5">Theme Yuzu</a>.</div></div></footer>
+<script>window.config = {
+  url_root: '/',
+  meta_path: 'meta.json',
+};
+</script>
+<script src="/js/theme/back-to-top.js"></script>
+
+
+<script src="/js/theme/clipboard.js"></script>
+
+
+<script src="/js/theme/loading.js"></script>
+
+
+<script src="/js/theme/navbar.js"></script>
+
+<script src="/js/theme/search.js"></script>
+
+<script src="/js/theme/toc.js"></script>
+<script>window.onload = function () {
+  for (const moduleName in Theme) {
+    const module = Theme[moduleName];
+    module.register();
+  }
+};</script></div><div class="search-modal" id="search-modal"><div class="card"><div class="card-head"><div class="search-box"><input class="search-input" id="search-input" placeholder="搜索"><div class="search-button" id="search-button"><div class="icon icon-search"></div></div></div><div class="close-button"><div class="icon icon-x"></div></div></div><div class="card-body"><div class="search-count">共<hanla></hanla><span id="search-count-num">0</span><hanla></hanla>条搜索结果。</div><div class="search-result" id="search-result"></div></div></div></div></body></html>
