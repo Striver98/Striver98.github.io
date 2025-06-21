@@ -146,20 +146,6 @@
 
   
   <url>
-    <loc>https://striver98.github.io/tags/%E6%BC%94%E5%94%B1%E4%BC%9A/</loc>
-    <lastmod>2025-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://striver98.github.io/tags/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2025-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://striver98.github.io/tags/%E9%9A%8F%E6%8B%8D/</loc>
     <lastmod>2025-06-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -195,28 +181,14 @@
   </url>
   
   <url>
-    <loc>https://striver98.github.io/tags/%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6/</loc>
+    <loc>https://striver98.github.io/tags/%E6%BC%94%E5%94%B1%E4%BC%9A/</loc>
     <lastmod>2025-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://striver98.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
-    <lastmod>2025-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://striver98.github.io/tags/%E8%89%BA%E6%9C%AF%E5%B1%95/</loc>
-    <lastmod>2025-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://striver98.github.io/tags/%E6%97%85%E8%A1%8C/</loc>
+    <loc>https://striver98.github.io/tags/%E6%B8%B8%E6%88%8F/</loc>
     <lastmod>2025-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -237,7 +209,35 @@
   </url>
   
   <url>
+    <loc>https://striver98.github.io/tags/%E6%97%85%E8%A1%8C/</loc>
+    <lastmod>2025-06-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://striver98.github.io/tags/%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6/</loc>
+    <lastmod>2025-06-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://striver98.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
+    <lastmod>2025-06-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://striver98.github.io/tags/pytorch/</loc>
+    <lastmod>2025-06-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://striver98.github.io/tags/%E8%89%BA%E6%9C%AF%E5%B1%95/</loc>
     <lastmod>2025-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -1,23 +1,25 @@
 <!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="auto"><head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/universe.png">
+  <link rel="icon" href="/img/universe.png">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="Wang Zhixuan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基础配置 搭建环境  Python3.9 PyTorch 2.4.1 CUDA 12.1 NVIDIA GeForce RTX 4060 Laptop GPU  Anaconda常用命令   创建环境：conda create -n your_env_name python=X.X （X.X为python版本） eg: conda create -n pytorch_tutorial python">
+    <meta name="description" content="基础配置搭建环境 Python3.9 PyTorch 2.4.1 CUDA 12.1 NVIDIA GeForce RTX 4060 Laptop GPU  Anaconda常用命令 创建环境：conda create -n your_env_name python=X.X （X.X为python版本） eg: conda create -n pytorch_tutorial python=3.7">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PyTorch学习记录">
 <meta property="og:url" content="https://striver98.github.io/2025/01/10/PyTorch%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="午夜飞行">
-<meta property="og:description" content="基础配置 搭建环境  Python3.9 PyTorch 2.4.1 CUDA 12.1 NVIDIA GeForce RTX 4060 Laptop GPU  Anaconda常用命令   创建环境：conda create -n your_env_name python=X.X （X.X为python版本） eg: conda create -n pytorch_tutorial python">
+<meta property="og:description" content="基础配置搭建环境 Python3.9 PyTorch 2.4.1 CUDA 12.1 NVIDIA GeForce RTX 4060 Laptop GPU  Anaconda常用命令 创建环境：conda create -n your_env_name python=X.X （X.X为python版本） eg: conda create -n pytorch_tutorial python=3.7">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521194717982.png">
 <meta property="og:image" content="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521195348888.png">
@@ -35,6 +37,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521194717982.png">
   
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
   
   
   <title>PyTorch学习记录 - 午夜飞行</title>
@@ -75,7 +79,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"striver98.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"striver98.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"lvc5jMNgiDCshZ3sR3KkiNjR-gzGzoHsz","app_key":"yBvnSteGkTHVkCJDH80pXa1d","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -85,6 +89,19 @@
   <script src="/js/utils.js"></script>
   <script src="/js/color-schema.js"></script>
   
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
 
 
   
@@ -109,8 +126,7 @@ html ol > hanla,
 html ul > hanla {
     display: none;
 }
-</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="午夜飞行" type="application/atom+xml">
-<style>mjx-container[jax="SVG"] {
+</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -222,7 +238,8 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
+</style><link rel="alternate" href="/atom.xml" title="午夜飞行" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -235,7 +252,7 @@ mjx-container[display="true"] + br {
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>午夜飞行</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -253,7 +270,7 @@ mjx-container[display="true"] + br {
             <li class="nav-item">
               <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
-                <span><hanla></hanla>首页</span>
+                <span>首页</span>
               </a>
             </li>
           
@@ -306,6 +323,18 @@ mjx-container[display="true"] + br {
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -342,6 +371,11 @@ mjx-container[display="true"] + br {
           
   <div class="mt-3">
     
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Wang Zhixuan
+      </span>
+    
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
@@ -374,6 +408,15 @@ mjx-container[display="true"] + br {
     
 
     
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
     
   </div>
 
@@ -410,37 +453,28 @@ mjx-container[display="true"] + br {
             
               <div class="markdown-body">
                 
-                <h1>基础配置</h1>
-<h2 id="搭建环境">搭建环境</h2>
-<ul>
+                <h1 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h1><h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><ul>
 <li>Python3.9</li>
 <li>PyTorch 2.4.1</li>
 <li>CUDA 12.1</li>
 <li>NVIDIA GeForce RTX 4060 Laptop GPU</li>
 </ul>
-<h2 id="Anaconda常用命令">Anaconda<hanla></hanla>常用命令</h2>
-<ul>
-<li>
-<p>创建环境：conda create -n your_env_name python=X.X （X.X<hanla></hanla>为<hanla></hanla>python<hanla></hanla>版本）</p>
+<h2 id="Anaconda常用命令"><a href="#Anaconda常用命令" class="headerlink" title="Anaconda常用命令"></a>Anaconda<hanla></hanla>常用命令</h2><ul>
+<li><p>创建环境：conda create -n your_env_name python=X.X （X.X<hanla></hanla>为<hanla></hanla>python<hanla></hanla>版本）</p>
 <p>eg: conda create -n pytorch_tutorial python=3.7</p>
 </li>
-<li>
-<p>激活环境：source activate your_env_name</p>
+<li><p>激活环境：source activate your_env_name</p>
 <p>eg: source activate pytorch_tutorial</p>
 </li>
-<li>
-<p>退出环境：source deactivate</p>
+<li><p>退出环境：source deactivate</p>
 </li>
-<li>
-<p>删除环境：conda remove -n your_env_name –all</p>
-<p>eg: conda remove -n pytorch_tutorial --all</p>
+<li><p>删除环境：conda remove -n your_env_name –all</p>
+<p>eg: conda remove -n pytorch_tutorial –all</p>
 </li>
-<li>
-<p>查看已有虚拟环境：conda env list / conda info -e</p>
+<li><p>查看已有虚拟环境：conda env list / conda info -e</p>
 </li>
 </ul>
-<h2 id="PyCharm常用快捷键">PyCharm<hanla></hanla>常用快捷键</h2>
-<ul>
+<h2 id="PyCharm常用快捷键"><a href="#PyCharm常用快捷键" class="headerlink" title="PyCharm常用快捷键"></a>PyCharm<hanla></hanla>常用快捷键</h2><ul>
 <li>批量注释：Ctrl + /</li>
 <li>快速查看文档：Ctrl + q</li>
 <li>搜索：Ctrl+f</li>
@@ -449,8 +483,7 @@ mjx-container[display="true"] + br {
 <li>Ctrl + D 复制选定的区域或行</li>
 <li>Ctrl + Y 删除选定的行</li>
 </ul>
-<h2 id="JupyterNotebook常用快捷键">JupyterNotebook<hanla></hanla>常用快捷键</h2>
-<p><strong>命令模式：</strong></p>
+<h2 id="JupyterNotebook常用快捷键"><a href="#JupyterNotebook常用快捷键" class="headerlink" title="JupyterNotebook常用快捷键"></a>JupyterNotebook<hanla></hanla>常用快捷键</h2><p><strong>命令模式：</strong></p>
 <ul>
 <li>插入单元格： A 键上方插入，B 键在下方插入</li>
 <li>合并单元格：选中多个单元格，Shift + M</li>
@@ -467,93 +500,68 @@ mjx-container[display="true"] + br {
 <li>分割单元格：光标放到想要分割的地方，Ctrl + Shift + -</li>
 <li>函数详情：Shift+Tab （注意，要把模块导入才会提示函数详情！）</li>
 </ul>
-<h1>Pytorch Tutorial</h1>
-<h2 id="Step-1-torch-utils-data-Dataset-torch-utils-data-DataLoader">Step 1. torch.utils.data.Dataset &amp; torch.utils.data.DataLoader</h2>
-<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521194717982.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<h3 id="Dataset-Dataloader">Dataset &amp; Dataloader</h3>
-<ul>
-<li>
-<p>Dataset: 存储数据样本与期望值</p>
+<h1 id="Pytorch-Tutorial"><a href="#Pytorch-Tutorial" class="headerlink" title="Pytorch Tutorial"></a>Pytorch Tutorial</h1><h2 id="Step-1-torch-utils-data-Dataset-torch-utils-data-DataLoader"><a href="#Step-1-torch-utils-data-Dataset-torch-utils-data-DataLoader" class="headerlink" title="Step 1. torch.utils.data.Dataset &amp; torch.utils.data.DataLoader"></a>Step 1. torch.utils.data.Dataset &amp; torch.utils.data.DataLoader</h2><p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521194717982.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="Dataset-Dataloader"><a href="#Dataset-Dataloader" class="headerlink" title="Dataset &amp; Dataloader"></a>Dataset &amp; Dataloader</h3><ul>
+<li><p>Dataset: 存储数据样本与期望值</p>
 </li>
-<li>
-<p>Dataloader: 将数据分批次并进行多道处理</p>
+<li><p>Dataloader: 将数据分批次并进行多道处理</p>
 </li>
-<li>
-<p>具体用法：</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> torch.utils.data <span class="hljs-keyword">import</span> Dataset, DataLoader<br><span class="hljs-comment"># 自定义数据集<hanla></hanla></span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyDataset</span>(<span class="hljs-title class_ inherited__">Dataset</span>):<br>    <span class="hljs-comment"># Read data &amp; preprocess</span><br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, file</span>):<br>		<span class="hljs-variable language_">self</span>.data = ...<br>    <span class="hljs-comment"># Returns one sample at a time</span><br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__getitem__</span>(<span class="hljs-params">self, index</span>):<br>		<span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.data[index]<br>    <span class="hljs-comment"># Returns the size of the dataset</span><br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__len__</span>(<span class="hljs-params">self</span>):<br>		<span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.data)<br><br><br>dataset = MyDataset(file)<br><span class="hljs-comment"># Training: True</span><br><span class="hljs-comment"># Testing: False</span><br>dataloader = DataLoader(dataset, batch_size=<span class="hljs-number">5</span>, shuffle=<span class="hljs-literal">True</span>)<br></code></pre></td></tr></tbody></table></figure>
-</li>
+<li><p>具体用法：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> torch.utils.data <span class="hljs-keyword">import</span> Dataset, DataLoader<br><span class="hljs-comment"># 自定义数据集<hanla></hanla></span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyDataset</span>(<span class="hljs-title class_ inherited__">Dataset</span>):<br>    <span class="hljs-comment"># Read data &amp; preprocess</span><br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, file</span>):<br>		<span class="hljs-variable language_">self</span>.data = ...<br>    <span class="hljs-comment"># Returns one sample at a time</span><br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__getitem__</span>(<span class="hljs-params">self, index</span>):<br>		<span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.data[index]<br>    <span class="hljs-comment"># Returns the size of the dataset</span><br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__len__</span>(<span class="hljs-params">self</span>):<br>		<span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.data)<br><br><br>dataset = MyDataset(file)<br><span class="hljs-comment"># Training: True</span><br><span class="hljs-comment"># Testing: False</span><br>dataloader = DataLoader(dataset, batch_size=<span class="hljs-number">5</span>, shuffle=<span class="hljs-literal">True</span>)<br></code></pre></td></tr></tbody></table></figure></li>
 </ul>
-<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521195348888.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<h3 id="Tensors（张量）">Tensors（张量）</h3>
-<ul>
-<li>
-<p>高维矩阵<hanla></hanla>/<hanla></hanla>数组</p>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521195348888.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="Tensors（张量）"><a href="#Tensors（张量）" class="headerlink" title="Tensors（张量）"></a>Tensors（张量）</h3><ul>
+<li><p>高维矩阵<hanla></hanla>/<hanla></hanla>数组</p>
 </li>
-<li>
-<p>创建方法</p>
+<li><p>创建方法</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Directly from data (list or numpy.ndarray)</span><br>x = torch.tensor([[<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>], [-<span class="hljs-number">1</span>, <span class="hljs-number">1</span>]])<br>x = torch.from_numpy(np.array([[<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>], [-<span class="hljs-number">1</span>, <span class="hljs-number">1</span>]]))<br><br><span class="hljs-comment"># Tensor of constant zeros &amp; ones</span><br>x = torch.zeros([<span class="hljs-number">2</span>, <span class="hljs-number">2</span>])<br>x = torch.ones([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>])<br></code></pre></td></tr></tbody></table></figure>
 </li>
-<li>
-<p>常用操作符：</p>
+<li><p>常用操作符：</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 加法<hanla></hanla></span><br>z = x + y<br><br><span class="hljs-comment"># 减法<hanla></hanla></span><br>z = x - y<br><br><span class="hljs-comment"># 乘幂<hanla></hanla></span><br>y = x.<span class="hljs-built_in">pow</span>(<span class="hljs-number">2</span>)<br><br><span class="hljs-comment"># 求和<hanla></hanla></span><br>y = x.<span class="hljs-built_in">sum</span>()<br><br><span class="hljs-comment"># 平均<hanla></hanla></span><br>y = x.mean()<br><br><span class="hljs-comment"># Transpose: transpose two specified dimensions</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.zeros([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>x.shape<br>torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>x = x.transpose(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>x.shape<br>torch.Size([<span class="hljs-number">3</span>, <span class="hljs-number">2</span>])<br><br><span class="hljs-comment"># Squeeze: remove the specified dimension with length = 1</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.zeros([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>x.shape<br>torch.Size([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>x = x.squeeze(<span class="hljs-number">0</span>) <span class="hljs-comment"># dim = 0</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>x.shape<br>torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])<br><br><span class="hljs-comment"># Unsqueeze: expand a new dimension</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.zeros([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>x.shape<br>torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>x = x.unsqueeze(<span class="hljs-number">1</span>)  <span class="hljs-comment"># dim = 1</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>x.shape<br>torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>])<br><br><span class="hljs-comment"># Cat: concatenate multiple tensors</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.zeros([<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>y = torch.zeros([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>z = torch.zeros([<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>w = torch.cat([x, y, z], dim=<span class="hljs-number">1</span>) <span class="hljs-comment">#因为三个张量的第<hanla></hanla>0、2<hanla></hanla>维度均相同，所以沿第<hanla></hanla>1<hanla></hanla>维度进行拼接</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>w.shape<br>torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">3</span>])<br></code></pre></td></tr></tbody></table></figure>
 </li>
-<li>
-<p>数据类型：对模型和数据使用不同的数据类型会产生错误</p>
-<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521200508662.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<li><p>数据类型：对模型和数据使用不同的数据类型会产生错误</p>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521200508662.png" srcset="/img/loading.gif" lazyload></p>
 </li>
-<li>
-<p>运行设备：<a target="_blank" rel="noopener" href="http://xn--2rqz13g.to">使用.to</a>()<hanla></hanla>让张量在合适的设备上进行计算</p>
+<li><p>运行设备：使用.to()<hanla></hanla>让张量在合适的设备上进行计算</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># CPU</span><br>x = x.to(‘cpu’)<br><br><span class="hljs-comment"># GPU</span><br>x = x.to(‘cuda’)<br><br><span class="hljs-comment"># 检查电脑是否有英伟达<hanla></hanla>GPU</span><br>torch.cuda.is_available()<br></code></pre></td></tr></tbody></table></figure>
 </li>
-<li>
-<p>Gradient Calculation（梯度计算）</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.tensor([[<span class="hljs-number">1.</span>, <span class="hljs-number">0.</span>], [-<span class="hljs-number">1.</span>, <span class="hljs-number">1.</span>]], requires_grad=<span class="hljs-literal">True</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>z = x.<span class="hljs-built_in">pow</span>(<span class="hljs-number">2</span>).<span class="hljs-built_in">sum</span>()<br><span class="hljs-meta">&gt;&gt;&gt; </span>z.backward()<br><span class="hljs-meta">&gt;&gt;&gt; </span>x.grad<br>tensor([[ <span class="hljs-number">2.</span>, <span class="hljs-number">0.</span>],<br>[-<span class="hljs-number">2.</span>, <span class="hljs-number">2.</span>]])<br></code></pre></td></tr></tbody></table></figure>
-</li>
+<li><p>Gradient Calculation（梯度计算）</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.tensor([[<span class="hljs-number">1.</span>, <span class="hljs-number">0.</span>], [-<span class="hljs-number">1.</span>, <span class="hljs-number">1.</span>]], requires_grad=<span class="hljs-literal">True</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>z = x.<span class="hljs-built_in">pow</span>(<span class="hljs-number">2</span>).<span class="hljs-built_in">sum</span>()<br><span class="hljs-meta">&gt;&gt;&gt; </span>z.backward()<br><span class="hljs-meta">&gt;&gt;&gt; </span>x.grad<br>tensor([[ <span class="hljs-number">2.</span>, <span class="hljs-number">0.</span>],<br>[-<span class="hljs-number">2.</span>, <span class="hljs-number">2.</span>]])<br></code></pre></td></tr></tbody></table></figure></li>
 </ul>
-<h2 id="Step-2-torch-nn-Module">Step 2. torch.nn.Module</h2>
-<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521200915594.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="Step-2-torch-nn-Module"><a href="#Step-2-torch-nn-Module" class="headerlink" title="Step 2. torch.nn.Module"></a>Step 2. torch.nn.Module</h2><p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521200915594.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
-<li>
-<p>线性层（全连接层）</p>
+<li><p>线性层（全连接层）</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">nn.Linear(in_features, out_features)<br></code></pre></td></tr></tbody></table></figure>
-<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521201144546.png" srcset="/img/loading.gif" lazyload alt=""></p>
+
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521201144546.png" srcset="/img/loading.gif" lazyload></p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>layer = torch.nn.Linear(<span class="hljs-number">32</span>, <span class="hljs-number">64</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>layer.weight.shape<br>torch.Size([<span class="hljs-number">64</span>, <span class="hljs-number">32</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>layer.bias.shape<br>torch.Size([<span class="hljs-number">64</span>])<br></code></pre></td></tr></tbody></table></figure>
+
 <ul>
-<li>
-<p>非线性激活函数</p>
+<li><p>非线性激活函数</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Sigmoid Activation</span><br>nn.Sigmoid()<br><span class="hljs-comment"># ReLU Activation</span><br>ReLU Activation<br></code></pre></td></tr></tbody></table></figure>
 </li>
-<li>
-<p>构造自己的神经网络</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br><span class="hljs-comment"># Initialize your model &amp; define layers</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyModel</span>(nn.Module):<br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>		<span class="hljs-built_in">super</span>(MyModel, <span class="hljs-variable language_">self</span>).__init__()<br>		<span class="hljs-variable language_">self</span>.net = nn.Sequential(<br>			nn.Linear(<span class="hljs-number">10</span>, <span class="hljs-number">32</span>),<br>			nn.Sigmoid(),<br>			nn.Linear(<span class="hljs-number">32</span>, <span class="hljs-number">1</span>)<br>		)<br><span class="hljs-comment"># Compute output of your NN</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, x</span>):<br>	<span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.net(x)<br><br><span class="hljs-comment"># 以下为等价写法<hanla></hanla></span><br><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyModel</span>(nn.Module):<br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>		<span class="hljs-built_in">super</span>(MyModel, <span class="hljs-variable language_">self</span>).__init__()<br>		<span class="hljs-variable language_">self</span>.layer1 = nn.Linear(<span class="hljs-number">10</span>, <span class="hljs-number">32</span>)<br>		<span class="hljs-variable language_">self</span>.layer2 = nn.Sigmoid(),<br>		<span class="hljs-variable language_">self</span>.layer3 = nn.Linear(<span class="hljs-number">32</span>,<span class="hljs-number">1</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, x</span>):<br>	out = <span class="hljs-variable language_">self</span>.layer1(x)<br>	out = <span class="hljs-variable language_">self</span>.layer2(out)<br>	out = <span class="hljs-variable language_">self</span>.layer3(out)<br>	<span class="hljs-keyword">return</span> out<br></code></pre></td></tr></tbody></table></figure>
-</li>
+<li><p>构造自己的神经网络</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br><span class="hljs-comment"># Initialize your model &amp; define layers</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyModel</span>(nn.Module):<br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>		<span class="hljs-built_in">super</span>(MyModel, <span class="hljs-variable language_">self</span>).__init__()<br>		<span class="hljs-variable language_">self</span>.net = nn.Sequential(<br>			nn.Linear(<span class="hljs-number">10</span>, <span class="hljs-number">32</span>),<br>			nn.Sigmoid(),<br>			nn.Linear(<span class="hljs-number">32</span>, <span class="hljs-number">1</span>)<br>		)<br><span class="hljs-comment"># Compute output of your NN</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, x</span>):<br>	<span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.net(x)<br><br><span class="hljs-comment"># 以下为等价写法<hanla></hanla></span><br><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyModel</span>(nn.Module):<br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>		<span class="hljs-built_in">super</span>(MyModel, <span class="hljs-variable language_">self</span>).__init__()<br>		<span class="hljs-variable language_">self</span>.layer1 = nn.Linear(<span class="hljs-number">10</span>, <span class="hljs-number">32</span>)<br>		<span class="hljs-variable language_">self</span>.layer2 = nn.Sigmoid(),<br>		<span class="hljs-variable language_">self</span>.layer3 = nn.Linear(<span class="hljs-number">32</span>,<span class="hljs-number">1</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, x</span>):<br>	out = <span class="hljs-variable language_">self</span>.layer1(x)<br>	out = <span class="hljs-variable language_">self</span>.layer2(out)<br>	out = <span class="hljs-variable language_">self</span>.layer3(out)<br>	<span class="hljs-keyword">return</span> out<br></code></pre></td></tr></tbody></table></figure></li>
 </ul>
 </li>
 </ul>
-<h2 id="Step-3-torch-nn-MSELoss-torch-nn-CrossEntropyLoss-etc">Step 3. torch.nn.MSELoss, torch.nn.CrossEntropyLoss etc.</h2>
-<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521201726846.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="Step-3-torch-nn-MSELoss-torch-nn-CrossEntropyLoss-etc"><a href="#Step-3-torch-nn-MSELoss-torch-nn-CrossEntropyLoss-etc" class="headerlink" title="Step 3. torch.nn.MSELoss, torch.nn.CrossEntropyLoss etc."></a>Step 3. torch.nn.MSELoss, torch.nn.CrossEntropyLoss etc.</h2><p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521201726846.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
-<li>
-<p>Mean Squared Error (for regression tasks)</p>
+<li><p>Mean Squared Error (for regression tasks)</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">criterion = nn.MSELoss()<br></code></pre></td></tr></tbody></table></figure>
 </li>
-<li>
-<p>Cross Entropy (for classification tasks)</p>
+<li><p>Cross Entropy (for classification tasks)</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">criterion = nn.CrossEntropyLoss()<br></code></pre></td></tr></tbody></table></figure>
 </li>
-<li>
-<p>loss = criterion(model_output, expected_value)</p>
+<li><p>loss = criterion(model_output, expected_value)</p>
 </li>
 </ul>
-<h2 id="Step-4-torch-optim">Step 4. torch.optim</h2>
-<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521202002550.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="Step-4-torch-optim"><a href="#Step-4-torch-optim" class="headerlink" title="Step 4. torch.optim"></a>Step 4. torch.optim</h2><p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521202002550.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
-<li>
-<p>Gradient-based optimization algorithms that adjust network parameters to reduce error.</p>
+<li><p>Gradient-based optimization algorithms that adjust network parameters to reduce error.</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">optimizer = torch.optim.SGD(model.parameters(), lr, momentum = <span class="hljs-number">0</span>)<br></code></pre></td></tr></tbody></table></figure>
 </li>
-<li>
-<p>For every batch of data:</p>
+<li><p>For every batch of data:</p>
 <blockquote>
 <ol>
 <li>Call <code>optimizer.zero_grad()</code> to reset gradients of model parameters.</li>
@@ -563,9 +571,9 @@ mjx-container[display="true"] + br {
 </blockquote>
 </li>
 </ul>
-<h2 id="Step-5-Entire-Procedure">Step 5. Entire Procedure</h2>
-<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521202412507.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="Step-5-Entire-Procedure"><a href="#Step-5-Entire-Procedure" class="headerlink" title="Step 5. Entire Procedure"></a>Step 5. Entire Procedure</h2><p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521202412507.png" srcset="/img/loading.gif" lazyload></p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Training Setup</span><br>dataset = MyDataset(file)<br>tr_set = DataLoader(dataset, <span class="hljs-number">16</span>, shuffle=<span class="hljs-literal">True</span>)<br>model = MyModel().to(device)<br>criterion = nn.MSELoss()<br>optimizer = torch.optim.SGD(model.parameters(), <span class="hljs-number">0.1</span>)<br><span class="hljs-comment"># Training Loop</span><br><span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n_epochs):<br>	model.train()<br>	<span class="hljs-keyword">for</span> x, y <span class="hljs-keyword">in</span> tr_set:<br>		optimizer.zero_grad()<br>		x, y = x.to(device), y.to(device)<br>		pred = model(x)<br>		loss = criterion(pred, y)<br>		loss.backward()<br>		optimizer.step()<br><br><span class="hljs-comment"># Validation Loop</span><br>	model.<span class="hljs-built_in">eval</span>()<br>	total_loss = <span class="hljs-number">0</span><br>	<span class="hljs-keyword">for</span> x, y <span class="hljs-keyword">in</span> dv_set:<br>		x, y = x.to(device), y.to(device)<br>		<span class="hljs-keyword">with</span> torch.no_grad():<br>			pred = model(x)<br>			loss = criterion(pred, y)<br>		total_loss += loss.cpu().item() * <span class="hljs-built_in">len</span>(x)<br>		avg_loss = total_loss / <span class="hljs-built_in">len</span>(dv_set.dataset)<br><br><span class="hljs-comment"># Testing Loop</span><br>model.<span class="hljs-built_in">eval</span>()<br>preds = []<br><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> tt_set:<br>	x = x.to(device)<br>	<span class="hljs-keyword">with</span> torch.no_grad():<br>		pred = model(x)<br>		preds.append(pred.cpu())<br><br></code></pre></td></tr></tbody></table></figure>
+
 
                 
               </div>
@@ -771,9 +779,35 @@ mjx-container[display="true"] + br {
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
     </div>
   
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
   
   
 </div>
@@ -918,7 +952,11 @@ mjx-container[display="true"] + br {
 
   <script>Fluid.plugins.imageCaption();</script>
 
+  <script defer="" src="/js/leancloud.js"></script>
+
   <script src="/js/local-search.js"></script>
+
+  <script defer="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
