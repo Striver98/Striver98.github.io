@@ -443,57 +443,64 @@ mjx-container[display="true"] + br {
             
               <div class="markdown-body">
                 
-                <h2 id="Python解释器"><a href="#Python解释器" class="headerlink" title="Python解释器"></a>Python<hanla></hanla>解释器</h2><h3 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h3><ul>
+                <h2 id="Python解释器">Python<hanla></hanla>解释器</h2>
+<h3 id="算术运算">算术运算</h3>
+<ul>
 <li>加：+</li>
 <li>减：-</li>
 <li>乘：*</li>
-<li>除：/<ul>
+<li>除：/
+<ul>
 <li>在<hanla></hanla>Python2.x<hanla></hanla>中，整数除以整数的结果是整数；在<hanla></hanla>Python3.x<hanla></hanla>中，整数除以整数的结果是小数。</li>
 </ul>
 </li>
 </ul>
-<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
-<li><p>有整数、小数、字符串、布尔等类型</p>
+<h3 id="数据类型">数据类型</h3>
+<ul>
+<li>
+<p>有整数、小数、字符串、布尔等类型</p>
 </li>
-<li><p><code>type()</code><hanla></hanla>函数可以用来查看数据类型</p>
+<li>
+<p><code>type()</code><hanla></hanla>函数可以用来查看数据类型</p>
 </li>
 </ul>
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>可以使用<hanla></hanla>x<hanla></hanla>或<hanla></hanla>y<hanla></hanla>等字母定义变量（variable)。此外，可以使用变量进行计算，也可以对变量赋值。</p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>列表的格式为：</p>
+<h3 id="变量">变量</h3>
+<p>可以使用<hanla></hanla>x<hanla></hanla>或<hanla></hanla>y<hanla></hanla>等字母定义变量（variable)。此外，可以使用变量进行计算，也可以对变量赋值。</p>
+<h3 id="列表">列表</h3>
+<p>列表的格式为：</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">a=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br></code></pre></td></tr></tbody></table></figure>
-
-<p><hanla></hanla>列表的访问方式为：</p>
+<p>列表的访问方式为：</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">a[<span class="hljs-number">0</span>:<span class="hljs-number">2</span>]		<span class="hljs-comment">#获取索引为<hanla></hanla>0<hanla></hanla>到<hanla></hanla>2（不包括<hanla></hanla>2）的元素<hanla></hanla></span><br>a[<span class="hljs-number">1</span>:]		<span class="hljs-comment">#获取从索引为<hanla></hanla>1<hanla></hanla>的元素到最后一个元素<hanla></hanla></span><br>a[:<span class="hljs-number">3</span>]		<span class="hljs-comment">#获取从第一个元素到索引为<hanla></hanla>3（不包括<hanla></hanla>3）的元素<hanla></hanla></span><br>a[:-<span class="hljs-number">1</span>]		<span class="hljs-comment">#获取从第一个元素到最后一个元素的前一个元素之间的元素<hanla></hanla></span><br>a[:-<span class="hljs-number">2</span>]		<span class="hljs-comment">#获取从第一个元素到最后一个元素的前二给元素之间的元素</span><br></code></pre></td></tr></tbody></table></figure>
-
-<h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><p>字典以键值对的形式存储数据</p>
+<h3 id="字典">字典</h3>
+<p>字典以键值对的形式存储数据</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">me={<span class="hljs-string">'height'</span>:<span class="hljs-number">180</span>}		<span class="hljs-comment">#字典格式<hanla></hanla></span><br>me[<span class="hljs-string">'height'</span>]			<span class="hljs-comment">#180</span><br>me[<span class="hljs-string">'weight'</span>]=<span class="hljs-number">70</span>			<span class="hljs-comment">#添加新元素</span><br></code></pre></td></tr></tbody></table></figure>
-
-<h3 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型<hanla></hanla></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">hungry=<span class="hljs-literal">True</span><br>sleepy=<span class="hljs-literal">False</span><br><span class="hljs-keyword">not</span> hungry				<span class="hljs-comment">#False</span><br>hungry <span class="hljs-keyword">and</span> sleepy		<span class="hljs-comment">#饿而且困<hanla></hanla></span><br>hungry <span class="hljs-keyword">or</span> sleepy		<span class="hljs-comment">#饿或者困<hanla></hanla></span><br></code></pre></td></tr></tbody></table></figure>
-
-<h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if<hanla></hanla>语句<hanla></hanla></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">hungry=<span class="hljs-literal">False</span><br><span class="hljs-keyword">if</span> hungry:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"I'm hungry"</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"I'm not hungry"</span>)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"I'm sleepy"</span>)<br></code></pre></td></tr></tbody></table></figure>
-
-<h3 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for<hanla></hanla>语句<hanla></hanla></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]:<br>	<span class="hljs-built_in">print</span>(i)<br></code></pre></td></tr></tbody></table></figure>
-
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a><hanla></hanla>函数</h3><p>可以将一连串的处理定义为函数（function）</p>
+<h3 id="布尔型">布尔型</h3>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">hungry=<span class="hljs-literal">True</span><br>sleepy=<span class="hljs-literal">False</span><br><span class="hljs-keyword">not</span> hungry				<span class="hljs-comment">#False</span><br>hungry <span class="hljs-keyword">and</span> sleepy		<span class="hljs-comment">#饿而且困<hanla></hanla></span><br>hungry <span class="hljs-keyword">or</span> sleepy		<span class="hljs-comment">#饿或者困</span><br></code></pre></td></tr></tbody></table></figure>
+<h3 id="if语句">if<hanla></hanla>语句</h3>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">hungry=<span class="hljs-literal">False</span><br><span class="hljs-keyword">if</span> hungry:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"I'm hungry"</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"I'm not hungry"</span>)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"I'm sleepy"</span>)<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="for语句">for<hanla></hanla>语句</h3>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]:<br>	<span class="hljs-built_in">print</span>(i)<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="函数">函数</h3>
+<p>可以将一连串的处理定义为函数（function）</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">hello</span>():<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello World!"</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">hello</span>(<span class="hljs-params"><span class="hljs-built_in">object</span></span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello "</span>+<span class="hljs-built_in">object</span>+<span class="hljs-string">"!"</span>)<br><br>hello(<span class="hljs-string">"cat"</span>)<br><span class="hljs-comment"># Hello cat!</span><br></code></pre></td></tr></tbody></table></figure>
-
-<h2 id="Python脚本文件"><a href="#Python脚本文件" class="headerlink" title="Python脚本文件"></a>Python<hanla></hanla>脚本文件</h2><h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>类的格式为：</p>
+<h2 id="Python脚本文件">Python<hanla></hanla>脚本文件</h2>
+<h3 id="类">类</h3>
+<p>类的格式为：</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">类名</span><br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, 参数, ...</span>):	<span class="hljs-comment">#构造函数，只在生成类的实例时被调用一次</span><br>        ...<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">方法名<hanla></hanla>1</span>(<span class="hljs-params">self, 参数, ...</span>):	  <span class="hljs-comment">#方法<hanla></hanla>1</span><br>        ...<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">方法名<hanla></hanla>2</span>(<span class="hljs-params">self, 参数, ...</span>):	  <span class="hljs-comment">#方法<hanla></hanla>2</span><br>        ...<br></code></pre></td></tr></tbody></table></figure>
-
-<p><hanla></hanla>例子：</p>
+<p>例子：</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Man</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name</span>):<br>        <span class="hljs-variable language_">self</span>.name=name<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">"Initialized!"</span>)<br>        <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">hello</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello "</span>+<span class="hljs-variable language_">self</span>.name+<span class="hljs-string">"!"</span>)<br>        <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">goodbye</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">"Good-bye "</span>+<span class="hljs-variable language_">self</span>.name+<span class="hljs-string">"!"</span>)<br>        <br>m=Man(<span class="hljs-string">"David"</span>)<br>m.hello()		<span class="hljs-comment">#Hello David!</span><br>m.goodbye()		<span class="hljs-comment">#Good-bye David!</span><br></code></pre></td></tr></tbody></table></figure>
-
-<h3 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h3><h4 id="导入Numpy"><a href="#导入Numpy" class="headerlink" title="导入Numpy"></a><hanla></hanla>导入<hanla></hanla>Numpy</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br></code></pre></td></tr></tbody></table></figure>
-
-<h4 id="生成Numpy数组"><a href="#生成Numpy数组" class="headerlink" title="生成Numpy数组"></a><hanla></hanla>生成<hanla></hanla>Numpy<hanla></hanla>数组<hanla></hanla></h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># np.array()<hanla></hanla>接受<hanla></hanla>Python<hanla></hanla>列表作为参数，生成<hanla></hanla>Numpy<hanla></hanla>数组<hanla></hanla>(numpy.ndarray)。</span><br>x=np.array([<span class="hljs-number">1.0</span>,<span class="hljs-number">2.0</span>,<span class="hljs-number">3.0</span>])<br><span class="hljs-built_in">print</span>(x)	<span class="hljs-comment">#[1. 2. 3.]</span><br><span class="hljs-built_in">type</span>(x)		<span class="hljs-comment">#&lt;class 'numpy.ndarray'&gt;</span><br></code></pre></td></tr></tbody></table></figure>
-
-<h4 id="Numpy的算术运算"><a href="#Numpy的算术运算" class="headerlink" title="Numpy的算术运算"></a>Numpy<hanla></hanla>的算术运算</h4><p>只有当两个数组的元素个数相同，才能对各个元素进行算术运算。</p>
+<h3 id="Numpy">Numpy</h3>
+<h4 id="导入Numpy">导入<hanla></hanla>Numpy</h4>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br></code></pre></td></tr></tbody></table></figure>
+<h4 id="生成Numpy数组">生成<hanla></hanla>Numpy<hanla></hanla>数组</h4>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># np.array()<hanla></hanla>接受<hanla></hanla>Python<hanla></hanla>列表作为参数，生成<hanla></hanla>Numpy<hanla></hanla>数组<hanla></hanla>(numpy.ndarray)。</span><br>x=np.array([<span class="hljs-number">1.0</span>,<span class="hljs-number">2.0</span>,<span class="hljs-number">3.0</span>])<br><span class="hljs-built_in">print</span>(x)	<span class="hljs-comment">#[1. 2. 3.]</span><br><span class="hljs-built_in">type</span>(x)		<span class="hljs-comment">#&lt;class 'numpy.ndarray'&gt;</span><br></code></pre></td></tr></tbody></table></figure>
+<h4 id="Numpy的算术运算">Numpy<hanla></hanla>的算术运算</h4>
+<p>只有当两个数组的元素个数相同，才能对各个元素进行算术运算。</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python">x=np.array([<span class="hljs-number">1.0</span>,<span class="hljs-number">2.0</span>,<span class="hljs-number">3.0</span>])<br>y=np.array([<span class="hljs-number">2.0</span>,<span class="hljs-number">4.0</span>,<span class="hljs-number">6.0</span>])<br>x+y<br><span class="hljs-comment"># array([3.,6.,9.])</span><br>x-y<br><span class="hljs-comment"># array([-1.,-2.,-3.])</span><br>x*y 	<span class="hljs-comment">#element-wise product</span><br><span class="hljs-comment"># array([2.,8.,18.])</span><br>x/y<br><span class="hljs-comment"># array([0.5,0.5,0.5])</span><br>x/<span class="hljs-number">2.0</span><br><span class="hljs-comment"># array([0.5,1.,1.5])</span><br></code></pre></td></tr></tbody></table></figure>
-
-<h4 id="Numpy的N维数组"><a href="#Numpy的N维数组" class="headerlink" title="Numpy的N维数组"></a>Numpy<hanla></hanla>的<hanla></hanla>N<hanla></hanla>维数组<hanla></hanla></h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">A=np.array([[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]])<br>A.shape		<span class="hljs-comment">#(2,2)</span><br>A.dtype		<span class="hljs-comment">#dtype('int64')</span><br>B=np.array([[<span class="hljs-number">3</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">6</span>]])<br>A+B			<span class="hljs-comment">#array([[4,2],[3,10]])</span><br>A*B			<span class="hljs-comment">#array([[3,0],[0,24]])</span><br>A*<span class="hljs-number">10</span>		<span class="hljs-comment">#array([[10,20],[30,40]])</span><br></code></pre></td></tr></tbody></table></figure>
-
-<h4 id="广播"><a href="#广播" class="headerlink" title="广播"></a><hanla></hanla>广播<hanla></hanla></h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">A=np.array([[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]])<br>B=np.array([<span class="hljs-number">10</span>,<span class="hljs-number">20</span>])<br>A*B<br><span class="hljs-comment"># array([[10,40],[30,80]])</span><br><span class="hljs-comment"># 因为<hanla></hanla>Numpy<hanla></hanla>有广播功能，所以不同形状的数组之间也可以顺利进行运算。</span><br></code></pre></td></tr></tbody></table></figure>
-
+<h4 id="Numpy的N维数组">Numpy<hanla></hanla>的<hanla></hanla>N<hanla></hanla>维数组</h4>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">A=np.array([[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]])<br>A.shape		<span class="hljs-comment">#(2,2)</span><br>A.dtype		<span class="hljs-comment">#dtype('int64')</span><br>B=np.array([[<span class="hljs-number">3</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">6</span>]])<br>A+B			<span class="hljs-comment">#array([[4,2],[3,10]])</span><br>A*B			<span class="hljs-comment">#array([[3,0],[0,24]])</span><br>A*<span class="hljs-number">10</span>		<span class="hljs-comment">#array([[10,20],[30,40]])</span><br></code></pre></td></tr></tbody></table></figure>
+<h4 id="广播">广播</h4>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">A=np.array([[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]])<br>B=np.array([<span class="hljs-number">10</span>,<span class="hljs-number">20</span>])<br>A*B<br><span class="hljs-comment"># array([[10,40],[30,80]])</span><br><span class="hljs-comment"># 因为<hanla></hanla>Numpy<hanla></hanla>有广播功能，所以不同形状的数组之间也可以顺利进行运算。</span><br></code></pre></td></tr></tbody></table></figure>
 
                 
               </div>
@@ -558,7 +565,7 @@ mjx-container[display="true"] + br {
       
       
         <div class="license-meta-item">
-          <div>许可协议</div>
+          <div>许可协议<hanla></hanla></div>
           <div>
             
               
@@ -583,6 +590,12 @@ mjx-container[display="true"] + br {
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2025/08/11/Text-image%20Synthesis/" title="Text-image Synthesis">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Text-image Synthesis</span>
+                        <span class="visible-mobile"><hanla></hanla>上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
