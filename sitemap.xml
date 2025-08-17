@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://striver98.github.io/2025/08/17/%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E6%8E%A8%E5%AF%BC/</loc>
-    
-    <lastmod>2025-08-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://striver98.github.io/2025/08/11/Text-image%20Synthesis/</loc>
     
     <lastmod>2025-08-16</lastmod>
@@ -238,6 +229,20 @@
   </url>
   
   <url>
+    <loc>https://striver98.github.io/tags/%E5%A4%8D%E4%B9%A0/</loc>
+    <lastmod>2025-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://striver98.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E4%B8%93%E4%B8%9A/</loc>
+    <lastmod>2025-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://striver98.github.io/tags/%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -273,20 +278,6 @@
   </url>
   
   <url>
-    <loc>https://striver98.github.io/tags/%E5%A4%8D%E4%B9%A0/</loc>
-    <lastmod>2025-08-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://striver98.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E4%B8%93%E4%B8%9A/</loc>
-    <lastmod>2025-08-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://striver98.github.io/tags/%E6%97%85%E8%A1%8C/</loc>
     <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -294,7 +285,7 @@
   </url>
   
   <url>
-    <loc>https://striver98.github.io/tags/%E8%89%BA%E6%9C%AF%E5%B1%95/</loc>
+    <loc>https://striver98.github.io/tags/pytorch/</loc>
     <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -315,7 +306,7 @@
   </url>
   
   <url>
-    <loc>https://striver98.github.io/tags/pytorch/</loc>
+    <loc>https://striver98.github.io/tags/%E8%89%BA%E6%9C%AF%E5%B1%95/</loc>
     <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
