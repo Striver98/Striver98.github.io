@@ -146,8 +146,10 @@
 <meta property="og:image" content="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20251017193410119.png">
 <meta property="og:image" content="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20251017193454480.png">
 <meta property="og:image" content="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20251017193523297.png">
+<meta property="og:image" content="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20251020180753166.png">
+<meta property="og:image" content="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20251020181153264.png">
 <meta property="article:published_time" content="2025-09-22T14:53:46.000Z">
-<meta property="article:modified_time" content="2025-10-17T11:36:15.562Z">
+<meta property="article:modified_time" content="2025-10-20T10:19:51.857Z">
 <meta property="article:author" content="Wang Zhixuan">
 <meta property="article:tag" content="NLP">
 <meta property="article:tag" content="LLM">
@@ -243,8 +245,7 @@ html ol > hanla,
 html ul > hanla {
     display: none;
 }
-</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="午夜飞行" type="application/atom+xml">
-<style>mjx-container[jax="SVG"] {
+</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -356,7 +357,8 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
+</style><link rel="alternate" href="/atom.xml" title="午夜飞行" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -508,7 +510,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.9k 字
+          7.4k 字
         
       </span>
     
@@ -519,7 +521,7 @@ mjx-container[display="true"] + br {
         
         
         
-          58 分钟
+          62 分钟
         
       </span>
     
@@ -1032,7 +1034,41 @@ mjx-container[display="true"] + br {
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20251017193454480.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20251017193523297.png" srcset="/img/loading.gif" lazyload></p>
 <p><strong>领域差异和生词识别是分词和 NER 面临的最大挑战</strong></p>
-<h3 id="子词压缩"><a href="#子词压缩" class="headerlink" title="子词压缩"></a><strong>子词压缩</strong></h3><h3 id="词性标注"><a href="#词性标注" class="headerlink" title="词性标注"></a>词性标注</h3>
+<h3 id="子词压缩"><a href="#子词压缩" class="headerlink" title="子词压缩"></a><strong>子词压缩</strong></h3><p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20251020180753166.png" srcset="/img/loading.gif" lazyload></p>
+<p>基本思路：</p>
+<ul>
+<li>对于英语等屈折语文本，可直接用<strong>双字节编码算法<hanla></hanla>(Pair Encoding, BPE)</strong> 算法进行 字符压缩。 </li>
+<li>对于汉语文本，如果有很好的分词工具，先对文本进行词语切分，在切分结果的基础上利用<hanla></hanla>BPE<hanla></hanla>算法进行单字压缩，合并那些最大次数的相邻汉字或字符。</li>
+</ul>
+<p>BPE<hanla></hanla>算法：</p>
+<p>①对邻近的两个字符<hanla></hanla>(汉字)<hanla></hanla>合并，统计被合并的两个邻近字符<hanla></hanla>(汉字)<hanla></hanla>在整个文本中出现的次数<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.448ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 640 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D6FC" d="M34 156Q34 270 120 356T309 442Q379 442 421 402T478 304Q484 275 485 237V208Q534 282 560 374Q564 388 566 390T582 393Q603 393 603 385Q603 376 594 346T558 261T497 161L486 147L487 123Q489 67 495 47T514 26Q528 28 540 37T557 60Q559 67 562 68T577 70Q597 70 597 62Q597 56 591 43Q579 19 556 5T512 -10H505Q438 -10 414 62L411 69L400 61Q390 53 370 41T325 18T267 -2T203 -11Q124 -11 79 39T34 156ZM208 26Q257 26 306 47T379 90L403 112Q401 255 396 290Q382 405 304 405Q235 405 183 332Q156 292 139 224T121 120Q121 71 146 49T208 26Z"></path></g></g></g></svg></mjx-container>； </p>
+<p>②将<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.448ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 640 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D6FC" d="M34 156Q34 270 120 356T309 442Q379 442 421 402T478 304Q484 275 485 237V208Q534 282 560 374Q564 388 566 390T582 393Q603 393 603 385Q603 376 594 346T558 261T497 161L486 147L487 123Q489 67 495 47T514 26Q528 28 540 37T557 60Q559 67 562 68T577 70Q597 70 597 62Q597 56 591 43Q579 19 556 5T512 -10H505Q438 -10 414 62L411 69L400 61Q390 53 370 41T325 18T267 -2T203 -11Q124 -11 79 39T34 156ZM208 26Q257 26 306 47T379 90L403 112Q401 255 396 290Q382 405 304 405Q235 405 183 332Q156 292 139 224T121 120Q121 71 146 49T208 26Z"></path></g></g></g></svg></mjx-container>最大的两个邻近字符<hanla></hanla>(汉字)<hanla></hanla>用原文本中不存在的符号替换<hanla></hanla>(压缩)，重复进行上面的操纵。直到没有被合并的字符<hanla></hanla>(汉字)<hanla></hanla>为止，或者达到限定合并的次数。</p>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20251020181153264.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="词性标注"><a href="#词性标注" class="headerlink" title="词性标注"></a>词性标注<hanla></hanla></h3><p>**<hanla></hanla>词性或称词类<hanla></hanla>(Part-of-Speech, POS)**<hanla></hanla>是词汇最重要的特性，是语言中词的语法分类，具有相同句法功能、能够出现在同样的组合位置中的词，聚合在一起所形成的范畴。<strong>词类连接词汇到句法的桥梁。</strong> </p>
+<p>如在汉语中，词类分为两大类：实词<hanla></hanla>(content words)<hanla></hanla>和虚词<hanla></hanla>(functional words)，实词包括体词、谓词，体词又包括名词、代词等，谓词包括动词、形容词等。 </p>
+<p><strong>词性标注的任务是让系统自动对词汇标注词性标记。</strong></p>
+<p>标注集的确定原则：不同语言中，词性划分基本上已经约定俗成。 自然语言处理中对词性标记要求相对细致。 </p>
+<p><strong>一般原则：</strong></p>
+<ul>
+<li>标准性 : 普遍使用和认可的分类标准和符号集； </li>
+<li>兼容性 : 与已有资源标记尽量一致，或可转换； </li>
+<li>可扩展性 ：扩充或修改。</li>
+</ul>
+<p><strong>标注方法：</strong></p>
+<ul>
+<li><p>基于规则<hanla></hanla>/<hanla></hanla>有限状态机的词性标注方法</p>
+</li>
+<li><p>基于统计模型的词性标注方法</p>
+<ul>
+<li>HMM：分词与词性标注一体化方法</li>
+<li>CRFs：序列标注方法</li>
+</ul>
+</li>
+<li><p>规则和统计方法相结合的词性标注方法</p>
+</li>
+</ul>
+<p><strong>性能评价指标：准确率</strong></p>
+<h2 id="句法分析"><a href="#句法分析" class="headerlink" title="句法分析"></a>句法分析</h2>
                 
               </div>
             
