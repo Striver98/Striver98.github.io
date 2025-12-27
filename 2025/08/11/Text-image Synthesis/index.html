@@ -465,63 +465,79 @@ mjx-container[display="true"] + br {
             
               <div class="markdown-body">
                 
-                <h1 id="扩散模型"><a href="#扩散模型" class="headerlink" title="扩散模型"></a><hanla></hanla>扩散模型<hanla></hanla></h1><h2 id="DDPM"><a href="#DDPM" class="headerlink" title="DDPM"></a>DDPM</h2><p>[1] J. Ho, A. Jain, and P. Abbeel, “Denoising diffusion probabilistic models,” in NeurIPS, 2020.</p>
+                <h1 id="扩散模型"><hanla></hanla>扩散模型</h1>
+<h2 id="ddpm">DDPM</h2>
+<p>[1] J. Ho, A. Jain, and P. Abbeel, “Denoising diffusion probabilistic models,” in NeurIPS, 2020.</p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250812103145875.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="Guided-Diffusion"><a href="#Guided-Diffusion" class="headerlink" title="Guided Diffusion"></a>Guided Diffusion</h2><p>[2] P.DhariwalandA.Nichol, “Diffusion models beat gans on image synthesis,” in NeurIPS,<br>2021.</p>
-<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250813130838784.png" srcset="/img/loading.gif" lazyload alt="image-20250813130838784"></p>
-<h2 id="Latent-Diffusion-Model"><a href="#Latent-Diffusion-Model" class="headerlink" title="Latent Diffusion Model"></a>Latent Diffusion Model</h2><p>[3] R. Rombach, A. Blattmann, D. Lorenz, P. Esser, and B. Ommer, “High-resolution image synthesis with latent diffusion models,” in CVPR, 2022.</p>
+<h2 id="guided-diffusion">Guided Diffusion</h2>
+<p>[2] P.DhariwalandA.Nichol, “Diffusion models beat gans on image synthesis,” in NeurIPS, 2021.</p>
+<figure>
+<img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250813130838784.png" srcset="/img/loading.gif" lazyload alt="image-20250813130838784"><figcaption aria-hidden="true">image-20250813130838784</figcaption>
+</figure>
+<h2 id="latent-diffusion-model">Latent Diffusion Model</h2>
+<p>[3] R. Rombach, A. Blattmann, D. Lorenz, P. Esser, and B. Ommer, “High-resolution image synthesis with latent diffusion models,” in CVPR, 2022.</p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250813171052119.png" srcset="/img/loading.gif" lazyload></p>
 <p>[<a target="_blank" rel="noopener" href="https://www.cnblogs.com/lichunlei/p/18521616">论文阅读] High-Resolution Image Synthesis with Latent Diffusion Models - Chunleiii - 博客园</a></p>
-<h2 id="ControlNet"><a href="#ControlNet" class="headerlink" title="ControlNet"></a>ControlNet</h2><p>[4] L. Zhang, A. Rao, and M. Agrawala, “Adding conditional control to text-to-image diffusion<br>models,” in ICCV, 2023.</p>
+<h2 id="controlnet">ControlNet</h2>
+<p>[4] L. Zhang, A. Rao, and M. Agrawala, “Adding conditional control to text-to-image diffusion models,” in ICCV, 2023.</p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250813174948963.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250813180517096.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="Dreambooth"><a href="#Dreambooth" class="headerlink" title="Dreambooth"></a>Dreambooth</h2><p>[5] N. Ruiz, Y. Li, V. Jampani, Y. Pritch, M. Rubinstein, and K. Aberman, “Dreambooth: Fine tuning text-to-image diffusion models for subject-driven generation,” in CVPR, 2023.</p>
+<h2 id="dreambooth">Dreambooth</h2>
+<p>[5] N. Ruiz, Y. Li, V. Jampani, Y. Pritch, M. Rubinstein, and K. Aberman, “Dreambooth: Fine tuning text-to-image diffusion models for subject-driven generation,” in CVPR, 2023.</p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250814143051168.png" srcset="/img/loading.gif" lazyload></p>
-<ol>
+<ol type="1">
 <li><strong>目标是什么？</strong> 让通用的<hanla></hanla>“文字生成图片”<hanla></hanla>模型学会认识你提供的<strong>特定东西</strong>（比如你家的狗），并能用<strong>新造的词</strong>（比如<hanla></hanla>“一个<hanla></hanla>[小<hanla></hanla>V]<hanla></hanla>狗”）来生成它在各种场景下的新图片，同时保持它独特的样子。</li>
-<li><strong>怎么做？</strong><ul>
+<li><strong>怎么做？</strong>
+<ul>
 <li>给你想教给模型的特定东西（比如你的狗）拍<strong>几张照片</strong>（大约<hanla></hanla>3-5<hanla></hanla>张）。</li>
 <li>给模型看这些照片，同时配上文字描述。这个描述用<strong>一个特殊代号（如<hanla></hanla>[V]）+ 这个东西的种类名（如<hanla></hanla>“狗”）</strong> 组成，比如<hanla></hanla>“一个<hanla></hanla>[V]<hanla></hanla>狗”。</li>
-<li>这样微调模型时，模型就能：<ul>
+<li>这样微调模型时，模型就能：
+<ul>
 <li>利用它<strong>原本就懂<hanla></hanla></strong>“狗”<hanla></hanla>是什么样子的知识（先验知识）。</li>
 <li>把<strong>你这个特定的狗</strong>和那个<strong>特殊代号<hanla></hanla>[V]</strong> 牢牢绑定起来。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>防止模型忘本：</strong><ul>
+</ul></li>
+</ul></li>
+<li><strong>防止模型忘本：</strong>
+<ul>
 <li>有个问题是，模型可能会把<hanla></hanla>“狗”<hanla></hanla>这个词<strong>只</strong>理解成<strong>你这条特定的狗</strong>，忘了其他狗长啥样（这叫<hanla></hanla>“语言漂移”）。</li>
-<li>为了解决这个问题，他们发明了一个<hanla></hanla>**“防遗忘训练法”**：<ul>
+<li>为了解决这个问题，他们发明了一个<hanla></hanla><strong>“防遗忘训练法”</strong>：
+<ul>
 <li>这个方法<strong>利用模型本身</strong>对<hanla></hanla>“狗”<hanla></hanla>这个<strong>种类</strong>的知识（比如知道狗有很多不同样子）。</li>
 <li>在训练过程中，<strong>鼓励模型</strong>在看到<strong>单纯<hanla></hanla>“狗”<hanla></hanla>这个词</strong>时，仍然能生成<strong>各种各样不同的狗</strong>（而不是只生成你家那条狗）。这样就能保护模型对<hanla></hanla>“狗”<hanla></hanla>这个类别的理解。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>效果：</strong><ul>
+</ul></li>
+</ul></li>
+<li><strong>效果：</strong>
+<ul>
 <li>训练完成后，只要在文字描述里用那个<strong>特殊代号（如<hanla></hanla>“[V]<hanla></hanla>狗”）</strong>，就能指挥模型生成<strong>你家那条狗</strong>在各种新场景、摆不同姿势、甚至变成艺术风格的照片了！就像放进一个<hanla></hanla>“魔法照相亭”。</li>
-</ul>
-</li>
-<li><strong>他们还做了这些：</strong><ul>
+</ul></li>
+<li><strong>他们还做了这些：</strong>
+<ul>
 <li>尝试了各种文字生成图片的新玩法（给东西换背景、改属性、做艺术效果等）。</li>
 <li>通过实验证明了他们方法里每个部分（特别是那个<hanla></hanla>“防遗忘训练法”）都很重要。</li>
 <li>和其他方法做了对比实验。</li>
 <li>请人实际测试，证明他们生成的图片里，东西的样子和文字描述的要求都更准确。</li>
-</ul>
-</li>
+</ul></li>
 </ol>
 <p><strong>总结核心（完全对应原文）：</strong> Dreambooth 教通用文生图模型认识你的特定东西（用几张照片），并绑定一个新词（特殊代号<hanla></hanla>+<hanla></hanla>类别名，如<hanla></hanla>“[V]<hanla></hanla>狗”）。为了防止模型学了新词就忘了旧词（把<hanla></hanla>“狗”<hanla></hanla>只当成你的狗），它用了一个巧妙的<hanla></hanla>“防遗忘训练法”，利用模型本身对这个东西类别（如<hanla></hanla>“狗”）的理解，在训练时鼓励模型继续生成同类的其他东西（各种狗），从而保护了原有知识。最终，用新词就能生成那个特定东西在各种场景下的新图片。</p>
-<h1 id="流匹配"><a href="#流匹配" class="headerlink" title="流匹配"></a>流匹配<hanla></hanla></h1><h2 id="Multimodal-Diffusion-Backbone"><a href="#Multimodal-Diffusion-Backbone" class="headerlink" title="Multimodal Diffusion Backbone"></a>Multimodal Diffusion Backbone</h2><p>[1] P. Esser, S. Kulal, A. Blattmann, R. Entezari, J. Muller, H. Saini, ¨ Y. Levi, D. Lorenz, A. Sauer, F. Boesel et al., “Scaling rectified flow transformers for high-resolution image synthesis,” in ICML, 2024.</p>
+<h1 id="流匹配">流匹配</h1>
+<h2 id="multimodal-diffusion-backbone">Multimodal Diffusion Backbone</h2>
+<p>[1] P. Esser, S. Kulal, A. Blattmann, R. Entezari, J. Muller, H. Saini, ¨ Y. Levi, D. Lorenz, A. Sauer, F. Boesel et al., “Scaling rectified flow transformers for high-resolution image synthesis,” in ICML, 2024.</p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250815162713903.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="Flow-Matching"><a href="#Flow-Matching" class="headerlink" title="Flow Matching"></a>Flow Matching</h2><p>[2] Lipman, Y., Chen, R. T. Q., Ben-Hamu, H., Nickel, M., and Le, M. “Flow matching for generative modeling,”in ICLR 2023.</p>
+<h2 id="flow-matching">Flow Matching</h2>
+<p>[2] Lipman, Y., Chen, R. T. Q., Ben-Hamu, H., Nickel, M., and Le, M. “Flow matching for generative modeling,”in ICLR 2023.</p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250816180158344.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250816180240863.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250816180254717.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="1-为什么流匹配方法比传统的得分匹配方法更稳定？"><a href="#1-为什么流匹配方法比传统的得分匹配方法更稳定？" class="headerlink" title="1. 为什么流匹配方法比传统的得分匹配方法更稳定？"></a>1. 为什么流匹配方法比传统的得分匹配方法更稳定？</h3><p>得分匹配方法需要估计数据的概率密度对数的梯度，即得分函数，这在高维数据上可能具有较高的方差，导致训练不稳定。流匹配方法直接回归矢量场，避免了高方差的估计，同时通过条件流匹配，将训练过程分解为更简单的条件问题，提高了训练的稳定性。</p>
-<h3 id="2-为什么最优传输路径能够提高采样效率？"><a href="#2-为什么最优传输路径能够提高采样效率？" class="headerlink" title="2. 为什么最优传输路径能够提高采样效率？"></a>2. 为什么最优传输路径能够提高采样效率？</h3><p>最优传输路径中的样本以直线轨迹从初始分布移动到目标分布，路径更为直接，且速度恒定。这意味着采样过程可以使用更大的步长，减少步数，同时仍能保持较高的生成质量。因此，最优传输路径在采样效率上具有优势。</p>
-<h3 id="3-流匹配方法是否适用于其他类型的数据？"><a href="#3-流匹配方法是否适用于其他类型的数据？" class="headerlink" title="3. 流匹配方法是否适用于其他类型的数据？"></a>3. 流匹配方法是否适用于其他类型的数据？</h3><p>虽然本文的实验主要集中在图像数据上，但流匹配方法本质上是通用的。由于它仅依赖于构建合适的条件概率路径和矢量场，因此可以适用于其他类型的数据，如文本、音频等，只要能够定义合适的概率路径。</p>
-<h3 id="4-流匹配方法是否存在局限性？在什么情况下可能不起作用？"><a href="#4-流匹配方法是否存在局限性？在什么情况下可能不起作用？" class="headerlink" title="4. 流匹配方法是否存在局限性？在什么情况下可能不起作用？"></a>4. 流匹配方法是否存在局限性？在什么情况下可能不起作用？</h3><p>流匹配方法的效果取决于条件概率路径和条件矢量场的选择。如果条件概率路径无法有效地逼近数据分布，或者条件矢量场难以学习到真实的流，那么模型的性能可能会受到限制。此外，对于高维、复杂的数据分布，构建合适的概率路径和矢量场可能会更加困难，需要进一步的研究。</p>
-<h3 id="5-CNF和NF的区别？"><a href="#5-CNF和NF的区别？" class="headerlink" title="5. CNF和NF的区别？"></a>5. CNF<hanla></hanla>和<hanla></hanla>NF<hanla></hanla>的区别？</h3><p>连续归一化流（Continuous Normalizing Flows, CNFs）和归一化流（Normalizing Flows, NFs）都是用于概率分布变换的技术。</p>
+<h3 id="为什么流匹配方法比传统的得分匹配方法更稳定">1. 为什么流匹配方法比传统的得分匹配方法更稳定？</h3>
+<p>得分匹配方法需要估计数据的概率密度对数的梯度，即得分函数，这在高维数据上可能具有较高的方差，导致训练不稳定。流匹配方法直接回归矢量场，避免了高方差的估计，同时通过条件流匹配，将训练过程分解为更简单的条件问题，提高了训练的稳定性。</p>
+<h3 id="为什么最优传输路径能够提高采样效率">2. 为什么最优传输路径能够提高采样效率？</h3>
+<p>最优传输路径中的样本以直线轨迹从初始分布移动到目标分布，路径更为直接，且速度恒定。这意味着采样过程可以使用更大的步长，减少步数，同时仍能保持较高的生成质量。因此，最优传输路径在采样效率上具有优势。</p>
+<h3 id="流匹配方法是否适用于其他类型的数据">3. 流匹配方法是否适用于其他类型的数据？</h3>
+<p>虽然本文的实验主要集中在图像数据上，但流匹配方法本质上是通用的。由于它仅依赖于构建合适的条件概率路径和矢量场，因此可以适用于其他类型的数据，如文本、音频等，只要能够定义合适的概率路径。</p>
+<h3 id="流匹配方法是否存在局限性在什么情况下可能不起作用">4. 流匹配方法是否存在局限性？在什么情况下可能不起作用？</h3>
+<p>流匹配方法的效果取决于条件概率路径和条件矢量场的选择。如果条件概率路径无法有效地逼近数据分布，或者条件矢量场难以学习到真实的流，那么模型的性能可能会受到限制。此外，对于高维、复杂的数据分布，构建合适的概率路径和矢量场可能会更加困难，需要进一步的研究。</p>
+<h3 id="cnf和nf的区别">5. CNF<hanla></hanla>和<hanla></hanla>NF<hanla></hanla>的区别？</h3>
+<p>连续归一化流（Continuous Normalizing Flows, CNFs）和归一化流（Normalizing Flows, NFs）都是用于概率分布变换的技术。</p>
 <p><strong>归一化流（NF）</strong>：</p>
 <ul>
 <li>归一化流使用一系列可逆的、参数化的变换来将一个简单的分布（如高斯分布）变换为目标复杂分布。</li>
@@ -532,16 +548,19 @@ mjx-container[display="true"] + br {
 <li>CNF<hanla></hanla>将这种变换的过程视为一个连续的系统，通过常微分方程（ODE）定义。</li>
 <li>变换不再是离散的一步一步，而是一个连续的时间演化过程。</li>
 </ul>
-<h3 id="6-什么是最优传输（Optimal-Transport，OT）路径？"><a href="#6-什么是最优传输（Optimal-Transport，OT）路径？" class="headerlink" title="6. 什么是最优传输（Optimal Transport，OT）路径？"></a>6. 什么是最优传输（Optimal Transport，OT）路径？</h3><ul>
+<h3 id="什么是最优传输optimal-transportot路径">6. 什么是最优传输（Optimal Transport，OT）路径？</h3>
+<ul>
 <li><strong>最优传输理论</strong>研究如何以最小的代价将一个概率分布转换为另一个概率分布。</li>
 <li><strong>OT<hanla></hanla>路径</strong>是在最优传输问题中找到的，将初始分布转换为目标分布的最节省<hanla></hanla>“成本”<hanla></hanla>的路径。</li>
 <li>在图像处理中，最优传输可以用于图像变形、颜色匹配等。</li>
 </ul>
-<h3 id="7-为什么说扩散模型限制于特定的概率路径？"><a href="#7-为什么说扩散模型限制于特定的概率路径？" class="headerlink" title="7. 为什么说扩散模型限制于特定的概率路径？"></a>7. 为什么说扩散模型限制于特定的概率路径？</h3><p>扩散模型通过逐步添加噪声将数据转换为一种简单的噪声分布，然后通过逆过程逐步去除噪声来生成新数据。这一过程可以被视为沿着一个特定的概率路径在数据空间中移动。</p>
+<h3 id="为什么说扩散模型限制于特定的概率路径">7. 为什么说扩散模型限制于特定的概率路径？</h3>
+<p>扩散模型通过逐步添加噪声将数据转换为一种简单的噪声分布，然后通过逆过程逐步去除噪声来生成新数据。这一过程可以被视为沿着一个特定的概率路径在数据空间中移动。</p>
 <p>「概率路径」通常指的是一个概率过程的演变轨迹，这个过程描述了从一种状态或分布转移到另一种状态或分布的方式。尤其是谈及扩散模型时，概率路径涉及模型如何在数据空间中通过一系列的概率分布变化实现从初始状态（标准高斯分布）到目标状态（自然图像的分布）的转变。</p>
 <p>扩散模型中，路径的演变规则是固定的，即如何从一个分布转变到下一个分布的方式是预先定义的，通常是线性或非线性的噪声添加和去除过程。这种固定性使得模型在训练时学习的是<strong>如何反向通过这条特定的路径</strong>，从而生成新的数据样本。</p>
 <p>任何偏离预设路径的尝试都可能导致模型生成不正确或低质量的样本，因为模型没有学习如何处理这些偏离路径的情况。这种限制使得扩散模型在生成过程中缺乏灵活性，无法根据数据的不同特征动态调整路径。</p>
-<h3 id="8-在流匹配中是如何找到OT路径的？"><a href="#8-在流匹配中是如何找到OT路径的？" class="headerlink" title="8. 在流匹配中是如何找到OT路径的？"></a>8. 在流匹配中是如何找到<hanla></hanla>OT<hanla></hanla>路径的？</h3><ol>
+<h3 id="在流匹配中是如何找到ot路径的">8. 在流匹配中是如何找到<hanla></hanla>OT<hanla></hanla>路径的？</h3>
+<ol type="1">
 <li><strong>构建条件概率路径：</strong> 定义均值和标准差随时间线性变化的条件概率路径。</li>
 <li><strong>计算条件矢量场：</strong> 利用条件概率路径的参数，计算对应的条件矢量场。</li>
 <li><strong>训练模型矢量场：</strong> 使用条件流匹配的损失函数，将模型矢量场训练为逼近条件矢量场。</li>
@@ -549,8 +568,8 @@ mjx-container[display="true"] + br {
 <p>通过选择线性变化的条件概率路径和对应的条件矢量场，流匹配方法成功地找到了符合最优传输性质的<hanla></hanla>OT<hanla></hanla>路径。在这种路径下，样本点以最直接、最有效的方式从初始分布移动到目标分布。</p>
 <p><strong>1. Simulation-Free Training of Flows：</strong></p>
 <p>在训练生成模型时，可以避免直接求解微分方程，从而提高训练效率。在生成模型，尤其是扩散模型中，通常需要通过模拟一个从数据到噪声的随机过程（即正向过程），然后训练模型逆转这个过程（即逆向过程），以生成新的数据样本。这个过程涉及到求解一个随机微分方程，这在计算上通常是昂贵的。在传统的扩散模型训练中，正向过程是通过模拟一个确定性的微分方程来实现的，这个过程需要在每个时间步上评估神经网络，这导致了较高的计算成本。为了解决这个问题，研究者们提出了一种新的方法，即<strong>通过直接回归一个向量场来近似这个过程，而不是直接求解<hanla></hanla>ODE</strong>。这个向量场定义了从数据分布到噪声分布的转换，而且可以通过神经网络参数化。</p>
-<p><strong>2.</strong> <strong><a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=240459073&amp;content_type=Article&amp;match_order=1&amp;q=Rectified+Flow+Transformer+Models&amp;zhida_source=entity">Rectified Flow Transformer Models</a>：<strong>修正流<hanla></hanla>Transformer<hanla></hanla>模型是一种结合了修正流（Rectified Flow）和<hanla></hanla>Transformer<hanla></hanla>架构的生成模型，<strong>专门用于高分辨率图像合成任务</strong>。Rectified Flow<hanla></hanla>优势如下</strong>：</strong></p>
-<ol>
+<p><strong>2.</strong> <strong><a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=240459073&amp;content_type=Article&amp;match_order=1&amp;q=Rectified+Flow+Transformer+Models&amp;zhida_source=entity">Rectified Flow Transformer Models</a>：</strong>修正流<hanla></hanla>Transformer<hanla></hanla>模型是一种结合了修正流（Rectified Flow）和<hanla></hanla>Transformer<hanla></hanla>架构的生成模型，<strong>专门用于高分辨率图像合成任务</strong>。Rectified Flow<hanla></hanla>优势如下<strong>：</strong></p>
+<ol type="1">
 <li><strong>理论优势</strong>：Rectified Flow<hanla></hanla>模型通过在数据和噪声之间建立一条直线路径来定义正向过程。这种直接的路径选择在理论上具有更好的属性，因为它减少了在模拟过程中可能累积的误差，并且由于每一步都对应于神经网络的评估，这直接影响了采样速度。</li>
 <li><strong>简化的训练过程</strong>：RF<hanla></hanla>模型的训练过程相对简单，因为它不需要复杂的积分步骤来模拟过程。这使得<hanla></hanla>RF<hanla></hanla>模型在训练时更加高效，尤其是在处理高维数据（如图像）时。</li>
 <li><strong>性能提升</strong>：在第<hanla></hanla>3<hanla></hanla>章中，作者通过大规模研究比较了不同的流模型，并展示了<hanla></hanla>RF<hanla></hanla>模型在高分辨率文本到图像合成任务中的优越性能。这表明<hanla></hanla>RF<hanla></hanla>模型在理解和生成复杂图像方面具有更好的能力。</li>
@@ -558,7 +577,7 @@ mjx-container[display="true"] + br {
 <li><strong>可扩展性</strong>：RF<hanla></hanla>模型的架构和训练方法允许模型在不同尺度上进行扩展，这有助于在保持性能的同时增加模型的复杂性。这种可扩展性使得<hanla></hanla>RF<hanla></hanla>模型能够适应更广泛的应用场景。</li>
 <li><strong>实验结果</strong>：通过实验，作者展示了<hanla></hanla>RF<hanla></hanla>模型在各种评估指标（如验证损失、CLIP<hanla></hanla>分数和<hanla></hanla>FID）上相对于其他流模型的优越性。这些实验结果支持了<hanla></hanla>RF<hanla></hanla>模型在实际应用中的有效性和优越性能。</li>
 </ol>
-<p>**3. 时序噪声采样器（Timestep Samplers）：**<hanla></hanla>在修正流模型（Rectified Flow Models）的训练中起着关键作用。这些采样器的工作方式和提升效率的原因如下：</p>
+<p><strong>3. 时序噪声采样器（Timestep Samplers）：</strong>在修正流模型（Rectified Flow Models）的训练中起着关键作用。这些采样器的工作方式和提升效率的原因如下：</p>
 <ul>
 <li>在修正流模型中，数据生成过程被视为一个从数据分布到噪声分布的连续路径。这个过程通常被划分为多个时间步（timesteps），每个时间步对应于路径上的一个点。</li>
 <li>传统的噪声采样方法可能在所有时间步上均匀地采样，这意味着在训练过程中，模型在每个时间步上接收到的样本数量是相同的。</li>
@@ -570,16 +589,20 @@ mjx-container[display="true"] + br {
 <li>这种结合允许模型在生成过程中同时考虑文本提示和图像内容，从而生成与文本描述相匹配的高质量图像。多模态扩散骨干的设计使得模型能够在图像和文本之间实现双向信息流，这对于理解和生成复杂的图像内容至关重要。</li>
 </ul>
 <p>总的来说，<strong>Rectified Flow Transformer Models</strong><hanla></hanla>通过结合修正流的直线路径优势和<hanla></hanla>Transformer<hanla></hanla>的全局上下文理解能力，提高了文本到图像合成任务的性能。<strong>时序噪声采样器</strong>和<strong>多模态扩散骨干</strong>是这种模型的关键组成部分，它们共同作用于提高训练效率和生成图像的质量。</p>
-<h1 id="自回归"><a href="#自回归" class="headerlink" title="自回归"></a>自回归<hanla></hanla></h1><h2 id="DALL-E"><a href="#DALL-E" class="headerlink" title="DALL-E"></a>DALL-E</h2><p>[1] A. Ramesh, M. Pavlov, G. Goh, S. Gray, C. Voss, A. Radford, M. Chen, and I. Sutskever, “Zero-shot text-to-image generation,”in ICML, 2021.</p>
+<h1 id="自回归">自回归</h1>
+<h2 id="dall-e">DALL-E</h2>
+<p>[1] A. Ramesh, M. Pavlov, G. Goh, S. Gray, C. Voss, A. Radford, M. Chen, and I. Sutskever, “Zero-shot text-to-image generation,”in ICML, 2021.</p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250818140738176.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250818140717727.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250818181727725.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250818181749089.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/a69850e76b7274e421011fd48bfa5d1b.jpeg" srcset="/img/loading.gif" lazyload></p>
-<h2 id="CogView"><a href="#CogView" class="headerlink" title="CogView"></a>CogView</h2><p>[3] M. Ding, Z. Yang, W. Hong, W. Zheng, C. Zhou, D. Yin, J. Lin, X. Zou, Z. Shao, H. Yang et al., “Cogview: Mastering text-toimage generation via transformers,” in NeurIPS, 2021.</p>
+<h2 id="cogview">CogView</h2>
+<p>[3] M. Ding, Z. Yang, W. Hong, W. Zheng, C. Zhou, D. Yin, J. Lin, X. Zou, Z. Shao, H. Yang et al., “Cogview: Mastering text-toimage generation via transformers,” in NeurIPS, 2021.</p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250819123728715.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250819140252517.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="VAR"><a href="#VAR" class="headerlink" title="VAR"></a>VAR</h2><p>[2] Keyu Tian, Yi Jiang, Zehuan Yuan, Bingyue Peng, Liwei Wang, “Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction,”in NeurIPS, 2024.</p>
+<h2 id="var">VAR</h2>
+<p>[2] Keyu Tian, Yi Jiang, Zehuan Yuan, Bingyue Peng, Liwei Wang, “Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction,”in NeurIPS, 2024.</p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250820140525833.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250820145817081.png" srcset="/img/loading.gif" lazyload></p>
 
