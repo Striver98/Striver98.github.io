@@ -1,0 +1,1170 @@
+<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="auto"><head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/universe.png">
+  <link rel="icon" href="/img/universe.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Wang Zhixuan">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="中国科学院大学《多智能体系统》课程笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多智能体系统知识总结">
+<meta property="og:url" content="https://striver98.github.io/2026/04/01/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="午夜飞行">
+<meta property="og:description" content="中国科学院大学《多智能体系统》课程笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260401182733898.png">
+<meta property="article:published_time" content="2026-04-01T09:05:15.000Z">
+<meta property="article:modified_time" content="2026-04-02T08:03:52.459Z">
+<meta property="article:author" content="Wang Zhixuan">
+<meta property="article:tag" content="Agent">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260401182733898.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>多智能体系统知识总结 - 午夜飞行</title>
+
+  <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css">
+
+
+
+  <link rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css">
+
+  <link rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css">
+
+  <link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css">
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css">
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"striver98.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":["home"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"lvc5jMNgiDCshZ3sR3KkiNjR-gzGzoHsz","app_key":"yBvnSteGkTHVkCJDH80pXa1d","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/color-schema.js"></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<!-- hexo injector head_end start --><style>
+body hanla:after {
+    content: ' ';
+    display: inline;
+    font-family: inherit;
+    font-size: 0.45em;
+}
+
+html code hanla,
+html pre hanla,
+html kbd hanla,
+html samp hanla,
+html ruby hanla,
+html .tag-list-item hanla {
+    display: none;
+}
+
+html ol > hanla,
+html ul > hanla {
+    display: none;
+}
+</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="午夜飞行" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>午夜飞行</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax="true" style="background: url('https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260401182733898.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">多智能体系统知识总结</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Wang Zhixuan
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-04-01 17:05" pubdate="">
+          2026<hanla></hanla>年<hanla></hanla>4<hanla></hanla>月<hanla></hanla>1<hanla></hanla>日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          33 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">多智能体系统知识总结</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="多智能体系统介绍">多智能体系统介绍</h1>
+<h2 id="智能体与多智能体系统基础">智能体与多智能体系统基础</h2>
+<p><strong>智能体是一种能够在特定环境中自主行动以实现其设计目标的计算机系统。</strong></p>
+<ul>
+<li>能够代表其用户或所有者独立行动，并展现出对其内部状态的控制能力。</li>
+<li>能够自行领会满足设计目标所需的工作，而非持续依赖指令。</li>
+</ul>
+<p>多智能体系统由若干智能体构成，这些智能体彼此交互。</p>
+<ul>
+<li>在最普遍的情况下，智能体将代表具有不同目标和动机的用户进行行动。</li>
+<li>为了成功交互，它们需要具备相互协作、配合与协调的能力，正如人类之间的互动方式。</li>
+</ul>
+<h3 id="智能体的特性">智能体的特性</h3>
+<ul>
+<li>情境化<hanla></hanla>(Situated)：在动态<hanla></hanla>/<hanla></hanla>不确定环境中感知与行动</li>
+<li>灵活性<hanla></hanla>(Flexible)：反应式（响应环境变化），主动式（目标导向行为）</li>
+<li>自主性<hanla></hanla>(Autonomous)：对其自身行动行使控制权</li>
+<li>持续性<hanla></hanla>(Persistent)：持续运行的进程</li>
+<li>社会性<hanla></hanla>(Social) ：与其他智能体<hanla></hanla>/<hanla></hanla>人进行交互</li>
+</ul>
+<h2 id="bdi模型">BDI<hanla></hanla>模型</h2>
+<p>在智能体研究领域，BDI<hanla></hanla>模型<hanla></hanla>/<hanla></hanla>理论最初由<hanla></hanla>Bratman[1987]<hanla></hanla>提出：</p>
+<ul>
+<li>识别实践推理中意图的特性</li>
+<li>意图具有前瞻性，可引导智能体规划并约束其采纳其他意图</li>
+<li>意图作为智能体行动计划的构成要素，用以组织当前及未来的行为</li>
+</ul>
+<blockquote>
+<p>实践推理中的意图</p>
+<p>■ 意图为智能体带来需要解决的问题，智能体必须找到实现这些意图的方法 -
+若我怀有实现<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex;" xmlns="http://www.w3.org/2000/svg" width="49.774ex" height="2.149ex" role="img" focusable="false" viewBox="0 -750 22000 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">的</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">意</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">图</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(4000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">你</text></g><g data-mml-node="mi" transform="translate(5000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">应</text></g><g data-mml-node="mi" transform="translate(6000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">当</text></g><g data-mml-node="mi" transform="translate(7000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">预</text></g><g data-mml-node="mi" transform="translate(8000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">期</text></g><g data-mml-node="mi" transform="translate(9000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">我</text></g><g data-mml-node="mi" transform="translate(10000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">会</text></g><g data-mml-node="mi" transform="translate(11000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">投</text></g><g data-mml-node="mi" transform="translate(12000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">入</text></g><g data-mml-node="mi" transform="translate(13000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">资</text></g><g data-mml-node="mi" transform="translate(14000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">源</text></g><g data-mml-node="mi" transform="translate(15000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">来</text></g><g data-mml-node="mi" transform="translate(16000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">规</text></g><g data-mml-node="mi" transform="translate(17000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">划</text></g><g data-mml-node="mi" transform="translate(18000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">如</text></g><g data-mml-node="mi" transform="translate(19000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">何</text></g><g data-mml-node="mi" transform="translate(20000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">达</text></g><g data-mml-node="mi" transform="translate(21000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">成</text></g></g></g></svg></mjx-container></p>
+<p>■ 意图构成采纳其他意图的<hanla></hanla>“筛选机制”，新意图不得与既有意图冲突 -
+若我已持有实现<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex;" xmlns="http://www.w3.org/2000/svg" width="38.462ex" height="2.149ex" role="img" focusable="false" viewBox="0 -750 17000 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">的</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">意</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">图</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(4000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">你</text></g><g data-mml-node="mi" transform="translate(5000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">便</text></g><g data-mml-node="mi" transform="translate(6000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">不</text></g><g data-mml-node="mi" transform="translate(7000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">应</text></g><g data-mml-node="mi" transform="translate(8000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">期</text></g><g data-mml-node="mi" transform="translate(9000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">待</text></g><g data-mml-node="mi" transform="translate(10000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">我</text></g><g data-mml-node="mi" transform="translate(11000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">会</text></g><g data-mml-node="mi" transform="translate(12000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">采</text></g><g data-mml-node="mi" transform="translate(13000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">纳</text></g><g data-mml-node="mi" transform="translate(14000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">一</text></g><g data-mml-node="mi" transform="translate(15000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">个</text></g><g data-mml-node="mi" transform="translate(16000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">与</text></g></g></g></svg></mjx-container>相冲突的意图</p>
+<p>■ 智能体追踪其意图的实现状态，若尝试失败则倾向于再次尝试 -
+若智能体首次实现<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex;" xmlns="http://www.w3.org/2000/svg" width="65.611ex" height="2.149ex" role="img" focusable="false" viewBox="0 -750 29000 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">的</text></g><g data-mml-node="mi" transform="translate(1000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">尝</text></g><g data-mml-node="mi" transform="translate(2000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">试</text></g><g data-mml-node="mi" transform="translate(3000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">失</text></g><g data-mml-node="mi" transform="translate(4000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">败</text></g><g data-mml-node="mi" transform="translate(5000,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(6000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">在</text></g><g data-mml-node="mi" transform="translate(7000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">其</text></g><g data-mml-node="mi" transform="translate(8000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">他</text></g><g data-mml-node="mi" transform="translate(9000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">条</text></g><g data-mml-node="mi" transform="translate(10000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">件</text></g><g data-mml-node="mi" transform="translate(11000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">不</text></g><g data-mml-node="mi" transform="translate(12000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">变</text></g><g data-mml-node="mi" transform="translate(13000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">的</text></g><g data-mml-node="mi" transform="translate(14000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">情</text></g><g data-mml-node="mi" transform="translate(15000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">况</text></g><g data-mml-node="mi" transform="translate(16000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">下</text></g><g data-mml-node="mi" transform="translate(17000,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">，</text></g><g data-mml-node="mi" transform="translate(18000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">它</text></g><g data-mml-node="mi" transform="translate(19000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">将</text></g><g data-mml-node="mi" transform="translate(20000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">尝</text></g><g data-mml-node="mi" transform="translate(21000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">试</text></g><g data-mml-node="mi" transform="translate(22000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">其</text></g><g data-mml-node="mi" transform="translate(23000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">他</text></g><g data-mml-node="mi" transform="translate(24000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">方</text></g><g data-mml-node="mi" transform="translate(25000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">式</text></g><g data-mml-node="mi" transform="translate(26000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">以</text></g><g data-mml-node="mi" transform="translate(27000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">实</text></g><g data-mml-node="mi" transform="translate(28000,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">现</text></g></g></g></svg></mjx-container></p>
+</blockquote>
+<p>Bratman<hanla></hanla>等人<hanla></hanla>[1988]<hanla></hanla>指出了信念、愿望和意图（BDI）在智能体理性行为建模中的核心地位：</p>
+<ul>
+<li>智能体的信念代表其对世界认知的信息</li>
+<li>智能体的愿望代表其期望实现的事态</li>
+<li>智能体的意图代表其已作出行动承诺的愿望</li>
+</ul>
+<p>智能体之所以进行规划，是因为其资源具有有限性</p>
+<ul>
+<li>智能体必须制定并坚持执行计划（即确定计划）
+<ul>
+<li>“坚持”<hanla></hanla>意味着持续遵循计划，不轻易放弃</li>
+</ul></li>
+<li>承诺对推理形成约束：
+<ul>
+<li>为智能体界定问题范围（明确需要推理的内容）：智能体需确定如何履行承诺</li>
+<li>提供可行性筛选机制（明确无需推理的内容）：智能体将排除与承诺相冲突的选项</li>
+</ul></li>
+<li>意图是一种已承诺的计划（例如我的下一次旅程）</li>
+</ul>
+<h1 id="规划问题求解">规划问题求解</h1>
+<p>规划本质上是为了达成某些预期目标而自动生成一系列行动方案的过程。</p>
+<p>规划算法的特性：</p>
+<ul>
+<li><p>可靠性</p>
+<ul>
+<li><p>若规划算法所有解均为合法计划，则该算法是可靠的</p></li>
+<li><p>所有前提条件、目标及额外约束均须得到满足</p></li>
+</ul></li>
+<li><p>完备性</p>
+<ul>
+<li>若实际存在解时规划算法总能找到解，则该算法是完备的</li>
+<li>若搜索空间包含所有解，则该规划算法是严格完备的</li>
+</ul></li>
+<li><p>最优性</p>
+<ul>
+<li>若规划算法能最大化预设的规划质量度量标准，则该算法具有最优性。</li>
+</ul></li>
+</ul>
+<h2 id="类strips规划表示">类<hanla></hanla>STRIPS<hanla></hanla>规划表示</h2>
+<p>极具影响力的动作表示法：</p>
+<ul>
+<li>前提条件：需为真的命题列表</li>
+<li>删除表：将变为假的命题列表</li>
+<li>增加表：将变为真的命题列表</li>
+</ul>
+<p>Example:</p>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260401194330497.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="框架问题">框架问题</h3>
+<p><strong>如何高效地表示所有未发生改变的部分？</strong></p>
+<p>我从家前往商店，由此创造了一个新的情境<hanla></hanla>S’。在<hanla></hanla>S’<hanla></hanla>中：</p>
+<ul>
+<li>商店仍在售卖薯片<br>
+</li>
+<li>我的年龄保持不变<br>
+</li>
+<li>北京依然是中国的首都……</li>
+</ul>
+<h3 id="分支问题">分支问题</h3>
+<p><strong>我们是否要在动作定义中说明所有这些内容？</strong></p>
+<p>我从家前往商店，由此创造了新情境<hanla></hanla>S’。在<hanla></hanla>S’<hanla></hanla>中：</p>
+<ul>
+<li>我此刻位于中关村<br>
+</li>
+<li>店内人数增加了<hanla></hanla>1<br>
+</li>
+<li>我口袋中的物品现已转移至店内</li>
+</ul>
+<h3 id="strips-treatment">STRIPS Treatment</h3>
+<p>在<hanla></hanla>STRIPS<hanla></hanla>中，某些事实是在世界状态内推断得出的（例如商店内的人数）。</p>
+<ul>
+<li>原始事实（例如<hanla></hanla>at(home)）会在状态间持续存在，除非发生改变。</li>
+<li>推断事实不会被保留，必须重新推断。
+<ul>
+<li>这可以避免出错，但可能效率较低。</li>
+</ul></li>
+</ul>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260401194936896.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="手段目的分析">手段目的分析</h3>
+<p>STRIPS<hanla></hanla>系统采用手段-目的分析法解决问题</p>
+<ul>
+<li>通过缩减当前状态与目标状态之间的差异进行搜索</li>
+<li>分析可用操作手段以实现预期目标</li>
+</ul>
+<h3 id="积木世界示例苏斯曼异常">积木世界示例（苏斯曼异常）</h3>
+<p>STRIPS<hanla></hanla>采用<strong>非交叉规划器<hanla></hanla>(non-interleaved
+planner)</strong>，无法解决此示例：</p>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260401195135850.png" srcset="/img/loading.gif" lazyload></p>
+<p>非交叉规划器当给定两个子目标<hanla></hanla>G1<hanla></hanla>和<hanla></hanla>G2<hanla></hanla>时，它会生成一个先完成<hanla></hanla>G1<hanla></hanla>再完成<hanla></hanla>G2<hanla></hanla>的串联计划，反之亦然。</p>
+<p>Initial State: on(C,A), clear(C), on-table(A),
+on-table(B),clear(B)</p>
+<p>Goal: on(A,B), on(B,C),clear(A)</p>
+<p><strong>顺序 1：G1 → G2</strong></p>
+<figure class="highlight asciidoc"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><hanla></hanla>初始: on(C,A), clear(C), on-table(A), on-table(B), clear(B)<br><br><span class="hljs-section">=== 求解 G1 (on(A,B)) ===</span><br>1. unstack(C, A)     // C 移到桌上，现在 on-table(C), clear(A)<br>2. pickup(A)         // A 从桌上拿起<hanla></hanla><br>3. stack(A, B)       // A 放到 B 上，G1 完成<br>状态: on(A,B), on-table(C), clear(C), clear(A)<br><br><span class="hljs-section">=== 求解 G2 (on(B,C)) ===</span><br><hanla></hanla>需要: clear(C) ✅, holding(B) ❌<br>当前 B 在桌上，但 B 上有 A ❌  (on(A,B) 意味着 B 被占)<br><hanla></hanla>必须先 unstack(A, B) → 破坏 G1<br><hanla></hanla>重新规划 G1... 陷入循环<br></code></pre></td></tr></tbody></table></figure>
+<p><strong>顺序 2：G2 → G1</strong></p>
+<figure class="highlight asciidoc"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><hanla></hanla>初始: on(C,A), clear(C), on-table(A), on-table(B), clear(B)<br><br><span class="hljs-section">=== 求解 G2 (on(B,C)) ===</span><br>1. pickup(B)          // B 从桌上拿起<hanla></hanla><br>2. stack(B, C)        // B 放到 C 上，G2 完成<br>状态: on(B,C), on(C,A), clear(B), on-table(A), clear(A)? <br><span class="hljs-code">      等等，on(C,A) 还在，所以 A 上有 C，clear(A) = false</span><br><br><span class="hljs-section">=== 求解 G1 (on(A,B)) ===</span><br><hanla></hanla>需要: clear(B) ✅, holding(A) ❌<br>当前 A 在桌上，但 A 上有 C ❌<br>必须先 unstack(C, A) → 但 C 上有 B，所以需要先 unstack(B, C)<br><hanla></hanla>这破坏 G2<br><hanla></hanla>重新规划 G2... 陷入循环<br></code></pre></td></tr></tbody></table></figure>
+<h2 id="基于状态空间搜索的规划">基于状态空间搜索的规划</h2>
+<p>规划即状态空间搜索</p>
+<ul>
+<li>节点：世界状态</li>
+<li>弧：动作</li>
+<li>解：从初始状态到满足目标状态的路径</li>
+</ul>
+<p>Progression(前向规划): forward search</p>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260401204941905.png" srcset="/img/loading.gif" lazyload></p>
+<p>Regression(后向规划): backward search</p>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260401204953050.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="偏序规划pop">偏序规划<hanla></hanla>POP</h2>
+<p>生成偏序规划</p>
+<ul>
+<li>节点为局部规划</li>
+<li>连接表示规划细化</li>
+<li>解为节点（非路径）</li>
+</ul>
+<p>遵循<strong>最少承诺原则</strong>：除非必要，否则不对行动顺序做出承诺</p>
+<p>Plan = (A, O, L)，其中</p>
+<ul>
+<li>A：计划中的动作集合</li>
+<li>O：动作间的时序关系（例如 <span class="math inline"><em>A</em><sub>1</sub> &lt; <em>A</em><sub>2</sub></span>）</li>
+<li>L：通过文字项连接动作的因果连接</li>
+</ul>
+<p><strong>因果连接</strong>：<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.65ex;" xmlns="http://www.w3.org/2000/svg" width="8.786ex" height="3.72ex" role="img" focusable="false" viewBox="0 -1357 3883.4 1644.2"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g><g data-mml-node="mi" transform="translate(783,-150) scale(0.707)"><path data-c="1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path></g></g><g data-mml-node="mover" transform="translate(1466.5,0)"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(220.3,759.2) scale(0.707)"><path data-c="1D444" d="M399 -80Q399 -47 400 -30T402 -11V-7L387 -11Q341 -22 303 -22Q208 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435Q740 255 592 107Q529 47 461 16L444 8V3Q444 2 449 -24T470 -66T516 -82Q551 -82 583 -60T625 -3Q631 11 638 11Q647 11 649 2Q649 -6 639 -34T611 -100T557 -165T481 -194Q399 -194 399 -87V-80ZM636 468Q636 523 621 564T580 625T530 655T477 665Q429 665 379 640Q277 591 215 464T153 216Q153 110 207 59Q231 38 236 38V46Q236 86 269 120T347 155Q372 155 390 144T417 114T429 82T435 55L448 64Q512 108 557 185T619 334T636 468ZM314 18Q362 18 404 39L403 49Q399 104 366 115Q354 117 347 117Q344 117 341 117T337 118Q317 118 296 98T274 52Q274 18 314 18Z"></path></g></g><g data-mml-node="msub" transform="translate(2744.2,0)"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g><g data-mml-node="mi" transform="translate(783,-150) scale(0.707)"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path></g></g></g></g></svg></mjx-container></span></p>
+<p>消费者行为<hanla></hanla><span class="math inline"><em>A</em><sub><em>c</em></sub></span><hanla></hanla>的前提条件<hanla></hanla>Q<hanla></hanla>由生产者行为<hanla></hanla><span class="math inline"><em>A</em><sub><em>p</em></sub></span><hanla></hanla>在规划中建立。</p>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260401210840212.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="因果连接的威胁与保护">因果连接的威胁与保护</h3>
+<p>步骤<hanla></hanla><span class="math inline"><em>A</em><sub><em>t</em></sub></span><hanla></hanla>威胁连接<hanla></hanla>(<span class="math inline"><em>A</em><sub><em>p</em></sub></span>, <span class="math inline"><em>Q</em></span>, <span class="math inline"><em>A</em><sub><em>c</em></sub></span>)<hanla></hanla>的条件是：
+<span class="math inline"><em>A</em><sub><em>t</em></sub></span><hanla></hanla>具有<hanla></hanla>(非<hanla></hanla><span class="math inline"><em>Q</em></span>)<hanla></hanla>的效果，且<hanla></hanla><span class="math inline"><em>A</em><sub><em>t</em></sub></span><hanla></hanla>可能发生在<hanla></hanla><span class="math inline"><em>A</em><sub><em>p</em></sub></span><hanla></hanla>与<hanla></hanla><span class="math inline"><em>A</em><sub><em>c</em></sub></span><hanla></hanla>之间。</p>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260401211141725.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="initial-plan">Initial Plan</h3>
+<p>为保持统一性，请使用两个特殊动作表示初始状态与目标：</p>
+<p>Start(<span class="math inline"><em>A</em><sub>0</sub></span>)：</p>
+<ul>
+<li>无先决条件，</li>
+<li>初始状态即效果，</li>
+<li>必须是规划中的第一步。</li>
+</ul>
+<p>Finish(<span class="math inline"><em>A</em><sub>∞</sub></span>)：</p>
+<ul>
+<li>无附加效果</li>
+<li>目标作为前提条件</li>
+<li>必须是规划中的最后一步</li>
+</ul>
+<p>议程：开放条件集</p>
+<p>例如：{(on(A,B),<span class="math inline"><em>A</em><sub>∞</sub></span>), (on(B,C), <span class="math inline"><em>A</em><sub>∞</sub></span>)}</p>
+<h3 id="consistent-plan-in-pop">Consistent Plan in POP</h3>
+<p>当且仅当：</p>
+<ul>
+<li>排序约束中不存在循环，且</li>
+<li>与因果连接无冲突</li>
+</ul>
+<p>一个没有开放前置条件的<hanla></hanla>Consistent
+Plan<hanla></hanla>即为解：偏序解的每一种线性化都是全序解，从初始状态执行该全序解即可抵达目标状态。</p>
+<h3 id="算法流程">算法流程</h3>
+<p>POP((A, O, L), agenda, actions)</p>
+<p>Initial plan: {Start, Finish} 且将<hanla></hanla>Finish<hanla></hanla>中的前置条件设为开放条件</p>
+<ol type="1">
+<li><p><strong>结束条件</strong>：如果<hanla></hanla>agenda<hanla></hanla>为空，则返回<hanla></hanla>(A,O,L)</p></li>
+<li><p><strong>确定<hanla></hanla>(子)<hanla></hanla>目标</strong>：从<hanla></hanla>agenda<hanla></hanla>中选择<hanla></hanla>(Q,<span class="math inline"><em>A</em><sub><em>n</em><em>e</em><em>e</em><em>d</em></sub></span>)，意思是<hanla></hanla><span class="math inline"><em>A</em><sub><em>n</em><em>e</em><em>e</em><em>d</em></sub></span><hanla></hanla>需要前置条件<hanla></hanla>Q</p></li>
+<li><p><strong>选择动作</strong>：选择一个会产生效果<hanla></hanla>Q<hanla></hanla>的动作<hanla></hanla><span class="math inline"><em>A</em><sub><em>a</em><em>d</em><em>d</em></sub></span></p>
+<ul>
+<li>如果不存在这样的动作，则失败</li>
+<li>把因果连接<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.357ex;" xmlns="http://www.w3.org/2000/svg" width="13.081ex" height="3.427ex" role="img" focusable="false" viewBox="0 -1357 5782 1514.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g><g data-mml-node="TeXAtom" transform="translate(783,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path></g><g data-mml-node="mi" transform="translate(529,0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g><g data-mml-node="mi" transform="translate(1049,0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g></g></g><g data-mml-node="mover" transform="translate(2220.2,0)"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(220.3,759.2) scale(0.707)"><path data-c="1D444" d="M399 -80Q399 -47 400 -30T402 -11V-7L387 -11Q341 -22 303 -22Q208 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435Q740 255 592 107Q529 47 461 16L444 8V3Q444 2 449 -24T470 -66T516 -82Q551 -82 583 -60T625 -3Q631 11 638 11Q647 11 649 2Q649 -6 639 -34T611 -100T557 -165T481 -194Q399 -194 399 -87V-80ZM636 468Q636 523 621 564T580 625T530 655T477 665Q429 665 379 640Q277 591 215 464T153 216Q153 110 207 59Q231 38 236 38V46Q236 86 269 120T347 155Q372 155 390 144T417 114T429 82T435 55L448 64Q512 108 557 185T619 334T636 468ZM314 18Q362 18 404 39L403 49Q399 104 366 115Q354 117 347 117Q344 117 341 117T337 118Q317 118 296 98T274 52Q274 18 314 18Z"></path></g></g><g data-mml-node="msub" transform="translate(3498,0)"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g><g data-mml-node="TeXAtom" transform="translate(783,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(600,0)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path></g><g data-mml-node="mi" transform="translate(1066,0)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path></g><g data-mml-node="mi" transform="translate(1532,0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g></g></g></g></g></svg></mjx-container></span>加入<hanla></hanla>L，把时序<hanla></hanla><span class="math inline"><em>A</em><sub><em>a</em><em>d</em><em>d</em></sub> &lt; <em>A</em><sub><em>n</em><em>e</em><em>e</em><em>d</em></sub></span><hanla></hanla>加入<hanla></hanla>O</li>
+<li><strong>扩展规划</strong>：如果<hanla></hanla><span class="math inline"><em>A</em><sub><em>a</em><em>d</em><em>d</em></sub></span><hanla></hanla>是新动作，则把它加入到<hanla></hanla>A<hanla></hanla>中</li>
+</ul></li>
+<li><p><strong>更新<hanla></hanla>(子)<hanla></hanla>目标</strong>：把<hanla></hanla>(Q,<span class="math inline"><em>A</em><sub><em>n</em><em>e</em><em>e</em><em>d</em></sub></span>)<hanla></hanla>从<hanla></hanla>agenda<hanla></hanla>中移除。如果<hanla></hanla><span class="math inline"><em>A</em><sub><em>a</em><em>d</em><em>d</em></sub></span><hanla></hanla>是新动作，则对于它的每个前置条件<hanla></hanla>P，把<hanla></hanla>(P,<span class="math inline"><em>A</em><sub><em>a</em><em>d</em><em>d</em></sub></span>)<hanla></hanla>加入到<hanla></hanla>agenda<hanla></hanla>中</p></li>
+<li><p><strong>保护因果连接</strong>：对于<hanla></hanla>A<hanla></hanla>中的每个会威胁<hanla></hanla>L<hanla></hanla>中的任意因果连接<hanla></hanla><span class="math inline"><em>A</em><sub><em>p</em></sub> → <em>A</em><sub><em>c</em></sub></span><hanla></hanla>的动作<hanla></hanla><span class="math inline"><em>A</em><sub><em>t</em></sub></span></p>
+<ul>
+<li>选择把<hanla></hanla><span class="math inline"><em>A</em><sub><em>t</em></sub> &lt; <em>A</em><sub><em>p</em></sub></span><hanla></hanla>或者<hanla></hanla><span class="math inline"><em>A</em><sub><em>c</em></sub> &lt; <em>A</em><sub><em>t</em></sub></span><hanla></hanla>加入到<hanla></hanla>O<hanla></hanla>中</li>
+<li>若两项选择均不能满足一致性，则判定为失败</li>
+</ul></li>
+<li><p><strong>POP((A, O, L), agenda, actions)</strong></p></li>
+</ol>
+<h2 id="图规划graphplan">图规划<hanla></hanla>GraphPlan</h2>
+<h3 id="主要思想">主要思想</h3>
+<p>搜索算法中低效的一大根源在于<strong>分支因子</strong>，即每个节点的子节点数量</p>
+<p>GraphPlan<hanla></hanla>通过以下方式降低分支因子：</p>
+<ul>
+<li>创建松弛问题
+<ul>
+<li>移除原问题的部分限制条件，使松弛问题易于求解（多项式时间）</li>
+<li>松弛问题的解将包含原问题的所有解</li>
+</ul></li>
+<li>对原问题进行改进的搜索
+<ul>
+<li>将搜索空间限制在仅包含松弛问题解中出现的动作</li>
+</ul></li>
+</ul>
+<p>GraphPlan [Blum and Furst 97]</p>
+<ul>
+<li>在开始搜索前进行预处理</li>
+<li>构建规划图以记录可能规划上的约束</li>
+<li>结合前向扩展与后向搜索，包含两个阶段：
+<ul>
+<li>扩展：在每个时间步扩展规划图</li>
+<li>搜索：利用规划图约束搜索以寻找可行解</li>
+</ul></li>
+<li>Graphplan 要么找到一个有效规划，要么得出无解的结论</li>
+</ul>
+<p>图规划过程：</p>
+<p>令 k = 0, 1, 2, … &lt;规划图扩展&gt;：</p>
+<ul>
+<li>构建包含 k 个层级的规划图</li>
+<li>检验规划图是否满足解存在的必要条件</li>
+<li>若满足，则</li>
+</ul>
+<p>&lt;规划解提取&gt;：</p>
+<ul>
+<li>进行反向搜索，并限定仅考虑规划图中包含的动作</li>
+<li>若找到解，则返回该解</li>
+</ul>
+<h3 id="规划图">规划图</h3>
+<ul>
+<li><p>该结构由一系列与规划时间步骤对应的层级组成，其中第<hanla></hanla>0<hanla></hanla>层为初始状态。</p></li>
+<li><p>每个层级包含一组命题文字和一组动作，并通过边连接动作的前提条件与效果。</p></li>
+</ul>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260401221700024.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="扩展图">扩展图</h4>
+<p><strong>Actions</strong>:</p>
+<ul>
+<li>为扩展第<hanla></hanla>i<hanla></hanla>层动作：
+<ul>
+<li>添加所有实例化的动作，其全部前提条件均存在于第<hanla></hanla>i<hanla></hanla>层命题中，且任意两个前提条件互不排斥</li>
+<li>添加所有空操作</li>
+</ul></li>
+<li>确定互斥动作</li>
+</ul>
+<p><strong>Propositions</strong>:</p>
+<ul>
+<li>拓展命题层级 i+1：
+<ul>
+<li>在动作层级 i
+中，添加所有插入动作的效果：需区分增加效果与删除效果。</li>
+</ul></li>
+<li>确定互斥命题</li>
+</ul>
+<p><strong>Mutex Relations</strong>：</p>
+<p>若满足以下任一条件，则动作<hanla></hanla>A<hanla></hanla>与<hanla></hanla>B<hanla></hanla>在动作层级上互斥：</p>
+<ul>
+<li><strong>干扰<hanla></hanla>(Interference)</strong>：A（或<hanla></hanla>B）会解除<hanla></hanla>B（或<hanla></hanla>A）的前提条件或效果</li>
+<li><strong>需求竞争<hanla></hanla>(Competing
+needs)</strong>：A<hanla></hanla>与<hanla></hanla>B<hanla></hanla>具有互斥的前提条件</li>
+</ul>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260401222201993.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260401222224119.png" srcset="/img/loading.gif" lazyload></p>
+<p>若满足以下任一条件，则两个命题<hanla></hanla>p<hanla></hanla>和<hanla></hanla>q<hanla></hanla>在命题层面互斥：</p>
+<ul>
+<li><strong>否定关系<hanla></hanla>(Negation)</strong>：p（或<hanla></hanla>q）是<hanla></hanla>q（或<hanla></hanla>p）的否定</li>
+<li><strong>不一致支持<hanla></hanla>(Inconsistent
+support)</strong>：所有实现它们的方式互斥（即所有添加<hanla></hanla>p<hanla></hanla>的动作与所有添加<hanla></hanla>q<hanla></hanla>的动作相互排斥）</li>
+</ul>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260401222409998.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="团队合作">团队合作</h1>
+<h2 id="理解团队合作-understanding-teamwork">理解团队合作 (Understanding
+Teamwork)</h2>
+<ul>
+<li><strong>团队合作的本质</strong>：团队合作不仅仅是多个成员同时采取协调一致的行动（例如普通交通或车队行驶），而是团队成员为了实现共同目标而进行的合作努力
+。</li>
+<li><strong>为什么需要团队</strong>：组织团队可以建立更健壮的结构，成员可以在遇到困难时互相帮助，互相替代履行责任，并确保关键信息传达给队友
+。团队中不同的角色可以承担不同的责任，弥补个体能力的局限 。</li>
+<li><strong>构建团队的难点</strong>：在复杂的环境中，成员动态获取的信息往往是不完整的，沟通不仅耗时、成本高而且存在风险，此外团队成员还可能发生意外失败（如无人机坠毁）
+。</li>
+<li><strong>“特设（Ad
+Hoc）”<hanla></hanla>协调的局限性</strong>：在小规模团队中，依靠预先固定的协调规划可能有效，但这缺乏应对失败的框架，会导致系统缺乏灵活性且难以复用
+。在大型复杂场景中，这种方式会导致严重的团队混乱（例如侦察兵坠毁后整个队伍陷入无限等待）
+。因此，需要基础的团队合作理论作为支撑 。</li>
+</ul>
+<h2 id="团队合作理论-teamwork-theories">团队合作理论 (Teamwork
+Theories)</h2>
+<p>理论的目的是为了从根本上理解团队合作，并为构建健壮的团队应用程序提供规范
+。</p>
+<h3 id="联合意图理论joint-intentions">联合意图理论（Joint
+Intentions）</h3>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260402160104860.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260402160202515.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>承诺（Commitment）是团队合作的核心，理论关注的是<hanla></hanla>“团队承诺”<hanla></hanla>而非个体承诺
+。</li>
+<li><strong>共同的信念（Mutual Belief,
+MB）</strong>：指成员之间关于某事的无限层级嵌套信念（“我相信你相信我相信……”）
+。</li>
+<li><strong>联合持续的目标（Joint Persistent Goal,
+JPG）</strong>：这是定义团队承诺的核心概念。它要求团队共同相信目标尚未达成，并拥有实现该目标的共同目标
+。</li>
+<li><strong>弱目标（Weak Goal,
+WG）与沟通</strong>：直到团队共同相信目标已达成、永远无法达成或无关紧要之前，成员必须保持<hanla></hanla>“弱的共同目标”
+。这意味着，如果某个成员私下发现目标无法实现，他不能直接放弃目标走开，而是必须承担向队友通报的责任，直到使这一情况成为全队的<hanla></hanla>“共同信念”
+。这就为团队合作中的<hanla></hanla>“沟通”<hanla></hanla>提供了坚实的逻辑依据 。</li>
+</ul>
+<h3 id="共享规划shared-plans">共享规划（Shared Plans）</h3>
+<p>与联合意图不同，它不依赖于联合的心理状态，而是强调成员为了团队目标展现出合作行为的<hanla></hanla>“打算（intend-that）”，并对执行任务的步骤（recipe）达成共识
+。</p>
+<h2 id="实用的团队合作模型-steam">实用的团队合作模型 (STEAM)</h2>
+<p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260402160250258.png" srcset="/img/loading.gif" lazyload></p>
+<p>STEAM<hanla></hanla>是一个基于上述理论构建的实用团队模型框架，旨在为智能体提供通用的协调与沟通机制
+。</p>
+<ul>
+<li><strong>层次化规划与组织结构</strong>：STEAM<hanla></hanla>使用了层次化的<hanla></hanla>“响应式团队规划”（包含执行前提、执行体和终止条件）
+。同时，它还定义了包含团队、子团队、个体的组织架构，并将特定的角色分配给这些层级
+。</li>
+<li><strong>执行与监控</strong>：在运行时，每个智能体都在本地维护一份团队程序的副本
+。所有团队规划的执行和终止都通过建立<hanla></hanla>“联合承诺”<hanla></hanla>来完成 。</li>
+<li><strong>故障修复（Monitor and
+Repair）</strong>：如果团队中某个成员失败（例如侦察角色未完成），STEAM<hanla></hanla>会评估角色依赖性（如<hanla></hanla>AND/OR<hanla></hanla>约束）
+。如果发生关键故障，团队会通过能力匹配重新分配角色，能力最强的候选者将接替任务
+。</li>
+<li><strong>选择性沟通（Communication
+Selectivity）</strong>：为了降低沟通成本，STEAM<hanla></hanla>引入了决策理论模型。它会计算<hanla></hanla>“沟通的预期效用（EU(Comm)）”<hanla></hanla>和<hanla></hanla>“不沟通的预期效用（EU(No
+Comm)）”，只有当沟通带来的团队收益大于沟通成本时，智能体才会发送信息
+。</li>
+</ul>
+
+                
+              </div>
+            
+            <hr>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="category-chain-item">学习</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Agent/" class="print-no-link">#Agent</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div><hanla></hanla>多智能体系统知识总结<hanla></hanla></div>
+      <div>https://striver98.github.io/2026/04/01/<hanla></hanla>多智能体系统知识总结<hanla></hanla>/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div><hanla></hanla>作者<hanla></hanla></div>
+          <div>Wang Zhixuan</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div><hanla></hanla>发布于<hanla></hanla></div>
+          <div>2026<hanla></hanla>年<hanla></hanla>4<hanla></hanla>月<hanla></hanla>1<hanla></hanla>日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/03/02/%E5%AF%92%E5%81%87%E9%9A%8F%E6%8B%8D/" title="寒假随拍">
+                        <span class="hidden-mobile">寒假随拍</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索<hanla></hanla></h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input"><hanla></hanla>关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <link rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css">
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js"></script>
+<script src="/js/events.js"></script>
+<script src="/js/plugins.js"></script>
+
+
+
+
+
+  
+    <script src="/js/img-lazyload.js"></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src="https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js"></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer="" src="/js/leancloud.js"></script>
+
+  <script src="/js/local-search.js"></script>
+
+  <script defer="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script src="/js/boot.js"></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning"><hanla></hanla>博客在允许 JavaScript 运行的环境下浏览效果更佳<hanla></hanla></div>
+  </noscript>
+
+
+</body></html>

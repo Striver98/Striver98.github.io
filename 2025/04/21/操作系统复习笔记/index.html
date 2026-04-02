@@ -490,15 +490,23 @@ mjx-container[display="true"] + br {
 <li><p>内核启动<hanla></hanla>init<hanla></hanla>进程：内核初始化完成后，会启动<hanla></hanla>init<hanla></hanla>进程（在<hanla></hanla>Linux<hanla></hanla>中）或<hanla></hanla>systemd<hanla></hanla>进程，该进程是所有其他用户进程的父进程。</p></li>
 <li><p>用户空间程序启动：init<hanla></hanla>进程根据系统的配置，启动一系列的用户空间程序，如<hanla></hanla>Shell，图形界面等。</p></li>
 </ol>
-<h3 id="什么是引导扇区boot-sector它在操作系统的启动过程中起什么作用"><strong>什么是引导扇区（Boot Sector）？它在操作系统的启动过程中起什么作用？</strong></h3>
-<p><strong>引导扇区（Boot Sector）</strong> 是计算机存储设备（如硬盘、U<hanla></hanla>盘等）上用于启动操作系统的关键数据区域，通常占据设备的第一个物理扇区（512<hanla></hanla>字节）。它在操作系统的启动过程中扮演<hanla></hanla>“启动链”<hanla></hanla>的第一环角色，负责将控制权从 BIOS/UEFI 传递给更复杂的引导加载程序（Boot Loader）。</p>
+<h3 id="什么是引导扇区boot-sector它在操作系统的启动过程中起什么作用"><strong>什么是引导扇区（Boot
+Sector）？它在操作系统的启动过程中起什么作用？</strong></h3>
+<p><strong>引导扇区（Boot Sector）</strong>
+是计算机存储设备（如硬盘、U<hanla></hanla>盘等）上用于启动操作系统的关键数据区域，通常占据设备的第一个物理扇区（512<hanla></hanla>字节）。它在操作系统的启动过程中扮演<hanla></hanla>“启动链”<hanla></hanla>的第一环角色，负责将控制权从
+BIOS/UEFI 传递给更复杂的引导加载程序（Boot Loader）。</p>
 <h3 id="请描述一个程序从点击图标到完全运行的典型执行流程"><strong>请描述一个程序从点击图标到完全运行的典型执行流程</strong>？</h3>
 <ol type="1">
-<li><p><strong>加载：</strong> 当启动一个程序时，由<hanla></hanla>OS<hanla></hanla>的加载器将该程序的可执行文件加载到内存中。</p></li>
-<li><p><strong>运行：</strong> OS<hanla></hanla>创建一个新的进程，并将<hanla></hanla>CPU<hanla></hanla>的控制权交给该进程。该新进程开始执行加载到内存中的程序代码。</p></li>
-<li><p><strong>系统调用：</strong> 当程序需要进行一些特权操作（如读写文件，发送网络数据等）时，它将发起系统调用。</p></li>
-<li><p><strong>中断和信号：</strong> 程序的执行可能会被中断和信号打断。中断通常是由硬件事件触发的，如<hanla></hanla>I/O<hanla></hanla>操作的完成，定时器的超时等。信号则是一种软件中断，可以由其他进程或者内核发送。</p></li>
-<li><p><strong>退出：</strong> 当程序执行完成或者由于某种原因需要停止时，它将执行退出操作，包括释放资源，关闭打开的文件，通知父进程等。</p></li>
+<li><p><strong>加载：</strong>
+当启动一个程序时，由<hanla></hanla>OS<hanla></hanla>的加载器将该程序的可执行文件加载到内存中。</p></li>
+<li><p><strong>运行：</strong>
+OS<hanla></hanla>创建一个新的进程，并将<hanla></hanla>CPU<hanla></hanla>的控制权交给该进程。该新进程开始执行加载到内存中的程序代码。</p></li>
+<li><p><strong>系统调用：</strong>
+当程序需要进行一些特权操作（如读写文件，发送网络数据等）时，它将发起系统调用。</p></li>
+<li><p><strong>中断和信号：</strong>
+程序的执行可能会被中断和信号打断。中断通常是由硬件事件触发的，如<hanla></hanla>I/O<hanla></hanla>操作的完成，定时器的超时等。信号则是一种软件中断，可以由其他进程或者内核发送。</p></li>
+<li><p><strong>退出：</strong>
+当程序执行完成或者由于某种原因需要停止时，它将执行退出操作，包括释放资源，关闭打开的文件，通知父进程等。</p></li>
 </ol>
 <h2 id="选择题">选择题</h2>
 <p>在脱机批处理方式中，有一台负责与外部设备交换信息的计算机，一般称之为<hanla></hanla>_____。</p>
@@ -540,34 +548,36 @@ mjx-container[display="true"] + br {
 <p>操作系统中最基本的两个特征是<hanla></hanla>_____。</p>
 <p>A. 虚拟和不确定 B.<hanla></hanla>共享和虚拟</p>
 <p><strong>C. 并发和共享</strong> D.<hanla></hanla>并发和不确定</p>
-<h1 id="第2章-操作系统的运行环境和运行机制">第<hanla></hanla>2<hanla></hanla>章 操作系统的运行环境和运行机制</h1>
+<h1 id="第2章-操作系统的运行环境和运行机制">第<hanla></hanla>2<hanla></hanla>章
+操作系统的运行环境和运行机制</h1>
 <h2 id="练习题-1">练习题</h2>
 <h3 id="从应用程序的视角来看异常和中断的区别是什么"><strong>从应用程序的视角来看，异常和中断的区别是什么？</strong></h3>
 <table>
+
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;"><strong>特征</strong></th>
 <th style="text-align: center;"><strong>异常</strong></th>
 <th style="text-align: center;"><strong>中断</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;"><strong>触发源</strong></td>
 <td style="text-align: center;">程序自身</td>
 <td style="text-align: center;">外部硬件或定时器</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;"><strong>同步<hanla></hanla>/<hanla></hanla>异步</strong></td>
 <td style="text-align: center;">同步（由指令触发）</td>
 <td style="text-align: center;">异步（随机发生）</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;"><strong>应用程序感知</strong></td>
 <td style="text-align: center;">直接感知，可能导致崩溃或信号处理</td>
 <td style="text-align: center;">间接感知（如通过系统调用返回结果）</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;"><strong>处理方式</strong></td>
 <td style="text-align: center;">需显式处理（如捕获异常）</td>
 <td style="text-align: center;">由操作系统透明处理</td>
@@ -575,12 +585,20 @@ mjx-container[display="true"] + br {
 </tbody>
 </table>
 <p>从应用程序的角度来看，<strong>异常是程序自身执行过程中的<hanla></hanla>“事故”</strong>，需要主动处理或修复；<strong>中断是外部事件的<hanla></hanla>“通知”</strong>，由操作系统代为处理，对程序透明。</p>
-<p><strong>在发生<hanla></hanla>CPU<hanla></hanla>的特权级切换时，CPU<hanla></hanla>会自动保存当前的执行状态，包括程序计器<hanla></hanla>(PC)、栈指针<hanla></hanla>(Stack Pointer, SP)<hanla></hanla>等。请分析：如果不保存<hanla></hanla>PC<hanla></hanla>和<hanla></hanla>SP，会出现什么问题？</strong></p>
+<p><strong>在发生<hanla></hanla>CPU<hanla></hanla>的特权级切换时，CPU<hanla></hanla>会自动保存当前的执行状态，包括程序计器<hanla></hanla>(PC)、栈指针<hanla></hanla>(Stack
+Pointer, SP)<hanla></hanla>等。请分析：如果不保存<hanla></hanla>PC<hanla></hanla>和<hanla></hanla>SP，会出现什么问题？</strong></p>
 <ol type="1">
-<li><strong>无法返回原执行流</strong>：PC 记录了下一条要执行的指令地址。如果切换特权级时未保存 PC，<strong>CPU 将无法知道中断<hanla></hanla>/<hanla></hanla>异常处理完成后应该返回到哪里继续执行</strong>。程序会跳转到错误的地址，导致执行流程混乱（例如执行随机指令、死循环或崩溃）。</li>
-<li><strong>栈数据破坏与内存安全风险</strong>：SP 指向当前栈的顶部，保存了函数的返回地址、局部变量和寄存器状态。若未保存 SP，<strong>切换特权级时会使用错误的栈空间</strong>。</li>
-<li><strong>特权级隔离失效</strong>：用户程序可能通过未隔离的 SP 或 PC 篡改内核栈或代码，引发安全漏洞（如提权攻击）。内核操作可能因用户态数据干扰而崩溃。</li>
-<li><strong>多任务调度失效</strong>：在多任务系统中，进程切换依赖保存的 PC 和 SP 以恢复执行现场。若未保存 PC 和 SP，进程切换后无法恢复原执行状态，导致多任务调度完全失效，系统只能运行单一任务。</li>
+<li><strong>无法返回原执行流</strong>：PC
+记录了下一条要执行的指令地址。如果切换特权级时未保存 PC，<strong>CPU
+将无法知道中断<hanla></hanla>/<hanla></hanla>异常处理完成后应该返回到哪里继续执行</strong>。程序会跳转到错误的地址，导致执行流程混乱（例如执行随机指令、死循环或崩溃）。</li>
+<li><strong>栈数据破坏与内存安全风险</strong>：SP
+指向当前栈的顶部，保存了函数的返回地址、局部变量和寄存器状态。若未保存
+SP，<strong>切换特权级时会使用错误的栈空间</strong>。</li>
+<li><strong>特权级隔离失效</strong>：用户程序可能通过未隔离的 SP 或 PC
+篡改内核栈或代码，引发安全漏洞（如提权攻击）。内核操作可能因用户态数据干扰而崩溃。</li>
+<li><strong>多任务调度失效</strong>：在多任务系统中，进程切换依赖保存的
+PC 和 SP 以恢复执行现场。若未保存 PC 和
+SP，进程切换后无法恢复原执行状态，导致多任务调度完全失效，系统只能运行单一任务。</li>
 </ol>
 <h3 id="系统调用和库函数或api之间是什么关系"><strong>系统调用和库函数或<hanla></hanla>API<hanla></hanla>之间是什么关系？</strong></h3>
 <p>系统调用、库函数和<hanla></hanla>API<hanla></hanla>之间的关系可以理解为<strong>不同层次的接口封装</strong>，三者协作实现用户程序与操作系统之间的交互。系统调用是<strong>操作系统内核提供的底层接口</strong>，允许用户程序（运行在用户态）请求内核（运行在内核态）执行特权操作，例如文件读写、进程创建、网络通信等。库函数是<strong>封装在用户态库中的函数</strong>，例如<hanla></hanla>C<hanla></hanla>标准库（<code>libc</code>）、数学库（<code>libm</code>）等。它们可能直接执行用户态操作，也可能间接调用系统调用。API<hanla></hanla>是<strong>一组预定义的接口规范</strong>，用于定义程序与外部系统（如操作系统、库、服务）的交互方式。</p>
@@ -588,8 +606,9 @@ mjx-container[display="true"] + br {
 <figure class="highlight asciidoc"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-code">+-----------------+</span><br><span class="hljs-section">|  应用程序代码    | → 调用库函数或<hanla></hanla>API</span><br><span class="hljs-section">+-----------------+</span><br><span class="hljs-section">        ↓</span><br><span class="hljs-section">+-----------------+</span><br><span class="hljs-section">| 库函数<hanla></hanla>/API       | → 可能封装系统调用<hanla></hanla></span><br><span class="hljs-section">+-----------------+</span><br><span class="hljs-section">        ↓</span><br><span class="hljs-section">+-----------------+</span><br><span class="hljs-section">| 系统调用         | → 进入内核执行特权操作<hanla></hanla></span><br><span class="hljs-section">+-----------------+</span><br></code></pre></td></tr></tbody></table></figure>
 <p><strong>示例对比</strong></p>
 <table>
+
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;"><strong>操作</strong></th>
 <th style="text-align: center;"><strong>系统调用</strong></th>
 <th style="text-align: center;"><strong>库函数<hanla></hanla>/API</strong></th>
@@ -597,25 +616,27 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">输出字符串</td>
 <td style="text-align: center;"><code>write()</code></td>
 <td style="text-align: center;"><code>printf()</code></td>
-<td style="text-align: center;"><code>printf()</code><hanla></hanla>封装了 <code>write()</code></td>
+<td style="text-align: center;"><code>printf()</code><hanla></hanla>封装了
+<code>write()</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">创建进程</td>
 <td style="text-align: center;"><code>fork()</code></td>
 <td style="text-align: center;"><code>pthread_create()</code></td>
-<td style="text-align: center;">线程库可能调用 <code>clone()</code>（系统调用）</td>
+<td style="text-align: center;">线程库可能调用
+<code>clone()</code>（系统调用）</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">获取时间</td>
 <td style="text-align: center;"><code>gettimeofday()</code></td>
 <td style="text-align: center;"><code>time()</code>（C<hanla></hanla>标准库）</td>
 <td style="text-align: center;"><code>time()</code><hanla></hanla>可能直接调用系统调用</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">数学运算</td>
 <td style="text-align: center;">无</td>
 <td style="text-align: center;"><code>sqrt()</code>（数学库）</td>
@@ -653,10 +674,14 @@ mjx-container[display="true"] + br {
 <p>1.<hanla></hanla>堆栈 2.<hanla></hanla>堆 <strong>3.<hanla></hanla>共享内存段</strong></p>
 <h3 id="内核在进程间执行上下文切换时采取的主要操作步骤"><strong>内核在进程间执行上下文切换时采取的主要操作步骤？</strong></h3>
 <ol type="1">
-<li><p>触发切换 • 由中断<hanla></hanla>/<hanla></hanla>异常（如时间片耗尽、I/O<hanla></hanla>请求）或主动系统调用（如<hanla></hanla>sleep()）引发</p></li>
+<li><p>触发切换 •
+由中断<hanla></hanla>/<hanla></hanla>异常（如时间片耗尽、I/O<hanla></hanla>请求）或主动系统调用（如<hanla></hanla>sleep()）引发</p></li>
 <li><p>保存当前上下文 • 将当前进程的<hanla></hanla>CPU<hanla></hanla>状态存入其进程控制块<hanla></hanla>(PCB)：</p>
-<p>✓ 所有寄存器（通用寄存器、程序计数器<hanla></hanla>PC、栈指针<hanla></hanla>SP） ✓ 内存管理信息（页表基址寄存器） ✓ 浮点寄存器状态 ✓ 特殊功能寄存器</p></li>
-<li><p>切换至内核态 • 提升<hanla></hanla>CPU<hanla></hanla>特权级别到内核模式，使用内核栈进行后续操作</p></li>
+<p>✓ 所有寄存器（通用寄存器、程序计数器<hanla></hanla>PC、栈指针<hanla></hanla>SP） ✓
+内存管理信息（页表基址寄存器） ✓ 浮点寄存器状态 ✓
+特殊功能寄存器</p></li>
+<li><p>切换至内核态 •
+提升<hanla></hanla>CPU<hanla></hanla>特权级别到内核模式，使用内核栈进行后续操作</p></li>
 <li><p>执行调度程序 • 通过调度算法选择下一个要运行的进程</p></li>
 <li><p>更新内存管理单元 • 切换新进程的地址空间（页表基址寄存器更新）</p>
 <p>• 必要时刷新<hanla></hanla>TLB（Translation Lookaside Buffer）</p></li>
@@ -668,33 +693,39 @@ mjx-container[display="true"] + br {
 <h3 id="用户级线程与内核级线程的两个主要区别及其适用场景"><strong>用户级线程与内核级线程的两个主要区别及其适用场景？</strong></h3>
 <p><strong>区别 1：管理主体与内核感知</strong></p>
 <ul>
-<li><strong>用户级线程</strong> ✓ 由用户空间的线程库（如 POSIX Pthreads）管理 ✓ 内核无法感知线程存在，仅看到单进程</li>
-<li><strong>内核级线程</strong> ✓ 由操作系统内核直接管理 ✓ 每个线程在内核有独立的数据结构（如 Linux 的 task_struct）</li>
+<li><strong>用户级线程</strong> ✓ 由用户空间的线程库（如 POSIX
+Pthreads）管理 ✓ 内核无法感知线程存在，仅看到单进程</li>
+<li><strong>内核级线程</strong> ✓ 由操作系统内核直接管理 ✓
+每个线程在内核有独立的数据结构（如 Linux 的 task_struct）</li>
 </ul>
 <p><strong>区别 2：阻塞与并行性</strong></p>
 <ul>
-<li><strong>用户级线程</strong> ✓ 单个线程阻塞（如 I/O 操作）会导致整个进程阻塞 ✓ 无法利用多核 CPU 的并行性（所有线程绑定到单一内核线程）</li>
-<li><strong>内核级线程</strong> ✓ 单个线程阻塞不影响其他线程执行 ✓ 支持多核并行调度（不同线程可分配到不同 CPU 核心）</li>
+<li><strong>用户级线程</strong> ✓ 单个线程阻塞（如 I/O
+操作）会导致整个进程阻塞 ✓ 无法利用多核 CPU
+的并行性（所有线程绑定到单一内核线程）</li>
+<li><strong>内核级线程</strong> ✓ 单个线程阻塞不影响其他线程执行 ✓
+支持多核并行调度（不同线程可分配到不同 CPU 核心）</li>
 </ul>
 <hr>
 <p><strong>适用场景对比</strong></p>
 <table>
+
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;"><strong>用户级线程更优的场景</strong></th>
 <th style="text-align: center;"><strong>内核级线程更优的场景</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">需要极速线程切换（无内核态切换开销）</td>
 <td style="text-align: center;">需要多核并行计算（如科学计算、视频渲染）</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">大规模轻量级线程（如百万级连接处理）</td>
 <td style="text-align: center;">涉及频繁阻塞操作（如文件<hanla></hanla>I/O<hanla></hanla>密集型任务）</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">跨平台移植性要求高（不依赖<hanla></hanla>OS<hanla></hanla>支持）</td>
 <td style="text-align: center;">需要实时响应调度（如嵌入式系统控制）</td>
 </tr>
@@ -754,7 +785,8 @@ mjx-container[display="true"] + br {
 <p><strong>B．进程状态变为就绪</strong></p>
 <p>C．它的优先权变为最大</p>
 <p>D．其<hanla></hanla>PCB<hanla></hanla>移至就绪队列的队首</p>
-<p>一个进程基本状态可以从其他两种基本状态转变过来 ，这个基本状态是<hanla></hanla>_____。</p>
+<p>一个进程基本状态可以从其他两种基本状态转变过来
+，这个基本状态是<hanla></hanla>_____。</p>
 <p>A．执行状态 B．阻塞状态</p>
 <p><strong>C．就绪状态</strong> D．撤销状态</p>
 <p>设系统中有<hanla></hanla>n（n&gt;2）个进程，且当前不在执行进程调度程序，试考虑下述<hanla></hanla>4<hanla></hanla>种情况：</p>
@@ -768,7 +800,8 @@ mjx-container[display="true"] + br {
 <p>下面关于进程的叙述中，不正确的有 _____ 条。2</p>
 <p><strong>① 进程申请<hanla></hanla>CPU<hanla></hanla>得不到满足时，其状态变为等待状态。</strong></p>
 <p>② 在单<hanla></hanla>CPU<hanla></hanla>系统中，任一时刻都有一个进程处于运行状态。</p>
-<p><strong>③ 优先级是进行进程调度的重要依据，一旦确定不能改变。</strong></p>
+<p><strong>③
+优先级是进行进程调度的重要依据，一旦确定不能改变。</strong></p>
 <p>④ 进程获得处理机而运行是通过调度而实现的。</p>
 <p>下列选项中，导致创建新进程的操作是 。</p>
 <p>Ⅰ 用户登录成功 Ⅱ 设备分配</p>
@@ -783,7 +816,9 @@ mjx-container[display="true"] + br {
 <p><strong>C. 进程切换</strong> D. 缺页</p>
 <h1 id="第4章-进程线程调度">第<hanla></hanla>4<hanla></hanla>章 进程线程调度</h1>
 <h2 id="练习题-3">练习题</h2>
-<h3 id="解释抢占式调度preemptive-scheduling和非抢占式调度nonpreemptive-scheduling的区别"><strong>解释抢占式调度（preemptive scheduling）和非抢占式调度（nonpreemptive scheduling）的区别。</strong></h3>
+<h3 id="解释抢占式调度preemptive-scheduling和非抢占式调度nonpreemptive-scheduling的区别"><strong>解释抢占式调度（preemptive
+scheduling）和非抢占式调度（nonpreemptive
+scheduling）的区别。</strong></h3>
 <p><strong>1. 抢占式调度（Preemptive Scheduling）</strong></p>
 <ul>
 <li><strong>定义</strong>：操作系统可以在<strong>任意时刻</strong>中断当前运行的进程，将<hanla></hanla>CPU<hanla></hanla>分配给其他更高优先级或更紧急的进程。</li>
@@ -820,30 +855,31 @@ mjx-container[display="true"] + br {
 </ul>
 <h4 id="关键区别总结"><strong>关键区别总结</strong></h4>
 <table>
+
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;"><strong>对比维度</strong></th>
 <th style="text-align: center;"><strong>抢占式调度</strong></th>
 <th style="text-align: center;"><strong>非抢占式调度</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;"><strong>控制权归属</strong></td>
 <td style="text-align: center;">操作系统强制剥夺<hanla></hanla>CPU</td>
 <td style="text-align: center;">进程主动释放<hanla></hanla>CPU</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;"><strong>响应速度</strong></td>
 <td style="text-align: center;">高（适合交互式系统）</td>
 <td style="text-align: center;">低（适合批处理任务）</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;"><strong>典型场景</strong></td>
 <td style="text-align: center;">分时系统、实时<hanla></hanla>OS</td>
 <td style="text-align: center;">批处理系统、简单任务调度</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;"><strong>实现复杂度</strong></td>
 <td style="text-align: center;">高（需处理中断、上下文保存）</td>
 <td style="text-align: center;">低（仅需简单队列管理）</td>
@@ -854,7 +890,8 @@ mjx-container[display="true"] + br {
 <p>在标准<hanla></hanla><strong>RR（Round-Robin，轮转调度）</strong>策略中：</p>
 <ol type="1">
 <li>所有就绪任务按<hanla></hanla><strong>FIFO<hanla></hanla>顺序</strong>排列在一个队列中。</li>
-<li>每个任务执行<strong>固定时间片（time quantum）</strong>后，被移回队列尾部。</li>
+<li>每个任务执行<strong>固定时间片（time
+quantum）</strong>后，被移回队列尾部。</li>
 <li>公平性：每个任务获得<strong>均等的<hanla></hanla>CPU<hanla></hanla>时间份额</strong>。</li>
 </ol>
 <p>若在<hanla></hanla>RR<hanla></hanla>队列中<strong>允许对同一任务插入多个引用</strong>（即同一任务在队列中出现多次），会产生以下影响：</p>
@@ -879,17 +916,17 @@ mjx-container[display="true"] + br {
 <li><p>与标准<hanla></hanla>RR<hanla></hanla>的区别：</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;"><strong>标准<hanla></hanla>RR</strong></th>
 <th style="text-align: center;"><strong>多引用<hanla></hanla>RR</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">严格公平（时间片均等）</td>
 <td style="text-align: center;">允许任务权重差异化</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">无优先级</td>
 <td style="text-align: center;">隐式优先级（引用数<hanla></hanla>=<hanla></hanla>权重）</td>
 </tr>
@@ -901,7 +938,8 @@ mjx-container[display="true"] + br {
 <li>需维护引用计数，避免同一任务被重复执行（如时间片未用完时跳过冗余引用）。</li>
 <li>需处理任务终止时的引用清理（防止悬垂指针）。</li>
 </ul>
-<p>这样的设计使得<hanla></hanla>RR<hanla></hanla>策略<strong>与多级反馈队列（MLFQ）或权重轮转（Weighted RR）调度相似</strong></p>
+<p>这样的设计使得<hanla></hanla>RR<hanla></hanla>策略<strong>与多级反馈队列（MLFQ）或权重轮转（Weighted
+RR）调度相似</strong></p>
 <ul>
 <li>多级反馈队列（MLFQ）：
 <ul>
@@ -914,7 +952,8 @@ mjx-container[display="true"] + br {
 <li>本例中<hanla></hanla>“引用次数”<hanla></hanla>实质是权重的隐式表达。</li>
 </ul></li>
 </ul>
-<h3 id="什么是处理器亲和性processor-affinity它在多处理器调度中起什么作用"><strong>什么是处理器亲和性（Processor Affinity）？它在多处理器调度中起什么作用？</strong></h3>
+<h3 id="什么是处理器亲和性processor-affinity它在多处理器调度中起什么作用"><strong>什么是处理器亲和性（Processor
+Affinity）？它在多处理器调度中起什么作用？</strong></h3>
 <p><strong>处理器亲和性</strong>是指进程或线程<strong>倾向于在特定的</strong>处理器或处理器集合上运行的特性。</p>
 <p>作用：由于该进程或线程之前在这些处理器上运行过，因此可能有一些数据或状态仍然缓存在那里，如果再次在这些处理器上运行，则可以利用这些缓存数据，从而提高性能。</p>
 <h1 id="第5章-进程同步机制">第<hanla></hanla>5<hanla></hanla>章 进程同步机制</h1>
@@ -924,16 +963,21 @@ mjx-container[display="true"] + br {
 <p>（1）若独木桥上一次只允许一个人行走，请用信号量实现对行人的同步。</p>
 <p>（2）若不考虑独木桥的载重量，只要桥上有赵家村的人往李家村走<hanla></hanla>(或李家村的人往赵家村走)，其他同方向的人就可以连续通过。当桥上没有某一方向的行人行走时，另一方向的行人就可以走。请用信号量实现对两个方向上行人的同步。</p>
 <hr>
-<p><strong>（1）一次仅允许一人通行</strong> <strong>解法：互斥信号量</strong> • 信号量设计：</p>
+<p><strong>（1）一次仅允许一人通行</strong>
+<strong>解法：互斥信号量</strong> • 信号量设计：</p>
 <p>• <code>mutex</code>：初始值为<hanla></hanla>1，表示桥的互斥访问权。</p>
 <p>• 伪代码：</p>
 <p></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs c">semaphore mutex = <span class="hljs-number">1</span>; <span class="hljs-comment">// 独木桥互斥锁<hanla></hanla></span><br><br><span class="hljs-comment">// 赵家村行人（A<hanla></hanla>方向）</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">person_A</span><span class="hljs-params">()</span> {<br>    wait(mutex);    <span class="hljs-comment">// 申请桥的使用权</span><br>    cross_bridge(); <span class="hljs-comment">// 过桥</span><br>    signal(mutex);  <span class="hljs-comment">// 释放桥</span><br>}<br><br><span class="hljs-comment">// 李家村行人（B<hanla></hanla>方向）</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">person_B</span><span class="hljs-params">()</span> {<br>    wait(mutex);    <span class="hljs-comment">// 申请桥的使用权</span><br>    cross_bridge(); <span class="hljs-comment">// 过桥</span><br>    signal(mutex);  <span class="hljs-comment">// 释放桥</span><br>}<br></code></pre></td></tr></tbody></table></figure> • 说明：<p></p>
-<p>• <code>wait(mutex)</code> 和 <code>signal(mutex)</code> 保证同一时间只有一人过桥。</p>
+<p>• <code>wait(mutex)</code> 和 <code>signal(mutex)</code>
+保证同一时间只有一人过桥。</p>
 <hr>
-<p><strong>（2）允许同方向连续通行，反方向需等待</strong> <strong>解法：读者-写者变种（方向优先级）</strong> • 信号量设计：</p>
+<p><strong>（2）允许同方向连续通行，反方向需等待</strong>
+<strong>解法：读者-写者变种（方向优先级）</strong> • 信号量设计：</p>
 <p>• <code>bridge</code>：互斥锁，初始值为<hanla></hanla>1（保护方向切换）。</p>
-<p>• <code>counter_A</code> 和 <code>counter_B</code>：统计当前方向的行人数量。</p>
-<p>• <code>mutex_A</code> 和 <code>mutex_B</code>：保护对应计数器的互斥锁（初始值为<hanla></hanla>1）。</p>
+<p>• <code>counter_A</code> 和
+<code>counter_B</code>：统计当前方向的行人数量。</p>
+<p>• <code>mutex_A</code> 和
+<code>mutex_B</code>：保护对应计数器的互斥锁（初始值为<hanla></hanla>1）。</p>
 <p>• 伪代码：</p>
 <p></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs c">semaphore bridge = <span class="hljs-number">1</span>;     <span class="hljs-comment">// 方向切换锁<hanla></hanla></span><br>semaphore mutex_A = <span class="hljs-number">1</span>;    <span class="hljs-comment">// 保护赵家村计数器<hanla></hanla></span><br>semaphore mutex_B = <span class="hljs-number">1</span>;    <span class="hljs-comment">// 保护李家村计数器<hanla></hanla></span><br><span class="hljs-type">int</span> counter_A = <span class="hljs-number">0</span>;        <span class="hljs-comment">// 赵家村方向行人计数<hanla></hanla></span><br><span class="hljs-type">int</span> counter_B = <span class="hljs-number">0</span>;        <span class="hljs-comment">// 李家村方向行人计数<hanla></hanla></span><br><br><span class="hljs-comment">// 赵家村→李家村方向（A<hanla></hanla>方向）</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">person_A</span><span class="hljs-params">()</span> {<br>    wait(mutex_A);        <span class="hljs-comment">// 保护<hanla></hanla>counter_A</span><br>    <span class="hljs-keyword">if</span> (counter_A == <span class="hljs-number">0</span>)   <span class="hljs-comment">// 如果是第一个<hanla></hanla>A<hanla></hanla>方向行人</span><br>        wait(bridge);     <span class="hljs-comment">// 申请方向锁（禁止<hanla></hanla>B<hanla></hanla>方向）</span><br>    counter_A++;          <span class="hljs-comment">// 增加<hanla></hanla>A<hanla></hanla>方向计数</span><br>    signal(mutex_A);<br><br>    cross_bridge();       <span class="hljs-comment">// 过桥</span><br><br>    wait(mutex_A);<br>    counter_A--;          <span class="hljs-comment">// 离开桥</span><br>    <span class="hljs-keyword">if</span> (counter_A == <span class="hljs-number">0</span>)   <span class="hljs-comment">// 如果是最后一个<hanla></hanla>A<hanla></hanla>方向行人</span><br>        signal(bridge);   <span class="hljs-comment">// 释放方向锁（允许<hanla></hanla>B<hanla></hanla>方向）</span><br>    signal(mutex_A);<br>}<br><br><span class="hljs-comment">// 李家村→赵家村方向（B<hanla></hanla>方向）</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">person_B</span><span class="hljs-params">()</span> {<br>    wait(mutex_B);<br>    <span class="hljs-keyword">if</span> (counter_B == <span class="hljs-number">0</span>)<br>        wait(bridge);     <span class="hljs-comment">// 申请方向锁（禁止<hanla></hanla>A<hanla></hanla>方向）</span><br>    counter_B++;<br>    signal(mutex_B);<br><br>    cross_bridge();<br><br>    wait(mutex_B);<br>    counter_B--;<br>    <span class="hljs-keyword">if</span> (counter_B == <span class="hljs-number">0</span>)<br>        signal(bridge);   <span class="hljs-comment">// 释放方向锁</span><br>    signal(mutex_B);<br>}<br></code></pre></td></tr></tbody></table></figure> • 关键逻辑：<p></p>
 <ol type="1">
@@ -958,20 +1002,31 @@ mjx-container[display="true"] + br {
 <li>使用互斥锁保护对订单队列的插入和删除操作。</li>
 <li>每个收银员和咖啡师由一个线程模拟。</li>
 </ul>
-<p><strong>问题分析</strong> 我们需要模拟一个咖啡店的订单处理系统，其中： 1. 收银员线程（N<hanla></hanla>个）：负责接收顾客订单，并将订单加入共享队列。 2. 咖啡师线程（M<hanla></hanla>个）：从共享队列获取订单并制作饮品。 3. 共享订单队列：存储待处理的订单，需保证线程安全。 4. 同步机制： • 收银员和咖啡师需互斥访问队列（防止数据竞争）。</p>
+<p><strong>问题分析</strong>
+我们需要模拟一个咖啡店的订单处理系统，其中： 1.
+收银员线程（N<hanla></hanla>个）：负责接收顾客订单，并将订单加入共享队列。 2.
+咖啡师线程（M<hanla></hanla>个）：从共享队列获取订单并制作饮品。 3.
+共享订单队列：存储待处理的订单，需保证线程安全。 4. 同步机制： •
+收银员和咖啡师需互斥访问队列（防止数据竞争）。</p>
 <p>• 咖啡师需等待订单到来（避免忙等待）。</p>
 <p>• 收银员需通知咖啡师有新订单。</p>
 <hr>
-<p><strong>同步方案设计</strong> <strong>1. 信号量与互斥锁</strong> • <code>queue_mutex</code>：互斥锁，保护共享队列的插入<hanla></hanla>/<hanla></hanla>删除操作（初始值<hanla></hanla>=1）。</p>
-<p>• <code>orders_available</code>：信号量，表示队列中的订单数量（初始值<hanla></hanla>=0），咖啡师通过 <code>wait</code> 等待订单。</p>
-<p>• <code>queue_space</code>：信号量（可选），限制队列最大长度（避免内存耗尽）。</p>
-<p><strong>2. 共享数据结构</strong> • 订单队列：存储订单（如订单<hanla></hanla>ID、接收时间等）。</p>
+<p><strong>同步方案设计</strong> <strong>1. 信号量与互斥锁</strong> •
+<code>queue_mutex</code>：互斥锁，保护共享队列的插入<hanla></hanla>/<hanla></hanla>删除操作（初始值<hanla></hanla>=1）。</p>
+<p>•
+<code>orders_available</code>：信号量，表示队列中的订单数量（初始值<hanla></hanla>=0），咖啡师通过
+<code>wait</code> 等待订单。</p>
+<p>•
+<code>queue_space</code>：信号量（可选），限制队列最大长度（避免内存耗尽）。</p>
+<p><strong>2. 共享数据结构</strong> •
+订单队列：存储订单（如订单<hanla></hanla>ID、接收时间等）。</p>
 <p>• 全局计数器：记录已处理的订单数量（需原子操作或加锁）。</p>
 <p><strong>3. 线程行为</strong> • 收银员线程：</p>
 <ol type="1">
 <li><p>接收订单（模拟输入）。</p></li>
 <li><p>获取 <code>queue_mutex</code>，将订单加入队列。</p></li>
-<li><p>释放 <code>queue_mutex</code>，并 <code>signal(orders_available)</code>。 • 咖啡师线程：</p></li>
+<li><p>释放 <code>queue_mutex</code>，并
+<code>signal(orders_available)</code>。 • 咖啡师线程：</p></li>
 <li><p><code>wait(orders_available)</code> 等待订单。</p></li>
 <li><p>获取 <code>queue_mutex</code>，从队列取出订单。</p></li>
 <li><p>释放 <code>queue_mutex</code>，制作饮品并记录完成时间。</p></li>
@@ -979,20 +1034,28 @@ mjx-container[display="true"] + br {
 <hr>
 <p><strong>代码实现（伪代码）</strong> </p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> threading <span class="hljs-keyword">import</span> Thread, Semaphore, Lock<br><span class="hljs-keyword">import</span> time<br><span class="hljs-keyword">import</span> queue<br><br><span class="hljs-comment"># 全局变量<hanla></hanla></span><br>order_queue = queue.Queue()  <span class="hljs-comment"># 线程安全队列（实际可用<hanla></hanla>list+<hanla></hanla>锁模拟）</span><br>queue_mutex = Lock()         <span class="hljs-comment"># 保护队列操作<hanla></hanla></span><br>orders_available = Semaphore(<span class="hljs-number">0</span>)  <span class="hljs-comment"># 初始无订单<hanla></hanla></span><br>order_counter = <span class="hljs-number">0</span>            <span class="hljs-comment"># 已处理订单数（需原子操作或加锁）</span><br><br><span class="hljs-comment"># 收银员线程<hanla></hanla></span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">cashier_thread</span>(<span class="hljs-params">cashier_id</span>):<br>    <span class="hljs-keyword">global</span> order_counter<br>    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>        <span class="hljs-comment"># 模拟接收订单</span><br>        order_time = time.time()<br>        order = {<span class="hljs-string">"id"</span>: order_counter, <span class="hljs-string">"received"</span>: order_time}<br>        order_counter += <span class="hljs-number">1</span><br><br>        <span class="hljs-comment"># 将订单加入队列</span><br>        <span class="hljs-keyword">with</span> queue_mutex:<br>            order_queue.put(order)<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f"订单 <span class="hljs-subst">{order[<span class="hljs-string">'id'</span>]}</span> 接收时间: <span class="hljs-subst">{order_time:<span class="hljs-number">.2</span>f}</span>, 队列长度: <span class="hljs-subst">{order_queue.qsize()}</span>"</span>)<br><br>        <span class="hljs-comment"># 通知咖啡师有新订单</span><br>        orders_available.release()<br>        time.sleep(<span class="hljs-number">1</span>)  <span class="hljs-comment"># 模拟处理间隔</span><br><br><span class="hljs-comment"># 咖啡师线程<hanla></hanla></span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">barista_thread</span>(<span class="hljs-params">barista_id</span>):<br>    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>        <span class="hljs-comment"># 等待订单</span><br>        orders_available.acquire()<br><br>        <span class="hljs-comment"># 从队列取出订单</span><br>        <span class="hljs-keyword">with</span> queue_mutex:<br>            order = order_queue.get()<br>            queue_size = order_queue.qsize()<br><br>        <span class="hljs-comment"># 模拟制作饮品</span><br>        completion_time = time.time()<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f"订单 <span class="hljs-subst">{order[<span class="hljs-string">'id'</span>]}</span> 完成时间: <span class="hljs-subst">{completion_time:<span class="hljs-number">.2</span>f}</span>, 制作耗时: <span class="hljs-subst">{completion_time - order[<span class="hljs-string">'received'</span>]:<span class="hljs-number">.2</span>f}</span>s, 队列剩余: <span class="hljs-subst">{queue_size}</span>"</span>)<br><br>        time.sleep(<span class="hljs-number">2</span>)  <span class="hljs-comment"># 模拟制作时间</span><br><br><span class="hljs-comment"># 启动线程<hanla></hanla></span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N):<br>    Thread(target=cashier_thread, args=(i,)).start()<br><span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(M):<br>    Thread(target=barista_thread, args=(j,)).start()<br></code></pre></td></tr></tbody></table></figure><p></p>
 <hr>
-<p><strong>关键点说明</strong> 1. 线程安全队列： • 使用 <code>queue_mutex</code> 保护队列操作（若用 <code>list</code> 需手动加锁）。</p>
-<p>• Python 的 <code>queue.Queue</code> 本身是线程安全的，但为演示显式加锁。</p>
+<p><strong>关键点说明</strong> 1. 线程安全队列： • 使用
+<code>queue_mutex</code> 保护队列操作（若用 <code>list</code>
+需手动加锁）。</p>
+<p>• Python 的 <code>queue.Queue</code>
+本身是线程安全的，但为演示显式加锁。</p>
 <ol start="2" type="1">
-<li><p>信号量作用： • <code>orders_available</code> 确保咖啡师仅在订单到达时工作（避免忙等待）。</p></li>
-<li><p>输出信息： • 订单接收时间、完成时间、队列长度，用于监控系统状态。</p></li>
-<li><p>扩展性： • 可添加 <code>queue_space</code> 信号量限制队列最大长度（防止内存溢出）。</p>
+<li><p>信号量作用： • <code>orders_available</code>
+确保咖啡师仅在订单到达时工作（避免忙等待）。</p></li>
+<li><p>输出信息： •
+订单接收时间、完成时间、队列长度，用于监控系统状态。</p></li>
+<li><p>扩展性： • 可添加 <code>queue_space</code>
+信号量限制队列最大长度（防止内存溢出）。</p>
 <p>• 可引入优先级队列（如<hanla></hanla>VIP<hanla></hanla>订单优先处理）。</p></li>
 </ol>
 <hr>
 <p><strong>总结</strong> • 收银员和咖啡师通过互斥锁<hanla></hanla>+<hanla></hanla>信号量协同工作。</p>
 <p>• 订单队列作为缓冲区，解耦接收与制作过程。</p>
 <p>• 输出信息帮助分析系统性能（如平均等待时间、队列拥堵情况）。</p>
-<p>• 实际应用中，可结合线程池（<code>ThreadPoolExecutor</code>）优化资源管理。</p>
-<p>​ 某银行提供一个服务窗口和<hanla></hanla>10<hanla></hanla>个供顾客等待的座位。顾客到达银行时，若有空座位，则到取号机上领取一个号，等待叫号。取号机每次仅允许一个顾客使用。当营业员空闲时，通过叫号选取一位顾客，并为其服务。顾客及营业员的活动描述如下：</p>
+<p>•
+实际应用中，可结合线程池（<code>ThreadPoolExecutor</code>）优化资源管理。</p>
+<p>​
+某银行提供一个服务窗口和<hanla></hanla>10<hanla></hanla>个供顾客等待的座位。顾客到达银行时，若有空座位，则到取号机上领取一个号，等待叫号。取号机每次仅允许一个顾客使用。当营业员空闲时，通过叫号选取一位顾客，并为其服务。顾客及营业员的活动描述如下：</p>
 <p>cobegin</p>
 <p>{ process 顾客</p>
 <p>​ { 从取号机获取一个号码；</p>
@@ -1060,7 +1123,8 @@ mjx-container[display="true"] + br {
 <p><strong>C．若控制这些并发进程互斥执行<hanla></hanla>count<hanla></hanla>加<hanla></hanla>1<hanla></hanla>操作，count<hanla></hanla>中的值正确</strong></p>
 <p>D．A，B，C<hanla></hanla>均不对</p>
 <p>下述关于管程的描述中错误的是<hanla></hanla>____ 。</p>
-<p>A．管程是一种进程同步工具，解决了信号量机制 中大量同步操作分散问题</p>
+<p>A．管程是一种进程同步工具，解决了信号量机制
+中大量同步操作分散问题</p>
 <p>B．管程每次只允许一个进程进入管程</p>
 <p><strong>C．管程中的<hanla></hanla>signal<hanla></hanla>操作的作用和信号量机制中的<hanla></hanla>signal<hanla></hanla>操作相同</strong></p>
 <p>D．管程是被进程调用的</p>
@@ -1069,26 +1133,40 @@ mjx-container[display="true"] + br {
 <p>Ⅲ. 处理机与通道 Ⅳ. 设备与设备</p>
 <p>A.Ⅰ、Ⅱ和Ⅲ B.Ⅰ、Ⅱ和Ⅳ</p>
 <p>C.Ⅰ、Ⅲ和Ⅳ <strong>D.Ⅱ、Ⅲ和Ⅳ</strong></p>
-<p>设与某资源相关联的信号量初值为<hanla></hanla>3，当前值为<hanla></hanla>1，若<hanla></hanla>M<hanla></hanla>表示该资源的可用个数，N<hanla></hanla>表示等待该资源的进程数，则<hanla></hanla>M、N<hanla></hanla>分别是 。</p>
+<p>设与某资源相关联的信号量初值为<hanla></hanla>3，当前值为<hanla></hanla>1，若<hanla></hanla>M<hanla></hanla>表示该资源的可用个数，N<hanla></hanla>表示等待该资源的进程数，则<hanla></hanla>M、N<hanla></hanla>分别是
+。</p>
 <p>A.0，1 <strong>B.1，0</strong></p>
 <p>C.1，2 D.2，0</p>
 <h2 id="填空题">填空题</h2>
 <ol type="1">
-<li><p>如果信号量的当前值为-4，则表示系统中在该信号量上有 <strong>4</strong><hanla></hanla>个等待进程。</p></li>
-<li><p>对于信号量可以做 P 操作和 V 操作，P<hanla></hanla>操作用于阻塞进程，V 操作用于释放进程。程序中的 P<hanla></hanla>操作应谨慎使用，以保证其使用的正确性，否则执行时可能发生死锁。</p></li>
-<li><p>信号量的物理意义是：当信号量值大于<hanla></hanla>0<hanla></hanla>时表示 <strong>可用资源数量</strong>；当信号量值小于<hanla></hanla>0<hanla></hanla>时，其绝对值为 <strong>等待进程数量</strong> 。</p></li>
-<li><p>有<hanla></hanla>m<hanla></hanla>个进程共享同一临界资源，若使用信号量机制实现对临界资源的互斥访问，则信号量值的变化范围是<hanla></hanla><strong>1 到 -(m-1)</strong>。</p></li>
-<li><p>访问临界资源的进程应该遵循的条件有：<strong>互斥访问</strong>（Mutual Exclusion）、<strong>空闲让进</strong>（Progress）、<strong>有限等待</strong>（Bounded Waiting）、和 <strong>让权等待</strong>（No Busy Waiting。</p></li>
+<li><p>如果信号量的当前值为-4，则表示系统中在该信号量上有
+<strong>4</strong><hanla></hanla>个等待进程。</p></li>
+<li><p>对于信号量可以做 P 操作和 V 操作，P<hanla></hanla>操作用于阻塞进程，V
+操作用于释放进程。程序中的
+P<hanla></hanla>操作应谨慎使用，以保证其使用的正确性，否则执行时可能发生死锁。</p></li>
+<li><p>信号量的物理意义是：当信号量值大于<hanla></hanla>0<hanla></hanla>时表示
+<strong>可用资源数量</strong>；当信号量值小于<hanla></hanla>0<hanla></hanla>时，其绝对值为
+<strong>等待进程数量</strong> 。</p></li>
+<li><p>有<hanla></hanla>m<hanla></hanla>个进程共享同一临界资源，若使用信号量机制实现对临界资源的互斥访问，则信号量值的变化范围是<hanla></hanla><strong>1
+到 -(m-1)</strong>。</p></li>
+<li><p>访问临界资源的进程应该遵循的条件有：<strong>互斥访问</strong>（Mutual
+Exclusion）、<strong>空闲让进</strong>（Progress）、<strong>有限等待</strong>（Bounded
+Waiting）、和 <strong>让权等待</strong>（No Busy Waiting。</p></li>
 <li><p>临界资源是指<hanla></hanla>__<strong><hanla></hanla>一次仅允许一个进程访问<hanla></hanla></strong>__<hanla></hanla>的资源。</p></li>
-<li><p>管程由<strong>共享变量声明</strong>、<strong>操作共享变量的过程（方法）</strong>和 <strong>初始化代码</strong>三部分组成</p></li>
+<li><p>管程由<strong>共享变量声明</strong>、<strong>操作共享变量的过程（方法）</strong>和
+<strong>初始化代码</strong>三部分组成</p></li>
 </ol>
 <h1 id="第6章-死锁">第<hanla></hanla>6<hanla></hanla>章 死锁</h1>
 <h2 id="练习题-5">练习题</h2>
 <h3 id="银行家问题">银行家问题</h3>
 <p>考虑以下系统快照：</p>
 <figure class="highlight apache"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs apache">    <span class="hljs-attribute">Allocation</span>          Max          Available<br>     <span class="hljs-attribute">A</span> B C D          A B C D         A B C D<br><span class="hljs-attribute">T0</span>   <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span>          <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span>         <span class="hljs-number">1</span> <span class="hljs-number">5</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span><br><span class="hljs-attribute">T1</span>   <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>          <span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span> <span class="hljs-number">0</span><br><span class="hljs-attribute">T2</span>   <span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span>          <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span><br><span class="hljs-attribute">T3</span>   <span class="hljs-number">0</span> <span class="hljs-number">6</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span>          <span class="hljs-number">0</span> <span class="hljs-number">6</span> <span class="hljs-number">5</span> <span class="hljs-number">2</span><br><span class="hljs-attribute">T4</span>   <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">4</span>          <span class="hljs-number">0</span> <span class="hljs-number">6</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span><br></code></pre></td></tr></tbody></table></figure>
-<p>使用银行家算法回答以下问题： a. 矩阵 <code>Need</code> 的内容是什么？ b. 系统是否处于安全状态？ c.&nbsp;如果线程 T1 请求资源 <code>(0,4,2,0)</code>，是否可以立即批准该请求？</p>
-<p><strong>a. 计算 Need 矩阵</strong> Need = Max - Allocation（逐项计算）： • T0: <code>(0-0, 0-0, 1-1, 2-2) = (0,0,0,0)</code></p>
+<p>使用银行家算法回答以下问题： a. 矩阵 <code>Need</code> 的内容是什么？
+b. 系统是否处于安全状态？ c.&nbsp;如果线程 T1 请求资源
+<code>(0,4,2,0)</code>，是否可以立即批准该请求？</p>
+<p><strong>a. 计算 Need 矩阵</strong> Need = Max -
+Allocation（逐项计算）： • T0:
+<code>(0-0, 0-0, 1-1, 2-2) = (0,0,0,0)</code></p>
 <p>• T1: <code>(1-1, 7-0, 5-0, 0-0) = (0,7,5,0)</code></p>
 <p>• T2: <code>(2-1, 3-3, 5-5, 6-4) = (1,0,0,2)</code></p>
 <p>• T3: <code>(0-0, 6-6, 5-3, 2-2) = (0,0,2,0)</code></p>
@@ -1098,41 +1176,63 @@ mjx-container[display="true"] + br {
 <ol type="1">
 <li><p>初始可用资源：<code>Available = (1,5,2,0)</code><br>
 </p></li>
-<li><p>安全性检查过程： • T0 的 Need 为 <code>(0,0,0,0)</code> ≤ Available，执行后释放资源：</p>
+<li><p>安全性检查过程： • T0 的 Need 为 <code>(0,0,0,0)</code> ≤
+Available，执行后释放资源：</p>
 <p>◦ 新 Available = <code>(1+0,5+0,2+1,0+2) = (1,5,3,2)</code></p>
-<p>• T3 的 Need 为 <code>(0,0,2,0)</code> ≤ Available <code>(1,5,3,2)</code>，执行后释放资源：</p>
+<p>• T3 的 Need 为 <code>(0,0,2,0)</code> ≤ Available
+<code>(1,5,3,2)</code>，执行后释放资源：</p>
 <p>◦ 新 Available = <code>(1+0,5+6,3+3,2+2) = (1,11,6,4)</code></p>
-<p>• T4 的 Need 为 <code>(0,6,4,2)</code> ≤ Available <code>(1,11,6,4)</code>，执行后释放资源：</p>
+<p>• T4 的 Need 为 <code>(0,6,4,2)</code> ≤ Available
+<code>(1,11,6,4)</code>，执行后释放资源：</p>
 <p>◦ 新 Available = <code>(1+0,11+0,6+1,4+4) = (1,11,7,8)</code></p>
-<p>• T1 的 Need 为 <code>(0,7,5,0)</code> ≤ Available <code>(1,11,7,8)</code>，执行后释放资源：</p>
+<p>• T1 的 Need 为 <code>(0,7,5,0)</code> ≤ Available
+<code>(1,11,7,8)</code>，执行后释放资源：</p>
 <p>◦ 新 Available = <code>(1+1,11+0,7+0,8+0) = (2,11,7,8)</code></p>
-<p>• T2 的 Need 为 <code>(1,0,0,2)</code> ≤ Available <code>(2,11,7,8)</code>，执行后释放资源：</p>
-<p>◦ 新 Available = <code>(2+1,11+3,7+5,8+4) = (3,14,12,12)</code></p></li>
-<li><p>安全序列：<code>T0 → T3 → T4 → T1 → T2</code> 结论：系统处于安全状态。</p></li>
+<p>• T2 的 Need 为 <code>(1,0,0,2)</code> ≤ Available
+<code>(2,11,7,8)</code>，执行后释放资源：</p>
+<p>◦ 新 Available =
+<code>(2+1,11+3,7+5,8+4) = (3,14,12,12)</code></p></li>
+<li><p>安全序列：<code>T0 → T3 → T4 → T1 → T2</code>
+结论：系统处于安全状态。</p></li>
 </ol>
 <hr>
-<p><strong>c.&nbsp;处理 T1 的请求 (0,4,2,0)</strong> 1. 验证请求合法性： • T1 的 Need 为 <code>(0,7,5,0)</code>，请求 <code>(0,4,2,0)</code> ≤ Need → 合法。</p>
-<p>• 请求 <code>(0,4,2,0)</code> ≤ Available <code>(1,5,2,0)</code> → 资源足够。</p>
+<p><strong>c.&nbsp;处理 T1 的请求 (0,4,2,0)</strong> 1. 验证请求合法性： • T1
+的 Need 为 <code>(0,7,5,0)</code>，请求 <code>(0,4,2,0)</code> ≤ Need →
+合法。</p>
+<p>• 请求 <code>(0,4,2,0)</code> ≤ Available <code>(1,5,2,0)</code> →
+资源足够。</p>
 <ol start="2" type="1">
-<li><p>模拟分配： • 更新 Allocation(T1)：<code>(1+0,0+4,0+2,0+0) = (1,4,2,0)</code></p>
+<li><p>模拟分配： • 更新
+Allocation(T1)：<code>(1+0,0+4,0+2,0+0) = (1,4,2,0)</code></p>
 <p>• 更新 Need(T1)：<code>(0,7-4,5-2,0) = (0,3,3,0)</code></p>
 <p>• 新 Available：<code>(1-0,5-4,2-2,0-0) = (1,1,0,0)</code></p></li>
-<li><p>检查新状态是否安全： • 当前 Available = <code>(1,1,0,0)</code></p>
-<p>• T0 的 Need <code>(0,0,0,0)</code> ≤ Available → 执行后 Available = <code>(1,1,1,2)</code></p>
-<p>• T3 的 Need <code>(0,0,2,0)</code> ≤ Available → 执行后 Available = <code>(1,7,4,4)</code></p>
-<p>• T4 的 Need <code>(0,6,4,2)</code> 需要资源 <code>(0,6,4,2)</code>，但 Available = <code>(1,7,4,4)</code> 中 B=7 ≥ 6，C=4 ≥ 4，D=4 ≥ 2 → 可执行，新 Available = <code>(1,7,5,8)</code></p>
-<p>• T1 的 Need <code>(0,3,3,0)</code> ≤ Available → 执行后 Available = <code>(2,7,5,8)</code></p>
-<p>• T2 的 Need <code>(1,0,0,2)</code> ≤ Available → 执行后 Available = <code>(3,10,10,12)</code></p>
-<p>安全序列：<code>T0 → T3 → T4 → T1 → T2</code> 结论：请求可以立即批准。</p></li>
+<li><p>检查新状态是否安全： • 当前 Available =
+<code>(1,1,0,0)</code></p>
+<p>• T0 的 Need <code>(0,0,0,0)</code> ≤ Available → 执行后 Available =
+<code>(1,1,1,2)</code></p>
+<p>• T3 的 Need <code>(0,0,2,0)</code> ≤ Available → 执行后 Available =
+<code>(1,7,4,4)</code></p>
+<p>• T4 的 Need <code>(0,6,4,2)</code> 需要资源
+<code>(0,6,4,2)</code>，但 Available = <code>(1,7,4,4)</code> 中 B=7 ≥
+6，C=4 ≥ 4，D=4 ≥ 2 → 可执行，新 Available = <code>(1,7,5,8)</code></p>
+<p>• T1 的 Need <code>(0,3,3,0)</code> ≤ Available → 执行后 Available =
+<code>(2,7,5,8)</code></p>
+<p>• T2 的 Need <code>(1,0,0,2)</code> ≤ Available → 执行后 Available =
+<code>(3,10,10,12)</code></p>
+<p>安全序列：<code>T0 → T3 → T4 → T1 → T2</code>
+结论：请求可以立即批准。</p></li>
 </ol>
 <hr>
 <p><strong>最终答案：</strong> a. Need 矩阵：<br>
-</p><figure class="highlight apache"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">A</span> B C D<br><span class="hljs-attribute">T0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-attribute">T1</span> <span class="hljs-number">0</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span> <span class="hljs-number">0</span><br><span class="hljs-attribute">T2</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span><br><span class="hljs-attribute">T3</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span><br><span class="hljs-attribute">T4</span> <span class="hljs-number">0</span> <span class="hljs-number">6</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span><br></code></pre></td></tr></tbody></table></figure> b. 是，系统处于安全状态。 c.&nbsp;是，可以立即批准 T1 的请求。<p></p>
+</p><figure class="highlight apache"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">A</span> B C D<br><span class="hljs-attribute">T0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-attribute">T1</span> <span class="hljs-number">0</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span> <span class="hljs-number">0</span><br><span class="hljs-attribute">T2</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span><br><span class="hljs-attribute">T3</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span><br><span class="hljs-attribute">T4</span> <span class="hljs-number">0</span> <span class="hljs-number">6</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span><br></code></pre></td></tr></tbody></table></figure> b. 是，系统处于安全状态。 c.&nbsp;是，可以立即批准 T1
+的请求。<p></p>
 <h2 id="选择题-4">选择题</h2>
-<p>要防止死锁的发生，可以通过破坏这四个必要条件之一来实现，但破坏 _____ 条件是不太实际的。</p>
+<p>要防止死锁的发生，可以通过破坏这四个必要条件之一来实现，但破坏 _____
+条件是不太实际的。</p>
 <p>A.<hanla></hanla>循环等待 B.<hanla></hanla>部分分配</p>
 <p>C.<hanla></hanla>不可抢占 <strong>D.<hanla></hanla>互斥</strong></p>
-<p>为多道程序提供的可共享资源不足时，可能出现死锁。但是，不适当的 _____ 也可能产生死锁。</p>
+<p>为多道程序提供的可共享资源不足时，可能出现死锁。但是，不适当的 _____
+也可能产生死锁。</p>
 <p>A.<hanla></hanla>分配队列优先权 <strong>B.<hanla></hanla>进程推进顺序</strong></p>
 <p>C.<hanla></hanla>资源的线性分配 D.<hanla></hanla>进程优先权</p>
 <p>采用资源剥夺法可以解除死锁，还可以采用 _____ 方法解除死锁。</p>
@@ -1141,7 +1241,8 @@ mjx-container[display="true"] + br {
 <p>在 _____ 的情况下，系统出现死锁。</p>
 <p>A. 计算机系统发生了重大故障</p>
 <p>B. 有多个封锁的进程同时存在</p>
-<p><strong>C. 若干进程因竞争资源而无休止地相互等待他方释放已占有的资源</strong></p>
+<p><strong>C.
+若干进程因竞争资源而无休止地相互等待他方释放已占有的资源</strong></p>
 <p>D. 资源数大大小于进程数或进程同时申请的资源数大大超过资源总数</p>
 <p>银行家算法在解决死锁问题中是用于 _____ 的。</p>
 <p>A.<hanla></hanla>检测死锁 B.<hanla></hanla>预防死锁</p>
@@ -1149,7 +1250,8 @@ mjx-container[display="true"] + br {
 <p>资源的有序分配策略可以破坏 _____ 条件。</p>
 <p>A.<hanla></hanla>占有且等待资源 <strong>B.<hanla></hanla>循环等待资源</strong></p>
 <p>C. 非抢夺资源 D.<hanla></hanla>互斥使用资源</p>
-<p>某系统中有<hanla></hanla>3<hanla></hanla>个并发进程，都需要同类资源<hanla></hanla>4<hanla></hanla>个，试问该系统不会发生死锁的最少资源数是 _____ 。</p>
+<p>某系统中有<hanla></hanla>3<hanla></hanla>个并发进程，都需要同类资源<hanla></hanla>4<hanla></hanla>个，试问该系统不会发生死锁的最少资源数是
+_____ 。</p>
 <p>A. 9 <strong>B. 10</strong></p>
 <p>C. 11 D. 12</p>
 <p>有序资源分配方法属于<hanla></hanla>_____ 方法。</p>
@@ -1167,36 +1269,62 @@ mjx-container[display="true"] + br {
 <p>此时的安全序列是<hanla></hanla>___。</p>
 <p>A、P1，P2，P3，P4 B、P1，P3，P2，P4</p>
 <p>C、P1，P4，P3，P2 D、不存在</p>
-<p><strong>问题分析：</strong> 我们需要根据给定的资源分配情况，判断是否存在一个安全序列，使得所有进程都能顺利完成。安全序列是指一个进程执行顺序，使得每个进程都能获得所需的资源并释放已占用的资源，从而保证系统不会进入死锁状态。</p>
-<p><strong>给定数据：</strong> | 进程 | 已分配资源 (Allocation) | 尚需资源 (Need) | 可用资源 (Available) | | —- | ———————– | ————— | ——————– | | | R1 R2 R3 | R1 R2 R3 | R1 R2 R3 | | P1 | 2 0 0 | 0 0 1 | 0 2 1 | | P2 | 1 2 0 | 1 3 2 | | | P3 | 0 1 1 | 1 3 1 | | | P4 | 0 0 1 | 2 0 0 | |</p>
-<p><strong>步骤 1：计算当前可用资源 (Available)</strong> 初始可用资源为：<code>Available = (0, 2, 1)</code></p>
-<p><strong>步骤 2：寻找可以执行的进程</strong> 我们需要找到一个进程，其尚需资源 (Need) ≤ 当前可用资源 (Available)。</p>
+<p><strong>问题分析：</strong>
+我们需要根据给定的资源分配情况，判断是否存在一个安全序列，使得所有进程都能顺利完成。安全序列是指一个进程执行顺序，使得每个进程都能获得所需的资源并释放已占用的资源，从而保证系统不会进入死锁状态。</p>
+<p><strong>给定数据：</strong> | 进程 | 已分配资源 (Allocation) |
+尚需资源 (Need) | 可用资源 (Available) | | —- | ———————– | ————— |
+——————– | | | R1 R2 R3 | R1 R2 R3 | R1 R2 R3 | | P1 | 2 0 0 | 0 0 1 | 0
+2 1 | | P2 | 1 2 0 | 1 3 2 | | | P3 | 0 1 1 | 1 3 1 | | | P4 | 0 0 1 | 2
+0 0 | |</p>
+<p><strong>步骤 1：计算当前可用资源 (Available)</strong>
+初始可用资源为：<code>Available = (0, 2, 1)</code></p>
+<p><strong>步骤 2：寻找可以执行的进程</strong>
+我们需要找到一个进程，其尚需资源 (Need) ≤ 当前可用资源 (Available)。</p>
 <p>• P1：Need = (0, 0, 1) ≤ Available = (0, 2, 1) → 可以执行</p>
 <p>• 执行后，释放已分配资源：<code>Allocation(P1) = (2, 0, 0)</code></p>
-<p>• 更新可用资源：<code>Available = (0, 2, 1) + (2, 0, 0) = (2, 2, 1)</code></p>
+<p>•
+更新可用资源：<code>Available = (0, 2, 1) + (2, 0, 0) = (2, 2, 1)</code></p>
 <p>• P4：Need = (2, 0, 0) ≤ Available = (2, 2, 1) → 可以执行</p>
 <p>• 执行后，释放已分配资源：<code>Allocation(P4) = (0, 0, 1)</code></p>
-<p>• 更新可用资源：<code>Available = (2, 2, 1) + (0, 0, 1) = (2, 2, 2)</code></p>
-<p>• P3：Need = (1, 3, 1) ≤ Available = (2, 2, 2) → 不满足（R2=3 &gt; 2）</p>
+<p>•
+更新可用资源：<code>Available = (2, 2, 1) + (0, 0, 1) = (2, 2, 2)</code></p>
+<p>• P3：Need = (1, 3, 1) ≤ Available = (2, 2, 2) → 不满足（R2=3 &gt;
+2）</p>
 <p>• 暂时无法执行。</p>
-<p>• P2：Need = (1, 3, 2) ≤ Available = (2, 2, 2) → 不满足（R2=3 &gt; 2）</p>
+<p>• P2：Need = (1, 3, 2) ≤ Available = (2, 2, 2) → 不满足（R2=3 &gt;
+2）</p>
 <p>• 暂时无法执行。</p>
-<p><strong>步骤 3：尝试其他顺序</strong> 由于直接执行 P1 后，P4 可以执行，但 P3 和 P2 仍无法执行，我们需要尝试其他顺序。</p>
-<p><strong>尝试顺序：P1 → P4 → P3 → P2</strong> 1. P1：执行后，<code>Available = (2, 2, 1)</code> 2. P4：执行后，<code>Available = (2, 2, 2)</code> 3. P3：Need = (1, 3, 1) ≤ Available = (2, 2, 2) → 不满足（R2=3 &gt; 2） • 无法执行。</p>
-<p><strong>尝试顺序：P1 → P3 → P4 → P2</strong> 1. P1：执行后，<code>Available = (2, 2, 1)</code> 2. P3：Need = (1, 3, 1) ≤ Available = (2, 2, 1) → 不满足（R2=3 &gt; 2） • 无法执行。</p>
-<p><strong>尝试顺序：P1 → P4 → P2 → P3</strong> 1. P1：执行后，<code>Available = (2, 2, 1)</code> 2. P4：执行后，<code>Available = (2, 2, 2)</code> 3. P2：Need = (1, 3, 2) ≤ Available = (2, 2, 2) → 不满足（R2=3 &gt; 2） • 无法执行。</p>
-<p><strong>步骤 4：检查其他初始选择</strong> • P4：Need = (2, 0, 0) ≤ Available = (0, 2, 1) → 不满足（R1=2 &gt; 0）</p>
+<p><strong>步骤 3：尝试其他顺序</strong> 由于直接执行 P1 后，P4
+可以执行，但 P3 和 P2 仍无法执行，我们需要尝试其他顺序。</p>
+<p><strong>尝试顺序：P1 → P4 → P3 → P2</strong> 1.
+P1：执行后，<code>Available = (2, 2, 1)</code> 2.
+P4：执行后，<code>Available = (2, 2, 2)</code> 3. P3：Need = (1, 3, 1) ≤
+Available = (2, 2, 2) → 不满足（R2=3 &gt; 2） • 无法执行。</p>
+<p><strong>尝试顺序：P1 → P3 → P4 → P2</strong> 1.
+P1：执行后，<code>Available = (2, 2, 1)</code> 2. P3：Need = (1, 3, 1) ≤
+Available = (2, 2, 1) → 不满足（R2=3 &gt; 2） • 无法执行。</p>
+<p><strong>尝试顺序：P1 → P4 → P2 → P3</strong> 1.
+P1：执行后，<code>Available = (2, 2, 1)</code> 2.
+P4：执行后，<code>Available = (2, 2, 2)</code> 3. P2：Need = (1, 3, 2) ≤
+Available = (2, 2, 2) → 不满足（R2=3 &gt; 2） • 无法执行。</p>
+<p><strong>步骤 4：检查其他初始选择</strong> • P4：Need = (2, 0, 0) ≤
+Available = (0, 2, 1) → 不满足（R1=2 &gt; 0）</p>
 <p>• 无法直接执行。</p>
-<p>• P3：Need = (1, 3, 1) ≤ Available = (0, 2, 1) → 不满足（R1=1 &gt; 0, R2=3 &gt; 2）</p>
+<p>• P3：Need = (1, 3, 1) ≤ Available = (0, 2, 1) → 不满足（R1=1 &gt; 0,
+R2=3 &gt; 2）</p>
 <p>• 无法直接执行。</p>
-<p>• P2：Need = (1, 3, 2) ≤ Available = (0, 2, 1) → 不满足（R1=1 &gt; 0, R2=3 &gt; 2）</p>
+<p>• P2：Need = (1, 3, 2) ≤ Available = (0, 2, 1) → 不满足（R1=1 &gt; 0,
+R2=3 &gt; 2）</p>
 <p>• 无法直接执行。</p>
-<p><strong>结论：</strong> 唯一可以执行的初始进程是 P1，但执行 P1 后，后续进程无法满足需求，因此不存在安全序列。</p>
+<p><strong>结论：</strong> 唯一可以执行的初始进程是 P1，但执行 P1
+后，后续进程无法满足需求，因此不存在安全序列。</p>
 <p><strong>最终答案：</strong> D、不存在</p>
 <h2 id="填空题-1">填空题</h2>
 <p>在有<hanla></hanla>m<hanla></hanla>个进程的系统中出现死锁时，死锁进程的个数<hanla></hanla>k<hanla></hanla>应该满足的条件是<hanla></hanla><strong>2≤<em>k</em>≤<em>m</em></strong>。</p>
-<p>银行家算法中，当一个进程提出的资源请求将导致系统从<strong>安全状态</strong>进入 <strong>不安全状态</strong>时，系统就拒绝它的资源请求。</p>
-<p>对待死锁，一般应考虑死锁的预防、避免、检测和解除四个问题。典型的银行家算法是属于<strong>死锁避免</strong> ，破坏环路等待条件是属于<strong>死锁预防</strong>，而剥夺资源是<strong>死锁解除</strong>的基本方法。</p>
+<p>银行家算法中，当一个进程提出的资源请求将导致系统从<strong>安全状态</strong>进入
+<strong>不安全状态</strong>时，系统就拒绝它的资源请求。</p>
+<p>对待死锁，一般应考虑死锁的预防、避免、检测和解除四个问题。典型的银行家算法是属于<strong>死锁避免</strong>
+，破坏环路等待条件是属于<strong>死锁预防</strong>，而剥夺资源是<strong>死锁解除</strong>的基本方法。</p>
 <h1 id="第7章-内存管理">第<hanla></hanla>7<hanla></hanla>章 内存管理</h1>
 <h2 id="页面置换算法">页面置换算法</h2>
 <h3 id="先进先出置换算法fifo">先进先出置换算法<hanla></hanla>(FIFO)</h3>
@@ -1204,20 +1332,23 @@ mjx-container[display="true"] + br {
 <p>特点：该算法实现比较简单，对按线性顺序访问的程序比较合适，但可能产生异常现象。很少使用纯粹的<hanla></hanla>FIFO。</p>
 <p>Belady<hanla></hanla>异常：在某些情况下，分配给进程的页面数增多，缺页次数反而增加。</p>
 <figure>
-<img src="https://raw.githubusercontent.com/Striver98/Pictures/master/img/image-20250425143041731.png" srcset="/img/loading.gif" lazyload alt="采用先进先出算法的页面置换情况"><figcaption aria-hidden="true">采用先进先出算法的页面置换情况</figcaption>
+<img src="https://raw.githubusercontent.com/Striver98/Pictures/master/img/image-20250425143041731.png" srcset="/img/loading.gif" lazyload alt="采用先进先出算法的页面置换情况">
+<figcaption aria-hidden="true">采用先进先出算法的页面置换情况</figcaption>
 </figure>
 <h3 id="最佳置换算法opt">最佳置换算法（OPT）</h3>
 <p>最佳算法：也称最优置换算法。从内存中选择最长时间不会使用的页面予以淘汰。</p>
 <p>特点：因页面访问的未来顺序很难精确预测，该算法具有理论意义，可以用来评价其他算法的优劣。</p>
 <figure>
-<img src="https://raw.githubusercontent.com/Striver98/Pictures/master/img/image-20250425143135437.png" srcset="/img/loading.gif" lazyload alt="采用最佳置换算法的页面置换情况"><figcaption aria-hidden="true">采用最佳置换算法的页面置换情况</figcaption>
+<img src="https://raw.githubusercontent.com/Striver98/Pictures/master/img/image-20250425143135437.png" srcset="/img/loading.gif" lazyload alt="采用最佳置换算法的页面置换情况">
+<figcaption aria-hidden="true">采用最佳置换算法的页面置换情况</figcaption>
 </figure>
 <h3 id="最近最久未使用置换算法lru">最近最久未使用置换算法<hanla></hanla>(LRU)</h3>
 <p><strong>最近最久未使用算法</strong>：选择最近一段时间内最长时间没有被访问过的页面予以淘汰。</p>
 <p>为此，应赋予每个页面一个访问字段，用于记录页面自上次访问以来所经历的时间。</p>
 <p>LRU<hanla></hanla>是<hanla></hanla>Least Recently Used，也称为最近最少使用</p>
 <figure>
-<img src="https://raw.githubusercontent.com/Striver98/Pictures/master/img/image-20250425143315998.png" srcset="/img/loading.gif" lazyload alt="采用LRU算法的页面置换情况"><figcaption aria-hidden="true">采用<hanla></hanla>LRU<hanla></hanla>算法的页面置换情况</figcaption>
+<img src="https://raw.githubusercontent.com/Striver98/Pictures/master/img/image-20250425143315998.png" srcset="/img/loading.gif" lazyload alt="采用LRU算法的页面置换情况">
+<figcaption aria-hidden="true">采用<hanla></hanla>LRU<hanla></hanla>算法的页面置换情况</figcaption>
 </figure>
 <h4 id="lru算法的实现">LRU<hanla></hanla>算法的实现</h4>
 <ol type="1">
@@ -1229,7 +1360,8 @@ mjx-container[display="true"] + br {
 </ul></li>
 </ol>
 <figure>
-<img src="https://raw.githubusercontent.com/Striver98/Pictures/master/img/image-20250425143503151.png" srcset="/img/loading.gif" lazyload alt="计数器实现方法"><figcaption aria-hidden="true">计数器实现方法</figcaption>
+<img src="https://raw.githubusercontent.com/Striver98/Pictures/master/img/image-20250425143503151.png" srcset="/img/loading.gif" lazyload alt="计数器实现方法">
+<figcaption aria-hidden="true">计数器实现方法</figcaption>
 </figure>
 <ol start="2" type="1">
 <li>特殊栈
@@ -1238,7 +1370,8 @@ mjx-container[display="true"] + br {
 </ul></li>
 </ol>
 <figure>
-<img src="https://raw.githubusercontent.com/Striver98/Pictures/master/img/image-20250425143612961.png" srcset="/img/loading.gif" lazyload alt="特殊栈实现方法"><figcaption aria-hidden="true">特殊栈实现方法</figcaption>
+<img src="https://raw.githubusercontent.com/Striver98/Pictures/master/img/image-20250425143612961.png" srcset="/img/loading.gif" lazyload alt="特殊栈实现方法">
+<figcaption aria-hidden="true">特殊栈实现方法</figcaption>
 </figure>
 <h3 id="lru近似置换算法">LRU<hanla></hanla>近似置换算法</h3>
 <p>近似<hanla></hanla>LRU<hanla></hanla>算法的基础：引用位（也称访问位）</p>
@@ -1260,7 +1393,8 @@ mjx-container[display="true"] + br {
 </ul>
 <p><img src="https://raw.githubusercontent.com/Striver98/Pictures/master/img/image-20250425144343231.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="改进的时钟算法">改进的时钟算法</h4>
-<p>​ 将一个修改过的页面换出需要写磁盘，其开销大于未修改页面。为此在改进型时钟算法中应考虑页面修改情况。设<hanla></hanla>R<hanla></hanla>为访问位，U<hanla></hanla>为修改位，将页面分为以下<hanla></hanla>4<hanla></hanla>种类型：</p>
+<p>​
+将一个修改过的页面换出需要写磁盘，其开销大于未修改页面。为此在改进型时钟算法中应考虑页面修改情况。设<hanla></hanla>R<hanla></hanla>为访问位，U<hanla></hanla>为修改位，将页面分为以下<hanla></hanla>4<hanla></hanla>种类型：</p>
 <ul>
 <li>1<hanla></hanla>类<hanla></hanla>(R=0,U=0)：未被访问又未被修改</li>
 <li>2<hanla></hanla>类<hanla></hanla>(R=0,U=1)：未被访问但已被修改</li>
@@ -1305,16 +1439,19 @@ mjx-container[display="true"] + br {
 </ol>
 <blockquote>
 <p><strong>a. 逻辑地址的位数</strong></p>
-<p>逻辑地址由 <strong>页号（page number）</strong> 和 <strong>页内偏移量（page offset）</strong> 组成：</p>
+<p>逻辑地址由 <strong>页号（page number）</strong> 和
+<strong>页内偏移量（page offset）</strong> 组成：</p>
 <ol type="1">
 <li><p><strong>页号位数</strong>：</p>
 <ul>
-<li>逻辑地址空间有 64 页，因此需要足够多的位数来表示 64 个不同的页号。</li>
+<li>逻辑地址空间有 64 页，因此需要足够多的位数来表示 64
+个不同的页号。</li>
 <li>计算：log2(64)=6 位。</li>
 </ul></li>
 <li><p><strong>页内偏移量位数</strong>：</p>
 <ul>
-<li>每页大小为 1,024 字，因此需要足够多的位数来表示 1,024 个不同的偏移位置。</li>
+<li>每页大小为 1,024 字，因此需要足够多的位数来表示 1,024
+个不同的偏移位置。</li>
 <li>计算：log2(1024)=10 位。</li>
 </ul></li>
 <li><p><strong>逻辑地址总位数</strong>：</p>
@@ -1322,7 +1459,8 @@ mjx-container[display="true"] + br {
 </ol>
 <p><strong>答案 (a)</strong>：逻辑地址有 <strong>16 位</strong>。</p>
 <p><strong>b. 物理地址的位数</strong></p>
-<p>物理地址由 <strong>帧号（frame number）</strong> 和 <strong>页内偏移量（page offset）</strong> 组成：</p>
+<p>物理地址由 <strong>帧号（frame number）</strong> 和
+<strong>页内偏移量（page offset）</strong> 组成：</p>
 <ol type="1">
 <li><p><strong>帧号位数</strong>：</p>
 <ul>
@@ -1347,40 +1485,53 @@ mjx-container[display="true"] + br {
 </ul>
 <p>需要计算：</p>
 <ol type="1">
-<li><strong>(a) 传统单级页表（conventional single-level page table）的条目数</strong></li>
+<li><strong>(a) 传统单级页表（conventional single-level page
+table）的条目数</strong></li>
 <li><strong>(b) 反向页表（inverted page table）的条目数</strong></li>
 <li><strong>MPV 操作系统支持的最大物理内存容量</strong></li>
 </ol></li>
 </ol>
 <blockquote>
-<p><strong>1. 分析地址结构</strong> 首先，我们需要分解 虚拟地址 和 物理地址 的结构，以确定页号（page number）和页内偏移量（page offset）的位数。</p>
+<p><strong>1. 分析地址结构</strong> 首先，我们需要分解 虚拟地址 和
+物理地址 的结构，以确定页号（page number）和页内偏移量（page
+offset）的位数。</p>
 <ol type="1">
 <li>页内偏移量（Page Offset）位数 • 页大小 = 4 KB = <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.919ex" height="1.887ex" role="img" focusable="false" viewBox="0 -833.9 1290.1 833.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(533,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(500,0)"></path></g></g></g></g></g></svg></mjx-container>字节</li>
 </ol>
 <p>• 因此，页内偏移量占 12 位（因为 <span class="math inline">2<sup>12</sup> = 4096</span> ）。</p>
 <ol start="2" type="1">
-<li>虚拟地址分解（24 位） • 虚拟地址 = 页号（VPN） + 页内偏移量（Offset）</li>
+<li>虚拟地址分解（24 位） • 虚拟地址 = 页号（VPN） +
+页内偏移量（Offset）</li>
 </ol>
 <p>• 页号位数 = 虚拟地址位数 - 偏移量位数 =<span class="math inline">24 − 12 = 12</span> 位</p>
 <p>• 因此，虚拟页号（VPN）有 12 位，可以表示<hanla></hanla><span class="math inline">2<sup>12</sup> = 4096</span><hanla></hanla>个不同的页。</p>
 <ol start="3" type="1">
-<li>物理地址分解（20 位） • 物理地址 = 帧号（PFN） + 页内偏移量（Offset）</li>
+<li>物理地址分解（20 位） • 物理地址 = 帧号（PFN） +
+页内偏移量（Offset）</li>
 </ol>
-<p>• 由于页内偏移量仍然是 12 位，帧号位数 = 物理地址位数 - 偏移量位数 =<span class="math inline">20 − 12 = 8</span><hanla></hanla>位</p>
+<p>• 由于页内偏移量仍然是 12 位，帧号位数 = 物理地址位数 - 偏移量位数
+=<span class="math inline">20 − 12 = 8</span><hanla></hanla>位</p>
 <p>• 因此，物理帧号（PFN）有 8 位，可以表示 <span class="math inline">2<sup>8</sup> = 256</span> 个不同的帧。</p>
 <hr>
-<p><strong>(a) 传统单级页表的条目数</strong> • 传统页表 的条目数由 虚拟页号（VPN） 决定，即每个虚拟页对应一个页表条目。</p>
+<p><strong>(a) 传统单级页表的条目数</strong> • 传统页表 的条目数由
+虚拟页号（VPN） 决定，即每个虚拟页对应一个页表条目。</p>
 <p>• 虚拟页号有 12 位，因此页表条目数 = <span class="math inline">2<sup>12</sup> = 4096</span> 个。</p>
 <p>答案 (a)：传统单级页表有 4096 个条目。</p>
 <hr>
-<p><strong>(b) 反向页表的条目数</strong> • 反向页表（Inverted Page Table, IPT） 的条目数由 物理帧号（PFN） 决定，即每个物理帧对应一个反向页表条目。</p>
+<p><strong>(b) 反向页表的条目数</strong> • 反向页表（Inverted Page
+Table, IPT） 的条目数由 物理帧号（PFN）
+决定，即每个物理帧对应一个反向页表条目。</p>
 <p>• 物理帧号有 8 位，因此反向页表条目数 = <span class="math inline">2<sup>8</sup> = 256</span> 个。</p>
 <p>答案 (b)：反向页表有 256 个条目。</p>
 <hr>
-<p><strong>最大物理内存容量</strong> • 物理地址有 20 位，因此可寻址的物理内存空间为<hanla></hanla><span class="math inline">2<sup>20</sup> = 1, 048, 576</span> 字节（即 1 MB）。</p>
-<p>• 但题目问的是 最大物理内存，而物理帧数由 帧号位数（8 位） 决定，即最多 256 帧。</p>
+<p><strong>最大物理内存容量</strong> • 物理地址有 20
+位，因此可寻址的物理内存空间为<hanla></hanla><span class="math inline">2<sup>20</sup> = 1, 048, 576</span> 字节（即 1
+MB）。</p>
+<p>• 但题目问的是 最大物理内存，而物理帧数由 帧号位数（8 位）
+决定，即最多 256 帧。</p>
 <p>• 每帧大小 = 页大小 = 4 KB</p>
-<p>• 因此，最大物理内存 = <span class="math inline">256 × 4 KB = 1024 KB = 1 MB</span> 。</p>
+<p>• 因此，最大物理内存 = <span class="math inline">256 × 4 KB = 1024
+KB = 1 MB</span> 。</p>
 <p>答案：MPV 操作系统支持的最大物理内存是 1 MB。</p>
 </blockquote>
 <ol start="4" type="1">
@@ -1388,15 +1539,19 @@ mjx-container[display="true"] + br {
 <ul>
 <li><strong>内存访问时间（Memory Access Time）</strong>：50 ns</li>
 <li><strong>TLB（Translation Lookaside Buffer）命中率</strong>：75%</li>
-<li><strong>TLB 查找时间（TLB Lookup Time）</strong>：2 ns（命中时）</li>
+<li><strong>TLB 查找时间（TLB Lookup Time）</strong>：2
+ns（命中时）</li>
 </ul>
 <p>需要计算：</p>
 <p><strong>(a) 无 TLB 时，分页内存访问的总时间</strong></p>
 <p><strong>(b) 有 TLB 时，</strong></p>
 <ul>
-<li><p>75% 的情况命中 TLB，访问时间 = TLB 查找时间 + 1 次内存访问</p></li>
-<li><p>25% 的情况未命中 TLB，访问时间 = TLB 查找时间 + 2 次内存访问（查页表 + 访问数据）</p></li>
-<li><p><strong>求有效内存访问时间（Effective Memory Access Time, EMAT）</strong></p></li>
+<li><p>75% 的情况命中 TLB，访问时间 = TLB 查找时间 + 1
+次内存访问</p></li>
+<li><p>25% 的情况未命中 TLB，访问时间 = TLB 查找时间 + 2
+次内存访问（查页表 + 访问数据）</p></li>
+<li><p><strong>求有效内存访问时间（Effective Memory Access Time,
+EMAT）</strong></p></li>
 </ul></li>
 </ol>
 <blockquote>
@@ -1404,9 +1559,11 @@ mjx-container[display="true"] + br {
 <p>在 <strong>无 TLB</strong> 的情况下，每次内存访问需要：</p>
 <ol type="1">
 <li><strong>查页表（1 次内存访问）</strong> → 50 ns</li>
-<li><strong>访问目标数据（1 次内存访问）</strong> → 50 ns 因此，总时间 =<span class="math inline"><em>P</em><em>a</em><em>g</em><em>e</em><em>T</em><em>a</em><em>b</em><em>l</em><em>e</em><em>L</em><em>o</em><em>o</em><em>k</em><em>u</em><em>p</em> + <em>M</em><em>e</em><em>m</em><em>o</em><em>r</em><em>y</em><em>A</em><em>c</em><em>c</em><em>e</em><em>s</em><em>s</em> = 50<em>n</em><em>s</em> + 50<em>n</em><em>s</em> = 100<em>n</em><em>s</em></span></li>
+<li><strong>访问目标数据（1 次内存访问）</strong> → 50 ns 因此，总时间
+=<span class="math inline"><em>P</em><em>a</em><em>g</em><em>e</em><em>T</em><em>a</em><em>b</em><em>l</em><em>e</em><em>L</em><em>o</em><em>o</em><em>k</em><em>u</em><em>p</em> + <em>M</em><em>e</em><em>m</em><em>o</em><em>r</em><em>y</em><em>A</em><em>c</em><em>c</em><em>e</em><em>s</em><em>s</em> = 50<em>n</em><em>s</em> + 50<em>n</em><em>s</em> = 100<em>n</em><em>s</em></span></li>
 </ol>
-<p><strong>答案 (a)</strong>：无 TLB 时，分页内存访问时间为 <strong>100 ns</strong>。</p>
+<p><strong>答案 (a)</strong>：无 TLB 时，分页内存访问时间为 <strong>100
+ns</strong>。</p>
 <p><strong>(b) 有 TLB 时，有效内存访问时间（EMAT）</strong></p>
 <p>TLB 是一种缓存，用于加速页表查找。访问流程如下：</p>
 <p><strong>1. TLB 命中（75% 概率）</strong></p>
@@ -1420,12 +1577,16 @@ mjx-container[display="true"] + br {
 <li><strong>查页表</strong>（1 次内存访问，50 ns）</li>
 <li><strong>访问目标数据</strong>（1 次内存访问，50 ns） 总时间 =<span class="math inline"><em>T</em><em>L</em><em>B</em><em>L</em><em>o</em><em>o</em><em>k</em><em>u</em><em>p</em> + <em>P</em><em>a</em><em>g</em><em>e</em><em>T</em><em>a</em><em>b</em><em>l</em><em>e</em><em>L</em><em>o</em><em>o</em><em>k</em><em>u</em><em>p</em> + <em>M</em><em>e</em><em>m</em><em>o</em><em>r</em><em>y</em><em>A</em><em>c</em><em>c</em><em>e</em><em>s</em><em>s</em> = 2<em>n</em><em>s</em> + 50<em>n</em><em>s</em> + 50<em>n</em><em>s</em> = 102<em>n</em><em>s</em></span></li>
 </ul>
-<h4 id="计算有效内存访问时间emat"><strong>3. 计算有效内存访问时间（EMAT）</strong></h4>
+<h4 id="计算有效内存访问时间emat"><strong>3.
+计算有效内存访问时间（EMAT）</strong></h4>
 <p><span class="math inline"><em>E</em><em>M</em><em>A</em><em>T</em> = (<em>T</em><em>L</em><em>B</em><em>H</em><em>i</em><em>t</em><em>R</em><em>a</em><em>t</em><em>e</em> × <em>H</em><em>i</em><em>t</em><em>T</em><em>i</em><em>m</em><em>e</em>) + (<em>T</em><em>L</em><em>B</em><em>M</em><em>i</em><em>s</em><em>s</em><em>R</em><em>a</em><em>t</em><em>e</em> × <em>M</em><em>i</em><em>s</em><em>s</em><em>T</em><em>i</em><em>m</em><em>e</em>)<em>E</em><em>M</em><em>A</em><em>T</em> = (0.75 × 52<em>n</em><em>s</em>) + (0.25 × 102<em>n</em><em>s</em>) = 39<em>n</em><em>s</em> + 25.5<em>n</em><em>s</em> = 64.5<em>n</em><em>s</em></span></p>
-<p><strong>答案 (b)</strong>：有 TLB 时，有效内存访问时间为 <strong>64.5 ns</strong></p>
+<p><strong>答案 (b)</strong>：有 TLB 时，有效内存访问时间为 <strong>64.5
+ns</strong></p>
 </blockquote>
 <ol start="5" type="1">
-<li><p>在一个 <strong>固定多道程序度（degree of multiprogramming）为 4</strong> 的请求分页系统中，测量了 <strong>CPU 利用率</strong> 和 <strong>磁盘（分页磁盘）利用率</strong>，得到以下三种情况：</p>
+<li><p>在一个 <strong>固定多道程序度（degree of multiprogramming）为
+4</strong> 的请求分页系统中，测量了 <strong>CPU 利用率</strong> 和
+<strong>磁盘（分页磁盘）利用率</strong>，得到以下三种情况：</p>
 <ol type="1">
 <li><strong>(a) CPU 利用率 13%；磁盘利用率 97%</strong></li>
 <li><strong>(b) CPU 利用率 87%；磁盘利用率 3%</strong></li>
@@ -1439,8 +1600,9 @@ mjx-container[display="true"] + br {
 </ol>
 <blockquote>
 <table>
+
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">情况</th>
 <th style="text-align: center;">CPU 利用率</th>
 <th style="text-align: center;">磁盘利用率</th>
@@ -1449,34 +1611,40 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;"><strong>(a)</strong></td>
 <td style="text-align: center;">13%</td>
 <td style="text-align: center;">97%</td>
 <td style="text-align: center;"><strong>抖动（Thrashing）</strong></td>
 <td style="text-align: center;">❌ <strong>不能，应减少</strong></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;"><strong>(b)</strong></td>
 <td style="text-align: center;">87%</td>
 <td style="text-align: center;">3%</td>
 <td style="text-align: center;"><strong>运行良好</strong></td>
-<td style="text-align: center;">⚠️ <strong>可尝试增加，但需监控</strong></td>
+<td style="text-align: center;">⚠️
+<strong>可尝试增加，但需监控</strong></td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;"><strong>(c)</strong></td>
 <td style="text-align: center;">13%</td>
 <td style="text-align: center;">3%</td>
-<td style="text-align: center;"><strong>进程数不足或 I/O 密集型</strong></td>
+<td style="text-align: center;"><strong>进程数不足或 I/O
+密集型</strong></td>
 <td style="text-align: center;">✅ <strong>可以增加</strong></td>
 </tr>
 </tbody>
 </table>
 <h3 id="关键结论"><strong>关键结论</strong></h3>
 <ul>
-<li><strong>抖动（Thrashing）</strong> 发生时（高磁盘利用率 + 低 CPU 利用率），<strong>不能增加多道程序度</strong>，反而应该减少。</li>
-<li><strong>系统运行良好</strong>（高 CPU 利用率 + 低磁盘利用率）时，可以 <strong>谨慎增加</strong> 多道程序度，但需监控是否接近抖动阈值。</li>
-<li><strong>CPU 和磁盘都空闲</strong>（低 CPU + 低磁盘）时，通常 <strong>可以增加多道程序度</strong>，以提高 CPU 利用率。</li>
+<li><strong>抖动（Thrashing）</strong> 发生时（高磁盘利用率 + 低 CPU
+利用率），<strong>不能增加多道程序度</strong>，反而应该减少。</li>
+<li><strong>系统运行良好</strong>（高 CPU 利用率 +
+低磁盘利用率）时，可以 <strong>谨慎增加</strong>
+多道程序度，但需监控是否接近抖动阈值。</li>
+<li><strong>CPU 和磁盘都空闲</strong>（低 CPU + 低磁盘）时，通常
+<strong>可以增加多道程序度</strong>，以提高 CPU 利用率。</li>
 </ul>
 </blockquote>
 <h2 id="选择题-5">选择题</h2>
@@ -1500,9 +1668,11 @@ mjx-container[display="true"] + br {
 <p><strong>C.<hanla></hanla>分段存储管理</strong></p>
 <p>D.<hanla></hanla>段页式存储管理</p>
 <ol start="4" type="1">
-<li>采用分段存储管理的系统中，若地址用<hanla></hanla>24<hanla></hanla>位表示，其中<hanla></hanla>8<hanla></hanla>位表示段号，则允许每段的最大长度是 _____ 。</li>
+<li>采用分段存储管理的系统中，若地址用<hanla></hanla>24<hanla></hanla>位表示，其中<hanla></hanla>8<hanla></hanla>位表示段号，则允许每段的最大长度是
+_____ 。</li>
 </ol>
-<p><strong>A. <span class="math inline">2<sup>16</sup></span></strong> B. <span class="math inline">2<sup>32</sup></span> C. <span class="math inline">2<sup>24</sup></span> D. <span class="math inline">2<sup>8</sup></span></p>
+<p><strong>A. <span class="math inline">2<sup>16</sup></span></strong>
+B. <span class="math inline">2<sup>32</sup></span> C. <span class="math inline">2<sup>24</sup></span> D. <span class="math inline">2<sup>8</sup></span></p>
 <ol start="5" type="1">
 <li>在固定分区分配中，每个分区的大小是 _____ 。</li>
 </ol>
@@ -1521,14 +1691,16 @@ mjx-container[display="true"] + br {
 <p>A.<hanla></hanla>固定式分区分配 <strong>B.<hanla></hanla>单一连续分配</strong></p>
 <p>C.<hanla></hanla>可变式分区分配 D.<hanla></hanla>页式存储管理</p>
 <ol start="8" type="1">
-<li>在可变式分区分配方案中，某一作业完成后，系统收回其内存空间并与相邻空闲区合并，为此需修改空闲区表，造成空闲区数减<hanla></hanla>1<hanla></hanla>的情况是 _____ 。</li>
+<li>在可变式分区分配方案中，某一作业完成后，系统收回其内存空间并与相邻空闲区合并，为此需修改空闲区表，造成空闲区数减<hanla></hanla>1<hanla></hanla>的情况是
+_____ 。</li>
 </ol>
 <p>A.<hanla></hanla>有下邻空闲区但无上邻空闲区</p>
 <p>B.<hanla></hanla>有上邻空闲区但无下邻空闲区</p>
 <p><strong>C.<hanla></hanla>有上邻空闲区也有下邻空闲区</strong></p>
 <p>D.<hanla></hanla>无上邻空闲区也无下邻空闲区</p>
 <ol start="9" type="1">
-<li>采用两级页表的页式存储管理中，按给定的逻辑地址进行读写时，通常需访问主存的次数是<hanla></hanla>_____ 。</li>
+<li>采用两级页表的页式存储管理中，按给定的逻辑地址进行读写时，通常需访问主存的次数是<hanla></hanla>_____
+。</li>
 </ol>
 <p>A. 1<hanla></hanla>次 B. 2<hanla></hanla>次 <strong>C. 3<hanla></hanla>次</strong> D. 4<hanla></hanla>次</p>
 <ol start="10" type="1">
@@ -1554,7 +1726,8 @@ mjx-container[display="true"] + br {
 <p>C. 不要求进行缺页中断处理</p>
 <p>D. 不要求进行页面置换</p>
 <ol start="14" type="1">
-<li>作业在执行中发生了缺页中断，经操作系统处理后，应让其执行 _____ 指令。</li>
+<li>作业在执行中发生了缺页中断，经操作系统处理后，应让其执行 _____
+指令。</li>
 </ol>
 <p>A. 被中断的前一条 <strong>B. 被中断的那条</strong></p>
 <p>C. 被中断的后一条 D. 启动时的第一条</p>
@@ -1569,7 +1742,8 @@ mjx-container[display="true"] + br {
 <p>A. 可重定位分区分配 B. 分段存储管理</p>
 <p><strong>C. 请求分页存储管理</strong> D. 段页式存储管理</p>
 <ol start="17" type="1">
-<li>由于实现<hanla></hanla>_____ 页面置换算法的成本高，通常使用一种近似的页面置换算法<hanla></hanla>_____<hanla></hanla>算法。</li>
+<li>由于实现<hanla></hanla>_____
+页面置换算法的成本高，通常使用一种近似的页面置换算法<hanla></hanla>_____<hanla></hanla>算法。</li>
 </ol>
 <p>A.Optimal LRU <strong>B.LRU Clock</strong></p>
 <p>C.FCFS Clock D.Clock 改进的<hanla></hanla>Clock</p>
@@ -1599,16 +1773,26 @@ mjx-container[display="true"] + br {
 <p>D．为提高内存利用率，允许用户使用大小不同的页。</p>
 <h2 id="填空题-2">填空题</h2>
 <ol type="1">
-<li><p>在分区分配算法中，首次适应算法倾向于优先利用内存中的 <strong>低地址</strong>部分的空闲分区，从而保留了<strong>高地址</strong>部分的大空闲区。</p></li>
-<li><p>段页式存储管理中，是先将作业分<strong>段</strong> ， <strong>段</strong>内分<strong>页</strong>。分配以 <strong>页</strong>为单位。在不考虑使用联想存储器的情况下，执行程序时需要 <strong>3</strong><hanla></hanla>次访问内存，其中第 <strong>2</strong><hanla></hanla>次是查作业的页表。</p></li>
-<li><p>把作业装入内存中随即进行地址变换的方式称为<strong>静态重定位</strong>，而在作业执行期间，当访问到指令或数据时才进行地址变换的方式称为 <strong>动态重定位</strong>。</p></li>
-<li><p>三种不连续内存管理方式是：<strong>分页</strong>、<strong>分段</strong>和 <strong>段页式</strong>。</p></li>
+<li><p>在分区分配算法中，首次适应算法倾向于优先利用内存中的
+<strong>低地址</strong>部分的空闲分区，从而保留了<strong>高地址</strong>部分的大空闲区。</p></li>
+<li><p>段页式存储管理中，是先将作业分<strong>段</strong> ，
+<strong>段</strong>内分<strong>页</strong>。分配以
+<strong>页</strong>为单位。在不考虑使用联想存储器的情况下，执行程序时需要
+<strong>3</strong><hanla></hanla>次访问内存，其中第
+<strong>2</strong><hanla></hanla>次是查作业的页表。</p></li>
+<li><p>把作业装入内存中随即进行地址变换的方式称为<strong>静态重定位</strong>，而在作业执行期间，当访问到指令或数据时才进行地址变换的方式称为
+<strong>动态重定位</strong>。</p></li>
+<li><p>三种不连续内存管理方式是：<strong>分页</strong>、<strong>分段</strong>和
+<strong>段页式</strong>。</p></li>
 <li><p>分区存储管理可以分为：<strong>固定</strong>分区和<strong>动态</strong>分区。</p></li>
 <li><p>在请求页式存储管理系统中，常用的页面淘汰算法有：<strong>最佳置换算法（OPT）</strong>，选择淘汰不再使用或最远的将来才使用的页；<strong>先进先出算法（FIFO）</strong>，选择淘汰在内存驻留时间最长的页。</p></li>
-<li><p>程序运行时的局部性表现为： <strong>时间局部性</strong>和<strong>空间局部性</strong>。</p></li>
+<li><p>程序运行时的局部性表现为：
+<strong>时间局部性</strong>和<strong>空间局部性</strong>。</p></li>
 <li><p>虚拟存储器的特点是<strong>部分装入</strong>、<strong>按需调页</strong>、<strong>逻辑扩展内存</strong>、<strong>透明性</strong>。</p></li>
-<li><p>所谓虚拟存储器是指具有 <strong>请求调入</strong> 和 <strong>置换</strong>功能，能从逻辑上对内存容量进行扩充的一种存储器系统。</p></li>
-<li><p>虚拟存储器的实现方法有三种<strong>请求分页</strong>、 <strong>请求分段</strong>和 <strong>段页式</strong> 。</p></li>
+<li><p>所谓虚拟存储器是指具有 <strong>请求调入</strong> 和
+<strong>置换</strong>功能，能从逻辑上对内存容量进行扩充的一种存储器系统。</p></li>
+<li><p>虚拟存储器的实现方法有三种<strong>请求分页</strong>、
+<strong>请求分段</strong>和 <strong>段页式</strong> 。</p></li>
 <li><p>在请求页式系统中，当访问的页不在主存时，由<strong>缺页中断机制</strong>将该页调入内存；当主存无空闲块时，必须<strong>置换（或淘汰）</strong>一页。</p></li>
 </ol>
 <h2 id="考研题">考研题</h2>
@@ -1627,8 +1811,9 @@ mjx-container[display="true"] + br {
 <p>A.7MB <strong>B.9MB</strong> C.10MB D.15MB</p></li>
 </ol>
 <table>
+
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">操作</th>
 <th style="text-align: center;">空闲分区表（分配前）</th>
 <th style="text-align: center;">分配<hanla></hanla>/<hanla></hanla>释放操作</th>
@@ -1636,37 +1821,37 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">初始</td>
 <td style="text-align: center;"><code>[55MB]</code></td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;"><code>[55MB]</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">分配 15MB</td>
 <td style="text-align: center;"><code>[55MB]</code></td>
 <td style="text-align: center;">从 55MB 中分配 15MB</td>
 <td style="text-align: center;"><code>[40MB]</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">分配 30MB</td>
 <td style="text-align: center;"><code>[40MB]</code></td>
 <td style="text-align: center;">从 40MB 中分配 30MB</td>
 <td style="text-align: center;"><code>[10MB]</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">释放 15MB</td>
 <td style="text-align: center;"><code>[10MB]</code></td>
 <td style="text-align: center;">释放 15MB</td>
 <td style="text-align: center;"><code>[10MB, 15MB]</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">分配 8MB</td>
 <td style="text-align: center;"><code>[10MB, 15MB]</code></td>
 <td style="text-align: center;">从 10MB 中分配 8MB</td>
 <td style="text-align: center;"><code>[2MB, 15MB]</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">分配 6MB</td>
 <td style="text-align: center;"><code>[2MB, 15MB]</code></td>
 <td style="text-align: center;">从 15MB 中分配 6MB</td>
@@ -1675,50 +1860,60 @@ mjx-container[display="true"] + br {
 </tbody>
 </table>
 <ol start="4" type="1">
-<li><p>某计算机采用 <strong>二级页表</strong> 的分页存储管理方式，按字节编址，具体参数如下：</p>
+<li><p>某计算机采用 <strong>二级页表</strong>
+的分页存储管理方式，按字节编址，具体参数如下：</p>
 <ul>
 <li><strong>页大小</strong>：<span class="math inline">2<sup>10</sup></span> 字节（1KB）。</li>
 <li><strong>页表项大小</strong>：2 字节。</li>
 <li><strong>逻辑地址结构</strong>：<code>页目录号 | 页号 | 页内偏移量</code>。</li>
 <li><strong>逻辑地址空间大小</strong>：<span class="math inline">2<sup>16</sup></span> 页。</li>
 </ul>
-<p><strong>问题</strong>：表示整个逻辑地址空间的 <strong>页目录表（一级页表）</strong> 中，包含的表项个数至少是多少？ ​<strong>​选项​</strong>​：A. 64 B. 128 C. 256 D. 512</p></li>
+<p><strong>问题</strong>：表示整个逻辑地址空间的
+<strong>页目录表（一级页表）</strong> 中，包含的表项个数至少是多少？
+​<strong>​选项​</strong>​：A. 64 B. 128 C. 256 D. 512</p></li>
 </ol>
 <p><strong>解题步骤</strong></p>
 <p><strong>1. 理解二级页表结构</strong></p>
 <ul>
 <li><strong>二级页表</strong> 的地址转换流程：
 <ol type="1">
-<li>根据 <strong>页目录号</strong> 查找页目录表（一级页表），获取二级页表的基址。</li>
+<li>根据 <strong>页目录号</strong>
+查找页目录表（一级页表），获取二级页表的基址。</li>
 <li>根据 <strong>页号</strong> 查找二级页表，获取物理页框号。</li>
 <li>结合 <strong>页内偏移量</strong> 访问物理内存。</li>
 </ol></li>
 <li><strong>逻辑地址空间</strong>：
 <ul>
 <li>总页数 = 216 页。</li>
-<li>每页大小 = 210 字节 → <strong>逻辑地址空间总大小</strong> = 216×210=226 字节（64MB）。</li>
+<li>每页大小 = 210 字节 → <strong>逻辑地址空间总大小</strong> =
+216×210=226 字节（64MB）。</li>
 </ul></li>
 </ul>
 <p><strong>2. 计算页目录表的表项数</strong></p>
 <ul>
-<li><strong>页目录表（一级页表）</strong> 的每个表项指向一个 <strong>二级页表</strong>。</li>
-<li><strong>关键问题</strong>：需要多少个二级页表才能覆盖 216 个逻辑页？</li>
+<li><strong>页目录表（一级页表）</strong> 的每个表项指向一个
+<strong>二级页表</strong>。</li>
+<li><strong>关键问题</strong>：需要多少个二级页表才能覆盖 216
+个逻辑页？</li>
 </ul>
 <p><strong>步骤</strong>：</p>
 <ol type="1">
 <li><strong>每个二级页表能映射多少页</strong>？
 <ul>
 <li>页大小 = 210 字节，页表项大小 = 2 字节。</li>
-<li><strong>每张二级页表的表项数</strong> = 2210=29=512 项（即每张二级页表可映射 512 页）。</li>
+<li><strong>每张二级页表的表项数</strong> = 2210=29=512
+项（即每张二级页表可映射 512 页）。</li>
 </ul></li>
 <li><strong>需要的二级页表总数</strong>：
 <ul>
 <li>总逻辑页数 = 216 页。</li>
-<li>每张二级页表映射 512 页 → <strong>二级页表数量</strong> = 29216=27=128 个。</li>
+<li>每张二级页表映射 512 页 → <strong>二级页表数量</strong> =
+29216=27=128 个。</li>
 </ul></li>
 <li><strong>页目录表的表项数</strong>：
 <ul>
-<li>页目录表需要 <strong>128 个表项</strong>（每个表项指向一个二级页表）。</li>
+<li>页目录表需要 <strong>128
+个表项</strong>（每个表项指向一个二级页表）。</li>
 </ul></li>
 </ol>
 <p><strong>3. 验证逻辑地址划分</strong></p>
@@ -1728,7 +1923,8 @@ mjx-container[display="true"] + br {
 <ul>
 <li><strong>页内偏移量</strong>：10 位（210 字节页大小）。</li>
 <li><strong>页号</strong>：9 位（每张二级页表 512 项，29）。</li>
-<li><strong>页目录号</strong>：剩余位数 = 26 - 10 - 9 = 7 位 → 27=128 个表项。</li>
+<li><strong>页目录号</strong>：剩余位数 = 26 - 10 - 9 = 7 位 → 27=128
+个表项。</li>
 </ul></li>
 </ul>
 <h1 id="第8章-文件系统">第<hanla></hanla>8<hanla></hanla>章 文件系统</h1>
@@ -1758,8 +1954,9 @@ mjx-container[display="true"] + br {
 <li><strong>索引分配（单级）</strong>：索引块存储所有块的指针，修改索引块即可。</li>
 </ol>
 <table>
+
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;"><strong>操作</strong></th>
 <th style="text-align: center;"><strong>连续分配</strong></th>
 <th style="text-align: center;"><strong>链接分配</strong></th>
@@ -1767,37 +1964,37 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;"><strong>a. 开头添加块</strong></td>
 <td style="text-align: center;">101（移动全部块）</td>
 <td style="text-align: center;">1（更新头指针<hanla></hanla>+<hanla></hanla>新块）</td>
 <td style="text-align: center;">1（更新索引块）</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;"><strong>b. 中间添加块</strong></td>
 <td style="text-align: center;">51（移动后半部分）</td>
 <td style="text-align: center;">51（遍历到中间<hanla></hanla>+<hanla></hanla>更新指针）</td>
 <td style="text-align: center;">1（更新索引块）</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;"><strong>c.&nbsp;末尾添加块</strong></td>
 <td style="text-align: center;">1（直接追加）</td>
 <td style="text-align: center;">1（更新尾指针<hanla></hanla>+<hanla></hanla>新块）</td>
 <td style="text-align: center;">1（更新索引块）</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;"><strong>d.&nbsp;开头删除块</strong></td>
 <td style="text-align: center;">0（仅更新<hanla></hanla>FCB）</td>
 <td style="text-align: center;">1（更新头指针）</td>
 <td style="text-align: center;">1（更新索引块）</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;"><strong>e. 中间删除块</strong></td>
 <td style="text-align: center;">49（移动后半部分）</td>
 <td style="text-align: center;">51（遍历到中间<hanla></hanla>+<hanla></hanla>更新指针）</td>
 <td style="text-align: center;">1（更新索引块）</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;"><strong>f.&nbsp;末尾删除块</strong></td>
 <td style="text-align: center;">0（仅更新<hanla></hanla>FCB）</td>
 <td style="text-align: center;">100（遍历到尾节点）</td>
@@ -1826,22 +2023,27 @@ mjx-container[display="true"] + br {
 <p><strong>C. 从根目录到该文件所经历的路径中各符号名的集合</strong></p>
 <p>D. 目录文件名和文件名的集合</p>
 <ol start="4" type="1">
-<li>为了解决不同用户文件的<hanla></hanla>“命名冲突”<hanla></hanla>问题，通常在文件系统中采用 _____ 。</li>
+<li>为了解决不同用户文件的<hanla></hanla>“命名冲突”<hanla></hanla>问题，通常在文件系统中采用 _____
+。</li>
 </ol>
 <p>A. 约定的方法 <strong>B. 多级目录</strong></p>
 <p>C. 路径 D. 索引</p>
 <ol start="5" type="1">
-<li>一个文件的相对路径名是从 _____ 开始，逐步沿着各级子目录追溯，最后到指定文件的整个通路上所有子目录名组成的一个字符串。</li>
+<li>一个文件的相对路径名是从 _____
+开始，逐步沿着各级子目录追溯，最后到指定文件的整个通路上所有子目录名组成的一个字符串。</li>
 </ol>
 <p><strong>A. 当前目录</strong> B. 根目录</p>
 <p>C. 二级目录 D. 多级目录</p>
 <ol start="6" type="1">
-<li>使用文件前必须先 ① 文件，文件使用完毕后应该 ② 。<strong>B，D</strong></li>
+<li>使用文件前必须先 ① 文件，文件使用完毕后应该 ②
+。<strong>B，D</strong></li>
 </ol>
 <p>A. 建立 <strong>B. 打开</strong></p>
 <p>C. 命名 <strong>D. 关闭</strong></p>
 <ol start="7" type="1">
-<li>在文件系统中，文件的不同物理结构有不同的优缺点。在下列文件的物理结构中， ① 不具有直接读写文件任意一个记录的能力， ② 不利于文件长度动态增长。<strong>B，A</strong></li>
+<li>在文件系统中，文件的不同物理结构有不同的优缺点。在下列文件的物理结构中，
+① 不具有直接读写文件任意一个记录的能力， ②
+不利于文件长度动态增长。<strong>B，A</strong></li>
 </ol>
 <p>A. 顺序结构 B. 链接结构</p>
 <p>C. 索引结构 D. Hash<hanla></hanla>结构</p>
@@ -1866,20 +2068,27 @@ mjx-container[display="true"] + br {
 <p>D. 实现文件的保护和保密</p>
 <h2 id="填空题-3">填空题</h2>
 <ol type="1">
-<li>索引文件大体上由 <strong>索引区</strong>和 <strong>数据区</strong>构成。</li>
-<li>逻辑文件有两种类型，即 <strong>流式文件</strong>与<strong>记录式文件</strong>。</li>
+<li>索引文件大体上由 <strong>索引区</strong>和
+<strong>数据区</strong>构成。</li>
+<li>逻辑文件有两种类型，即
+<strong>流式文件</strong>与<strong>记录式文件</strong>。</li>
 <li>文件的物理组织有顺序结构、<strong>链接结构</strong>和索引结构。</li>
 <li>在文件系统中，要求物理块必须连续的物理文件是<strong>顺序文件</strong>。</li>
 <li>文件转储的方法有两种：全量转储和<strong>增量转储</strong>。</li>
 <li>文件的结构就是文件的组织形式，从用户观点出发所看到的文件组织形式称为文件的<strong>逻辑结构</strong>；从实现观点出发，文件在外存上的存放组织形式称为文件的<strong>物理结构</strong>。</li>
-<li>文件系统中若文件的物理结构采用连续结构，则文件控制块中关于文件的物理位置信息应包括文件的<strong>起始块号</strong>和 <strong>文件长度</strong>。</li>
-<li>二级目录结构通常由<strong>主文件目录（MFD）</strong>和各用户的 <strong>用户文件目录（UFD）</strong>组成。</li>
-<li>按用户对文件的存取权限将用户分为若干组，同时规定每一组用户对文件的访问权限。这样，所有用户组存取权限的集合称为该文件的<strong>访问控制表（ACL，Access Control List）</strong>。</li>
-<li><strong>文件保护（File Protection）</strong>是指避免文件拥有者或其他用户因有意或无意的错误操作使文件受到破坏。</li>
+<li>文件系统中若文件的物理结构采用连续结构，则文件控制块中关于文件的物理位置信息应包括文件的<strong>起始块号</strong>和
+<strong>文件长度</strong>。</li>
+<li>二级目录结构通常由<strong>主文件目录（MFD）</strong>和各用户的
+<strong>用户文件目录（UFD）</strong>组成。</li>
+<li>按用户对文件的存取权限将用户分为若干组，同时规定每一组用户对文件的访问权限。这样，所有用户组存取权限的集合称为该文件的<strong>访问控制表（ACL，Access
+Control List）</strong>。</li>
+<li><strong>文件保护（File
+Protection）</strong>是指避免文件拥有者或其他用户因有意或无意的错误操作使文件受到破坏。</li>
 </ol>
 <h2 id="考研题-1">考研题</h2>
 <ol type="1">
-<li><p>设文件索引节点中有<hanla></hanla>7<hanla></hanla>个地址项，其中<hanla></hanla>4<hanla></hanla>个地址项为直接地址索引，2<hanla></hanla>个地址项是一级间接地址索引，1<hanla></hanla>个地址项是二级间接地址索引，每个地址项大小为<hanla></hanla>4<hanla></hanla>字节，若磁盘索引块和磁盘数据块大小均为<hanla></hanla>256<hanla></hanla>字节，则可表示的单个文件最大长度是 。</p>
+<li><p>设文件索引节点中有<hanla></hanla>7<hanla></hanla>个地址项，其中<hanla></hanla>4<hanla></hanla>个地址项为直接地址索引，2<hanla></hanla>个地址项是一级间接地址索引，1<hanla></hanla>个地址项是二级间接地址索引，每个地址项大小为<hanla></hanla>4<hanla></hanla>字节，若磁盘索引块和磁盘数据块大小均为<hanla></hanla>256<hanla></hanla>字节，则可表示的单个文件最大长度是
+。</p>
 <p>A.33KB B. 519KB C. 1057KB D. 16613KB</p></li>
 </ol>
 <h4 id="解题步骤">解题步骤</h4>
@@ -1911,7 +2120,8 @@ mjx-container[display="true"] + br {
 <ul>
 <li>二级间接索引的第一层是一个索引块，存储指向第二层索引块的指针。</li>
 <li>第二层每个索引块又可以指向<hanla></hanla>64<hanla></hanla>个数据块。</li>
-<li>因此，一个二级间接地址索引可以指向的数据块数量 = 64 × 64 = 4096<hanla></hanla>个。</li>
+<li>因此，一个二级间接地址索引可以指向的数据块数量 = 64 × 64 =
+4096<hanla></hanla>个。</li>
 <li>1<hanla></hanla>个二级间接地址索引 → 4096<hanla></hanla>个数据块。</li>
 </ul></li>
 </ul>
@@ -1932,7 +2142,8 @@ mjx-container[display="true"] + br {
 <li>每个数据块大小为<hanla></hanla>256<hanla></hanla>字节。</li>
 <li>文件最大长度 = 总数据块数量 × 数据块大小 = 4228 × 256<hanla></hanla>字节。</li>
 </ul>
-<p>计算： 4228 × 256 = 4228 × (250 + 6) = 4228 × 250 + 4228 × 6 = 1,057,000 + 25,368 = 1,082,368<hanla></hanla>字节。</p>
+<p>计算： 4228 × 256 = 4228 × (250 + 6) = 4228 × 250 + 4228 × 6 =
+1,057,000 + 25,368 = 1,082,368<hanla></hanla>字节。</p>
 <p>转换为<hanla></hanla>KB： 1,082,368<hanla></hanla>字节 ÷ 1024 = 1057KB。</p>
 <ol start="5" type="1">
 <li>验证选项</li>
@@ -2038,7 +2249,8 @@ mjx-container[display="true"] + br {
 <li>|1523 - 4965| = 3442</li>
 <li>|4965 - 3681| = 1284</li>
 </ul></li>
-<li><p><strong>总距离</strong>：81 + 857 + 1084 + 504 + 2256 + 1074 + 1262 + 1167 + 3442 + 1284 = <strong>13011</strong></p></li>
+<li><p><strong>总距离</strong>：81 + 857 + 1084 + 504 + 2256 + 1074 +
+1262 + 1167 + 3442 + 1284 = <strong>13011</strong></p></li>
 </ul>
 <p><strong>2. SCAN（电梯算法）</strong></p>
 <ul>
@@ -2073,7 +2285,8 @@ mjx-container[display="true"] + br {
 <li>|544 - 356| = 188</li>
 </ul></li>
 </ul></li>
-<li><p><strong>总距离</strong>：146 + 504 + 881 + 1284 + 2896 + 451 + 95 + 311 + 668 + 188 = <strong>7424</strong></p></li>
+<li><p><strong>总距离</strong>：146 + 504 + 881 + 1284 + 2896 + 451 + 95
++ 311 + 668 + 188 = <strong>7424</strong></p></li>
 </ul>
 <p><strong>3. C-SCAN（循环扫描）</strong></p>
 <ul>
@@ -2111,27 +2324,28 @@ mjx-container[display="true"] + br {
 <li>|1618 - 2069| = 451</li>
 </ul></li>
 </ul></li>
-<li><p><strong>总距离</strong>：146 + 504 + 881 + 1284 + 4965 + 356 + 188 + 668 + 311 + 95 + 451 = <strong>9849</strong></p></li>
+<li><p><strong>总距离</strong>：146 + 504 + 881 + 1284 + 4965 + 356 +
+188 + 668 + 311 + 95 + 451 = <strong>9849</strong></p></li>
 </ul>
 <hr>
 <p><strong>最终答案</strong></p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">调度算法</th>
 <th style="text-align: center;">总移动距离（柱面数）</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">FCFS</td>
 <td style="text-align: center;">13011</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">SCAN</td>
 <td style="text-align: center;">7424</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">C-SCAN</td>
 <td style="text-align: center;">9849</td>
 </tr>
@@ -2181,12 +2395,14 @@ mjx-container[display="true"] + br {
 <ol type="1">
 <li>避免性能瓶颈：
 <ul>
-<li><strong>CPU<hanla></hanla>速度↑</strong> → 处理能力↑，但若总线或设备速度不变，<strong>I/O<hanla></hanla>成为瓶颈</strong>（如<hanla></hanla>CPU<hanla></hanla>等待慢速磁盘数据）。</li>
+<li><strong>CPU<hanla></hanla>速度↑</strong> →
+处理能力↑，但若总线或设备速度不变，<strong>I/O<hanla></hanla>成为瓶颈</strong>（如<hanla></hanla>CPU<hanla></hanla>等待慢速磁盘数据）。</li>
 <li>例：1GHz CPU + 100MB/s<hanla></hanla>磁盘 → 磁盘拖累整体性能。</li>
 </ul></li>
 <li>平衡系统吞吐量：
 <ul>
-<li>高速<hanla></hanla>CPU<hanla></hanla>需匹配高速总线（如<hanla></hanla>PCIe 5.0）和存储设备（如<hanla></hanla>NVMe SSD），否则<strong>资源利用率低下</strong>。</li>
+<li>高速<hanla></hanla>CPU<hanla></hanla>需匹配高速总线（如<hanla></hanla>PCIe 5.0）和存储设备（如<hanla></hanla>NVMe
+SSD），否则<strong>资源利用率低下</strong>。</li>
 </ul></li>
 <li>减少等待时间：
 <ul>
@@ -2194,7 +2410,8 @@ mjx-container[display="true"] + br {
 </ul></li>
 <li>支持高并发：
 <ul>
-<li>多核<hanla></hanla>CPU<hanla></hanla>需总线带宽足够分配（如<hanla></hanla>16<hanla></hanla>核<hanla></hanla>CPU + 低带宽总线 → 核心争抢带宽）。</li>
+<li>多核<hanla></hanla>CPU<hanla></hanla>需总线带宽足够分配（如<hanla></hanla>16<hanla></hanla>核<hanla></hanla>CPU + 低带宽总线 →
+核心争抢带宽）。</li>
 </ul></li>
 </ol>
 <h2 id="选择题-7">选择题</h2>
@@ -2204,22 +2421,26 @@ mjx-container[display="true"] + br {
 <p><strong>A. 主存</strong> B. 外存</p>
 <p>C. ROM D. 寄存器</p>
 <ol start="2" type="1">
-<li>CPU<hanla></hanla>输出数据的速度远远高于打印机的打印速度，为了解决这一矛盾，可采用<hanla></hanla>_____ 。</li>
+<li>CPU<hanla></hanla>输出数据的速度远远高于打印机的打印速度，为了解决这一矛盾，可采用<hanla></hanla>_____
+。</li>
 </ol>
 <p>A. 并行技术 B. 通道技术</p>
 <p><strong>C. 缓冲技术</strong> D. 虚存技术</p>
 <ol start="3" type="1">
-<li>通过硬件和软件的功能扩充，把原来独占的设备改造成能为若干用户共享的设备，这种设备称为 _____ 。</li>
+<li>通过硬件和软件的功能扩充，把原来独占的设备改造成能为若干用户共享的设备，这种设备称为
+_____ 。</li>
 </ol>
 <p>A. 存储设备 B. 系统设备</p>
 <p>C. 用户设备 <strong>D. 虚拟设备</strong></p>
 <ol start="4" type="1">
-<li>为了使多个进程能有效地同时处理输入<hanla></hanla>/<hanla></hanla>输出，最好使用 _____ 结构的缓冲技术。</li>
+<li>为了使多个进程能有效地同时处理输入<hanla></hanla>/<hanla></hanla>输出，最好使用 _____
+结构的缓冲技术。</li>
 </ol>
 <p>A. 循环缓冲 <strong>B. 缓冲池</strong></p>
 <p>C. 单缓冲 D. 双缓冲</p>
 <ol start="5" type="1">
-<li>如果<hanla></hanla>I/O<hanla></hanla>设备与存储设备进行数据交换不经过<hanla></hanla>CPU<hanla></hanla>来完成，这种数据交换方式是 _____ 。</li>
+<li>如果<hanla></hanla>I/O<hanla></hanla>设备与存储设备进行数据交换不经过<hanla></hanla>CPU<hanla></hanla>来完成，这种数据交换方式是
+_____ 。</li>
 </ol>
 <p>A. 程序查询 B. 中断方式</p>
 <p><strong>C. DMA<hanla></hanla>方式</strong> D. 无条件存取方式</p>
@@ -2229,7 +2450,8 @@ mjx-container[display="true"] + br {
 <p><strong>A. 磁盘固定区域</strong> B. 内存固定区域</p>
 <p>C. 终端 D. 打印机</p>
 <ol start="7" type="1">
-<li>设备管理程序对设备的管理是借助一些数据结构来进行的，下面的 _____ 不属于设备管理数据结构。</li>
+<li>设备管理程序对设备的管理是借助一些数据结构来进行的，下面的 _____
+不属于设备管理数据结构。</li>
 </ol>
 <p>A. DCT B. COCT</p>
 <p>C. CHCT <strong>D. JCB</strong></p>
@@ -2261,12 +2483,15 @@ mjx-container[display="true"] + br {
 <p>A．I/O<hanla></hanla>设备　 　B．设备控制器</p>
 <p><strong>C．处理机</strong>　　 D．I/O<hanla></hanla>控制器</p>
 <ol start="13" type="1">
-<li>共享设备磁盘的物理地址为（柱面号，磁头号，扇区号），磁头从当前位置移动到需访问柱面所用的时间称为 ① ，磁头从访问的柱面移动到指定扇区所用时间称为 ② 。A，B</li>
+<li>共享设备磁盘的物理地址为（柱面号，磁头号，扇区号），磁头从当前位置移动到需访问柱面所用的时间称为
+① ，磁头从访问的柱面移动到指定扇区所用时间称为 ② 。A，B</li>
 </ol>
 <p>A. 寻道时间 B. 传输时间</p>
 <p>C. 旋转等待时间 D. 周转时间</p>
 <ol start="14" type="1">
-<li>若进程<hanla></hanla>P1<hanla></hanla>访问<hanla></hanla>199<hanla></hanla>号柱面，磁头是从<hanla></hanla>0<hanla></hanla>号柱面移到<hanla></hanla>199<hanla></hanla>柱面的，且在访问期间依次出现了<hanla></hanla>P2<hanla></hanla>申请读<hanla></hanla>299<hanla></hanla>号柱面，P3<hanla></hanla>申请写<hanla></hanla>209<hanla></hanla>号柱面，P4<hanla></hanla>申请读<hanla></hanla>199<hanla></hanla>号柱面，访问完<hanla></hanla>199<hanla></hanla>号柱面以后，如果采用：先来先服务算法，将依次访问 ① ；最短寻道时间优先算法，将依次访问 ② ；扫描算法，将依次访问 ③ 。B，D，C</li>
+<li>若进程<hanla></hanla>P1<hanla></hanla>访问<hanla></hanla>199<hanla></hanla>号柱面，磁头是从<hanla></hanla>0<hanla></hanla>号柱面移到<hanla></hanla>199<hanla></hanla>柱面的，且在访问期间依次出现了<hanla></hanla>P2<hanla></hanla>申请读<hanla></hanla>299<hanla></hanla>号柱面，P3<hanla></hanla>申请写<hanla></hanla>209<hanla></hanla>号柱面，P4<hanla></hanla>申请读<hanla></hanla>199<hanla></hanla>号柱面，访问完<hanla></hanla>199<hanla></hanla>号柱面以后，如果采用：先来先服务算法，将依次访问
+① ；最短寻道时间优先算法，将依次访问 ② ；扫描算法，将依次访问 ③
+。B，D，C</li>
 </ol>
 <p>A. 299，199，209 B. 299，209，199</p>
 <p>C. 199，209，299 D. 209，199，299</p>
@@ -2290,7 +2515,8 @@ mjx-container[display="true"] + br {
 <ul>
 <li>199 → 209 → 199（P4）→ 299。</li>
 </ul></li>
-<li><strong>注意</strong>：若<hanla></hanla>P4<hanla></hanla>在访问<hanla></hanla>199<hanla></hanla>后立即处理，顺序为<hanla></hanla>199 → 199 → 209 → 299，但选项无此组合。最接近的是<hanla></hanla>D（209, 199, 299）。</li>
+<li><strong>注意</strong>：若<hanla></hanla>P4<hanla></hanla>在访问<hanla></hanla>199<hanla></hanla>后立即处理，顺序为<hanla></hanla>199 → 199 →
+209 → 299，但选项无此组合。最接近的是<hanla></hanla>D（209, 199, 299）。</li>
 </ul>
 <p><strong>3. 扫描算法（SCAN，电梯算法）</strong></p>
 <ul>
@@ -2323,18 +2549,47 @@ mjx-container[display="true"] + br {
 <p>C. 索引文件 <strong>D. 顺序文件</strong></p>
 <h2 id="填空题-4">填空题</h2>
 <ol type="1">
-<li><p>进行设备分配时所需的数据表格主要有<strong>设备控制表（DCT，Device Control Table）</strong>、 <strong>控制器控制表（COCT，Controller Control Table）</strong> 、<strong>通道控制表（CHCT，Channel Control Table）</strong>和 <strong>系统设备表（SDT，System Device Table）</strong> 。</p></li>
-<li><p>引起中断发生的事件称为<strong>中断源（Interrupt Source）</strong>。</p></li>
-<li><p>常用的<hanla></hanla>I/O<hanla></hanla>控制方式有程序直接控制方式、中断控制方式、<strong>DMA<hanla></hanla>方式（Direct Memory Access）</strong>和<strong>通道控制方式（Channel Control）</strong>。</p></li>
-<li><p>通道是一个独立于 <strong>CPU</strong><hanla></hanla>的专管 <strong>I/O<hanla></hanla>操作的处理器</strong>，它控制<hanla></hanla><strong>I/O<hanla></hanla>设备</strong>与内存之间的信息交换。</p></li>
-<li><p>SPOOLing<hanla></hanla>系统是由磁盘中的 <strong>输入井（Input Spooling）</strong>和 <strong>输出井（Output Spooling）</strong> ，内存中的 <strong>输入缓冲区（Input Buffer）</strong> 和 <strong>输出缓冲区（Output Buffer）</strong>，以及<strong>输入进程（Input Process）</strong>和<strong>输出进程（Output Process）</strong>所构成。</p></li>
-<li><p>设备分配程序分配外部设备时，先分配 <strong>设备（Device）</strong>，再分配 <strong>控制器（Controller）</strong>，最后分配 <strong>通道（Channel）</strong>。</p></li>
-<li><p>中断方式适合于<strong>低速设备（如键盘、鼠标）</strong>，DMA<hanla></hanla>方式适合于 <strong>高速设备（如磁盘、网卡）</strong> 。</p></li>
-<li><p>缓冲区的组织方式可分为 <strong>单缓冲（Single Buffer）</strong>、<strong>双缓冲（Double Buffer）</strong>、<strong>循环缓冲（Circular Buffer）</strong>和缓冲池。</p></li>
-<li><p>缓冲池中有三种类型的缓冲队列：<strong>空闲缓冲区队列（Empty Buffer Queue）</strong>、<strong>输入缓冲区队列（Input Buffer Queue）</strong>、<strong>输出缓冲区队列（Output Buffer Queue）</strong>。</p></li>
-<li><p>大多数设备控制器由三部分构成：<strong>设备接口（Device Interface）</strong>、<strong>控制器逻辑（Controller Logic）</strong>、 <strong>系统接口（System Interface）</strong>。</p></li>
-<li><p>活动头磁盘的访问时间包括<strong>寻道时间（Seek Time）</strong> 、<strong>旋转延迟时间（Rotational Latency）</strong>和 <strong>传输时间（Transfer Time）</strong>。</p></li>
-<li><p><strong>最短寻道时间优先（SSTF，Shortest Seek Time First）</strong>算法选择与当前磁头所在磁道距离最近的请求作为下一次服务的对象。</p></li>
+<li><p>进行设备分配时所需的数据表格主要有<strong>设备控制表（DCT，Device
+Control Table）</strong>、 <strong>控制器控制表（COCT，Controller
+Control Table）</strong> 、<strong>通道控制表（CHCT，Channel Control
+Table）</strong>和 <strong>系统设备表（SDT，System Device
+Table）</strong> 。</p></li>
+<li><p>引起中断发生的事件称为<strong>中断源（Interrupt
+Source）</strong>。</p></li>
+<li><p>常用的<hanla></hanla>I/O<hanla></hanla>控制方式有程序直接控制方式、中断控制方式、<strong>DMA<hanla></hanla>方式（Direct
+Memory Access）</strong>和<strong>通道控制方式（Channel
+Control）</strong>。</p></li>
+<li><p>通道是一个独立于 <strong>CPU</strong><hanla></hanla>的专管
+<strong>I/O<hanla></hanla>操作的处理器</strong>，它控制<hanla></hanla><strong>I/O<hanla></hanla>设备</strong>与内存之间的信息交换。</p></li>
+<li><p>SPOOLing<hanla></hanla>系统是由磁盘中的 <strong>输入井（Input
+Spooling）</strong>和 <strong>输出井（Output Spooling）</strong>
+，内存中的 <strong>输入缓冲区（Input Buffer）</strong> 和
+<strong>输出缓冲区（Output
+Buffer）</strong>，以及<strong>输入进程（Input
+Process）</strong>和<strong>输出进程（Output
+Process）</strong>所构成。</p></li>
+<li><p>设备分配程序分配外部设备时，先分配
+<strong>设备（Device）</strong>，再分配
+<strong>控制器（Controller）</strong>，最后分配
+<strong>通道（Channel）</strong>。</p></li>
+<li><p>中断方式适合于<strong>低速设备（如键盘、鼠标）</strong>，DMA<hanla></hanla>方式适合于
+<strong>高速设备（如磁盘、网卡）</strong> 。</p></li>
+<li><p>缓冲区的组织方式可分为 <strong>单缓冲（Single
+Buffer）</strong>、<strong>双缓冲（Double
+Buffer）</strong>、<strong>循环缓冲（Circular
+Buffer）</strong>和缓冲池。</p></li>
+<li><p>缓冲池中有三种类型的缓冲队列：<strong>空闲缓冲区队列（Empty
+Buffer Queue）</strong>、<strong>输入缓冲区队列（Input Buffer
+Queue）</strong>、<strong>输出缓冲区队列（Output Buffer
+Queue）</strong>。</p></li>
+<li><p>大多数设备控制器由三部分构成：<strong>设备接口（Device
+Interface）</strong>、<strong>控制器逻辑（Controller Logic）</strong>、
+<strong>系统接口（System Interface）</strong>。</p></li>
+<li><p>活动头磁盘的访问时间包括<strong>寻道时间（Seek Time）</strong>
+、<strong>旋转延迟时间（Rotational Latency）</strong>和
+<strong>传输时间（Transfer Time）</strong>。</p></li>
+<li><p><strong>最短寻道时间优先（SSTF，Shortest Seek Time
+First）</strong>算法选择与当前磁头所在磁道距离最近的请求作为下一次服务的对象。</p></li>
 </ol>
 <h2 id="考研题-2">考研题</h2>
 <ol type="1">

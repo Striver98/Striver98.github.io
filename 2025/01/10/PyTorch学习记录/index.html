@@ -463,7 +463,8 @@ mjx-container[display="true"] + br {
 </ul>
 <h2 id="anaconda常用命令">Anaconda<hanla></hanla>常用命令</h2>
 <ul>
-<li><p>创建环境：conda create -n your_env_name python=X.X （X.X<hanla></hanla>为<hanla></hanla>python<hanla></hanla>版本）</p>
+<li><p>创建环境：conda create -n your_env_name python=X.X
+（X.X<hanla></hanla>为<hanla></hanla>python<hanla></hanla>版本）</p>
 <p>eg: conda create -n pytorch_tutorial python=3.7</p></li>
 <li><p>激活环境：source activate your_env_name</p>
 <p>eg: source activate pytorch_tutorial</p></li>
@@ -501,7 +502,8 @@ mjx-container[display="true"] + br {
 <li>函数详情：Shift+Tab （注意，要把模块导入才会提示函数详情！）</li>
 </ul>
 <h1 id="pytorch-tutorial">Pytorch Tutorial</h1>
-<h2 id="step-1.-torch.utils.data.dataset-torch.utils.data.dataloader">Step 1. torch.utils.data.Dataset &amp; torch.utils.data.DataLoader</h2>
+<h2 id="step-1.-torch.utils.data.dataset-torch.utils.data.dataloader">Step
+1. torch.utils.data.Dataset &amp; torch.utils.data.DataLoader</h2>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521194717982.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="dataset-dataloader">Dataset &amp; Dataloader</h3>
 <ul>
@@ -539,7 +541,8 @@ mjx-container[display="true"] + br {
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br><span class="hljs-comment"># Initialize your model &amp; define layers</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyModel</span>(nn.Module):<br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>		<span class="hljs-built_in">super</span>(MyModel, <span class="hljs-variable language_">self</span>).__init__()<br>		<span class="hljs-variable language_">self</span>.net = nn.Sequential(<br>			nn.Linear(<span class="hljs-number">10</span>, <span class="hljs-number">32</span>),<br>			nn.Sigmoid(),<br>			nn.Linear(<span class="hljs-number">32</span>, <span class="hljs-number">1</span>)<br>		)<br><span class="hljs-comment"># Compute output of your NN</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, x</span>):<br>	<span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.net(x)<br><br><span class="hljs-comment"># 以下为等价写法<hanla></hanla></span><br><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyModel</span>(nn.Module):<br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>		<span class="hljs-built_in">super</span>(MyModel, <span class="hljs-variable language_">self</span>).__init__()<br>		<span class="hljs-variable language_">self</span>.layer1 = nn.Linear(<span class="hljs-number">10</span>, <span class="hljs-number">32</span>)<br>		<span class="hljs-variable language_">self</span>.layer2 = nn.Sigmoid(),<br>		<span class="hljs-variable language_">self</span>.layer3 = nn.Linear(<span class="hljs-number">32</span>,<span class="hljs-number">1</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, x</span>):<br>	out = <span class="hljs-variable language_">self</span>.layer1(x)<br>	out = <span class="hljs-variable language_">self</span>.layer2(out)<br>	out = <span class="hljs-variable language_">self</span>.layer3(out)<br>	<span class="hljs-keyword">return</span> out<br></code></pre></td></tr></tbody></table></figure></li>
 </ul></li>
 </ul>
-<h2 id="step-3.-torch.nn.mseloss-torch.nn.crossentropyloss-etc.">Step 3. torch.nn.MSELoss, torch.nn.CrossEntropyLoss etc.</h2>
+<h2 id="step-3.-torch.nn.mseloss-torch.nn.crossentropyloss-etc.">Step 3.
+torch.nn.MSELoss, torch.nn.CrossEntropyLoss etc.</h2>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521201726846.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li><p>Mean Squared Error (for regression tasks)</p>
@@ -551,13 +554,16 @@ mjx-container[display="true"] + br {
 <h2 id="step-4.-torch.optim">Step 4. torch.optim</h2>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20250521202002550.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
-<li><p>Gradient-based optimization algorithms that adjust network parameters to reduce error.</p>
+<li><p>Gradient-based optimization algorithms that adjust network
+parameters to reduce error.</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">optimizer = torch.optim.SGD(model.parameters(), lr, momentum = <span class="hljs-number">0</span>)<br></code></pre></td></tr></tbody></table></figure></li>
 <li><p>For every batch of data:</p>
 <blockquote>
 <ol type="1">
-<li>Call <code>optimizer.zero_grad()</code> to reset gradients of model parameters.</li>
-<li>Call <code>loss.backward()</code> to backpropagate gradients of prediction loss.</li>
+<li>Call <code>optimizer.zero_grad()</code> to reset gradients of model
+parameters.</li>
+<li>Call <code>loss.backward()</code> to backpropagate gradients of
+prediction loss.</li>
 <li>Call <code>optimizer.step()</code> to adjust model parameters.</li>
 </ol>
 </blockquote></li>

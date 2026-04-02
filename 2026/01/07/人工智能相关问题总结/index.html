@@ -447,42 +447,65 @@ mjx-container[display="true"] + br {
                 
                 <h3 id="正则化项只是在损失函数后面加了一项为什么可以降低vc维">正则化项只是在损失函数后面加了一项，为什么可以降低<hanla></hanla>VC<hanla></hanla>维？</h3>
 <h4 id="vc维与打散-shattering">0. VC<hanla></hanla>维与打散 (Shattering)</h4>
-<p><strong>VC<hanla></hanla>维</strong>（全称 <strong>Vapnik-Chervonenkis Dimension</strong>）是机器学习理论（特别是统计学习理论）中一个非常核心的概念。简单来说，它是衡量一个<strong>模型（函数集）复杂度</strong>或<hanla></hanla><strong>“学习能力”</strong><hanla></hanla>的指标。</p>
+<p><strong>VC<hanla></hanla>维</strong>（全称 <strong>Vapnik-Chervonenkis
+Dimension</strong>）是机器学习理论（特别是统计学习理论）中一个非常核心的概念。简单来说，它是衡量一个<strong>模型（函数集）复杂度</strong>或<hanla></hanla><strong>“学习能力”</strong><hanla></hanla>的指标。</p>
 <p>VC<hanla></hanla>维越高，模型越复杂，能拟合的数据模式越多样，但过拟合（Overfitting）的风险也越大；VC<hanla></hanla>维越低，模型越简单，容易欠拟合（Underfitting）。</p>
 <p>要理解<hanla></hanla>VC<hanla></hanla>维，首先必须理解<hanla></hanla><strong>“打散”</strong>（Shattering）这个概念。</p>
 <p>想象有一组数据点，我们要用一个模型（比如一条直线）把它们分成两类（正类和负类，即二分类问题）。</p>
 <ul>
-<li>如果有 <span class="math inline"><em>N</em></span> 个点，这 <span class="math inline"><em>N</em></span> 个点理论上共有 <span class="math inline">2<sup><em>N</em></sup></span> 种可能的标签组合（比如全正、全负、一正一负等）。</li>
-<li>如果对于这 <span class="math inline"><em>N</em></span> 个点的<strong>任何一种</strong>标签组合，模型都能找到一种参数设定，把它们完美地分开（训练误差为<hanla></hanla>0），我们就说这个模型能<strong>打散</strong>这 <span class="math inline"><em>N</em></span> 个点。</li>
+<li>如果有 <span class="math inline"><em>N</em></span> 个点，这 <span class="math inline"><em>N</em></span> 个点理论上共有 <span class="math inline">2<sup><em>N</em></sup></span>
+种可能的标签组合（比如全正、全负、一正一负等）。</li>
+<li>如果对于这 <span class="math inline"><em>N</em></span>
+个点的<strong>任何一种</strong>标签组合，模型都能找到一种参数设定，把它们完美地分开（训练误差为<hanla></hanla>0），我们就说这个模型能<strong>打散</strong>这
+<span class="math inline"><em>N</em></span> 个点。</li>
 </ul>
 <p>所以，<strong>VC<hanla></hanla>维就是一个假设集合（模型）能够<hanla></hanla>“打散”<hanla></hanla>的样本点的最大数量。</strong></p>
 <ul>
 <li><strong>记作：</strong> <span class="math inline"><em>V</em><em>C</em>(<em>H</em>)</span></li>
 <li><strong>含义：</strong>
 <ul>
-<li>如果存在至少一组 <span class="math inline"><em>N</em></span> 个点能被模型打散，且<strong>不存在</strong>任何一组 <span class="math inline"><em>N</em> + 1</span> 个点能被模型打散，那么该模型的<hanla></hanla>VC<hanla></hanla>维就是 <span class="math inline"><em>N</em></span>。</li>
-<li><strong>注意：</strong> 只要找到<hanla></hanla><strong>“任意一组”</strong> <span class="math inline"><em>N</em></span> 个点能被打散即可，不需要所有的 <span class="math inline"><em>N</em></span> 个点组合都能被打散。但在 <span class="math inline"><em>N</em> + 1</span> 时，必须是<hanla></hanla><strong>“所有”</strong><hanla></hanla>组合都无法被打散。</li>
+<li>如果存在至少一组 <span class="math inline"><em>N</em></span>
+个点能被模型打散，且<strong>不存在</strong>任何一组 <span class="math inline"><em>N</em> + 1</span>
+个点能被模型打散，那么该模型的<hanla></hanla>VC<hanla></hanla>维就是 <span class="math inline"><em>N</em></span>。</li>
+<li><strong>注意：</strong> 只要找到<hanla></hanla><strong>“任意一组”</strong> <span class="math inline"><em>N</em></span> 个点能被打散即可，不需要所有的
+<span class="math inline"><em>N</em></span> 个点组合都能被打散。但在
+<span class="math inline"><em>N</em> + 1</span>
+时，必须是<hanla></hanla><strong>“所有”</strong><hanla></hanla>组合都无法被打散。</li>
 </ul></li>
 </ul>
-<h4 id="几何直觉从全空间到受限空间">1. 几何直觉：从<hanla></hanla>“全空间”<hanla></hanla>到<hanla></hanla>“受限空间”</h4>
+<h4 id="几何直觉从全空间到受限空间">1.
+几何直觉：从<hanla></hanla>“全空间”<hanla></hanla>到<hanla></hanla>“受限空间”</h4>
 <p>想象你在训练一个线性回归模型 <span class="math inline"><em>y</em> = <em>w</em><sub>1</sub><em>x</em><sub>1</sub> + <em>w</em><sub>2</sub><em>x</em><sub>2</sub></span>。</p>
 <ul>
-<li><strong>没有正则化时：</strong> 参数 <span class="math inline"><em>w</em><sub>1</sub>, <em>w</em><sub>2</sub></span> 可以是任意实数。你的搜索空间是整个二维平面。在这个巨大的空间里，模型可以拟合幅度极大的变化，这对应着很高的复杂度（高 <span class="math inline"><em>h</em></span>）。</li>
-<li><strong>加上 L2 正则化 (<span class="math inline"><em>w</em><sub>1</sub><sup>2</sup> + <em>w</em><sub>2</sub><sup>2</sup> ≤ <em>C</em></span>)：</strong> 虽然你是在 loss 后面加了 <span class="math inline"><em>λ</em>||<em>w</em>||<sup>2</sup></span>，但这在数学上等价于告诉模型：“你只能在半径为 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.206ex;" xmlns="http://www.w3.org/2000/svg" width="3.649ex" height="2.398ex" role="img" focusable="false" viewBox="0 -969 1613 1060"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msqrt"><g transform="translate(853,0)"><g data-mml-node="mi"><path data-c="1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path></g></g><g data-mml-node="mo" transform="translate(0,109)"><path data-c="221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"></path></g><rect width="760" height="60" x="853" y="849"></rect></g></g></g></svg></mjx-container></span> 的圆圈内找参数”。
+<li><strong>没有正则化时：</strong> 参数 <span class="math inline"><em>w</em><sub>1</sub>, <em>w</em><sub>2</sub></span>
+可以是任意实数。你的搜索空间是整个二维平面。在这个巨大的空间里，模型可以拟合幅度极大的变化，这对应着很高的复杂度（高
+<span class="math inline"><em>h</em></span>）。</li>
+<li><strong>加上 L2 正则化 (<span class="math inline"><em>w</em><sub>1</sub><sup>2</sup> + <em>w</em><sub>2</sub><sup>2</sup> ≤ <em>C</em></span>)：</strong>
+虽然你是在 loss 后面加了 <span class="math inline"><em>λ</em>||<em>w</em>||<sup>2</sup></span>，但这在数学上等价于告诉模型：“你只能在半径为
+<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.206ex;" xmlns="http://www.w3.org/2000/svg" width="3.649ex" height="2.398ex" role="img" focusable="false" viewBox="0 -969 1613 1060"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msqrt"><g transform="translate(853,0)"><g data-mml-node="mi"><path data-c="1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path></g></g><g data-mml-node="mo" transform="translate(0,109)"><path data-c="221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"></path></g><rect width="760" height="60" x="853" y="849"></rect></g></g></g></svg></mjx-container></span> 的圆圈内找参数”。
 <ul>
-<li><strong>结果：</strong> 你的搜索空间从<hanla></hanla>“无限大的平面”<hanla></hanla>缩小到了<hanla></hanla>“一个小圆圈”。</li>
-<li><strong>结论：</strong> 一个只能在圆圈里取值的模型，显然比一个可以在全宇宙取值的模型<hanla></hanla>“弱”。<strong>这种人为变弱，就是降低 VC 维的过程。</strong></li>
+<li><strong>结果：</strong>
+你的搜索空间从<hanla></hanla>“无限大的平面”<hanla></hanla>缩小到了<hanla></hanla>“一个小圆圈”。</li>
+<li><strong>结论：</strong>
+一个只能在圆圈里取值的模型，显然比一个可以在全宇宙取值的模型<hanla></hanla>“弱”。<strong>这种人为变弱，就是降低
+VC 维的过程。</strong></li>
 </ul></li>
 </ul>
-<h4 id="数学解释权重衰减-weight-decay-与平滑度">2. 数学解释：权重衰减 (Weight Decay) 与平滑度</h4>
-<p>VC 维的一个核心来源是模型对<strong>数据微小变化</strong>的敏感度。</p>
+<h4 id="数学解释权重衰减-weight-decay-与平滑度">2. 数学解释：权重衰减
+(Weight Decay) 与平滑度</h4>
+<p>VC
+维的一个核心来源是模型对<strong>数据微小变化</strong>的敏感度。</p>
 <ul>
-<li><strong>高 VC 维的表现：</strong> 模型参数 <span class="math inline"><em>w</em></span> 很大。当输入 <span class="math inline"><em>x</em></span> 稍微变化一点点，输出 <span class="math inline"><em>y</em> = <em>w</em> ⋅ <em>x</em></span> 就会剧烈波动。这种<hanla></hanla>“剧烈波动”<hanla></hanla>的能力让模型可以强行穿过每一个噪声点（过拟合）。</li>
-<li><strong>正则化的作用：</strong> 正则化项（如 <span class="math inline"><em>λ</em>||<em>w</em>||<sup>2</sup></span>）强迫参数 <span class="math inline"><em>w</em></span> 保持很小。
+<li><strong>高 VC 维的表现：</strong> 模型参数 <span class="math inline"><em>w</em></span> 很大。当输入 <span class="math inline"><em>x</em></span> 稍微变化一点点，输出 <span class="math inline"><em>y</em> = <em>w</em> ⋅ <em>x</em></span>
+就会剧烈波动。这种<hanla></hanla>“剧烈波动”<hanla></hanla>的能力让模型可以强行穿过每一个噪声点（过拟合）。</li>
+<li><strong>正则化的作用：</strong> 正则化项（如 <span class="math inline"><em>λ</em>||<em>w</em>||<sup>2</sup></span>）强迫参数
+<span class="math inline"><em>w</em></span> 保持很小。
 <ul>
-<li>当 <span class="math inline"><em>w</em></span> 很小时，函数变得非常<strong>平滑</strong>。</li>
+<li>当 <span class="math inline"><em>w</em></span>
+很小时，函数变得非常<strong>平滑</strong>。</li>
 <li>平滑的函数无法像心电图一样上下乱窜去拟合噪声。</li>
-<li><strong>丧失了<hanla></hanla>“乱窜”<hanla></hanla>的能力 = 丧失了拟合任意复杂数据的能力 = 降低了 VC 维。</strong></li>
+<li><strong>丧失了<hanla></hanla>“乱窜”<hanla></hanla>的能力 = 丧失了拟合任意复杂数据的能力 = 降低了
+VC 维。</strong></li>
 </ul></li>
 </ul>
 <h4 id="本质软约束-vs-硬约束">3. 本质：软约束 vs 硬约束</h4>
@@ -490,20 +513,33 @@ mjx-container[display="true"] + br {
 <p>“VC 维定义不是看参数个数吗？加了正则化，参数个数没变啊？”</p>
 </blockquote>
 <ul>
-<li><strong>理论 VC 维 (Theoretical VC dim)：</strong> 确实通常由参数数量决定（比如 <span class="math inline"><em>d</em> + 1</span>）。</li>
-<li><strong>有效 VC 维 (Effective VC dim)：</strong> 实际上模型能表现出的复杂度。</li>
+<li><strong>理论 VC 维 (Theoretical VC dim)：</strong>
+确实通常由参数数量决定（比如 <span class="math inline"><em>d</em> + 1</span>）。</li>
+<li><strong>有效 VC 维 (Effective VC dim)：</strong>
+实际上模型能表现出的复杂度。</li>
 </ul>
 <p>正则化并没有改变参数的<strong>个数</strong>，但它极大地限制了参数的<strong>取值范围</strong>（也就是参数的<hanla></hanla>“自由度”）。</p>
-<p>正则化项虽然是<hanla></hanla>“加”<hanla></hanla>在 Loss 上的，但它的作用是<strong>惩罚复杂度</strong>。 <span class="math display"><em>L</em><em>o</em><em>s</em><em>s</em><sub><em>t</em><em>o</em><em>t</em><em>a</em><em>l</em></sub> = <em>L</em><em>o</em><em>s</em><em>s</em><sub><em>d</em><em>a</em><em>t</em><em>a</em></sub> + <em>λ</em> ⋅ <em>C</em><em>o</em><em>m</em><em>p</em><em>l</em><em>e</em><em>x</em><em>i</em><em>t</em><em>y</em></span> 通过最小化这个总 Loss，模型被迫在<hanla></hanla>“拟合数据”<hanla></hanla>和<hanla></hanla>“保持简单”<hanla></hanla>之间做妥协。这种妥协<strong>剔除</strong>了假设空间中那些<hanla></hanla>“参数值巨大、极其崎岖复杂”<hanla></hanla>的函数，只留下了平滑、简单的函数。<strong>假设空间变小了，VC 维自然就降低了。</strong></p>
-<h3 id="l1-和-l2-正则化在几何图像上有什么区别">L1 和 L2 正则化在几何图像上有什么区别？</h3>
-<p>要理解为什么 <strong>L1 (Lasso)</strong> 能把参数变成 0（稀疏解），而 <strong>L2 (Ridge)</strong> 只能把参数变小，我们必须通过<strong>几何图像</strong>来看。</p>
+<p>正则化项虽然是<hanla></hanla>“加”<hanla></hanla>在 Loss
+上的，但它的作用是<strong>惩罚复杂度</strong>。 <span class="math display"><em>L</em><em>o</em><em>s</em><em>s</em><sub><em>t</em><em>o</em><em>t</em><em>a</em><em>l</em></sub> = <em>L</em><em>o</em><em>s</em><em>s</em><sub><em>d</em><em>a</em><em>t</em><em>a</em></sub> + <em>λ</em> ⋅ <em>C</em><em>o</em><em>m</em><em>p</em><em>l</em><em>e</em><em>x</em><em>i</em><em>t</em><em>y</em></span>
+通过最小化这个总
+Loss，模型被迫在<hanla></hanla>“拟合数据”<hanla></hanla>和<hanla></hanla>“保持简单”<hanla></hanla>之间做妥协。这种妥协<strong>剔除</strong>了假设空间中那些<hanla></hanla>“参数值巨大、极其崎岖复杂”<hanla></hanla>的函数，只留下了平滑、简单的函数。<strong>假设空间变小了，VC
+维自然就降低了。</strong></p>
+<h3 id="l1-和-l2-正则化在几何图像上有什么区别">L1 和 L2
+正则化在几何图像上有什么区别？</h3>
+<p>要理解为什么 <strong>L1 (Lasso)</strong> 能把参数变成 0（稀疏解），而
+<strong>L2 (Ridge)</strong>
+只能把参数变小，我们必须通过<strong>几何图像</strong>来看。</p>
 <p>想象我们在一个二维平面上，只有两个参数 <span class="math inline"><em>w</em><sub>1</sub></span> 和 <span class="math inline"><em>w</em><sub>2</sub></span>。</p>
 <h4 id="两股力量的对抗">1. 两股力量的对抗</h4>
-<p>我们的目标是最小化总损失：<span class="math inline"><em>L</em><em>o</em><em>s</em><em>s</em><sub><em>t</em><em>o</em><em>t</em><em>a</em><em>l</em></sub> = <em>L</em><em>o</em><em>s</em><em>s</em><sub><em>d</em><em>a</em><em>t</em><em>a</em></sub> + <em>λ</em> ⋅ <em>R</em><em>e</em><em>g</em><em>u</em><em>l</em><em>a</em><em>r</em><em>i</em><em>z</em><em>a</em><em>t</em><em>i</em><em>o</em><em>n</em></span>。这在数学上等价于：<strong>在限制正则化项不超过某个值 <span class="math inline"><em>C</em></span> 的情况下，尽可能最小化数据误差。</strong></p>
+<p>我们的目标是最小化总损失：<span class="math inline"><em>L</em><em>o</em><em>s</em><em>s</em><sub><em>t</em><em>o</em><em>t</em><em>a</em><em>l</em></sub> = <em>L</em><em>o</em><em>s</em><em>s</em><sub><em>d</em><em>a</em><em>t</em><em>a</em></sub> + <em>λ</em> ⋅ <em>R</em><em>e</em><em>g</em><em>u</em><em>l</em><em>a</em><em>r</em><em>i</em><em>z</em><em>a</em><em>t</em><em>i</em><em>o</em><em>n</em></span>。这在数学上等价于：<strong>在限制正则化项不超过某个值
+<span class="math inline"><em>C</em></span>
+的情况下，尽可能最小化数据误差。</strong></p>
 <p>这就变成了两股力量的<hanla></hanla>“接触”<hanla></hanla>游戏：</p>
 <ol type="1">
 <li><strong>数据误差（Loss）</strong>：它的等高线通常是一圈圈的<strong>椭圆</strong>。椭圆的中心是误差最小的完美点，越往外误差越大。模型拼命想往圆心钻。</li>
-<li><strong>正则化项（Constraint）</strong>：它是围绕原点 <span class="math inline">(0, 0)</span> 的一个<strong>限制区域</strong>。模型参数 <span class="math inline"><em>w</em></span> 被锁在这个区域里，不能跑出去。</li>
+<li><strong>正则化项（Constraint）</strong>：它是围绕原点 <span class="math inline">(0, 0)</span>
+的一个<strong>限制区域</strong>。模型参数 <span class="math inline"><em>w</em></span>
+被锁在这个区域里，不能跑出去。</li>
 </ol>
 <p><strong>最优解（最佳参数）就在<hanla></hanla>“误差等高线”<hanla></hanla>和<hanla></hanla>“正则化限制区域”<hanla></hanla>的切点（接触点）上。</strong></p>
 <p><img src="https://blogwzx.oss-cn-beijing.aliyuncs.com/image-20260107201343057.png" srcset="/img/loading.gif" lazyload></p>
@@ -516,50 +552,60 @@ mjx-container[display="true"] + br {
 <li><strong>关键点：</strong> 圆是非常光滑的，它没有<hanla></hanla>“棱角”。</li>
 <li>椭圆和圆的切点，通常会落在圆周的任意位置。</li>
 </ul></li>
-<li><strong>结果：</strong> 切点的坐标 <span class="math inline">(<em>w</em><sub>1</sub>, <em>w</em><sub>2</sub>)</span> 通常<strong>两个都不是 0</strong>（比如 <span class="math inline"><em>w</em><sub>1</sub> = 0.2, <em>w</em><sub>2</sub> =  − 0.5</span>）。</li>
-<li><strong>结论：</strong> L2 只是限制参数不要离原点太远（变小），但很难让它们恰好落在坐标轴上（变 0）。</li>
+<li><strong>结果：</strong> 切点的坐标 <span class="math inline">(<em>w</em><sub>1</sub>, <em>w</em><sub>2</sub>)</span>
+通常<strong>两个都不是 0</strong>（比如 <span class="math inline"><em>w</em><sub>1</sub> = 0.2, <em>w</em><sub>2</sub> = −0.5</span>）。</li>
+<li><strong>结论：</strong> L2
+只是限制参数不要离原点太远（变小），但很难让它们恰好落在坐标轴上（变
+0）。</li>
 </ul>
 <h4 id="l1-正则化菱形的尖角接触">3. L1 正则化：菱形的<hanla></hanla>“尖角”<hanla></hanla>接触</h4>
 <ul>
-<li><strong>正则项形状：</strong> <span class="math inline">|<em>w</em><sub>1</sub>| + |<em>w</em><sub>2</sub>| ≤ <em>C</em></span>。这是一个<strong>菱形</strong>（或者说是旋转了 45 度的正方形）。</li>
+<li><strong>正则项形状：</strong> <span class="math inline">|<em>w</em><sub>1</sub>|+|<em>w</em><sub>2</sub>| ≤ <em>C</em></span>。这是一个<strong>菱形</strong>（或者说是旋转了
+45 度的正方形）。</li>
 <li><strong>接触过程：</strong>
 <ul>
-<li>这个菱形有 4 个非常突出的<strong>尖角（Corners）</strong>，这些尖角刚好就在坐标轴上（比如 <span class="math inline">(<em>C</em>, 0)</span> 或 <span class="math inline">(0, <em>C</em>)</span>）。</li>
+<li>这个菱形有 4
+个非常突出的<strong>尖角（Corners）</strong>，这些尖角刚好就在坐标轴上（比如
+<span class="math inline">(<em>C</em>, 0)</span> 或 <span class="math inline">(0, <em>C</em>)</span>）。</li>
 <li>当误差椭圆扩大去触碰这个菱形时，由于尖角向外突出，椭圆<strong>极大概率会先碰到尖角</strong>，而不是碰到平滑的边。</li>
 </ul></li>
-<li><strong>结果：</strong> 一旦切点落在尖角上，你可以看看坐标——在这个例子中，切点是 <span class="math inline">(<em>w</em><sub>1</sub>, 0)</span> 或者 <span class="math inline">(0, <em>w</em><sub>2</sub>)</span>。</li>
-<li><strong>结论：</strong> <strong>这就产生了 0！</strong> 某个参数变成了 0，意味着对应的特征被<hanla></hanla>“删掉”<hanla></hanla>了。这就是<strong>稀疏性（Sparsity）</strong>的来源。</li>
+<li><strong>结果：</strong>
+一旦切点落在尖角上，你可以看看坐标——在这个例子中，切点是 <span class="math inline">(<em>w</em><sub>1</sub>, 0)</span> 或者 <span class="math inline">(0, <em>w</em><sub>2</sub>)</span>。</li>
+<li><strong>结论：</strong> <strong>这就产生了 0！</strong>
+某个参数变成了
+0，意味着对应的特征被<hanla></hanla>“删掉”<hanla></hanla>了。这就是<strong>稀疏性（Sparsity）</strong>的来源。</li>
 </ul>
 <table>
+
 <thead>
-<tr class="header">
+<tr>
 <th><strong>特性</strong></th>
 <th><strong>L2 正则化 (Ridge)</strong></th>
 <th><strong>L1 正则化 (Lasso)</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><strong>几何形状</strong></td>
 <td><strong>圆 / 球体</strong> (平滑)</td>
 <td><strong>菱形 / 多面体</strong> (有尖角)</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>触碰点</strong></td>
 <td>通常在圆弧边缘</td>
 <td>极大概率在<strong>尖角（顶点）</strong></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>参数变化</strong></td>
 <td>整体变小，接近 0</td>
 <td>很多参数<strong>直接变为 0</strong></td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>主要功能</strong></td>
 <td>防止过拟合，处理共线性</td>
 <td><strong>特征选择</strong> (自动去掉无用特征)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>数学性质</strong></td>
 <td>处处可导</td>
 <td>在 0 点处不可导 (所以产生了稀疏解)</td>
